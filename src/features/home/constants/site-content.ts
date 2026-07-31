@@ -128,9 +128,9 @@ export const siteCopy: Record<SiteLocale, SiteCopy> = {
     },
     visual: {
       caption: "매일의 순간을 위해",
-      play: "놀이",
-      focus: "집중",
-      create: "창작",
+      play: "Play",
+      focus: "Focus",
+      create: "Create",
     },
     apps: {
       eyebrow: "주요 앱",
@@ -218,9 +218,9 @@ export const siteCopy: Record<SiteLocale, SiteCopy> = {
     },
     visual: {
       caption: "毎日の小さな瞬間へ",
-      play: "遊ぶ",
-      focus: "集中",
-      create: "つくる",
+      play: "Play",
+      focus: "Focus",
+      create: "Create",
     },
     apps: {
       eyebrow: "注目のアプリ",
