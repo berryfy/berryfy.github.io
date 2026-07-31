@@ -9,6 +9,8 @@ export const siteConfig = {
   routes: {
     home: "/",
     eyeconsPrivacy: "/apps/eyecons/privacy/",
+    eyeconsPrivacyEn: "/apps/eyecons/privacy/en/",
+    eyeconsPrivacyJa: "/apps/eyecons/privacy/ja/",
   },
 } as const;
 
