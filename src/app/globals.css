@@ -8,7 +8,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-site-sans);
   --font-mono: var(--font-geist-mono);
   --font-heading: var(--font-sans);
   --color-berry-soft: var(--berry-soft);
@@ -152,7 +152,17 @@
   html {
     @apply font-sans;
     scroll-behavior: smooth;
+    font-synthesis: none;
+    font-optical-sizing: auto;
   }
+}
+
+html:lang(ko) {
+  word-break: keep-all;
+}
+
+html:lang(ja) {
+  font-feature-settings: "palt" 1;
 }
 
 ::selection {
