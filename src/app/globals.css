@@ -165,6 +165,49 @@ html:lang(ja) {
   font-feature-settings: "palt" 1;
 }
 
+.legal-copy {
+  color: var(--muted-foreground);
+  font-size: 1rem;
+  line-height: 1.85;
+}
+
+.legal-copy > * + * {
+  margin-top: 1.25rem;
+}
+
+.legal-copy h3 {
+  margin-top: 2rem;
+  margin-bottom: 0.8rem;
+  color: var(--foreground);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+.legal-copy ul,
+.legal-copy ol {
+  padding-left: 1.35rem;
+}
+
+.legal-copy ul {
+  list-style: disc;
+}
+
+.legal-copy ol {
+  list-style: decimal;
+}
+
+.legal-copy li + li {
+  margin-top: 0.45rem;
+}
+
+.legal-copy a:not(.not-prose *) {
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
 ::selection {
   background: oklch(0.82 0.1 6);
   color: var(--foreground);
