@@ -1,3 +1,4 @@
+import { businessInfo } from "@/constants/business";
 import type {
   ExternalPrivacyService,
   PrivacyDataItem,
@@ -7,8 +8,8 @@ import type {
 export const eyeconsPrivacy = {
   appName: "EYEKONS Stan",
   packageName: "me.bluemiv.katseye_stan",
-  businessName: "berryfy",
-  contactEmail: "public.berryfy@gmail.com",
+  businessName: businessInfo.name,
+  contactEmail: businessInfo.contactEmail,
   effectiveDate: "2026년 7월 31일",
   navigation: [
     { id: "overview", label: "개요" },

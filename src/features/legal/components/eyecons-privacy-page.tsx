@@ -169,8 +169,9 @@ export default function EyeconsPrivacyPage() {
             개인정보 처리방침
           </h1>
           <p className="mt-7 max-w-[760px] text-lg leading-8 text-muted-foreground">
-            berryfy는 이용자의 개인정보를 필요한 범위에서만 처리하고, 어떤
-            정보가 왜 사용되는지 쉽게 이해할 수 있도록 안내합니다.
+            {policy.businessName}는 이용자의 개인정보를 필요한 범위에서만
+            처리하고, 어떤 정보가 왜 사용되는지 쉽게 이해할 수 있도록
+            안내합니다.
           </p>
         </div>
 
@@ -273,9 +274,10 @@ export default function EyeconsPrivacyPage() {
               id="purpose"
             >
               <p>
-                berryfy는 다음 목적에 필요한 범위에서만 개인정보를 처리합니다.
-                처리한 정보는 아래 목적 이외로 사용하지 않으며, 목적이 변경되는
-                경우 관련 법령에 따라 별도 안내 또는 동의를 진행합니다.
+                {policy.businessName}는 다음 목적에 필요한 범위에서만 개인정보를
+                처리합니다. 처리한 정보는 아래 목적 이외로 사용하지 않으며,
+                목적이 변경되는 경우 관련 법령에 따라 별도 안내 또는 동의를
+                진행합니다.
               </p>
               <ul>
                 <li>익명 프로필과 커뮤니티 게시글·답글·좋아요 기능 제공</li>
@@ -345,10 +347,11 @@ export default function EyeconsPrivacyPage() {
               id="third-parties"
             >
               <p>
-                berryfy는 이용자의 개인정보를 판매하지 않으며, 원칙적으로
-                이용자의 동의 없이 별도의 제3자에게 제공하지 않습니다. 다만
-                법령에 특별한 규정이 있거나 수사기관 등이 적법한 절차에 따라
-                요청하는 경우에는 필요한 범위에서 제공할 수 있습니다.
+                {policy.businessName}는 이용자의 개인정보를 판매하지 않으며,
+                원칙적으로 이용자의 동의 없이 별도의 제3자에게 제공하지
+                않습니다. 다만 법령에 특별한 규정이 있거나 수사기관 등이 적법한
+                절차에 따라 요청하는 경우에는 필요한 범위에서 제공할 수
+                있습니다.
               </p>
               <p>
                 Google과 Cloudflare가 서비스 제공 과정에서 직접 처리하는 정보는
@@ -380,7 +383,7 @@ export default function EyeconsPrivacyPage() {
                   YouTube 기능은 공개 영상 정보를 조회하고 내장 플레이어로
                   재생하는 데 사용됩니다. 앱은 이용자의 YouTube 계정 로그인을
                   요구하거나 YouTube 로그인 정보·비밀번호·개인 재생 기록을
-                  berryfy 서버에 저장하지 않습니다.
+                  {policy.businessName} 서버에 저장하지 않습니다.
                 </p>
                 <div className="mt-3 flex flex-wrap gap-x-5 gap-y-2">
                   <a
@@ -629,7 +632,7 @@ export default function EyeconsPrivacyPage() {
 
       <footer className="border-t border-border/70 bg-white/45">
         <div className="mx-auto flex max-w-[1320px] flex-col gap-2 px-5 py-8 text-xs text-muted-foreground sm:px-8 lg:px-10">
-          <p>© 2026 berryfy. All rights reserved.</p>
+          <p>© 2026 {policy.businessName}. All rights reserved.</p>
           <a href={`mailto:${policy.contactEmail}`}>{policy.contactEmail}</a>
         </div>
       </footer>

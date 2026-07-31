@@ -5,6 +5,7 @@ import { ArrowDownRight, ArrowRight, Heart, Mail } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import { businessInfo } from "@/constants/business";
 import AppCard from "@/features/home/components/app-card";
 import BrandMark from "@/features/home/components/brand-mark";
 import HeroVisual from "@/features/home/components/hero-visual";
@@ -190,7 +191,7 @@ export default function HomePage({ locale, copy }: HomePageProps) {
               variant="outline"
               className="h-11 self-start rounded-full bg-white px-5 sm:self-auto"
             >
-              <a href="mailto:public.berryfy@gmail.com">
+              <a href={`mailto:${businessInfo.contactEmail}`}>
                 <Mail aria-hidden="true" />
                 {copy.footer.contact}
               </a>
