@@ -1,19 +1,7 @@
-import type { SiteCopy, SiteLocale } from "@/features/home/types/home";
-
-export const siteLocales = [
-  "en",
-  "ko",
-  "ja",
-] as const satisfies readonly SiteLocale[];
-
-export const localeDetails: Record<
-  SiteLocale,
-  { label: string; shortLabel: string; path: string }
-> = {
-  en: { label: "English", shortLabel: "EN", path: "/" },
-  ko: { label: "한국어", shortLabel: "KO", path: "/ko/" },
-  ja: { label: "日本語", shortLabel: "JA", path: "/ja/" },
-};
+import { siteConfig } from "@/constants/site";
+import { sharedVisualCopy } from "@/features/home/constants/sections";
+import type { SiteCopy } from "@/features/home/types/home";
+import type { SiteLocale } from "@/types/site";
 
 export const siteCopy: Record<SiteLocale, SiteCopy> = {
   en: {
@@ -22,25 +10,22 @@ export const siteCopy: Record<SiteLocale, SiteCopy> = {
     closeMenuLabel: "Close menu",
     navigation: {
       apps: "Apps",
-      studio: "About Berryfy",
+      studio: `About ${siteConfig.name}`,
       principles: "Experience",
     },
     hero: {
       eyebrow: "Apps for everyday life",
       title: "Small apps.\nBright moments.",
-      description:
-        "Play for a moment, find your focus, or make something your own. Berryfy creates Android apps that are easy to enjoy and easy to keep.",
+      description: `Play for a moment, find your focus, or make something your own. ${siteConfig.name} creates ${siteConfig.platform} apps that are easy to enjoy and easy to keep.`,
       primaryAction: "Explore our apps",
-      secondaryAction: "Meet Berryfy",
+      secondaryAction: `Meet ${siteConfig.name}`,
       benefitLabel: "Designed around you",
       benefitValue:
         "Easy to start, pleasant to use, and never more complicated than it needs to be.",
     },
     visual: {
       caption: "Made for everyday moments",
-      play: "Play",
-      focus: "Focus",
-      create: "Create",
+      ...sharedVisualCopy,
     },
     apps: {
       eyebrow: "Featured apps",
@@ -74,10 +59,9 @@ export const siteCopy: Record<SiteLocale, SiteCopy> = {
       ],
     },
     studio: {
-      eyebrow: "Why Berryfy",
+      eyebrow: `Why ${siteConfig.name}`,
       title: "Apps that feel good from the first tap.",
-      description:
-        "Every Berryfy app starts with a real everyday moment: a short break, a task worth finishing, or a spark of creativity. The result is clear, responsive, and made to fit naturally into your day.",
+      description: `Every ${siteConfig.name} app starts with a real everyday moment: a short break, a task worth finishing, or a spark of creativity. The result is clear, responsive, and made to fit naturally into your day.`,
       note: "Easy to learn · Smooth to use · Made for your day",
     },
     principles: {
@@ -104,7 +88,7 @@ export const siteCopy: Record<SiteLocale, SiteCopy> = {
     footer: {
       tagline: "Small apps. Bright moments.",
       contact: "Contact",
-      rights: "All rights reserved.",
+      rights: siteConfig.copyrightNotice,
     },
   },
   ko: {
@@ -113,24 +97,21 @@ export const siteCopy: Record<SiteLocale, SiteCopy> = {
     closeMenuLabel: "메뉴 닫기",
     navigation: {
       apps: "앱",
-      studio: "Berryfy 소개",
+      studio: `${siteConfig.name} 소개`,
       principles: "사용 경험",
     },
     hero: {
       eyebrow: "일상을 위한 앱",
       title: "작은 앱으로,\n더 빛나는 순간.",
-      description:
-        "잠깐 즐기고 싶을 때, 집중하고 싶을 때, 나만의 무언가를 만들고 싶을 때. Berryfy는 쉽고 기분 좋은 Android 앱을 만듭니다.",
+      description: `잠깐 즐기고 싶을 때, 집중하고 싶을 때, 나만의 무언가를 만들고 싶을 때. ${siteConfig.name}는 쉽고 기분 좋은 ${siteConfig.platform} 앱을 만듭니다.`,
       primaryAction: "앱 둘러보기",
-      secondaryAction: "Berryfy 알아보기",
+      secondaryAction: `${siteConfig.name} 알아보기`,
       benefitLabel: "사용자를 먼저 생각합니다",
       benefitValue: "처음부터 쉽고, 쓸수록 편안하며, 필요한 만큼만 담았습니다.",
     },
     visual: {
       caption: "매일의 순간을 위해",
-      play: "Play",
-      focus: "Focus",
-      create: "Create",
+      ...sharedVisualCopy,
     },
     apps: {
       eyebrow: "주요 앱",
@@ -164,10 +145,9 @@ export const siteCopy: Record<SiteLocale, SiteCopy> = {
       ],
     },
     studio: {
-      eyebrow: "왜 Berryfy인가요?",
+      eyebrow: `왜 ${siteConfig.name}인가요?`,
       title: "처음 터치하는 순간부터 기분 좋은 앱.",
-      description:
-        "잠깐 쉬어가는 시간, 꼭 끝내고 싶은 일, 문득 떠오른 창작의 순간. Berryfy는 실제 일상에서 시작해 명확하고 빠르며 자연스럽게 스며드는 앱을 만듭니다.",
+      description: `잠깐 쉬어가는 시간, 꼭 끝내고 싶은 일, 문득 떠오른 창작의 순간. ${siteConfig.name}는 실제 일상에서 시작해 명확하고 빠르며 자연스럽게 스며드는 앱을 만듭니다.`,
       note: "배우기 쉽게 · 사용은 매끄럽게 · 일상에 자연스럽게",
     },
     principles: {
@@ -203,24 +183,21 @@ export const siteCopy: Record<SiteLocale, SiteCopy> = {
     closeMenuLabel: "メニューを閉じる",
     navigation: {
       apps: "アプリ",
-      studio: "Berryfyについて",
+      studio: `${siteConfig.name}について`,
       principles: "使い心地",
     },
     hero: {
       eyebrow: "毎日のためのアプリ",
       title: "小さなアプリで、\n毎日にきらめきを。",
-      description:
-        "少し遊びたいとき、集中したいとき、自分らしく何かをつくりたいとき。Berryfyは、すぐに楽しめて長く使いたくなるAndroidアプリをつくります。",
+      description: `少し遊びたいとき、集中したいとき、自分らしく何かをつくりたいとき。${siteConfig.name}は、すぐに楽しめて長く使いたくなる${siteConfig.platform}アプリをつくります。`,
       primaryAction: "アプリを見る",
-      secondaryAction: "Berryfyについて",
+      secondaryAction: `${siteConfig.name}について`,
       benefitLabel: "使う人をいちばんに",
       benefitValue: "始めやすく、使うほど心地よく、必要以上に複雑にしません。",
     },
     visual: {
       caption: "毎日の小さな瞬間へ",
-      play: "Play",
-      focus: "Focus",
-      create: "Create",
+      ...sharedVisualCopy,
     },
     apps: {
       eyebrow: "注目のアプリ",
@@ -253,10 +230,9 @@ export const siteCopy: Record<SiteLocale, SiteCopy> = {
       ],
     },
     studio: {
-      eyebrow: "Berryfyを選ぶ理由",
+      eyebrow: `${siteConfig.name}を選ぶ理由`,
       title: "最初のタップから、心地よいアプリ。",
-      description:
-        "ひと息つく時間、やり遂げたいこと、ふと生まれた創作のひらめき。Berryfyは日常のリアルな瞬間から、わかりやすく軽快で、自然になじむアプリをつくります。",
+      description: `ひと息つく時間、やり遂げたいこと、ふと生まれた創作のひらめき。${siteConfig.name}は日常のリアルな瞬間から、わかりやすく軽快で、自然になじむアプリをつくります。`,
       note: "すぐにわかる · なめらかに使える · 毎日になじむ",
     },
     principles: {
@@ -283,7 +259,7 @@ export const siteCopy: Record<SiteLocale, SiteCopy> = {
     footer: {
       tagline: "小さなアプリで、毎日にきらめきを。",
       contact: "お問い合わせ",
-      rights: "All rights reserved.",
+      rights: siteConfig.copyrightNotice,
     },
   },
 };

@@ -1,8 +1,5 @@
-import {
-  localeDetails,
-  siteLocales,
-} from "@/features/home/constants/site-content";
-import type { SiteLocale } from "@/features/home/types/home";
+import { localeDetails, siteLocales } from "@/constants/site";
+import type { SiteLocale } from "@/types/site";
 
 export function isSiteLocale(value: string): value is SiteLocale {
   return siteLocales.includes(value as SiteLocale);

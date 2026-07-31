@@ -1,39 +1,33 @@
 import type { Metadata } from "next";
 
-import { localeDetails } from "@/features/home/constants/site-content";
-import type { SiteCopy, SiteLocale } from "@/features/home/types/home";
-
-const openGraphLocales: Record<SiteLocale, string> = {
-  en: "en_US",
-  ko: "ko_KR",
-  ja: "ja_JP",
-};
+import {
+  languageAlternates,
+  localeDetails,
+  siteConfig,
+} from "@/constants/site";
+import type { SiteCopy } from "@/features/home/types/home";
+import type { SiteLocale } from "@/types/site";
 
 export function createHomeMetadata(
   locale: SiteLocale,
   copy: SiteCopy,
 ): Metadata {
   return {
-    metadataBase: new URL("https://berryfy.github.io"),
+    metadataBase: new URL(siteConfig.url),
     title: {
-      absolute: `Berryfy — ${copy.footer.tagline}`,
+      absolute: `${siteConfig.name} — ${copy.footer.tagline}`,
     },
     description: copy.hero.description,
     alternates: {
       canonical: localeDetails[locale].path,
-      languages: {
-        en: "/",
-        ko: "/ko/",
-        ja: "/ja/",
-        "x-default": "/",
-      },
+      languages: languageAlternates,
     },
     openGraph: {
       type: "website",
-      siteName: "Berryfy",
-      locale: openGraphLocales[locale],
+      siteName: siteConfig.name,
+      locale: localeDetails[locale].openGraphLocale,
       url: localeDetails[locale].path,
-      title: `Berryfy — ${copy.footer.tagline}`,
+      title: `${siteConfig.name} — ${copy.footer.tagline}`,
       description: copy.hero.description,
     },
   };

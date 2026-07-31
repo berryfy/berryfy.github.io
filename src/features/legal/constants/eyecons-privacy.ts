@@ -1,4 +1,5 @@
 import { businessInfo } from "@/constants/business";
+import { privacyLinks } from "@/features/legal/constants/privacy-links";
 import type {
   ExternalPrivacyService,
   PrivacyDataItem,
@@ -100,7 +101,7 @@ export const eyeconsPrivacy = {
       location: "미국을 포함한 Google 및 처리업체의 서비스 제공 국가",
       timingAndMethod: "앱 실행·광고 요청·상호작용 시 암호화된 네트워크로 전송",
       retention: "Google의 개인정보처리방침 및 서비스 설정에 따름",
-      policyUrl: "https://policies.google.com/privacy",
+      policyUrl: privacyLinks.googlePrivacy,
     },
     {
       provider: "Google LLC",
@@ -111,7 +112,7 @@ export const eyeconsPrivacy = {
       timingAndMethod:
         "영상 목록 조회·플레이어 로드·재생 시 암호화된 네트워크로 전송",
       retention: "Google의 개인정보처리방침 및 YouTube 서비스 정책에 따름",
-      policyUrl: "https://policies.google.com/privacy",
+      policyUrl: privacyLinks.googlePrivacy,
     },
     {
       provider: "Cloudflare, Inc.",
@@ -124,7 +125,7 @@ export const eyeconsPrivacy = {
       timingAndMethod: "앱에서 서버 기능을 이용할 때 암호화된 네트워크로 전송",
       retention:
         "본 방침의 항목별 보유기간 및 Cloudflare의 서비스·개인정보 보호정책에 따름",
-      policyUrl: "https://www.cloudflare.com/privacypolicy/",
+      policyUrl: privacyLinks.cloudflarePrivacy,
     },
     {
       provider: "Google LLC",
@@ -134,7 +135,7 @@ export const eyeconsPrivacy = {
       location: "미국을 포함한 Google 및 처리업체의 서비스 제공 국가",
       timingAndMethod: "이용자가 이메일을 보낼 때 암호화된 네트워크로 전송",
       retention: "문의 처리 완료 후 1년 및 Google의 개인정보처리방침에 따름",
-      policyUrl: "https://policies.google.com/privacy",
+      policyUrl: privacyLinks.googlePrivacy,
     },
   ] satisfies ExternalPrivacyService[],
 } as const;

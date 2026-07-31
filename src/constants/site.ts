@@ -1,0 +1,55 @@
+import type { SiteLocale } from "@/types/site";
+
+export const siteConfig = {
+  name: "Berryfy",
+  url: "https://berryfy.github.io",
+  platform: "Android",
+  copyrightNotice: "All rights reserved.",
+  defaultLocale: "en" satisfies SiteLocale,
+  routes: {
+    home: "/",
+    eyeconsPrivacy: "/apps/eyecons/privacy/",
+  },
+} as const;
+
+export const siteLocales = [
+  "en",
+  "ko",
+  "ja",
+] as const satisfies readonly SiteLocale[];
+
+export const localeDetails: Record<
+  SiteLocale,
+  {
+    label: string;
+    shortLabel: string;
+    path: string;
+    openGraphLocale: string;
+  }
+> = {
+  en: {
+    label: "English",
+    shortLabel: "EN",
+    path: siteConfig.routes.home,
+    openGraphLocale: "en_US",
+  },
+  ko: {
+    label: "한국어",
+    shortLabel: "KO",
+    path: "/ko/",
+    openGraphLocale: "ko_KR",
+  },
+  ja: {
+    label: "日本語",
+    shortLabel: "JA",
+    path: "/ja/",
+    openGraphLocale: "ja_JP",
+  },
+};
+
+export const languageAlternates = {
+  en: localeDetails.en.path,
+  ko: localeDetails.ko.path,
+  ja: localeDetails.ja.path,
+  "x-default": localeDetails[siteConfig.defaultLocale].path,
+} as const;

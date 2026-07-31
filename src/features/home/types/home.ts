@@ -1,5 +1,3 @@
-export type SiteLocale = "en" | "ko" | "ja";
-
 export type AppVisual = "potion" | "focus" | "prisma";
 
 export interface FeaturedApp {

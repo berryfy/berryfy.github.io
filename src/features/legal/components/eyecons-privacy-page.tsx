@@ -1,4 +1,5 @@
 import Link from "next/link";
+import dayjs from "dayjs";
 import {
   ArrowLeft,
   ExternalLink,
@@ -9,8 +10,10 @@ import {
   Trash2,
 } from "lucide-react";
 
-import BrandMark from "@/features/home/components/brand-mark";
+import BrandMark from "@/components/brand-mark";
+import { siteConfig } from "@/constants/site";
 import { eyeconsPrivacy } from "@/features/legal/constants/eyecons-privacy";
+import { privacyLinks } from "@/features/legal/constants/privacy-links";
 import type {
   ExternalPrivacyService,
   PrivacyDataItem,
@@ -144,14 +147,16 @@ function ExternalServiceCard({ service }: { service: ExternalPrivacyService }) {
 
 export default function EyeconsPrivacyPage() {
   const policy = eyeconsPrivacy;
+  const privacyRequestMailto = `mailto:${policy.contactEmail}?subject=${encodeURIComponent(`${policy.appName} 개인정보 요청`)}`;
+  const year = dayjs().year();
 
   return (
     <div className="min-h-screen">
       <header className="sticky top-0 z-40 border-b border-border/70 bg-background/85 backdrop-blur-xl">
         <div className="mx-auto flex h-[76px] max-w-[1320px] items-center justify-between px-5 sm:px-8 lg:px-10">
-          <BrandMark href="/" />
+          <BrandMark href={siteConfig.routes.home} />
           <Link
-            href="/"
+            href={siteConfig.routes.home}
             className="inline-flex items-center gap-2 rounded-full px-3 py-2 text-sm font-semibold text-muted-foreground transition-colors hover:bg-white hover:text-foreground focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none"
           >
             <ArrowLeft className="size-4" aria-hidden="true" />
@@ -387,21 +392,21 @@ export default function EyeconsPrivacyPage() {
                 </p>
                 <div className="mt-3 flex flex-wrap gap-x-5 gap-y-2">
                   <a
-                    href="https://www.youtube.com/t/terms"
+                    href={privacyLinks.youtubeTerms}
                     target="_blank"
                     rel="noreferrer"
                   >
                     YouTube 이용약관
                   </a>
                   <a
-                    href="https://policies.google.com/privacy"
+                    href={privacyLinks.googlePrivacy}
                     target="_blank"
                     rel="noreferrer"
                   >
                     Google 개인정보처리방침
                   </a>
                   <a
-                    href="https://security.google.com/settings/security/permissions"
+                    href={privacyLinks.googlePermissions}
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -457,7 +462,7 @@ export default function EyeconsPrivacyPage() {
                 </li>
               </ol>
               <a
-                href={`mailto:${policy.contactEmail}?subject=EYEKONS%20Stan%20개인정보%20요청`}
+                href={privacyRequestMailto}
                 className="not-prose mt-5 inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white shadow-[0_12px_30px_rgba(217,45,99,0.2)] transition-colors hover:bg-[#c92559]"
               >
                 <Mail className="size-4" aria-hidden="true" />
@@ -476,7 +481,7 @@ export default function EyeconsPrivacyPage() {
               id="automatic"
             >
               <p>
-                EYEKONS Stan 자체는 웹 쿠키를 설치하지 않습니다. 다만 내장
+                {policy.appName} 자체는 웹 쿠키를 설치하지 않습니다. 다만 내장
                 YouTube 플레이어와 Google 광고 서비스는 쿠키 또는 유사 기술,
                 광고 ID, 기기·이용 정보를 처리할 수 있습니다.
               </p>
@@ -571,22 +576,23 @@ export default function EyeconsPrivacyPage() {
               <ul>
                 <li>
                   개인정보침해 신고센터:{" "}
-                  <a href="https://privacy.kisa.or.kr/">privacy.kisa.or.kr</a> ·
+                  <a href={privacyLinks.kisaPrivacy}>privacy.kisa.or.kr</a> ·
                   국번 없이 118
                 </li>
                 <li>
                   개인정보분쟁조정위원회:{" "}
-                  <a href="https://www.kopico.go.kr/">www.kopico.go.kr</a> ·
+                  <a href={privacyLinks.privacyDispute}>www.kopico.go.kr</a> ·
                   1833-6972
                 </li>
                 <li>
-                  대검찰청: <a href="https://www.spo.go.kr/">www.spo.go.kr</a> ·
+                  대검찰청:{" "}
+                  <a href={privacyLinks.prosecutionService}>www.spo.go.kr</a> ·
                   국번 없이 1301
                 </li>
                 <li>
                   경찰청 사이버범죄 신고시스템:{" "}
-                  <a href="https://ecrm.police.go.kr/">ecrm.police.go.kr</a> ·
-                  국번 없이 182
+                  <a href={privacyLinks.policeCybercrime}>ecrm.police.go.kr</a>{" "}
+                  · 국번 없이 182
                 </li>
               </ul>
             </SectionHeading>
@@ -606,7 +612,7 @@ export default function EyeconsPrivacyPage() {
                 <p className="font-semibold text-foreground">작성 기준</p>
                 <div className="mt-3 flex flex-col gap-2">
                   <a
-                    href="https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS217&mCode=G010030000&nttId=11134"
+                    href={privacyLinks.pipcPolicyGuide}
                     target="_blank"
                     rel="noreferrer"
                     className="inline-flex items-center gap-1.5 hover:text-primary"
@@ -615,7 +621,7 @@ export default function EyeconsPrivacyPage() {
                     <ExternalLink className="size-3.5" aria-hidden="true" />
                   </a>
                   <a
-                    href="https://support.google.com/googleplay/android-developer/answer/9859455?hl=ko"
+                    href={privacyLinks.googlePlayPolicyGuide}
                     target="_blank"
                     rel="noreferrer"
                     className="inline-flex items-center gap-1.5 hover:text-primary"
@@ -632,7 +638,9 @@ export default function EyeconsPrivacyPage() {
 
       <footer className="border-t border-border/70 bg-white/45">
         <div className="mx-auto flex max-w-[1320px] flex-col gap-2 px-5 py-8 text-xs text-muted-foreground sm:px-8 lg:px-10">
-          <p>© 2026 {policy.businessName}. All rights reserved.</p>
+          <p>
+            © {year} {policy.businessName}. {siteConfig.copyrightNotice}
+          </p>
           <a href={`mailto:${policy.contactEmail}`}>{policy.contactEmail}</a>
         </div>
       </footer>

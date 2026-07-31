@@ -1,17 +1,6 @@
-import { Geist_Mono, Manrope } from "next/font/google";
-
+import { monoFontVariable, siteFontVariables } from "@/app/fonts";
+import { siteConfig } from "@/constants/site";
 import "../globals.css";
-
-const manrope = Manrope({
-  variable: "--font-site-sans",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export default function DefaultRootLayout({
   children,
@@ -20,9 +9,9 @@ export default function DefaultRootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang={siteConfig.defaultLocale}
       data-scroll-behavior="smooth"
-      className={`${manrope.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${siteFontVariables.en} ${monoFontVariable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">{children}</body>
     </html>

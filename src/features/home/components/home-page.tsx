@@ -2,16 +2,19 @@ import Link from "next/link";
 import dayjs from "dayjs";
 import { ArrowDownRight, ArrowRight, Heart, Mail } from "lucide-react";
 
+import BrandMark from "@/components/brand-mark";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { businessInfo } from "@/constants/business";
+import { siteConfig } from "@/constants/site";
 import AppCard from "@/features/home/components/app-card";
-import BrandMark from "@/features/home/components/brand-mark";
 import HeroVisual from "@/features/home/components/hero-visual";
 import SiteHeader from "@/features/home/components/site-header";
-import type { SiteCopy, SiteLocale } from "@/features/home/types/home";
+import { homeSections } from "@/features/home/constants/sections";
+import type { SiteCopy } from "@/features/home/types/home";
 import { homePath } from "@/features/home/utils/locale";
+import type { SiteLocale } from "@/types/site";
 
 interface HomePageProps {
   locale: SiteLocale;
@@ -50,7 +53,7 @@ export default function HomePage({ locale, copy }: HomePageProps) {
                   size="lg"
                   className="h-13 rounded-full bg-primary px-6 text-base shadow-[0_14px_32px_rgba(217,45,99,0.22)] hover:bg-[#c92559]"
                 >
-                  <Link href={`${basePath}#apps`}>
+                  <Link href={`${basePath}#${homeSections.apps}`}>
                     {copy.hero.primaryAction}
                     <ArrowDownRight aria-hidden="true" />
                   </Link>
@@ -61,7 +64,7 @@ export default function HomePage({ locale, copy }: HomePageProps) {
                   size="lg"
                   className="h-13 rounded-full border-border bg-white/65 px-6 text-base hover:bg-white"
                 >
-                  <Link href={`${basePath}#studio`}>
+                  <Link href={`${basePath}#${homeSections.studio}`}>
                     {copy.hero.secondaryAction}
                     <ArrowRight aria-hidden="true" />
                   </Link>
@@ -87,7 +90,7 @@ export default function HomePage({ locale, copy }: HomePageProps) {
           </div>
         </section>
 
-        <section id="apps" className="scroll-mt-24 py-24 sm:py-32">
+        <section id={homeSections.apps} className="scroll-mt-24 py-24 sm:py-32">
           <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12">
             <div className="grid items-end gap-7 lg:grid-cols-[minmax(0,1fr)_minmax(320px,0.55fr)]">
               <div>
@@ -118,7 +121,7 @@ export default function HomePage({ locale, copy }: HomePageProps) {
         </section>
 
         <section
-          id="studio"
+          id={homeSections.studio}
           className="scroll-mt-20 px-5 py-12 sm:px-8 lg:px-12"
         >
           <div className="relative mx-auto max-w-[1344px] overflow-hidden rounded-[2.5rem] bg-[#2d1c32] px-6 py-16 text-white sm:px-10 sm:py-20 lg:px-16 lg:py-24">
@@ -146,7 +149,7 @@ export default function HomePage({ locale, copy }: HomePageProps) {
         </section>
 
         <section
-          id="principles"
+          id={homeSections.principles}
           className="scroll-mt-20 py-24 sm:py-32 lg:py-36"
         >
           <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12">
@@ -199,7 +202,7 @@ export default function HomePage({ locale, copy }: HomePageProps) {
           </div>
           <Separator className="my-7" />
           <p className="text-xs text-muted-foreground">
-            © {year} Berryfy. {copy.footer.rights}
+            © {year} {siteConfig.name}. {copy.footer.rights}
           </p>
         </div>
       </footer>

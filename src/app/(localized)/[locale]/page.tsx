@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
+import { siteConfig, siteLocales } from "@/constants/site";
 import HomePage from "@/features/home/components/home-page";
-import { siteCopy, siteLocales } from "@/features/home/constants/site-content";
+import { siteCopy } from "@/features/home/constants/site-content";
 import { isSiteLocale } from "@/features/home/utils/locale";
 import { createHomeMetadata } from "@/features/home/utils/metadata";
 
@@ -14,7 +15,7 @@ export const dynamicParams = false;
 
 export function generateStaticParams() {
   return siteLocales
-    .filter((locale) => locale !== "en")
+    .filter((locale) => locale !== siteConfig.defaultLocale)
     .map((locale) => ({ locale }));
 }
 
@@ -23,7 +24,7 @@ export async function generateMetadata({
 }: LocalizedHomePageProps): Promise<Metadata> {
   const { locale } = await params;
 
-  if (!isSiteLocale(locale) || locale === "en") {
+  if (!isSiteLocale(locale) || locale === siteConfig.defaultLocale) {
     return {};
   }
 
@@ -35,7 +36,7 @@ export default async function LocalizedHomePage({
 }: LocalizedHomePageProps) {
   const { locale } = await params;
 
-  if (!isSiteLocale(locale) || locale === "en") {
+  if (!isSiteLocale(locale) || locale === siteConfig.defaultLocale) {
     notFound();
   }
 

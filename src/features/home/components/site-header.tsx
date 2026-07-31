@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Menu } from "lucide-react";
 
+import BrandMark from "@/components/brand-mark";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -12,10 +13,11 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import BrandMark from "@/features/home/components/brand-mark";
 import LanguageSwitcher from "@/features/home/components/language-switcher";
-import type { SiteCopy, SiteLocale } from "@/features/home/types/home";
+import { homeSections } from "@/features/home/constants/sections";
+import type { SiteCopy } from "@/features/home/types/home";
 import { homePath } from "@/features/home/utils/locale";
+import type { SiteLocale } from "@/types/site";
 
 interface SiteHeaderProps {
   locale: SiteLocale;
@@ -25,9 +27,18 @@ interface SiteHeaderProps {
 export default function SiteHeader({ locale, copy }: SiteHeaderProps) {
   const basePath = homePath(locale);
   const navigation = [
-    { label: copy.navigation.apps, href: `${basePath}#apps` },
-    { label: copy.navigation.studio, href: `${basePath}#studio` },
-    { label: copy.navigation.principles, href: `${basePath}#principles` },
+    {
+      label: copy.navigation.apps,
+      href: `${basePath}#${homeSections.apps}`,
+    },
+    {
+      label: copy.navigation.studio,
+      href: `${basePath}#${homeSections.studio}`,
+    },
+    {
+      label: copy.navigation.principles,
+      href: `${basePath}#${homeSections.principles}`,
+    },
   ];
 
   return (
