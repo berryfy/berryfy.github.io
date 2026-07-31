@@ -10,7 +10,7 @@ export const eyeconsPrivacy = {
   appName: "EYEKONS Stan",
   businessName: businessInfo.name,
   contactEmail: businessInfo.contactEmail,
-  effectiveDate: "2026년 7월 31일",
+  effectiveDate: "2026년 8월 1일",
   navigation: [
     { id: "overview", label: "핵심 안내" },
     { id: "purpose", label: "처리 목적" },

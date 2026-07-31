@@ -28,44 +28,77 @@ function SectionHeading({ number, title, id, children }: SectionHeadingProps) {
 
 function DataTable({ items }: { items: readonly PrivacyDataItem[] }) {
   return (
-    <div className="overflow-x-auto border border-neutral-300">
-      <table className="w-full min-w-[720px] border-collapse text-left text-sm">
-        <thead className="bg-neutral-100 text-neutral-900">
-          <tr>
-            <th className="w-[17%] border-b border-neutral-300 px-3 py-3 font-semibold">
-              구분
-            </th>
-            <th className="w-[28%] border-b border-neutral-300 px-3 py-3 font-semibold">
-              처리 항목
-            </th>
-            <th className="w-[27%] border-b border-neutral-300 px-3 py-3 font-semibold">
-              처리 목적
-            </th>
-            <th className="w-[28%] border-b border-neutral-300 px-3 py-3 font-semibold">
-              보유 기간
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          {items.map((item) => (
-            <tr key={item.category} className="border-t border-neutral-200">
-              <th className="px-3 py-3 align-top font-semibold text-neutral-900">
-                {item.category}
+    <>
+      <div className="grid gap-3 sm:grid-cols-2 lg:hidden">
+        {items.map((item) => (
+          <section
+            key={item.category}
+            className="border border-neutral-300 p-4"
+          >
+            <h4 className="font-bold text-neutral-900">{item.category}</h4>
+            <dl className="mt-3 space-y-3 text-sm">
+              <div>
+                <dt className="font-semibold text-neutral-900">처리 항목</dt>
+                <dd className="mt-1 leading-6 break-words text-neutral-700">
+                  {item.data}
+                </dd>
+              </div>
+              <div>
+                <dt className="font-semibold text-neutral-900">처리 목적</dt>
+                <dd className="mt-1 leading-6 break-words text-neutral-700">
+                  {item.purpose}
+                </dd>
+              </div>
+              <div>
+                <dt className="font-semibold text-neutral-900">보유 기간</dt>
+                <dd className="mt-1 leading-6 break-words text-neutral-700">
+                  {item.retention}
+                </dd>
+              </div>
+            </dl>
+          </section>
+        ))}
+      </div>
+
+      <div className="hidden overflow-x-auto border border-neutral-300 lg:block">
+        <table className="w-full border-collapse text-left text-sm">
+          <thead className="bg-neutral-100 text-neutral-900">
+            <tr>
+              <th className="w-[17%] border-b border-neutral-300 px-3 py-3 font-semibold">
+                구분
               </th>
-              <td className="px-3 py-3 align-top leading-6 text-neutral-700">
-                {item.data}
-              </td>
-              <td className="px-3 py-3 align-top leading-6 text-neutral-700">
-                {item.purpose}
-              </td>
-              <td className="px-3 py-3 align-top leading-6 text-neutral-700">
-                {item.retention}
-              </td>
+              <th className="w-[28%] border-b border-neutral-300 px-3 py-3 font-semibold">
+                처리 항목
+              </th>
+              <th className="w-[27%] border-b border-neutral-300 px-3 py-3 font-semibold">
+                처리 목적
+              </th>
+              <th className="w-[28%] border-b border-neutral-300 px-3 py-3 font-semibold">
+                보유 기간
+              </th>
             </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+          </thead>
+          <tbody>
+            {items.map((item) => (
+              <tr key={item.category} className="border-t border-neutral-200">
+                <th className="px-3 py-3 align-top font-semibold text-neutral-900">
+                  {item.category}
+                </th>
+                <td className="px-3 py-3 align-top leading-6 text-neutral-700">
+                  {item.data}
+                </td>
+                <td className="px-3 py-3 align-top leading-6 text-neutral-700">
+                  {item.purpose}
+                </td>
+                <td className="px-3 py-3 align-top leading-6 text-neutral-700">
+                  {item.retention}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </>
   );
 }
 
@@ -88,45 +121,49 @@ function ExternalService({ service }: { service: ExternalPrivacyService }) {
       <dl className="mt-4 grid gap-x-6 gap-y-3 text-sm sm:grid-cols-2">
         <div>
           <dt className="font-semibold text-neutral-900">처리 관계</dt>
-          <dd className="mt-1 leading-6 text-neutral-700">
+          <dd className="mt-1 leading-6 break-words text-neutral-700">
             {service.relationship}
           </dd>
         </div>
         <div>
           <dt className="font-semibold text-neutral-900">국외 처리 근거</dt>
-          <dd className="mt-1 leading-6 text-neutral-700">
+          <dd className="mt-1 leading-6 break-words text-neutral-700">
             {service.transferBasis}
           </dd>
         </div>
         <div>
           <dt className="font-semibold text-neutral-900">처리 항목</dt>
-          <dd className="mt-1 leading-6 text-neutral-700">{service.data}</dd>
+          <dd className="mt-1 leading-6 break-words text-neutral-700">
+            {service.data}
+          </dd>
         </div>
         <div>
           <dt className="font-semibold text-neutral-900">목적</dt>
-          <dd className="mt-1 leading-6 text-neutral-700">{service.purpose}</dd>
+          <dd className="mt-1 leading-6 break-words text-neutral-700">
+            {service.purpose}
+          </dd>
         </div>
         <div>
           <dt className="font-semibold text-neutral-900">처리 국가·지역</dt>
-          <dd className="mt-1 leading-6 text-neutral-700">
+          <dd className="mt-1 leading-6 break-words text-neutral-700">
             {service.location}
           </dd>
         </div>
         <div>
           <dt className="font-semibold text-neutral-900">시점·방법</dt>
-          <dd className="mt-1 leading-6 text-neutral-700">
+          <dd className="mt-1 leading-6 break-words text-neutral-700">
             {service.timingAndMethod}
           </dd>
         </div>
         <div>
           <dt className="font-semibold text-neutral-900">보유 및 이용기간</dt>
-          <dd className="mt-1 leading-6 text-neutral-700">
+          <dd className="mt-1 leading-6 break-words text-neutral-700">
             {service.retention}
           </dd>
         </div>
         <div>
           <dt className="font-semibold text-neutral-900">거부 방법 및 영향</dt>
-          <dd className="mt-1 leading-6 text-neutral-700">
+          <dd className="mt-1 leading-6 break-words text-neutral-700">
             {service.refusalAndEffect}
           </dd>
         </div>
@@ -142,7 +179,7 @@ export default function EyeconsPrivacyPage() {
   return (
     <div className="min-h-screen bg-white text-neutral-900">
       <header className="border-b border-neutral-200">
-        <div className="mx-auto flex max-w-[900px] items-center justify-between px-5 py-4 sm:px-8">
+        <div className="mx-auto flex max-w-[900px] items-center justify-between px-4 py-4 sm:px-8">
           <Link
             href={siteConfig.routes.home}
             className="font-semibold text-neutral-900"
@@ -158,7 +195,7 @@ export default function EyeconsPrivacyPage() {
         </div>
       </header>
 
-      <main className="mx-auto max-w-[900px] px-5 py-10 sm:px-8 sm:py-14">
+      <main className="mx-auto max-w-[900px] px-4 py-8 sm:px-8 sm:py-12 lg:py-14">
         <header>
           <p className="text-sm text-neutral-600">{policy.appName}</p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight text-neutral-950 sm:text-4xl">
@@ -168,7 +205,7 @@ export default function EyeconsPrivacyPage() {
             {policy.businessName}는 이용자의 개인정보를 필요한 범위에서만
             처리하고, 처리 항목과 목적을 아래와 같이 안내합니다.
           </p>
-          <dl className="mt-6 grid gap-2 border-y border-neutral-200 py-4 text-sm sm:grid-cols-3">
+          <dl className="mt-6 grid gap-2 border-y border-neutral-200 py-4 text-sm sm:grid-cols-2 lg:grid-cols-3">
             <div>
               <dt className="inline font-semibold">앱: </dt>
               <dd className="inline">{policy.appName}</dd>
@@ -186,7 +223,7 @@ export default function EyeconsPrivacyPage() {
 
         <nav className="mt-8" aria-label="개인정보 처리방침 목차">
           <h2 className="text-sm font-bold">목차</h2>
-          <ol className="mt-3 grid gap-x-6 gap-y-2 text-sm sm:grid-cols-2">
+          <ol className="mt-3 grid gap-x-6 gap-y-2 text-sm sm:grid-cols-2 lg:grid-cols-3">
             {policy.navigation.map((item, index) => (
               <li key={item.id}>
                 <a
@@ -280,6 +317,12 @@ export default function EyeconsPrivacyPage() {
               않습니다. Android 버전에 따라 앱이 제공하는 이미지를 기기 갤러리에
               저장하기 위한 저장소 권한과 알림 권한을 요청할 수 있습니다.
             </p>
+            <p>
+              커뮤니티 게시글과 댓글은 다른 이용자에게 공개됩니다. 이용자는
+              게시물에 자신의 개인정보나 민감한 정보를 작성하지 않아야 합니다.
+              게시물이 숨김 처리되기 전에 다른 이용자가 복사·저장한 정보까지
+              {policy.businessName}가 회수하거나 삭제할 수는 없습니다.
+            </p>
           </SectionHeading>
 
           <SectionHeading
@@ -309,6 +352,12 @@ export default function EyeconsPrivacyPage() {
               제공하기 위해 아래 서비스를 사용합니다. 필요한 정보는 국외로
               전송되어 처리될 수 있으며, 각 제공자는 계약과 자체 개인정보
               보호정책에 따라 정보를 처리합니다.
+            </p>
+            <p>
+              외부 제공자가 자체 시스템에서 독립적으로 처리하는 정보의 세부
+              범위와 보유기간에는 해당 제공자의 정책과 이용자 설정이 적용됩니다.
+              {policy.businessName}는 직접 관리하거나 통제할 수 있는 범위에서만
+              이용자 요청을 처리할 수 있습니다.
             </p>
             <div className="space-y-3">
               {policy.externalServices.map((service) => (
@@ -369,8 +418,11 @@ export default function EyeconsPrivacyPage() {
               경우에도 권리 행사가 제한될 수 있습니다.
             </p>
             <p>
-              기기 내 데이터는 Android 설정의 앱 데이터 삭제 또는 앱 제거로 직접
-              삭제할 수 있습니다. 권리 행사는 법정대리인 또는 적법한 위임을 받은
+              앱 데이터 삭제 또는 앱 제거는 기기 내 정보만 삭제하며 서버에 남은
+              커뮤니티·보상 정보까지 자동으로 삭제하지 않습니다. 앱 데이터 삭제,
+              기기 교체 또는 재설치로 임의 식별자가 사라지면 서버 데이터와
+              요청자의 관계를 신뢰할 수 있게 확인하기 어려워져 요청 처리가
+              제한될 수 있습니다. 권리 행사는 법정대리인 또는 적법한 위임을 받은
               사람을 통해서도 할 수 있습니다.
             </p>
           </SectionHeading>
@@ -419,6 +471,11 @@ export default function EyeconsPrivacyPage() {
             <p>
               이용자는 기기 잠금과 최신 운영체제를 사용하고, 개인정보를 공개
               게시물에 올리지 않는 등 개인정보 보호에 협조해 주세요.
+            </p>
+            <p>
+              합리적인 보호조치를 적용하더라도 인터넷 통신, 이용자 기기 또는
+              외부 서비스 환경의 모든 위험을 완전히 제거할 수는 없습니다. 사고가
+              확인되면 관련 법령에 따라 필요한 조치를 진행합니다.
             </p>
           </SectionHeading>
 
@@ -489,7 +546,7 @@ export default function EyeconsPrivacyPage() {
       </main>
 
       <footer className="border-t border-neutral-200 bg-white">
-        <div className="mx-auto max-w-[900px] px-5 py-6 text-sm text-neutral-600 sm:px-8">
+        <div className="mx-auto max-w-[900px] px-4 py-6 text-sm text-neutral-600 sm:px-8">
           <p>
             {policy.businessName} · {policy.contactEmail}
           </p>
