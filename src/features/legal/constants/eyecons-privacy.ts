@@ -8,17 +8,16 @@ import type {
 
 export const eyeconsPrivacy = {
   appName: "EYEKONS Stan",
-  packageName: "me.bluemiv.katseye_stan",
   businessName: businessInfo.name,
   contactEmail: businessInfo.contactEmail,
   effectiveDate: "2026년 7월 31일",
   navigation: [
-    { id: "overview", label: "개요" },
+    { id: "overview", label: "핵심 안내" },
     { id: "purpose", label: "처리 목적" },
     { id: "data", label: "처리 항목 및 기간" },
     { id: "collection", label: "수집 방법" },
     { id: "third-parties", label: "제3자 제공" },
-    { id: "external-services", label: "외부 서비스 및 국외 처리" },
+    { id: "external-services", label: "처리위탁 및 국외 처리" },
     { id: "deletion", label: "파기" },
     { id: "rights", label: "이용자 권리" },
     { id: "automatic", label: "자동 수집 및 거부" },
@@ -28,113 +27,150 @@ export const eyeconsPrivacy = {
   ] satisfies PrivacyNavigationItem[],
   serverData: [
     {
-      category: "익명 계정",
-      data: "앱이 생성한 기기 UUID, 앱 그룹, 시스템 언어, 계정 생성·수정 시각",
+      category: "익명 커뮤니티 프로필",
+      data: "앱이 무작위로 생성한 식별자, 앱 구분값, 닉네임, 보석 잔액, 생성·수정 시각",
       purpose:
-        "로그인 없는 익명 프로필 제공, 커뮤니티 이용자 구분, 서비스 상태 및 부정 이용 관리",
+        "회원가입 없는 커뮤니티 프로필 제공, 이용자 구분, 보상 관리 및 부정 이용 방지",
       retention:
-        "계정 삭제 시까지. 계정 삭제가 완료되면 사용자와 연결된 서버 데이터를 영구 삭제합니다.",
-    },
-    {
-      category: "선택 프로필",
-      data: "닉네임, 선택형 계정 ID, 선택한 기본 아바타",
-      purpose: "앱 내 프로필 표시와 커뮤니티 작성자 구분",
-      retention: "계정 삭제 시까지 또는 이용자가 수정할 때까지",
+        "삭제 요청 처리 또는 서비스 종료 시까지. 부정 이용·분쟁 대응에 필요한 정보는 해당 목적이 끝날 때까지 보관할 수 있습니다.",
     },
     {
       category: "커뮤니티 활동",
-      data: "게시글·답글 내용, 좋아요, 신고 정보, 갤러리 사진·YouTube 영상 첨부 참조, 작성 시각, 커뮤니티 약관 동의 버전·시각",
+      data: "언어, 게시글·댓글 내용, 투표·신고 정보, 작성·수정 시각",
       purpose:
-        "커뮤니티 기능 제공, 게시물 표시, 신고 처리, 서비스 질서 유지 및 분쟁 대응",
+        "커뮤니티 기능 제공, 콘텐츠 표시, 신고 처리, 서비스 질서 유지 및 분쟁 대응",
       retention:
-        "계정 삭제 또는 서비스 종료 시까지. 법령상 보존 의무나 분쟁 처리가 필요한 경우 해당 기간 동안 별도 보관할 수 있습니다.",
+        "삭제 요청 처리 또는 서비스 종료 시까지. 이용자가 삭제한 게시글·댓글은 화면에서 숨김 처리되며, 운영·부정 이용 방지·분쟁 대응에 필요한 범위에서 제한적으로 남을 수 있습니다.",
     },
     {
       category: "광고 보상",
-      data: "기기 UUID, 광고 보상 거래 ID, 보상량, 처리 시각",
-      purpose: "보상 지급, 일일 한도 확인 및 중복 지급·부정 이용 방지",
+      data: "앱이 생성한 식별자, 앱 구분값, 광고 보상 거래 식별자, 보상량, 처리 시각",
+      purpose: "보상 지급, 중복 지급 확인 및 부정 이용 방지",
       retention:
-        "계정 삭제 시 사용자 식별자 연결을 제거합니다. 식별자와 분리된 거래 ID는 중복 지급 방지에 필요한 기간 동안 보관될 수 있습니다.",
+        "서비스 종료 시까지 또는 중복 지급·부정 이용 방지 목적이 끝날 때까지",
     },
     {
-      category: "접속 및 오류 정보",
-      data: "IP 주소, 요청 시각·주소, 네트워크 요청 정보, 오류 및 보안 이벤트가 서비스 제공 과정에서 일시적으로 처리될 수 있음",
-      purpose: "콘텐츠 전송, 장애 대응, 보안 및 부정 이용 방지",
+      category: "앱 이용·진단 정보",
+      data: "앱 인스턴스·기기·운영체제·언어·네트워크 정보, IP 주소, 화면 및 기능 이용 기록, 콘텐츠 식별자·제목, 광고·알림 관련 이벤트, 오류 정보",
+      purpose:
+        "콘텐츠 제공, 이용 현황 분석, 기능 개선, 오류·보안 대응 및 부정 이용 방지",
       retention:
-        "서비스 제공과 보안 대응에 필요한 최소 기간 또는 각 인프라 제공자의 정책에 따른 기간",
+        "Google 등 서비스 제공자의 설정과 개인정보 보호정책에 따른 기간",
+    },
+    {
+      category: "푸시 알림",
+      data: "Firebase Cloud Messaging 등록 토큰, 구독 주제, 알림 권한 상태, 기기·앱 정보",
+      purpose: "앱 관련 알림 발송과 수신 상태 관리",
+      retention:
+        "알림 구독 해제, 앱 제거 또는 서비스 제공자의 정책에 따른 기간",
     },
     {
       category: "이메일 문의",
       data: "보낸 사람의 이메일 주소, 문의 내용 및 이용자가 자발적으로 제공한 정보",
       purpose: "문의 확인, 답변 및 처리 이력 관리",
       retention:
-        "문의 처리 완료 후 1년. 이용자가 삭제를 요청하거나 보관 필요성이 사라지면 더 일찍 삭제합니다.",
+        "문의 처리 완료 후 1년. 법령상 보존 의무나 분쟁 대응 필요가 있으면 해당 기간까지 보관할 수 있습니다.",
     },
   ] satisfies PrivacyDataItem[],
   localData: [
     {
       category: "즐겨찾기",
-      data: "즐겨찾은 사진·영상의 ID와 표시용 정보, 저장 시각",
-      purpose: "즐겨찾기와 오프라인 목록 제공",
+      data: "즐겨찾은 사진·영상 정보와 저장 시각",
+      purpose: "즐겨찾기 목록 제공",
       retention: "즐겨찾기 삭제, 앱 데이터 삭제 또는 앱 제거 시까지",
     },
     {
-      category: "설정 및 동의",
-      data: "언어 설정, 개인정보처리방침·커뮤니티 약관 동의 버전, 광고 동의 상태",
-      purpose: "선택한 설정 유지와 동의 상태 확인",
+      category: "설정 및 식별 정보",
+      data: "언어·알림 등 앱 설정, 광고 동의 상태, 앱이 생성한 임의 식별자, 커뮤니티 프로필 캐시",
+      purpose: "설정 유지, 커뮤니티 및 광고 보상 기능 제공",
       retention: "설정 초기화, 앱 데이터 삭제 또는 앱 제거 시까지",
     },
     {
-      category: "캐시",
-      data: "사진·영상·플레이리스트·커뮤니티 목록과 이미지 캐시",
-      purpose: "빠른 화면 표시, 데이터 사용량 절감 및 오프라인 대응",
+      category: "콘텐츠 및 캐시",
+      data: "사진·영상·플레이리스트·갤러리·커뮤니티 목록과 이미지 캐시",
+      purpose: "화면 표시, 로딩 속도 개선 및 데이터 사용량 절감",
       retention:
-        "항목별 캐시 기간이 지나거나 앱이 갱신·정리할 때까지. 앱 데이터 삭제 또는 앱 제거로 직접 삭제할 수 있습니다.",
+        "앱이 갱신·정리하거나 앱 데이터 삭제 또는 앱 제거 시까지. 기기 갤러리에 저장한 이미지는 이용자가 직접 삭제할 때까지 남습니다.",
     },
   ] satisfies PrivacyDataItem[],
   externalServices: [
     {
-      provider: "Google LLC",
-      service: "Google Mobile Ads SDK 및 User Messaging Platform",
-      data: "광고 기능이 활성화된 경우 IP 주소, 앱 실행·탭·광고 조회 등 상호작용, 진단 정보, 광고 ID·앱 세트 ID 등 기기 식별자, 광고 동의 정보",
-      purpose: "광고 제공, 동의 관리, 광고 성과 측정, 분석 및 부정행위 방지",
-      location: "미국을 포함한 Google 및 처리업체의 서비스 제공 국가",
-      timingAndMethod: "앱 실행·광고 요청·상호작용 시 암호화된 네트워크로 전송",
-      retention: "Google의 개인정보처리방침 및 서비스 설정에 따름",
-      policyUrl: privacyLinks.googlePrivacy,
+      provider: "Supabase, Inc.",
+      service: "Supabase Database 및 Edge Functions",
+      relationship: "개인정보 처리위탁",
+      transferBasis:
+        "서비스 제공에 필요한 처리위탁·보관(개인정보 보호법 제28조의8 제1항 제3호)",
+      data: "앱이 생성한 식별자, 앱 구분값, 닉네임, 보석 잔액, 커뮤니티 활동, 신고·보상 거래 정보, IP 주소 등 네트워크 정보",
+      purpose:
+        "익명 커뮤니티 데이터 저장·처리, 광고 보상 지급, 중복 지급·부정 이용 방지",
+      location: "미국 동부(버지니아 북부)",
+      timingAndMethod:
+        "커뮤니티 또는 광고 보상 기능을 이용할 때 암호화된 네트워크로 전송",
+      retention:
+        "본 방침의 항목별 보유기간 및 Supabase의 백업·서비스 정책에 따름",
+      refusalAndEffect:
+        "해당 기능을 사용하지 않으면 전송되지 않습니다. 전송을 거부하면 커뮤니티와 광고 보상 기능을 이용할 수 없습니다.",
+      policyUrl: privacyLinks.supabasePrivacy,
     },
     {
       provider: "Google LLC",
-      service: "YouTube API Services 및 내장 YouTube 플레이어",
-      data: "공개 영상·채널·플레이리스트 정보, IP 주소, 기기·네트워크·쿠키 정보, 재생 및 이용 상호작용이 Google에 의해 처리될 수 있음",
-      purpose: "YouTube 공개 콘텐츠 조회와 영상 재생",
+      service: "Firebase Firestore, Analytics 및 Cloud Messaging",
+      relationship: "개인정보 처리위탁 및 서비스 제공자 처리",
+      transferBasis:
+        "서비스 제공에 필요한 처리위탁·보관 또는 관련 법령에 따른 동의·허용 근거",
+      data: "콘텐츠 요청 정보, 앱 인스턴스·기기·운영체제·언어·네트워크·IP 정보, 앱 이용·오류 기록, 콘텐츠 식별자·제목, 알림 토큰·구독 주제·권한 상태",
+      purpose:
+        "앱 콘텐츠 동기화, 이용 현황 분석, 기능·안정성 개선, 푸시 알림 제공",
       location: "미국을 포함한 Google 및 처리업체의 서비스 제공 국가",
       timingAndMethod:
-        "영상 목록 조회·플레이어 로드·재생 시 암호화된 네트워크로 전송",
-      retention: "Google의 개인정보처리방침 및 YouTube 서비스 정책에 따름",
-      policyUrl: privacyLinks.googlePrivacy,
+        "앱 실행, 콘텐츠 동기화, 기능 이용 또는 알림 등록·수신 시 암호화된 네트워크로 전송",
+      retention: "Google의 서비스 설정과 개인정보 보호정책에 따른 기간",
+      refusalAndEffect:
+        "알림 권한은 Android 설정에서 거부할 수 있습니다. 필요한 통신을 차단하면 콘텐츠 갱신·분석·알림 기능이 제한될 수 있습니다.",
+      policyUrl: privacyLinks.firebasePrivacy,
     },
     {
-      provider: "Cloudflare, Inc.",
-      service: "Cloudflare Workers, D1 및 R2",
-      data: "기기 UUID, 선택 프로필, 커뮤니티 활동, 광고 보상 기록, 콘텐츠 요청 정보 및 IP 주소 등 네트워크 정보",
-      purpose:
-        "앱 API 제공, 익명 계정·커뮤니티 데이터 저장, 콘텐츠 전송, 보안 및 장애 대응",
-      location:
-        "미국 및 Cloudflare 글로벌 인프라. D1 데이터 위치는 서비스 설정과 자동 배치에 따라 달라질 수 있음",
-      timingAndMethod: "앱에서 서버 기능을 이용할 때 암호화된 네트워크로 전송",
-      retention:
-        "본 방침의 항목별 보유기간 및 Cloudflare의 서비스·개인정보 보호정책에 따름",
-      policyUrl: privacyLinks.cloudflarePrivacy,
+      provider: "Google LLC",
+      service: "Google Mobile Ads SDK 및 User Messaging Platform",
+      relationship: "광고 및 동의 관리 서비스 제공자 처리",
+      transferBasis:
+        "관련 법령과 Google 동의 관리 절차에 따른 동의 또는 허용되는 처리 근거",
+      data: "IP 주소, 광고 ID·앱 세트 ID 등 기기 식별자, 앱·기기·네트워크 정보, 광고 요청·조회·상호작용·진단 정보, 광고 동의 정보",
+      purpose: "광고 제공, 동의 관리, 성과 측정 및 부정행위 방지",
+      location: "미국을 포함한 Google 및 처리업체의 서비스 제공 국가",
+      timingAndMethod: "앱 실행·광고 요청·상호작용 시 암호화된 네트워크로 전송",
+      retention: "Google의 서비스 설정과 개인정보 보호정책에 따른 기간",
+      refusalAndEffect:
+        "제공되는 광고 개인정보 설정 또는 Android 설정에서 선택을 변경할 수 있습니다. 선택에 따라 맞춤형 광고 또는 광고 보상 기능이 제한될 수 있습니다.",
+      policyUrl: privacyLinks.googleAdsPrivacy,
+    },
+    {
+      provider: "Google LLC",
+      service: "YouTube 내장 플레이어",
+      relationship: "이용자가 요청한 외부 콘텐츠 제공",
+      transferBasis: "이용자의 영상 재생 요청에 따른 기기 직접 전송",
+      data: "IP 주소, 기기·네트워크 정보, 영상 재생 및 이용 상호작용",
+      purpose: "YouTube 공개 영상 재생",
+      location: "미국을 포함한 Google 및 처리업체의 서비스 제공 국가",
+      timingAndMethod:
+        "플레이어를 불러오거나 영상을 재생할 때 이용자의 기기에서 Google로 직접 전송",
+      retention: "Google의 개인정보처리방침 및 YouTube 서비스 정책에 따름",
+      refusalAndEffect:
+        "영상을 재생하지 않으면 해당 전송을 피할 수 있으며, 이 경우 영상 재생 기능을 이용할 수 없습니다.",
+      policyUrl: privacyLinks.googlePrivacy,
     },
     {
       provider: "Google LLC",
       service: "Gmail",
+      relationship: "이메일 문의 처리위탁",
+      transferBasis: "이용자의 문의 전송 요청 및 답변 처리",
       data: "문의자의 이메일 주소, 문의 내용 및 첨부 정보",
       purpose: "개인정보 문의와 이용자 요청 접수·답변",
       location: "미국을 포함한 Google 및 처리업체의 서비스 제공 국가",
       timingAndMethod: "이용자가 이메일을 보낼 때 암호화된 네트워크로 전송",
-      retention: "문의 처리 완료 후 1년 및 Google의 개인정보처리방침에 따름",
+      retention: "문의 처리 완료 후 1년 및 Google의 개인정보 보호정책에 따름",
+      refusalAndEffect:
+        "이메일을 보내지 않으면 전송되지 않으며, 이 경우 이메일 문의와 권리 요청 처리가 어렵습니다.",
       policyUrl: privacyLinks.googlePrivacy,
     },
   ] satisfies ExternalPrivacyService[],

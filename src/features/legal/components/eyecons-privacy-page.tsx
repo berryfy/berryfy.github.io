@@ -111,6 +111,18 @@ function ExternalServiceCard({ service }: { service: ExternalPrivacyService }) {
       </div>
       <dl className="mt-5 grid gap-4 text-sm sm:grid-cols-2">
         <div>
+          <dt className="font-semibold text-foreground">처리 관계</dt>
+          <dd className="mt-1.5 leading-6 text-muted-foreground">
+            {service.relationship}
+          </dd>
+        </div>
+        <div>
+          <dt className="font-semibold text-foreground">국외 처리 근거</dt>
+          <dd className="mt-1.5 leading-6 text-muted-foreground">
+            {service.transferBasis}
+          </dd>
+        </div>
+        <div>
           <dt className="font-semibold text-foreground">처리 항목</dt>
           <dd className="mt-1.5 leading-6 text-muted-foreground">
             {service.data}
@@ -138,6 +150,12 @@ function ExternalServiceCard({ service }: { service: ExternalPrivacyService }) {
           <dt className="font-semibold text-foreground">보유 및 이용기간</dt>
           <dd className="mt-1.5 leading-6 text-muted-foreground">
             {service.retention}
+          </dd>
+        </div>
+        <div className="sm:col-span-2">
+          <dt className="font-semibold text-foreground">거부 방법 및 영향</dt>
+          <dd className="mt-1.5 leading-6 text-muted-foreground">
+            {service.refusalAndEffect}
           </dd>
         </div>
       </dl>
@@ -252,25 +270,24 @@ export default function EyeconsPrivacyPage() {
               <ul className="mt-5 space-y-3 text-[0.95rem] leading-7 text-white/72">
                 <li>
                   • 회원가입이나 Google 로그인을 요구하지 않으며,
-                  이름·전화번호·주소를 직접 수집하지 않습니다.
+                  이름·전화번호·주소·연락처·정확한 위치를 앱에서 입력하도록
+                  요구하지 않습니다.
                 </li>
                 <li>
-                  • 커뮤니티 또는 광고 보상 기능을 사용할 때 앱이 만든 익명 기기
-                  UUID가 계정 구분에 사용됩니다.
+                  • 커뮤니티 또는 광고 보상 기능을 사용할 때 앱이 무작위로 만든
+                  식별자가 이용자 구분에 사용됩니다. Android 기기 고유번호는
+                  사용하지 않습니다.
                 </li>
                 <li>
                   • 즐겨찾기와 대부분의 설정은 기기에만 저장되며 서버로
                   동기화하지 않습니다.
                 </li>
                 <li>
-                  • YouTube와 광고 기능에서는 Google이 기기·네트워크·이용 정보를
-                  자체 정책에 따라 처리할 수 있습니다.
+                  • Firebase, Supabase, Google 광고 및 YouTube 기능을 이용하는
+                  과정에서 기기·네트워크·이용 정보가 국외에서 처리될 수
+                  있습니다.
                 </li>
               </ul>
-              <p className="mt-6 border-t border-white/10 pt-5 text-sm leading-6 text-white/55">
-                {policy.appName}은 KATSEYE 및 관련 회사와 제휴하거나 공식 승인을
-                받은 서비스가 아닌 독립적인 팬 앱입니다.
-              </p>
             </section>
 
             <SectionHeading
@@ -288,7 +305,8 @@ export default function EyeconsPrivacyPage() {
                 <li>익명 프로필과 커뮤니티 게시글·답글·좋아요 기능 제공</li>
                 <li>사진·영상·플레이리스트 등 앱 콘텐츠 제공</li>
                 <li>보상형 광고 보상 지급과 중복 지급·부정 이용 방지</li>
-                <li>앱 설정 유지, 오류 대응, 보안 및 서비스 안정성 확보</li>
+                <li>앱 이용 현황 분석, 알림 제공, 오류 대응과 기능 개선</li>
+                <li>앱 설정 유지, 보안 및 서비스 안정성 확보</li>
                 <li>개인정보 문의, 데이터 열람·정정·삭제 요청 처리</li>
               </ul>
             </SectionHeading>
@@ -304,9 +322,10 @@ export default function EyeconsPrivacyPage() {
                   aria-hidden="true"
                 />
                 <p className="m-0 text-sm leading-6">
-                  앱을 실행하는 것만으로 익명 계정을 서버에 만들지 않습니다.
-                  프로필 동기화, 커뮤니티 작성·좋아요 또는 광고 보상처럼 서버
-                  기능이 필요한 시점에만 기기 UUID가 생성·전송될 수 있습니다.
+                  회원가입 계정은 만들지 않습니다. 커뮤니티 또는 광고 보상
+                  기능을 이용하면 앱이 무작위로 만든 식별자와 필요한 정보가
+                  서버로 전송됩니다. Firebase Analytics 등 외부 SDK는 앱 실행과
+                  기능 이용 정보를 자동으로 처리할 수 있습니다.
                 </p>
               </div>
               <h3>서버 또는 문의 채널에서 처리하는 정보</h3>
@@ -333,16 +352,17 @@ export default function EyeconsPrivacyPage() {
             >
               <ul>
                 <li>앱에서 프로필·게시글·답글·좋아요·신고 기능을 이용할 때</li>
+                <li>앱이 이용자 구분용 임의 식별자를 무작위로 생성할 때</li>
                 <li>
-                  앱이 최초 익명 식별용 UUID를 기기에서 무작위로 생성할 때
+                  Firebase, Supabase, YouTube 플레이어 및 광고 SDK가 동작할 때
                 </li>
-                <li>YouTube 플레이어, 광고 SDK 및 서버 API가 동작할 때</li>
                 <li>이용자가 개인정보 문의 이메일을 보낼 때</li>
               </ul>
               <p>
-                앱은 연락처, 문자, 통화 기록, 정확한 위치, 사진 보관함 전체에
-                대한 권한을 요청하지 않습니다. 커뮤니티에 첨부하는 항목은 앱이
-                제공하는 갤러리 사진 또는 YouTube 영상의 참조 정보입니다.
+                앱은 연락처, 문자, 통화 기록, 정확한 위치 권한을 요청하지
+                않습니다. Android 버전에 따라 앱이 제공하는 이미지를 기기
+                갤러리에 저장하기 위한 저장소 권한과 알림 권한을 요청할 수
+                있습니다.
               </p>
             </SectionHeading>
 
@@ -359,21 +379,21 @@ export default function EyeconsPrivacyPage() {
                 있습니다.
               </p>
               <p>
-                Google과 Cloudflare가 서비스 제공 과정에서 직접 처리하는 정보는
+                서비스 운영을 위해 위탁하거나 외부 제공자가 직접 처리하는 정보는
                 다음 항목에 구체적으로 안내합니다.
               </p>
             </SectionHeading>
 
             <SectionHeading
               number="06"
-              title="외부 서비스 이용 및 국외 처리"
+              title="개인정보 처리위탁 및 국외 처리"
               id="external-services"
             >
               <p>
-                앱은 영상 재생, 광고, 서버 및 이메일 문의 제공을 위해 아래 외부
-                서비스를 사용합니다. 이 과정에서 정보가 국외에서 처리될 수
-                있습니다. 외부 제공자는 각자의 개인정보 보호정책에 따라 정보를
-                처리합니다.
+                앱은 콘텐츠·커뮤니티·분석·알림·광고·영상 재생·이메일 문의를
+                제공하기 위해 아래 서비스를 사용합니다. 필요한 정보는 국외로
+                전송되어 처리될 수 있으며, 각 제공자는 계약과 자체 개인정보
+                보호정책에 따라 정보를 처리합니다.
               </p>
               <div className="mt-6 space-y-4">
                 {policy.externalServices.map((service) => (
@@ -405,13 +425,6 @@ export default function EyeconsPrivacyPage() {
                   >
                     Google 개인정보처리방침
                   </a>
-                  <a
-                    href={privacyLinks.googlePermissions}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Google 연결 권한 관리
-                  </a>
                 </div>
               </div>
             </SectionHeading>
@@ -427,18 +440,20 @@ export default function EyeconsPrivacyPage() {
                     목적이 끝난 정보는 지체 없이 삭제합니다.
                   </p>
                   <p className="mt-2 mb-0 text-sm leading-6">
-                    전자 파일은 복구하기 어려운 방식으로 삭제하고, 데이터베이스
-                    정보는 해당 레코드를 삭제합니다. 외부 제공자의 백업에 남은
-                    정보는 각 제공자의 백업 보존 주기에 따라 삭제됩니다.
+                    전자 파일은 복구하기 어려운 방식으로 삭제하거나 이용자와의
+                    연결을 제거합니다. 외부 제공자의 백업에 남은 정보는 각
+                    제공자의 백업 보존 주기에 따라 삭제됩니다.
                   </p>
                 </div>
               </div>
               <p>
-                계정 삭제가 완료되면 익명 프로필과 연결된
-                게시글·답글·좋아요·첨부 및 보상 정보가 영구 삭제되거나 사용자
-                식별자와 분리됩니다. 기기에 저장된 즐겨찾기·설정·캐시는 Android
-                설정에서 앱 데이터를 삭제하거나 앱을 제거하여 삭제할 수
-                있습니다.
+                커뮤니티 게시글·댓글의 삭제 기능은 다른 이용자에게 보이지 않게
+                숨김 처리합니다. 부정 이용 방지, 서비스 운영, 법적 의무 또는
+                분쟁 대응에 필요한 정보는 해당 목적이 끝날 때까지 제한적으로
+                보관한 뒤 삭제하거나 이용자와의 연결을 제거할 수 있습니다.
+                기기에 저장된 정보는 Android 설정에서 앱 데이터를 삭제하거나
+                앱을 제거해 삭제할 수 있습니다. 기기 갤러리에 저장한 이미지는
+                이용자가 직접 삭제해야 합니다.
               </p>
             </SectionHeading>
 
@@ -449,18 +464,8 @@ export default function EyeconsPrivacyPage() {
             >
               <p>
                 이용자는 자신의 개인정보에 대해 열람, 정정, 삭제, 처리정지를
-                요청할 수 있습니다. 앱의 프로필 편집 화면에서 닉네임·계정
-                ID·아바타를 변경하거나 계정을 직접 삭제할 수 있습니다.
+                요청할 수 있습니다. 요청은 아래 이메일로 접수합니다.
               </p>
-              <ol>
-                <li>
-                  앱에서 처리: <strong>프로필 → 프로필 편집 → 계정 삭제</strong>
-                </li>
-                <li>
-                  이메일로 요청: 앱의 <strong>앱 정보 → 삭제 요청 ID</strong>를
-                  복사해 아래 이메일로 보내주세요.
-                </li>
-              </ol>
               <a
                 href={privacyRequestMailto}
                 className="not-prose mt-5 inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white shadow-[0_12px_30px_rgba(217,45,99,0.2)] transition-colors hover:bg-[#c92559]"
@@ -468,10 +473,18 @@ export default function EyeconsPrivacyPage() {
                 <Mail className="size-4" aria-hidden="true" />
                 {policy.contactEmail}
               </a>
+              <p>
+                앱은 회원가입 정보가 없는 익명 구조입니다. 요청 대상 확인을 위해
+                닉네임, 작성한 게시물 내용·시각, 이용 앱 등 필요한 최소 정보를
+                요청할 수 있습니다. 제공된 정보만으로 요청자와 서버 데이터를
+                신뢰할 수 있게 연결할 수 없거나 다른 이용자의 권리를 침해할
+                우려가 있으면 요청 처리가 제한될 수 있습니다. 법령에서 정한
+                사유가 있는 경우에도 권리 행사가 제한될 수 있습니다.
+              </p>
               <p className="text-sm">
-                본인 확인이 필요한 경우 앱에 표시되는 삭제 요청 ID 등 최소한의
-                정보만 요청합니다. 권리 행사는 법정대리인 또는 적법한 위임을
-                받은 사람을 통해서도 할 수 있습니다.
+                기기 내 데이터는 Android 설정의 앱 데이터 삭제 또는 앱 제거로
+                직접 삭제할 수 있습니다. 권리 행사는 법정대리인 또는 적법한
+                위임을 받은 사람을 통해서도 할 수 있습니다.
               </p>
             </SectionHeading>
 
@@ -482,14 +495,13 @@ export default function EyeconsPrivacyPage() {
             >
               <p>
                 {policy.appName} 자체는 웹 쿠키를 설치하지 않습니다. 다만 내장
-                YouTube 플레이어와 Google 광고 서비스는 쿠키 또는 유사 기술,
-                광고 ID, 기기·이용 정보를 처리할 수 있습니다.
+                YouTube 플레이어, Firebase와 Google 광고 서비스는 쿠키 또는 유사
+                기술, 광고 ID, 앱 인스턴스·기기·이용 정보를 처리할 수 있습니다.
               </p>
               <ul>
                 <li>
-                  광고 동의가 필요한 지역에서는 Google UMP 동의 화면을 제공하고,
-                  필요한 경우 앱 정보의 광고 개인정보 설정에서 선택을 변경할 수
-                  있습니다.
+                  광고 동의가 필요한 지역에서는 Google UMP 동의 화면을 통해
+                  선택할 수 있습니다.
                 </li>
                 <li>
                   Android 설정의 광고 개인정보 보호 메뉴에서 광고 ID를
@@ -511,20 +523,15 @@ export default function EyeconsPrivacyPage() {
               <ul>
                 <li>앱과 서버 간 통신에 HTTPS/TLS 암호화 적용</li>
                 <li>
-                  실명 로그인 대신 무작위 익명 UUID를 사용해 직접 식별정보
-                  최소화
+                  실명 로그인 대신 앱이 무작위로 생성한 식별자를 사용해 직접
+                  식별정보 최소화
                 </li>
-                <li>
-                  서버 응답에서 내부 기기 UUID를 다른 이용자에게 공개하지 않음
-                </li>
-                <li>
-                  데이터 접근 권한 제한과 공개 쓰기 요청에 대한 검증·속도 제한
-                </li>
-                <li>Android 백업에서 앱 데이터가 복사되지 않도록 제한</li>
+                <li>업무상 필요한 범위로 데이터 접근 권한 제한</li>
+                <li>신고·숨김 처리와 보상 거래 검증을 통한 부정 이용 대응</li>
               </ul>
               <p>
-                이용자는 기기 잠금과 최신 운영체제를 사용하고, 삭제 요청 ID를
-                공개된 게시물에 올리지 않는 등 개인정보 보호에 협조해 주세요.
+                이용자는 기기 잠금과 최신 운영체제를 사용하고, 개인정보를 공개
+                게시물에 올리지 않는 등 개인정보 보호에 협조해 주세요.
               </p>
             </SectionHeading>
 
@@ -558,14 +565,6 @@ export default function EyeconsPrivacyPage() {
                       대상 앱
                     </dt>
                     <dd className="mt-1.5 text-foreground">{policy.appName}</dd>
-                  </div>
-                  <div>
-                    <dt className="font-semibold text-muted-foreground">
-                      패키지명
-                    </dt>
-                    <dd className="mt-1.5 font-mono text-xs text-foreground">
-                      {policy.packageName}
-                    </dd>
                   </div>
                 </dl>
               </div>
@@ -608,29 +607,6 @@ export default function EyeconsPrivacyPage() {
                 알림을 통해 변경 내용을 안내합니다. 중요한 변경으로 별도 동의가
                 필요한 경우에는 관련 법령에 따라 동의를 받습니다.
               </p>
-              <div className="not-prose mt-6 rounded-2xl border border-border bg-white/60 p-5 text-sm leading-6 text-muted-foreground">
-                <p className="font-semibold text-foreground">작성 기준</p>
-                <div className="mt-3 flex flex-col gap-2">
-                  <a
-                    href={privacyLinks.pipcPolicyGuide}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-1.5 hover:text-primary"
-                  >
-                    개인정보보호위원회 개인정보 처리방침 작성지침
-                    <ExternalLink className="size-3.5" aria-hidden="true" />
-                  </a>
-                  <a
-                    href={privacyLinks.googlePlayPolicyGuide}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-1.5 hover:text-primary"
-                  >
-                    Google Play 개인정보처리방침 안내
-                    <ExternalLink className="size-3.5" aria-hidden="true" />
-                  </a>
-                </div>
-              </div>
             </SectionHeading>
           </article>
         </div>

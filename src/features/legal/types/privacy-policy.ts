@@ -13,10 +13,13 @@ export interface PrivacyDataItem {
 export interface ExternalPrivacyService {
   provider: string;
   service: string;
+  relationship: string;
+  transferBasis: string;
   data: string;
   purpose: string;
   location: string;
   timingAndMethod: string;
   retention: string;
+  refusalAndEffect: string;
   policyUrl: string;
 }
