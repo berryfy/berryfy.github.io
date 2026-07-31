@@ -1,6 +1,6 @@
 import Link from "next/link";
 import dayjs from "dayjs";
-import { ArrowDownRight, ArrowRight, CircleCheck, Mail } from "lucide-react";
+import { ArrowDownRight, ArrowRight, Heart, Mail } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -69,14 +69,14 @@ export default function HomePage({ locale, copy }: HomePageProps) {
 
               <div className="mt-12 flex max-w-[550px] items-start gap-4 border-t border-border/80 pt-6">
                 <span className="mt-0.5 flex size-9 shrink-0 items-center justify-center rounded-full bg-[#dff8ee] text-[#297b5a]">
-                  <CircleCheck className="size-4" aria-hidden="true" />
+                  <Heart className="size-4" aria-hidden="true" />
                 </span>
                 <div>
                   <p className="text-sm font-semibold text-foreground">
-                    {copy.hero.challengeLabel}
+                    {copy.hero.benefitLabel}
                   </p>
                   <p className="mt-1 text-sm leading-6 text-muted-foreground">
-                    {copy.hero.challengeValue}
+                    {copy.hero.benefitValue}
                   </p>
                 </div>
               </div>

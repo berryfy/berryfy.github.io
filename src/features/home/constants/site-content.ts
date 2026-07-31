@@ -17,24 +17,24 @@ export const localeDetails: Record<
 
 export const siteCopy: Record<SiteLocale, SiteCopy> = {
   en: {
-    languageName: "English",
     languageMenuLabel: "Choose language",
     menuLabel: "Open menu",
     closeMenuLabel: "Close menu",
     navigation: {
       apps: "Apps",
-      studio: "Studio",
-      principles: "Principles",
+      studio: "About Berryfy",
+      principles: "Experience",
     },
     hero: {
-      eyebrow: "Independent app studio",
+      eyebrow: "Apps for everyday life",
       title: "Small apps.\nBright moments.",
       description:
-        "Berryfy creates thoughtful Android apps that make play, focus, and everyday creativity feel a little better.",
+        "Play for a moment, find your focus, or make something your own. Berryfy creates Android apps that are easy to enjoy and easy to keep.",
       primaryAction: "Explore our apps",
-      secondaryAction: "How we build",
-      challengeLabel: "100 app challenge",
-      challengeValue: "One useful idea, thoughtfully released at a time.",
+      secondaryAction: "Meet Berryfy",
+      benefitLabel: "Designed around you",
+      benefitValue:
+        "Easy to start, pleasant to use, and never more complicated than it needs to be.",
     },
     visual: {
       caption: "Made for everyday moments",
@@ -43,10 +43,10 @@ export const siteCopy: Record<SiteLocale, SiteCopy> = {
       create: "Create",
     },
     apps: {
-      eyebrow: "Selected work",
+      eyebrow: "Featured apps",
       title: "Apps for the little moments that shape a day.",
       description:
-        "A growing collection of playful games, calm utilities, and creative tools. Real app imagery will live in these flexible visual spaces.",
+        "Choose a quick puzzle, settle into a productive rhythm, or give your screen a new mood. Find an app that fits the moment.",
       featuredLabel: "Featured",
       imageSlotLabel: "App artwork area",
       items: [
@@ -74,30 +74,30 @@ export const siteCopy: Record<SiteLocale, SiteCopy> = {
       ],
     },
     studio: {
-      eyebrow: "The studio",
-      title: "Built small. Designed to travel far.",
+      eyebrow: "Why Berryfy",
+      title: "Apps that feel good from the first tap.",
       description:
-        "Berryfy is an independent Android app studio exploring one hundred ideas without the weight of unnecessary infrastructure. Each release begins with a clear use, a distinct mood, and respect for the person holding the phone.",
-      note: "Android first · Global by design · Lightweight by default",
+        "Every Berryfy app starts with a real everyday moment: a short break, a task worth finishing, or a spark of creativity. The result is clear, responsive, and made to fit naturally into your day.",
+      note: "Easy to learn · Smooth to use · Made for your day",
     },
     principles: {
-      eyebrow: "Our principles",
-      title: "Useful, expressive, and easy to keep.",
+      eyebrow: "What you can expect",
+      title: "Simple to start. Pleasant to return to.",
       items: [
         {
-          title: "Clear by default",
+          title: "Easy from the first tap",
           description:
-            "Every app should explain itself through focused flows and familiar interactions.",
+            "Focused screens and familiar interactions help you get where you want without a learning curve.",
         },
         {
-          title: "Light on resources",
+          title: "Fast and dependable",
           description:
-            "We prefer local-first experiences and simple systems that stay fast and dependable.",
+            "Apps open quickly, respond smoothly, and stay out of the way when you need them most.",
         },
         {
-          title: "Made for more people",
+          title: "Made to fit you",
           description:
-            "Language, screen size, and context are considered from the first design decision.",
+            "Thoughtful language and screen support make each experience comfortable in more places.",
         },
       ],
     },
@@ -108,24 +108,23 @@ export const siteCopy: Record<SiteLocale, SiteCopy> = {
     },
   },
   ko: {
-    languageName: "한국어",
     languageMenuLabel: "언어 선택",
     menuLabel: "메뉴 열기",
     closeMenuLabel: "메뉴 닫기",
     navigation: {
       apps: "앱",
-      studio: "스튜디오",
-      principles: "원칙",
+      studio: "Berryfy 소개",
+      principles: "사용 경험",
     },
     hero: {
-      eyebrow: "인디 앱 스튜디오",
+      eyebrow: "일상을 위한 앱",
       title: "작은 앱으로,\n더 빛나는 순간.",
       description:
-        "Berryfy는 놀이와 집중, 일상의 창작을 조금 더 기분 좋게 만드는 세심한 Android 앱을 만듭니다.",
+        "잠깐 즐기고 싶을 때, 집중하고 싶을 때, 나만의 무언가를 만들고 싶을 때. Berryfy는 쉽고 기분 좋은 Android 앱을 만듭니다.",
       primaryAction: "앱 둘러보기",
-      secondaryAction: "만드는 방식",
-      challengeLabel: "앱 100개 챌린지",
-      challengeValue: "쓸모 있는 아이디어를 하나씩 정성스럽게 출시합니다.",
+      secondaryAction: "Berryfy 알아보기",
+      benefitLabel: "사용자를 먼저 생각합니다",
+      benefitValue: "처음부터 쉽고, 쓸수록 편안하며, 필요한 만큼만 담았습니다.",
     },
     visual: {
       caption: "매일의 순간을 위해",
@@ -137,7 +136,7 @@ export const siteCopy: Record<SiteLocale, SiteCopy> = {
       eyebrow: "주요 앱",
       title: "하루를 이루는 작은 순간을 위한 앱.",
       description:
-        "즐거운 게임과 차분한 유틸리티, 창작 도구가 계속 추가됩니다. 현재의 유연한 비주얼 영역에는 나중에 실제 앱 이미지가 들어갑니다.",
+        "가볍게 즐길 퍼즐, 집중을 돕는 타이머, 화면 분위기를 바꾸는 창작 도구까지. 지금 필요한 앱을 찾아보세요.",
       featuredLabel: "주요 앱",
       imageSlotLabel: "앱 이미지 영역",
       items: [
@@ -165,30 +164,30 @@ export const siteCopy: Record<SiteLocale, SiteCopy> = {
       ],
     },
     studio: {
-      eyebrow: "스튜디오",
-      title: "작게 만들고, 더 멀리 닿도록.",
+      eyebrow: "왜 Berryfy인가요?",
+      title: "처음 터치하는 순간부터 기분 좋은 앱.",
       description:
-        "Berryfy는 불필요한 인프라의 무게 없이 100개의 아이디어를 탐색하는 독립 Android 앱 스튜디오입니다. 모든 앱은 명확한 쓰임, 고유한 분위기, 그리고 사용자를 존중하는 마음에서 시작합니다.",
-      note: "Android 우선 · 글로벌 설계 · 가벼운 구조",
+        "잠깐 쉬어가는 시간, 꼭 끝내고 싶은 일, 문득 떠오른 창작의 순간. Berryfy는 실제 일상에서 시작해 명확하고 빠르며 자연스럽게 스며드는 앱을 만듭니다.",
+      note: "배우기 쉽게 · 사용은 매끄럽게 · 일상에 자연스럽게",
     },
     principles: {
-      eyebrow: "만드는 원칙",
-      title: "유용하고, 개성 있고, 오래 곁에 둘 수 있게.",
+      eyebrow: "기대할 수 있는 경험",
+      title: "시작은 쉽게, 다시 찾을 때도 기분 좋게.",
       items: [
         {
-          title: "처음부터 명확하게",
+          title: "첫 터치부터 쉽게",
           description:
-            "집중된 흐름과 익숙한 상호작용으로 별도 설명 없이도 사용할 수 있게 만듭니다.",
+            "집중된 화면과 익숙한 사용 방식으로 배우는 시간 없이 바로 시작할 수 있습니다.",
         },
         {
-          title: "자원은 가볍게",
+          title: "빠르고 안정적으로",
           description:
-            "빠르고 안정적으로 유지되는 로컬 중심 경험과 단순한 시스템을 선호합니다.",
+            "필요한 순간 빠르게 열리고 매끄럽게 반응해 흐름을 방해하지 않습니다.",
         },
         {
-          title: "더 많은 사람을 위해",
+          title: "나에게 편안하게",
           description:
-            "언어와 화면 크기, 사용 환경을 첫 디자인 결정부터 함께 고려합니다.",
+            "다양한 언어와 화면을 세심하게 고려해 어디서든 편안하게 사용할 수 있습니다.",
         },
       ],
     },
@@ -199,24 +198,23 @@ export const siteCopy: Record<SiteLocale, SiteCopy> = {
     },
   },
   ja: {
-    languageName: "日本語",
     languageMenuLabel: "言語を選択",
     menuLabel: "メニューを開く",
     closeMenuLabel: "メニューを閉じる",
     navigation: {
       apps: "アプリ",
-      studio: "スタジオ",
-      principles: "ポリシー",
+      studio: "Berryfyについて",
+      principles: "使い心地",
     },
     hero: {
-      eyebrow: "インディーアプリスタジオ",
+      eyebrow: "毎日のためのアプリ",
       title: "小さなアプリで、\n毎日にきらめきを。",
       description:
-        "Berryfyは、遊ぶ、集中する、つくる時間を少し心地よくするAndroidアプリを丁寧につくります。",
+        "少し遊びたいとき、集中したいとき、自分らしく何かをつくりたいとき。Berryfyは、すぐに楽しめて長く使いたくなるAndroidアプリをつくります。",
       primaryAction: "アプリを見る",
-      secondaryAction: "ものづくりについて",
-      challengeLabel: "100アプリ・チャレンジ",
-      challengeValue: "役立つアイデアを、一つずつ丁寧に届けます。",
+      secondaryAction: "Berryfyについて",
+      benefitLabel: "使う人をいちばんに",
+      benefitValue: "始めやすく、使うほど心地よく、必要以上に複雑にしません。",
     },
     visual: {
       caption: "毎日の小さな瞬間へ",
@@ -228,7 +226,7 @@ export const siteCopy: Record<SiteLocale, SiteCopy> = {
       eyebrow: "注目のアプリ",
       title: "一日をつくる、小さな時間のためのアプリ。",
       description:
-        "楽しいゲーム、落ち着いたユーティリティ、創作ツールを少しずつ追加しています。このビジュアルエリアには、後から実際のアプリ画像を配置できます。",
+        "気軽に遊べるパズル、集中を支えるタイマー、画面の雰囲気を変える創作ツール。今の気分に合うアプリを見つけてください。",
       featuredLabel: "注目",
       imageSlotLabel: "アプリ画像エリア",
       items: [
@@ -255,30 +253,30 @@ export const siteCopy: Record<SiteLocale, SiteCopy> = {
       ],
     },
     studio: {
-      eyebrow: "スタジオ",
-      title: "小さくつくり、遠くまで届ける。",
+      eyebrow: "Berryfyを選ぶ理由",
+      title: "最初のタップから、心地よいアプリ。",
       description:
-        "Berryfyは、不要なインフラを抱えずに100のアイデアを探求する独立系Androidアプリスタジオです。明確な用途、独自の空気感、そして使う人への敬意から、すべてのアプリが始まります。",
-      note: "Androidファースト · グローバル設計 · 軽やかな仕組み",
+        "ひと息つく時間、やり遂げたいこと、ふと生まれた創作のひらめき。Berryfyは日常のリアルな瞬間から、わかりやすく軽快で、自然になじむアプリをつくります。",
+      note: "すぐにわかる · なめらかに使える · 毎日になじむ",
     },
     principles: {
-      eyebrow: "ものづくりの原則",
-      title: "役立ち、個性があり、長くそばに置けるものを。",
+      eyebrow: "期待できる体験",
+      title: "始めやすく、また使いたくなる心地よさ。",
       items: [
         {
-          title: "最初から明快に",
+          title: "最初のタップから簡単",
           description:
-            "迷いのない流れと慣れた操作で、説明がなくても使える体験を目指します。",
+            "わかりやすい画面と慣れた操作で、覚える時間をかけずにすぐ始められます。",
         },
         {
-          title: "リソースは軽やかに",
+          title: "速く、安心して使える",
           description:
-            "速く安定して使える、ローカル中心の体験とシンプルな仕組みを選びます。",
+            "必要なときにすぐ開き、なめらかに反応して、あなたの流れを邪魔しません。",
         },
         {
-          title: "より多くの人へ",
+          title: "自分にちょうどよく",
           description:
-            "言語、画面サイズ、使う場面を最初のデザイン判断から考えます。",
+            "さまざまな言語や画面に配慮し、どこでも心地よく使える体験を届けます。",
         },
       ],
     },

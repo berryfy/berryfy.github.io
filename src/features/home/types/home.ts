@@ -10,7 +10,6 @@ export interface FeaturedApp {
 }
 
 export interface SiteCopy {
-  languageName: string;
   languageMenuLabel: string;
   menuLabel: string;
   closeMenuLabel: string;
@@ -25,8 +24,8 @@ export interface SiteCopy {
     description: string;
     primaryAction: string;
     secondaryAction: string;
-    challengeLabel: string;
-    challengeValue: string;
+    benefitLabel: string;
+    benefitValue: string;
   };
   visual: {
     caption: string;
