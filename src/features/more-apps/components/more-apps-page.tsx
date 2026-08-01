@@ -1,7 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 
-import BrandMark from "@/components/brand-mark";
-import LanguageSwitcher from "@/components/language-switcher";
+import SiteHeader from "@/components/site-header";
 import { siteConfig } from "@/constants/site";
 import MoreAppItem from "@/features/more-apps/components/more-app-item";
 import {
@@ -27,16 +26,12 @@ export default function MoreAppsPage({ locale }: { locale: SiteLocale }) {
       lang={locale}
       className="min-h-svh bg-[#f8f5f7] pb-[env(safe-area-inset-bottom)] text-foreground"
     >
-      <header className="sticky top-0 z-40 border-b border-border/70 bg-[#f8f5f7]/90 pt-[env(safe-area-inset-top)] backdrop-blur-xl">
-        <div className="mx-auto flex h-16 max-w-[760px] items-center justify-between px-4 sm:px-6">
-          <BrandMark href={siteConfig.routes.home} />
-          <LanguageSwitcher
-            locale={locale}
-            label={copy.languageNavigationLabel}
-            paths={moreAppsLocalePaths}
-          />
-        </div>
-      </header>
+      <SiteHeader
+        homeHref={siteConfig.routes.home}
+        locale={locale}
+        languageLabel={copy.languageNavigationLabel}
+        languagePaths={moreAppsLocalePaths}
+      />
 
       <main className="mx-auto max-w-[760px] px-4 pt-10 pb-8 sm:px-6 sm:pt-14">
         <section>

@@ -10,7 +10,7 @@ import { businessInfo } from "@/constants/business";
 import { siteConfig } from "@/constants/site";
 import AppCard from "@/features/home/components/app-card";
 import HeroVisual from "@/features/home/components/hero-visual";
-import SiteHeader from "@/features/home/components/site-header";
+import HomeSiteHeader from "@/features/home/components/site-header";
 import { homeSections } from "@/features/home/constants/sections";
 import type { SiteCopy } from "@/features/home/types/home";
 import { homePath } from "@/features/home/utils/locale";
@@ -27,7 +27,7 @@ export default function HomePage({ locale, copy }: HomePageProps) {
 
   return (
     <>
-      <SiteHeader locale={locale} copy={copy} />
+      <HomeSiteHeader locale={locale} copy={copy} />
 
       <main className="overflow-hidden">
         <section className="relative">

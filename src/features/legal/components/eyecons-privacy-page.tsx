@@ -1,7 +1,5 @@
-import Link from "next/link";
-
 import { siteFontVariables } from "@/app/fonts";
-import LanguageSwitcher from "@/components/language-switcher";
+import SiteHeader from "@/components/site-header";
 import { siteConfig } from "@/constants/site";
 import {
   eyeconsPrivacyCopy,
@@ -220,21 +218,12 @@ export default function EyeconsPrivacyPage({
       lang={locale}
       className={`${siteFontVariables[locale]} min-h-screen bg-white font-sans text-neutral-900`}
     >
-      <header className="sticky top-0 z-50 border-b border-neutral-200 bg-white">
-        <div className="mx-auto flex min-h-14 max-w-[900px] items-center justify-between gap-3 px-4 py-2 sm:px-8">
-          <Link
-            href={siteConfig.routes.home}
-            className="shrink-0 font-semibold text-neutral-900"
-          >
-            berryfy
-          </Link>
-          <LanguageSwitcher
-            locale={locale}
-            label={copy.languageNavigationLabel}
-            paths={privacyLocalePaths}
-          />
-        </div>
-      </header>
+      <SiteHeader
+        homeHref={siteConfig.routes.home}
+        locale={locale}
+        languageLabel={copy.languageNavigationLabel}
+        languagePaths={privacyLocalePaths}
+      />
 
       <main className="mx-auto max-w-[900px] px-4 py-8 sm:px-8 sm:py-12 lg:py-14">
         <header>
