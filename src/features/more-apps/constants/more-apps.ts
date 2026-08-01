@@ -1,0 +1,159 @@
+import type { MoreApp } from "@/features/more-apps/types/more-apps";
+
+const googlePlayBaseUrl = "https://play.google.com/store/apps/details?id=";
+
+export const berryfyGooglePlayUrl =
+  "https://play.google.com/store/apps/developer?id=berryfy";
+
+export const moreApps = [
+  {
+    packageName: "com.berryfy.pomodoro_flow",
+    iconPath: "/images/apps/pomodoro-flow.webp",
+    storeUrl: `${googlePlayBaseUrl}com.berryfy.pomodoro_flow`,
+    copy: {
+      en: {
+        name: "Pomodoro Flow",
+        category: "Productivity",
+        description:
+          "A minimal focus timer with flexible sessions and clear progress statistics.",
+      },
+      ko: {
+        name: "Pomodoro Flow",
+        category: "생산성",
+        description:
+          "집중 시간과 휴식을 설정하고 진행 기록을 확인하는 미니멀 타이머입니다.",
+      },
+      ja: {
+        name: "Pomodoro Flow",
+        category: "生産性",
+        description:
+          "集中時間と休憩を設定し、進捗を確認できるシンプルなタイマーです。",
+      },
+    },
+  },
+  {
+    packageName: "com.berryfy.lottocat645",
+    iconPath: "/images/apps/lottocat645.webp",
+    storeUrl: `${googlePlayBaseUrl}com.berryfy.lottocat645`,
+    copy: {
+      en: {
+        name: "Lottocat645",
+        category: "Lottery utility",
+        description:
+          "Generate number sets, scan result QR codes, and explore draw statistics.",
+      },
+      ko: {
+        name: "로또켓645",
+        category: "로또 도구",
+        description:
+          "번호 조합 생성부터 QR 당첨 확인과 회차 통계까지 한곳에서 제공합니다.",
+      },
+      ja: {
+        name: "Lottocat645",
+        category: "ロト支援",
+        description:
+          "番号の生成、QRでの当選確認、抽選データの分析をまとめて提供します。",
+      },
+    },
+  },
+  {
+    packageName: "com.berryfy.potion_sort_quest",
+    iconPath: "/images/apps/potion-sort-quest.webp",
+    storeUrl: `${googlePlayBaseUrl}com.berryfy.potion_sort_quest`,
+    copy: {
+      en: {
+        name: "Potion Sort Quest",
+        category: "Puzzle",
+        description:
+          "A relaxing offline color-sorting puzzle filled with bright potion bottles.",
+      },
+      ko: {
+        name: "Potion Sort Quest",
+        category: "퍼즐",
+        description:
+          "알록달록한 포션을 같은 색끼리 정리하는 편안한 오프라인 퍼즐입니다.",
+      },
+      ja: {
+        name: "Potion Sort Quest",
+        category: "パズル",
+        description:
+          "カラフルなポーションを色ごとにそろえる、穏やかなオフラインパズルです。",
+      },
+    },
+  },
+  {
+    packageName: "com.berryfy.pixel_blur",
+    iconPath: "/images/apps/pixel-blur.webp",
+    storeUrl: `${googlePlayBaseUrl}com.berryfy.pixel_blur`,
+    copy: {
+      en: {
+        name: "Pixel Blur",
+        category: "Photo editing",
+        description:
+          "Hide faces, plates, and private details with offline mosaic and blur tools.",
+      },
+      ko: {
+        name: "Pixel Blur",
+        category: "사진 편집",
+        description:
+          "얼굴과 번호판 등 민감한 부분을 모자이크와 블러로 기기에서 가립니다.",
+      },
+      ja: {
+        name: "Pixel Blur",
+        category: "写真編集",
+        description:
+          "顔やナンバープレートなどを、端末内でモザイクやぼかし加工できます。",
+      },
+    },
+  },
+  {
+    packageName: "com.berryfy.musepiece",
+    iconPath: "/images/apps/musepiece.webp",
+    storeUrl: `${googlePlayBaseUrl}com.berryfy.musepiece`,
+    copy: {
+      en: {
+        name: "MusePiece: Anime Jigsaw",
+        category: "Puzzle",
+        description:
+          "Complete offline anime jigsaws and collect every finished artwork.",
+      },
+      ko: {
+        name: "MusePiece: Anime Jigsaw",
+        category: "퍼즐",
+        description:
+          "오프라인 애니메이션 직소 퍼즐을 완성하고 작품을 갤러리에 모아보세요.",
+      },
+      ja: {
+        name: "MusePiece: Anime Jigsaw",
+        category: "パズル",
+        description:
+          "オフラインのアニメジグソーを完成させ、作品をギャラリーに集められます。",
+      },
+    },
+  },
+  {
+    packageName: "com.berryfy.easy_dots",
+    iconPath: "/images/apps/easy-dots.webp",
+    storeUrl: `${googlePlayBaseUrl}com.berryfy.easy_dots`,
+    copy: {
+      en: {
+        name: "Easy Dots",
+        category: "Art & design",
+        description:
+          "Create pixel art with intuitive drawing tools, layers, and custom palettes.",
+      },
+      ko: {
+        name: "Easy Dots",
+        category: "아트·디자인",
+        description:
+          "간편한 그리기 도구와 레이어, 팔레트로 픽셀 아트를 만들어보세요.",
+      },
+      ja: {
+        name: "Easy Dots",
+        category: "アート・デザイン",
+        description:
+          "使いやすい描画ツール、レイヤー、パレットでドット絵を作成できます。",
+      },
+    },
+  },
+] as const satisfies readonly MoreApp[];

@@ -8,6 +8,10 @@ export const siteConfig = {
   defaultLocale: "en" satisfies SiteLocale,
   routes: {
     home: "/",
+    moreApps: "/more-apps/",
+    moreAppsKo: "/more-apps/ko/",
+    moreAppsEn: "/more-apps/en/",
+    moreAppsJa: "/more-apps/ja/",
     eyeconsPrivacy: "/apps/eyecons-stan/privacy/",
     eyeconsPrivacyKo: "/apps/eyecons-stan/privacy/ko/",
     eyeconsPrivacyEn: "/apps/eyecons-stan/privacy/en/",
