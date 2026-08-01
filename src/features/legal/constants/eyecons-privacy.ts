@@ -114,63 +114,20 @@ export const eyeconsPrivacy = {
     },
     {
       provider: "Google LLC",
-      service: "Firebase Firestore, Analytics 및 Cloud Messaging",
-      relationship: "개인정보 처리위탁 및 서비스 제공자 처리",
+      service: "Firebase, Google Mobile Ads, YouTube 내장 플레이어 및 Gmail",
+      relationship: "개인정보 처리위탁 및 독립 서비스 제공자 처리",
       transferBasis:
-        "서비스 제공에 필요한 처리위탁·보관 또는 관련 법령에 따른 동의·허용 근거",
-      data: "콘텐츠 요청 정보, 앱 인스턴스·기기·운영체제·언어·네트워크·IP 정보, 앱 이용·오류 기록, 콘텐츠 식별자·제목, 알림 토큰·구독 주제·권한 상태",
+        "서비스 제공에 필요한 국외 처리·보관, 관련 법령에 따른 동의 또는 이용자의 기능·문의 요청",
+      data: "콘텐츠 요청, 앱·기기·운영체제·언어·네트워크·IP 정보, 이용·오류·알림 기록, 알림 토큰, 광고 식별자·동의·상호작용 정보, YouTube 재생 정보, 이메일 문의 내용",
       purpose:
-        "앱 콘텐츠 동기화, 이용 현황 분석, 기능·안정성 개선, 푸시 알림 제공",
+        "콘텐츠 동기화, 이용 분석·기능 개선, 알림, 광고·보상, YouTube 재생 및 이메일 문의 답변",
       location: "미국을 포함한 Google 및 처리업체의 서비스 제공 국가",
       timingAndMethod:
-        "앱 실행, 콘텐츠 동기화, 기능 이용 또는 알림 등록·수신 시 암호화된 네트워크로 전송",
-      retention: "Google의 서비스 설정과 개인정보 보호정책에 따른 기간",
+        "관련 기능·광고·영상·이메일을 이용할 때 암호화된 네트워크 또는 이용자 기기에서 직접 전송",
+      retention:
+        "Google의 서비스 설정과 개인정보 보호정책에 따른 기간. 이메일 문의는 처리 완료 후 1년",
       refusalAndEffect:
-        "알림 권한은 Android 설정에서 거부할 수 있습니다. 필요한 통신을 차단하면 콘텐츠 갱신·분석·알림 기능이 제한될 수 있습니다.",
-      policyUrl: privacyLinks.firebasePrivacy,
-    },
-    {
-      provider: "Google LLC",
-      service: "Google Mobile Ads SDK 및 User Messaging Platform",
-      relationship: "광고 및 동의 관리 서비스 제공자 처리",
-      transferBasis:
-        "관련 법령과 Google 동의 관리 절차에 따른 동의 또는 허용되는 처리 근거",
-      data: "IP 주소, 광고 ID·앱 세트 ID 등 기기 식별자, 앱·기기·네트워크 정보, 광고 요청·조회·상호작용·진단 정보, 광고 동의 정보",
-      purpose: "광고 제공, 동의 관리, 성과 측정 및 부정행위 방지",
-      location: "미국을 포함한 Google 및 처리업체의 서비스 제공 국가",
-      timingAndMethod: "앱 실행·광고 요청·상호작용 시 암호화된 네트워크로 전송",
-      retention: "Google의 서비스 설정과 개인정보 보호정책에 따른 기간",
-      refusalAndEffect:
-        "제공되는 광고 개인정보 설정 또는 Android 설정에서 선택을 변경할 수 있습니다. 선택에 따라 맞춤형 광고 또는 광고 보상 기능이 제한될 수 있습니다.",
-      policyUrl: privacyLinks.googleAdsPrivacy,
-    },
-    {
-      provider: "Google LLC",
-      service: "YouTube 내장 플레이어",
-      relationship: "이용자가 요청한 외부 콘텐츠 제공",
-      transferBasis: "이용자의 영상 재생 요청에 따른 기기 직접 전송",
-      data: "IP 주소, 기기·네트워크 정보, 영상 재생 및 이용 상호작용",
-      purpose: "YouTube 공개 영상 재생",
-      location: "미국을 포함한 Google 및 처리업체의 서비스 제공 국가",
-      timingAndMethod:
-        "플레이어를 불러오거나 영상을 재생할 때 이용자의 기기에서 Google로 직접 전송",
-      retention: "Google의 개인정보처리방침 및 YouTube 서비스 정책에 따름",
-      refusalAndEffect:
-        "영상을 재생하지 않으면 해당 전송을 피할 수 있으며, 이 경우 영상 재생 기능을 이용할 수 없습니다.",
-      policyUrl: privacyLinks.googlePrivacy,
-    },
-    {
-      provider: "Google LLC",
-      service: "Gmail",
-      relationship: "이메일 문의 처리위탁",
-      transferBasis: "이용자의 문의 전송 요청 및 답변 처리",
-      data: "문의자의 이메일 주소, 문의 내용 및 첨부 정보",
-      purpose: "개인정보 문의와 이용자 요청 접수·답변",
-      location: "미국을 포함한 Google 및 처리업체의 서비스 제공 국가",
-      timingAndMethod: "이용자가 이메일을 보낼 때 암호화된 네트워크로 전송",
-      retention: "문의 처리 완료 후 1년 및 Google의 개인정보 보호정책에 따름",
-      refusalAndEffect:
-        "이메일을 보내지 않으면 전송되지 않으며, 이 경우 이메일 문의와 권리 요청 처리가 어렵습니다.",
+        "알림·광고 설정을 변경하거나 영상·이메일 기능을 사용하지 않을 수 있습니다. 필요한 통신을 차단하면 해당 기능이 제한됩니다.",
       policyUrl: privacyLinks.googlePrivacy,
     },
   ] satisfies ExternalPrivacyService[],

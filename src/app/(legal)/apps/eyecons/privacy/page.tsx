@@ -7,12 +7,12 @@ import {
   privacyLanguageAlternates,
 } from "@/features/legal/constants/eyecons-privacy-copy";
 
-const policy = eyeconsPrivacyPolicies.ko;
+const policy = eyeconsPrivacyPolicies.en;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
-  title: `${policy.appName} 개인정보 처리방침 | ${siteConfig.name}`,
-  description: `${policy.appName} 앱에서 처리하는 개인정보, 외부 서비스, 보유기간과 이용자 권리를 안내합니다.`,
+  title: `${policy.appName} Privacy Policy | ${siteConfig.name}`,
+  description: `${policy.appName} explains the personal information processed by the app, external services, retention periods, and user rights.`,
   alternates: {
     canonical: siteConfig.routes.eyeconsPrivacy,
     languages: privacyLanguageAlternates,
@@ -24,5 +24,5 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <EyeconsPrivacyPage locale="ko" />;
+  return <EyeconsPrivacyPage locale="en" />;
 }

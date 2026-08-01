@@ -114,74 +114,22 @@ export const eyeconsPrivacyEn = {
     },
     {
       provider: "Google LLC",
-      service: "Firebase Firestore, Analytics, and Cloud Messaging",
+      service:
+        "Firebase, Google Mobile Ads, embedded YouTube player, and Gmail",
       relationship: "Data processor and independent service provider",
       transferBasis:
-        "Overseas processing and storage necessary to provide the service, or consent or another permitted legal basis under applicable law",
-      data: "Content request information; app instance, device, operating system, language, network and IP information; app usage and error records; content identifiers and titles; notification tokens, subscribed topics, and permission status",
+        "Overseas processing and storage necessary to provide the service, consent where required, or the user's feature or inquiry request",
+      data: "Content requests; app, device, operating system, language, network and IP information; usage, error, and notification records; notification tokens; advertising identifiers, consent, and interactions; YouTube playback; and email inquiries",
       purpose:
-        "To synchronize app content, analyze usage, improve features and stability, and provide push notifications",
+        "To synchronize content, analyze and improve the app, provide notifications, ads and rewards, play YouTube videos, and answer email inquiries",
       location:
         "The United States and other countries where Google and its processors provide services",
       timingAndMethod:
-        "Transferred over an encrypted network when the app starts, content synchronizes, features are used, or notifications are registered or received",
-      retention: "According to Google's service settings and privacy policies",
-      refusalAndEffect:
-        "Notification permission may be denied in Android settings. Blocking required communications may limit content updates, analytics, and notifications.",
-      policyUrl: privacyLinks.firebasePrivacy,
-    },
-    {
-      provider: "Google LLC",
-      service: "Google Mobile Ads SDK and User Messaging Platform",
-      relationship: "Advertising and consent-management service provider",
-      transferBasis:
-        "Consent through Google's consent-management process or another permitted legal basis under applicable law",
-      data: "IP address; device identifiers such as advertising ID and app set ID; app, device, and network information; ad request, impression, interaction, and diagnostic information; and advertising consent information",
-      purpose:
-        "To deliver advertising, manage consent, measure performance, and prevent fraud",
-      location:
-        "The United States and other countries where Google and its processors provide services",
-      timingAndMethod:
-        "Transferred over an encrypted network when the app starts, an ad is requested, or the user interacts with an ad",
-      retention: "According to Google's service settings and privacy policies",
-      refusalAndEffect:
-        "Choices can be changed through available ad privacy settings or Android settings. Depending on the choice, personalized advertising or ad reward features may be limited.",
-      policyUrl: privacyLinks.googleAdsPrivacy,
-    },
-    {
-      provider: "Google LLC",
-      service: "Embedded YouTube player",
-      relationship: "External content requested by the user",
-      transferBasis:
-        "Direct device transmission requested when the user plays a video",
-      data: "IP address, device and network information, video playback, and usage interactions",
-      purpose: "To play public YouTube videos",
-      location:
-        "The United States and other countries where Google and its processors provide services",
-      timingAndMethod:
-        "Sent directly from the user's device to Google when the player loads or a video is played",
+        "Transferred over an encrypted network or directly from the user's device when the relevant feature, ad, video, or email is used",
       retention:
-        "According to Google's Privacy Policy and YouTube Terms of Service",
+        "According to Google's service settings and privacy policies; email inquiries are retained for one year after resolution",
       refusalAndEffect:
-        "The transfer can be avoided by not playing a video, in which case video playback will not be available.",
-      policyUrl: privacyLinks.googlePrivacy,
-    },
-    {
-      provider: "Google LLC",
-      service: "Gmail",
-      relationship: "Email inquiry processor",
-      transferBasis:
-        "The user's request to send an inquiry and receive a response",
-      data: "Sender email address, inquiry details, and attachments",
-      purpose: "To receive and respond to privacy inquiries and user requests",
-      location:
-        "The United States and other countries where Google and its processors provide services",
-      timingAndMethod:
-        "Transferred over an encrypted network when the user sends an email",
-      retention:
-        "One year after the inquiry is resolved and as otherwise provided by Google's Privacy Policy",
-      refusalAndEffect:
-        "No transfer occurs if no email is sent. In that case, email inquiries and rights requests may be difficult to process.",
+        "Users can change notification and advertising settings or avoid video and email features. Blocking required communications limits the relevant features.",
       policyUrl: privacyLinks.googlePrivacy,
     },
   ],

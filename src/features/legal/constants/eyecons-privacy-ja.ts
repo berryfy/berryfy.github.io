@@ -112,66 +112,21 @@ export const eyeconsPrivacyJa = {
     },
     {
       provider: "Google LLC",
-      service: "Firebase Firestore、AnalyticsおよびCloud Messaging",
+      service:
+        "Firebase、Google Mobile Ads、埋め込みYouTubeプレーヤーおよびGmail",
       relationship: "個人情報処理の委託先および独立したサービス提供者",
       transferBasis:
-        "サービス提供に必要な国外での処理・保管、または適用法令に基づく同意その他の許容される根拠",
-      data: "コンテンツ要求情報、アプリインスタンス・端末・OS・言語・ネットワーク・IP情報、アプリ利用・エラー記録、コンテンツ識別子・タイトル、通知トークン・購読トピック・権限状態",
+        "サービス提供に必要な国外処理・保管、法令上必要な同意、または利用者による機能・お問い合わせの要求",
+      data: "コンテンツ要求、アプリ・端末・OS・言語・ネットワーク・IP情報、利用・エラー・通知記録、通知トークン、広告識別子・同意・操作情報、YouTube再生情報、メールお問い合わせ内容",
       purpose:
-        "アプリコンテンツの同期、利用状況の分析、機能・安定性の改善、プッシュ通知の提供",
+        "コンテンツ同期、利用分析・機能改善、通知、広告・報酬、YouTube再生、メールお問い合わせへの回答",
       location: "米国を含む、Googleおよびその処理業者がサービスを提供する国",
       timingAndMethod:
-        "アプリ起動、コンテンツ同期、機能利用、通知の登録・受信時に、暗号化されたネットワークを通じて送信",
-      retention: "Googleのサービス設定およびプライバシーポリシーに従う期間",
-      refusalAndEffect:
-        "通知権限はAndroid設定で拒否できます。必要な通信を遮断すると、コンテンツ更新、分析、通知機能が制限される場合があります。",
-      policyUrl: privacyLinks.firebasePrivacy,
-    },
-    {
-      provider: "Google LLC",
-      service: "Google Mobile Ads SDKおよびUser Messaging Platform",
-      relationship: "広告および同意管理サービスの提供者",
-      transferBasis:
-        "Googleの同意管理手続による同意、または適用法令で許容されるその他の根拠",
-      data: "IPアドレス、広告ID・アプリセットIDなどの端末識別子、アプリ・端末・ネットワーク情報、広告要求・表示・操作・診断情報、広告同意情報",
-      purpose: "広告配信、同意管理、効果測定、不正行為の防止",
-      location: "米国を含む、Googleおよびその処理業者がサービスを提供する国",
-      timingAndMethod:
-        "アプリ起動、広告要求、広告操作時に、暗号化されたネットワークを通じて送信",
-      retention: "Googleのサービス設定およびプライバシーポリシーに従う期間",
-      refusalAndEffect:
-        "提供される広告プライバシー設定またはAndroid設定で選択を変更できます。選択内容により、パーソナライズ広告または広告報酬機能が制限される場合があります。",
-      policyUrl: privacyLinks.googleAdsPrivacy,
-    },
-    {
-      provider: "Google LLC",
-      service: "埋め込みYouTubeプレーヤー",
-      relationship: "利用者が要求した外部コンテンツの提供",
-      transferBasis: "利用者による動画再生要求に基づく端末からの直接送信",
-      data: "IPアドレス、端末・ネットワーク情報、動画再生および利用操作",
-      purpose: "YouTubeの公開動画の再生",
-      location: "米国を含む、Googleおよびその処理業者がサービスを提供する国",
-      timingAndMethod:
-        "プレーヤーの読み込みまたは動画再生時に、利用者の端末からGoogleへ直接送信",
-      retention: "GoogleプライバシーポリシーおよびYouTube利用規約に従う期間",
-      refusalAndEffect:
-        "動画を再生しなければ送信を避けられます。その場合、動画再生機能は利用できません。",
-      policyUrl: privacyLinks.googlePrivacy,
-    },
-    {
-      provider: "Google LLC",
-      service: "Gmail",
-      relationship: "メールお問い合わせ処理の委託先",
-      transferBasis: "利用者によるお問い合わせ送信および回答の要求",
-      data: "送信者のメールアドレス、お問い合わせ内容、添付情報",
-      purpose: "プライバシーに関するお問い合わせ・利用者請求の受付および回答",
-      location: "米国を含む、Googleおよびその処理業者がサービスを提供する国",
-      timingAndMethod:
-        "利用者がメールを送信する際に、暗号化されたネットワークを通じて送信",
+        "関連する機能、広告、動画、メールの利用時に、暗号化通信または利用者の端末から直接送信",
       retention:
-        "お問い合わせ対応完了後1年間およびGoogleプライバシーポリシーに従う期間",
+        "Googleのサービス設定およびプライバシーポリシーに従う期間。メールお問い合わせは対応完了後1年間",
       refusalAndEffect:
-        "メールを送信しなければ情報は送信されません。その場合、メールでのお問い合わせや権利請求の処理が困難になることがあります。",
+        "通知・広告設定を変更するか、動画・メール機能を利用しないことができます。必要な通信を遮断すると、該当機能が制限されます。",
       policyUrl: privacyLinks.googlePrivacy,
     },
   ],

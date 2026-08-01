@@ -8,9 +8,9 @@ export default function LegalRootLayout({
 }>) {
   return (
     <html
-      lang="ko"
+      lang="en"
       data-scroll-behavior="smooth"
-      className={`${siteFontVariables.ko} ${monoFontVariable} h-full antialiased`}
+      className={`${siteFontVariables.en} ${monoFontVariable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">{children}</body>
     </html>

@@ -16,8 +16,8 @@ export const privacyLocaleDetails: Record<
   PrivacyLocale,
   { label: string; path: string }
 > = {
-  ko: { label: "한국어", path: siteConfig.routes.eyeconsPrivacy },
-  en: { label: "English", path: siteConfig.routes.eyeconsPrivacyEn },
+  ko: { label: "한국어", path: siteConfig.routes.eyeconsPrivacyKo },
+  en: { label: "English", path: siteConfig.routes.eyeconsPrivacy },
   ja: { label: "日本語", path: siteConfig.routes.eyeconsPrivacyJa },
 };
 
@@ -54,21 +54,18 @@ export const eyeconsPrivacyCopy: Record<PrivacyLocale, PrivacyPageCopy> = {
     overview: {
       title: "핵심 안내",
       items: [
-        "회원가입이나 Google 로그인을 요구하지 않으며, 이름·전화번호·주소·연락처·정확한 위치를 앱에서 입력하도록 요구하지 않습니다.",
-        "커뮤니티 또는 광고 보상 기능을 사용할 때 앱이 무작위로 만든 식별자가 이용자 구분에 사용됩니다. Android 기기 고유번호는 사용하지 않습니다.",
+        "회원가입이나 Google 로그인을 요구하지 않습니다. 커뮤니티·광고 보상에는 앱이 만든 임의 식별자를 사용하며 Android 기기 고유번호는 사용하지 않습니다.",
         "즐겨찾기와 대부분의 설정은 기기에만 저장되며 서버로 동기화하지 않습니다.",
-        "Firebase, Supabase, Google 광고 및 YouTube 기능을 이용하는 과정에서 기기·네트워크·이용 정보가 국외에서 처리될 수 있습니다.",
+        "Supabase와 Google 서비스를 이용하는 과정에서 필요한 기기·네트워크·이용 정보가 국외에서 처리될 수 있습니다.",
       ],
     },
     purposes: {
       title: "개인정보의 처리 목적",
-      intro: `${businessInfo.name}는 다음 목적에 필요한 범위에서만 개인정보를 처리합니다. 처리한 정보는 아래 목적 이외로 사용하지 않으며, 목적이 변경되는 경우 관련 법령에 따라 별도 안내 또는 동의를 진행합니다.`,
+      intro: `${businessInfo.name}는 다음 목적에 필요한 범위에서만 개인정보를 처리합니다. 목적이 변경되면 관련 법령에 따라 안내하거나 동의를 받습니다.`,
       items: [
-        "익명 프로필과 커뮤니티 게시글·답글·좋아요 기능 제공",
-        "사진·영상·플레이리스트 등 앱 콘텐츠 제공",
+        "익명 커뮤니티와 사진·영상·플레이리스트 등 앱 콘텐츠 제공",
         "보상형 광고 보상 지급과 중복 지급·부정 이용 방지",
-        "앱 이용 현황 분석, 알림 제공, 오류 대응과 기능 개선",
-        "앱 설정 유지, 보안 및 서비스 안정성 확보",
+        "이용 분석, 알림, 오류 대응, 기능 개선과 서비스 안정성 확보",
         "개인정보 문의, 데이터 열람·정정·삭제 요청 처리",
       ],
     },
@@ -84,9 +81,8 @@ export const eyeconsPrivacyCopy: Record<PrivacyLocale, PrivacyPageCopy> = {
     collection: {
       title: "개인정보의 수집 방법",
       items: [
-        "앱에서 프로필·게시글·답글·좋아요·신고 기능을 이용할 때",
-        "앱이 이용자 구분용 임의 식별자를 무작위로 생성할 때",
-        "Firebase, Supabase, YouTube 플레이어 및 광고 SDK가 동작할 때",
+        "커뮤니티·광고 보상 기능을 이용하거나 앱이 임의 식별자를 만들 때",
+        "Supabase, Firebase, YouTube 플레이어 및 광고 SDK가 동작할 때",
         "이용자가 개인정보 문의 이메일을 보낼 때",
       ],
       permissions:
@@ -96,24 +92,23 @@ export const eyeconsPrivacyCopy: Record<PrivacyLocale, PrivacyPageCopy> = {
     thirdParties: {
       title: "개인정보의 제3자 제공",
       paragraphs: [
-        `${businessInfo.name}는 이용자의 개인정보를 판매하지 않으며, 원칙적으로 이용자의 동의 없이 별도의 제3자에게 제공하지 않습니다. 다만 법령에 특별한 규정이 있거나 수사기관 등이 적법한 절차에 따라 요청하는 경우에는 필요한 범위에서 제공할 수 있습니다.`,
-        "서비스 운영을 위해 위탁하거나 외부 제공자가 직접 처리하는 정보는 다음 항목에 구체적으로 안내합니다.",
+        `${businessInfo.name}는 개인정보를 판매하지 않으며, 동의 없이 별도의 제3자에게 제공하지 않습니다. 다만 법령에 근거한 적법한 요청에는 필요한 범위에서 제공할 수 있습니다. 서비스 제공자의 처리는 아래에 안내합니다.`,
       ],
     },
     external: {
       title: "개인정보 처리위탁 및 국외 처리",
       intro:
-        "앱은 콘텐츠·커뮤니티·분석·알림·광고·영상 재생·이메일 문의를 제공하기 위해 아래 서비스를 사용합니다. 필요한 정보는 국외로 전송되어 처리될 수 있으며, 각 제공자는 계약과 자체 개인정보 보호정책에 따라 정보를 처리합니다.",
-      providerControl: `외부 제공자가 자체 시스템에서 독립적으로 처리하는 정보의 세부 범위와 보유기간에는 해당 제공자의 정책과 이용자 설정이 적용됩니다. ${businessInfo.name}는 직접 관리하거나 통제할 수 있는 범위에서만 이용자 요청을 처리할 수 있습니다.`,
-      youtube: `YouTube 기능은 공개 영상 정보를 조회하고 내장 플레이어로 재생하는 데 사용됩니다. 앱은 이용자의 YouTube 계정 로그인을 요구하거나 YouTube 로그인 정보·비밀번호·개인 재생 기록을 ${businessInfo.name} 서버에 저장하지 않습니다.`,
+        "앱은 아래 서비스를 사용하며, 필요한 정보가 국외에서 처리될 수 있습니다.",
+      providerControl: `외부 제공자가 독립적으로 처리하는 정보에는 해당 제공자의 정책과 설정이 적용됩니다. ${businessInfo.name}는 직접 통제할 수 있는 범위에서 요청을 처리합니다.`,
+      youtube: `YouTube는 공개 영상 재생에만 사용합니다. YouTube 로그인 정보나 개인 재생 기록은 ${businessInfo.name} 서버에 저장하지 않습니다.`,
       youtubeTerms: "YouTube 이용약관",
       googlePrivacy: "Google 개인정보처리방침",
     },
     deletion: {
       title: "개인정보의 파기",
       paragraphs: [
-        "목적이 끝난 전자 파일은 복구하기 어려운 방식으로 삭제하거나 이용자와의 연결을 제거합니다. 외부 제공자의 백업에 남은 정보는 각 제공자의 백업 보존 주기에 따라 삭제됩니다.",
-        "커뮤니티 게시글·댓글의 삭제 기능은 다른 이용자에게 보이지 않게 숨김 처리합니다. 부정 이용 방지, 서비스 운영, 법적 의무 또는 분쟁 대응에 필요한 정보는 해당 목적이 끝날 때까지 제한적으로 보관한 뒤 삭제하거나 이용자와의 연결을 제거할 수 있습니다. 기기에 저장된 정보는 Android 설정에서 앱 데이터를 삭제하거나 앱을 제거해 삭제할 수 있습니다. 기기 갤러리에 저장한 이미지는 이용자가 직접 삭제해야 합니다.",
+        "목적이 끝난 정보는 삭제하거나 이용자와의 연결을 제거합니다. 게시글·댓글은 삭제 시 숨김 처리되며, 부정 이용 방지·법적 의무·분쟁 대응에 필요한 정보는 목적이 끝날 때까지 제한적으로 보관할 수 있습니다. 외부 백업은 제공자의 주기에 따라 삭제됩니다.",
+        "기기 정보는 앱 데이터 삭제 또는 앱 제거로 삭제할 수 있습니다. 갤러리에 저장한 이미지는 이용자가 직접 삭제해야 합니다.",
       ],
     },
     rights: {
@@ -121,8 +116,8 @@ export const eyeconsPrivacyCopy: Record<PrivacyLocale, PrivacyPageCopy> = {
       beforeEmail:
         "이용자는 자신의 개인정보에 대해 열람, 정정, 삭제, 처리정지를 요청할 수 있습니다. 요청은 아래 이메일로 접수합니다.",
       paragraphs: [
-        "앱은 회원가입 정보가 없는 익명 구조입니다. 요청 대상 확인을 위해 닉네임, 작성한 게시물 내용·시각, 이용 앱 등 필요한 최소 정보를 요청할 수 있습니다. 제공된 정보만으로 요청자와 서버 데이터를 신뢰할 수 있게 연결할 수 없거나 다른 이용자의 권리를 침해할 우려가 있으면 요청 처리가 제한될 수 있습니다. 법령에서 정한 사유가 있는 경우에도 권리 행사가 제한될 수 있습니다.",
-        "앱 데이터 삭제 또는 앱 제거는 기기 내 정보만 삭제하며 서버에 남은 커뮤니티·보상 정보까지 자동으로 삭제하지 않습니다. 앱 데이터 삭제, 기기 교체 또는 재설치로 임의 식별자가 사라지면 서버 데이터와 요청자의 관계를 신뢰할 수 있게 확인하기 어려워져 요청 처리가 제한될 수 있습니다. 권리 행사는 법정대리인 또는 적법한 위임을 받은 사람을 통해서도 할 수 있습니다.",
+        "익명 구조이므로 대상 확인에 필요한 최소 정보를 요청할 수 있습니다. 요청자와 서버 데이터를 확인할 수 없거나 타인의 권리를 침해할 우려가 있으면 법령에 따라 처리가 제한될 수 있습니다.",
+        "앱 데이터 삭제·앱 제거는 서버 정보를 자동 삭제하지 않습니다. 임의 식별자를 잃으면 본인과 서버 데이터의 관계를 확인하기 어려워 요청이 제한될 수 있습니다. 법정대리인이나 적법한 대리인도 권리를 행사할 수 있습니다.",
       ],
     },
     automatic: {
@@ -130,9 +125,8 @@ export const eyeconsPrivacyCopy: Record<PrivacyLocale, PrivacyPageCopy> = {
       intro:
         "EYEKONS Stan 자체는 웹 쿠키를 설치하지 않습니다. 다만 내장 YouTube 플레이어, Firebase와 Google 광고 서비스는 쿠키 또는 유사 기술, 광고 ID, 앱 인스턴스·기기·이용 정보를 처리할 수 있습니다.",
       items: [
-        "광고 동의가 필요한 지역에서는 Google UMP 동의 화면을 통해 선택할 수 있습니다.",
-        "Android 설정의 광고 개인정보 보호 메뉴에서 광고 ID를 재설정하거나 삭제할 수 있습니다.",
-        "광고 요청에 동의하지 않거나 광고가 비활성화되어도 사진·영상 등 기본 콘텐츠는 이용할 수 있으나 광고 보상 기능은 제한될 수 있습니다.",
+        "Google UMP 화면과 Android 광고 개인정보 보호 설정에서 광고 선택을 변경할 수 있습니다.",
+        "광고를 거부해도 기본 콘텐츠는 이용할 수 있으나 광고 보상 기능은 제한될 수 있습니다.",
       ],
     },
     security: {
@@ -144,8 +138,7 @@ export const eyeconsPrivacyCopy: Record<PrivacyLocale, PrivacyPageCopy> = {
         "신고·숨김 처리와 보상 거래 검증을 통한 부정 이용 대응",
       ],
       paragraphs: [
-        "이용자는 기기 잠금과 최신 운영체제를 사용하고, 개인정보를 공개 게시물에 올리지 않는 등 개인정보 보호에 협조해 주세요.",
-        "합리적인 보호조치를 적용하더라도 인터넷 통신, 이용자 기기 또는 외부 서비스 환경의 모든 위험을 완전히 제거할 수는 없습니다. 사고가 확인되면 관련 법령에 따라 필요한 조치를 진행합니다.",
+        "합리적인 보호조치로 모든 위험을 없앨 수는 없습니다. 이용자는 기기 잠금을 사용하고 공개 게시물에 개인정보를 올리지 않아야 합니다. 사고가 확인되면 법령에 따라 조치합니다.",
       ],
     },
     contact: {
@@ -167,18 +160,6 @@ export const eyeconsPrivacyCopy: Record<PrivacyLocale, PrivacyPageCopy> = {
           url: privacyLinks.privacyDispute,
           displayUrl: "www.kopico.go.kr",
           phone: "1833-6972",
-        },
-        {
-          label: "대검찰청",
-          url: privacyLinks.prosecutionService,
-          displayUrl: "www.spo.go.kr",
-          phone: "국번 없이 1301",
-        },
-        {
-          label: "경찰청 사이버범죄 신고시스템",
-          url: privacyLinks.policeCybercrime,
-          displayUrl: "ecrm.police.go.kr",
-          phone: "국번 없이 182",
         },
       ],
     },
@@ -210,21 +191,18 @@ export const eyeconsPrivacyCopy: Record<PrivacyLocale, PrivacyPageCopy> = {
     overview: {
       title: "Key information",
       items: [
-        "The app does not require registration or Google sign-in and does not ask you to enter your name, phone number, address, contacts, or precise location.",
-        "When community or ad reward features are used, a random identifier generated by the app distinguishes users. The app does not use a permanent Android hardware identifier.",
+        "The app does not require registration or Google sign-in. Community and ad reward features use an app-generated random identifier, not a permanent Android hardware identifier.",
         "Favorites and most settings are stored only on the device and are not synchronized to the server.",
-        "Device, network, and usage information may be processed overseas when Firebase, Supabase, Google advertising, or YouTube features are used.",
+        "Necessary device, network, and usage information may be processed overseas through Supabase and Google services.",
       ],
     },
     purposes: {
       title: "Purposes of processing",
-      intro: `${businessInfo.name} processes personal information only as necessary for the purposes below. Information will not be used for unrelated purposes. If a purpose materially changes, notice or consent will be provided as required by applicable law.`,
+      intro: `${businessInfo.name} processes personal information only as necessary for the purposes below. Material changes will be notified or submitted for consent as required by law.`,
       items: [
-        "Provide anonymous profiles and community posts, comments, and votes",
-        "Provide app content such as photos, videos, and playlists",
+        "Provide the anonymous community and app content such as photos, videos, and playlists",
         "Issue rewarded-ad benefits and prevent duplicate rewards and misuse",
-        "Analyze app usage, provide notifications, resolve errors, and improve features",
-        "Retain app settings and maintain security and service stability",
+        "Analyze usage, provide notifications, resolve errors, improve features, and maintain service stability",
         "Handle privacy inquiries and requests for access, correction, or deletion",
       ],
     },
@@ -240,9 +218,8 @@ export const eyeconsPrivacyCopy: Record<PrivacyLocale, PrivacyPageCopy> = {
     collection: {
       title: "How information is collected",
       items: [
-        "When profile, post, comment, vote, or report features are used",
-        "When the app randomly generates an identifier to distinguish users",
-        "When Firebase, Supabase, the YouTube player, or advertising SDKs operate",
+        "When community or ad reward features are used or the app creates a random identifier",
+        "When Supabase, Firebase, the YouTube player, or advertising SDKs operate",
         "When a user sends a privacy inquiry by email",
       ],
       permissions:
@@ -252,24 +229,23 @@ export const eyeconsPrivacyCopy: Record<PrivacyLocale, PrivacyPageCopy> = {
     thirdParties: {
       title: "Disclosure to third parties",
       paragraphs: [
-        `${businessInfo.name} does not sell personal information and, as a rule, does not disclose it to separate third parties without user consent. Information may be disclosed to the extent necessary where specifically required by law or lawfully requested by an authorized investigative authority.`,
-        "Information entrusted to service providers or processed directly by external providers for service operation is described below.",
+        `${businessInfo.name} does not sell personal information or disclose it to separate third parties without consent. It may disclose only what is necessary in response to a lawful request. Service-provider processing is described below.`,
       ],
     },
     external: {
       title: "Processors and overseas processing",
       intro:
-        "The app uses the services below to provide content, community features, analytics, notifications, advertising, video playback, and email support. Necessary information may be transferred and processed outside the user's country. Each provider processes information under its contract and privacy policy.",
-      providerControl: `The provider's own policy and user settings govern the detailed scope and retention period of information independently processed in that provider's systems. ${businessInfo.name} can handle user requests only to the extent it directly manages or controls the relevant information.`,
-      youtube: `YouTube is used to retrieve and play public videos in an embedded player. The app does not require a YouTube account sign-in and does not store YouTube credentials, passwords, or personal viewing history on ${businessInfo.name} servers.`,
+        "The app uses the services below, and necessary information may be processed overseas.",
+      providerControl: `Information independently processed by a provider is governed by that provider's policy and settings. ${businessInfo.name} handles requests only within its direct control.`,
+      youtube: `YouTube is used only to play public videos. YouTube credentials and personal viewing history are not stored on ${businessInfo.name} servers.`,
       youtubeTerms: "YouTube Terms of Service",
       googlePrivacy: "Google Privacy Policy",
     },
     deletion: {
       title: "Deletion of information",
       paragraphs: [
-        "Electronic information is deleted in a manner designed to make recovery difficult or is disassociated from the user when its purpose is fulfilled. Information remaining in a service provider's backups is removed according to that provider's backup cycle.",
-        "The delete function for community posts and comments hides them from other users. Information needed for misuse prevention, service operation, legal obligations, or dispute response may be retained on a limited basis until the relevant purpose is fulfilled and then deleted or disassociated. Device data can be removed by clearing app data in Android settings or uninstalling the app. Images saved to the device gallery must be deleted by the user.",
+        "Information is deleted or disassociated when its purpose ends. Deleted posts and comments are hidden, while information needed for misuse prevention, legal obligations, or disputes may be retained until that purpose ends. Provider backups follow the provider's deletion cycle.",
+        "Device data can be removed by clearing app data or uninstalling the app. Gallery images must be deleted by the user.",
       ],
     },
     rights: {
@@ -277,8 +253,8 @@ export const eyeconsPrivacyCopy: Record<PrivacyLocale, PrivacyPageCopy> = {
       beforeEmail:
         "Users may request access to, correction of, deletion of, or suspension of processing of their personal information. Requests are accepted by email:",
       paragraphs: [
-        "The app is anonymous and has no registration information. To identify the requested data, we may ask for the minimum information needed, such as a nickname, post content and time, or the app used. A request may be limited if the information supplied cannot reliably link the requester to server data, if it could affect another person's rights, or where applicable law permits a limitation.",
-        "Clearing app data or uninstalling the app removes only device data and does not automatically delete community or reward information stored on the server. If the random identifier is lost after app data is cleared, the device is replaced, or the app is reinstalled, it may no longer be possible to reliably verify the relationship between the requester and server data, and the request may be limited. Rights may also be exercised through a legal representative or a properly authorized agent.",
+        "Because the app is anonymous, we may request the minimum information needed to identify the data. A request may be limited where the requester cannot be linked to server data, another person's rights may be affected, or the law allows it.",
+        "Clearing app data or uninstalling does not automatically delete server data. Losing the random identifier may make verification impossible and limit a request. A legal representative or authorized agent may also exercise these rights.",
       ],
     },
     automatic: {
@@ -286,9 +262,8 @@ export const eyeconsPrivacyCopy: Record<PrivacyLocale, PrivacyPageCopy> = {
       intro:
         "EYEKONS Stan does not itself install web cookies. The embedded YouTube player, Firebase, and Google advertising services may process cookies or similar technologies, advertising IDs, and app instance, device, and usage information.",
       items: [
-        "Where advertising consent is required, choices can be made through the Google UMP consent screen.",
-        "The advertising ID can be reset or deleted in Android advertising privacy settings.",
-        "Core photo and video content remains available if an advertising request is not accepted or advertising is disabled, but ad reward features may be limited.",
+        "Advertising choices can be changed through the Google UMP screen and Android advertising privacy settings.",
+        "Core content remains available when advertising is refused, but ad reward features may be limited.",
       ],
     },
     security: {
@@ -300,8 +275,7 @@ export const eyeconsPrivacyCopy: Record<PrivacyLocale, PrivacyPageCopy> = {
         "Reports, content hiding, and reward transaction validation to address misuse",
       ],
       paragraphs: [
-        "Users should help protect their information by using a device lock and current operating system and by not posting personal information publicly.",
-        "Reasonable safeguards cannot eliminate every risk arising from internet communications, user devices, or external service environments. If an incident is confirmed, the measures required by applicable law will be taken.",
+        "Reasonable safeguards cannot eliminate every risk. Users should lock their device and avoid posting personal information publicly. Confirmed incidents will be handled as required by law.",
       ],
     },
     contact: {
@@ -323,18 +297,6 @@ export const eyeconsPrivacyCopy: Record<PrivacyLocale, PrivacyPageCopy> = {
           url: privacyLinks.privacyDispute,
           displayUrl: "www.kopico.go.kr",
           phone: "+82-1833-6972",
-        },
-        {
-          label: "Supreme Prosecutors' Office",
-          url: privacyLinks.prosecutionService,
-          displayUrl: "www.spo.go.kr",
-          phone: "1301 within Korea",
-        },
-        {
-          label: "Korean National Police Cybercrime Reporting System",
-          url: privacyLinks.policeCybercrime,
-          displayUrl: "ecrm.police.go.kr",
-          phone: "182 within Korea",
         },
       ],
     },
@@ -366,21 +328,18 @@ export const eyeconsPrivacyCopy: Record<PrivacyLocale, PrivacyPageCopy> = {
     overview: {
       title: "重要事項",
       items: [
-        "会員登録やGoogleログインは必要ありません。また、氏名、電話番号、住所、連絡先、正確な位置情報の入力を求めません。",
-        "コミュニティまたは広告報酬機能を利用する際、アプリが無作為に生成した識別子を利用者の区別に使用します。Android端末固有の恒久的な識別子は使用しません。",
+        "会員登録やGoogleログインは不要です。コミュニティ・広告報酬にはアプリ生成の任意識別子を使用し、Android端末固有の恒久的な識別子は使用しません。",
         "お気に入りと大部分の設定は端末内にのみ保存され、サーバーには同期されません。",
-        "Firebase、Supabase、Google広告、YouTube機能の利用時に、端末・ネットワーク・利用情報が国外で処理される場合があります。",
+        "SupabaseおよびGoogleサービスの利用時に、必要な端末・ネットワーク・利用情報が国外で処理される場合があります。",
       ],
     },
     purposes: {
       title: "個人情報の利用目的",
-      intro: `${businessInfo.name}は、以下の目的に必要な範囲でのみ個人情報を取り扱います。以下と無関係な目的には使用しません。目的が重要な点で変更される場合は、適用法令に従って通知または同意取得を行います。`,
+      intro: `${businessInfo.name}は、以下の目的に必要な範囲でのみ個人情報を取り扱います。目的を変更する場合は、法令に従って通知または同意取得を行います。`,
       items: [
-        "匿名プロフィール、コミュニティ投稿・コメント・投票機能の提供",
-        "写真・動画・プレイリストなどのアプリコンテンツの提供",
+        "匿名コミュニティおよび写真・動画・プレイリストなどのコンテンツ提供",
         "リワード広告の報酬付与、重複付与・不正利用の防止",
-        "アプリ利用状況の分析、通知、エラー対応、機能改善",
-        "アプリ設定の維持、セキュリティおよびサービス安定性の確保",
+        "利用分析、通知、エラー対応、機能改善、サービス安定性の確保",
         "プライバシーに関するお問い合わせ、閲覧・訂正・削除請求への対応",
       ],
     },
@@ -396,9 +355,8 @@ export const eyeconsPrivacyCopy: Record<PrivacyLocale, PrivacyPageCopy> = {
     collection: {
       title: "個人情報の収集方法",
       items: [
-        "プロフィール、投稿、コメント、投票、通報機能を利用するとき",
-        "アプリが利用者区別用の任意識別子を無作為に生成するとき",
-        "Firebase、Supabase、YouTubeプレーヤー、広告SDKが動作するとき",
+        "コミュニティ・広告報酬機能の利用時、またはアプリが任意識別子を生成するとき",
+        "Supabase、Firebase、YouTubeプレーヤー、広告SDKが動作するとき",
         "利用者がプライバシーに関するメールを送信するとき",
       ],
       permissions:
@@ -408,24 +366,23 @@ export const eyeconsPrivacyCopy: Record<PrivacyLocale, PrivacyPageCopy> = {
     thirdParties: {
       title: "個人情報の第三者提供",
       paragraphs: [
-        `${businessInfo.name}は個人情報を販売せず、原則として利用者の同意なく別の第三者へ提供しません。ただし、法令に特別な定めがある場合、または権限を有する捜査機関などから適法な手続により要請された場合は、必要な範囲で提供することがあります。`,
-        "サービス運営のために委託する情報、または外部提供者が直接処理する情報については、以下に記載します。",
+        `${businessInfo.name}は個人情報を販売せず、同意なく別の第三者へ提供しません。ただし、法令に基づく適法な要請には必要な範囲で提供する場合があります。サービス提供者による処理は以下に記載します。`,
       ],
     },
     external: {
       title: "個人情報処理の委託および国外処理",
       intro:
-        "アプリは、コンテンツ、コミュニティ、分析、通知、広告、動画再生、メール対応のために以下のサービスを利用します。必要な情報は国外に送信され、処理される場合があります。各提供者は契約および自らのプライバシーポリシーに従って情報を処理します。",
-      providerControl: `外部提供者が自社システムで独立して処理する情報の詳細な範囲と保存期間には、当該提供者の方針と利用者設定が適用されます。${businessInfo.name}は、直接管理または統制できる範囲でのみ利用者の請求に対応できます。`,
-      youtube: `YouTube機能は、公開動画情報の取得と埋め込みプレーヤーでの再生に使用します。アプリはYouTubeアカウントへのログインを要求せず、YouTubeのログイン情報、パスワード、個人の再生履歴を${businessInfo.name}のサーバーに保存しません。`,
+        "アプリは以下のサービスを使用し、必要な情報が国外で処理される場合があります。",
+      providerControl: `外部提供者が独立して処理する情報には、その提供者の方針と設定が適用されます。${businessInfo.name}は直接管理できる範囲で請求に対応します。`,
+      youtube: `YouTubeは公開動画の再生にのみ使用します。ログイン情報や個人の再生履歴は${businessInfo.name}のサーバーに保存しません。`,
       youtubeTerms: "YouTube利用規約",
       googlePrivacy: "Googleプライバシーポリシー",
     },
     deletion: {
       title: "個人情報の削除",
       paragraphs: [
-        "目的を終えた電子情報は、復元が困難な方法で削除するか、利用者との関連付けを解除します。外部提供者のバックアップに残る情報は、各提供者のバックアップ周期に従って削除されます。",
-        "コミュニティの投稿・コメントの削除機能は、他の利用者から見えない状態にします。不正利用の防止、サービス運営、法的義務または紛争対応に必要な情報は、目的が終了するまで限定的に保存し、その後削除または利用者との関連付けを解除する場合があります。端末内の情報は、Android設定からアプリデータを消去するか、アプリをアンインストールして削除できます。端末ギャラリーに保存した画像は利用者自身で削除する必要があります。",
+        "目的を終えた情報は削除または関連付けを解除します。削除した投稿・コメントは非表示となり、不正利用防止・法的義務・紛争対応に必要な情報は目的終了まで保存する場合があります。外部バックアップは提供者の周期に従って削除されます。",
+        "端末内の情報はアプリデータの消去またはアンインストールで削除できます。ギャラリーの画像は利用者が削除する必要があります。",
       ],
     },
     rights: {
@@ -433,8 +390,8 @@ export const eyeconsPrivacyCopy: Record<PrivacyLocale, PrivacyPageCopy> = {
       beforeEmail:
         "利用者は、自分の個人情報について閲覧、訂正、削除、処理停止を請求できます。請求は以下のメールで受け付けます。",
       paragraphs: [
-        "アプリは会員登録情報を持たない匿名構造です。対象データを特定するため、ニックネーム、投稿内容・日時、利用アプリなど、必要最小限の情報を求める場合があります。提供された情報だけでは請求者とサーバーデータを信頼できる方法で結び付けられない場合、他の利用者の権利を侵害するおそれがある場合、または適用法令で認められる場合は、請求への対応が制限されることがあります。",
-        "アプリデータの消去またはアプリのアンインストールで削除されるのは端末内の情報のみであり、サーバーに残るコミュニティ・報酬情報は自動的には削除されません。アプリデータの消去、端末変更、再インストールにより任意識別子が失われると、請求者とサーバーデータの関係を信頼できる方法で確認できず、請求への対応が制限される場合があります。法定代理人または適法に委任された代理人を通じて権利を行使することもできます。",
+        "匿名構造のため、対象確認に必要な最小限の情報を求める場合があります。請求者とサーバーデータを確認できない場合、他者の権利を侵害するおそれがある場合、または法令で認められる場合は対応が制限されることがあります。",
+        "アプリデータの消去・アンインストールではサーバー情報は自動削除されません。任意識別子を失うと本人確認が困難になり、請求が制限される場合があります。法定代理人または適法な代理人も権利を行使できます。",
       ],
     },
     automatic: {
@@ -442,9 +399,8 @@ export const eyeconsPrivacyCopy: Record<PrivacyLocale, PrivacyPageCopy> = {
       intro:
         "EYEKONS Stan自体はウェブCookieを設置しません。ただし、埋め込みYouTubeプレーヤー、Firebase、Google広告サービスは、Cookieまたは類似技術、広告ID、アプリインスタンス・端末・利用情報を処理する場合があります。",
       items: [
-        "広告同意が必要な地域では、Google UMPの同意画面から選択できます。",
-        "Androidの広告プライバシー設定から広告IDをリセットまたは削除できます。",
-        "広告リクエストに同意しない場合や広告が無効な場合でも、写真・動画などの基本コンテンツは利用できますが、広告報酬機能が制限される場合があります。",
+        "Google UMP画面とAndroidの広告プライバシー設定から選択を変更できます。",
+        "広告を拒否しても基本コンテンツは利用できますが、広告報酬機能が制限される場合があります。",
       ],
     },
     security: {
@@ -456,8 +412,7 @@ export const eyeconsPrivacyCopy: Record<PrivacyLocale, PrivacyPageCopy> = {
         "通報、非表示処理、報酬取引の検証による不正利用への対応",
       ],
       paragraphs: [
-        "利用者は、端末ロックと最新のOSを使用し、公開投稿に個人情報を記載しないなど、個人情報の保護にご協力ください。",
-        "合理的な保護措置を講じても、インターネット通信、利用者端末、外部サービス環境に伴うすべての危険を完全に排除することはできません。事故が確認された場合は、適用法令に従って必要な措置を講じます。",
+        "合理的な保護措置でもすべての危険は排除できません。端末をロックし、公開投稿に個人情報を記載しないでください。事故が確認された場合は法令に従って対応します。",
       ],
     },
     contact: {
@@ -480,18 +435,6 @@ export const eyeconsPrivacyCopy: Record<PrivacyLocale, PrivacyPageCopy> = {
           displayUrl: "www.kopico.go.kr",
           phone: "+82-1833-6972",
         },
-        {
-          label: "韓国大検察庁",
-          url: privacyLinks.prosecutionService,
-          displayUrl: "www.spo.go.kr",
-          phone: "韓国内 1301",
-        },
-        {
-          label: "韓国警察庁サイバー犯罪申告システム",
-          url: privacyLinks.policeCybercrime,
-          displayUrl: "ecrm.police.go.kr",
-          phone: "韓国内 182",
-        },
       ],
     },
     changes: {
@@ -502,8 +445,8 @@ export const eyeconsPrivacyCopy: Record<PrivacyLocale, PrivacyPageCopy> = {
 };
 
 export const privacyLanguageAlternates = {
-  ko: siteConfig.routes.eyeconsPrivacy,
-  en: siteConfig.routes.eyeconsPrivacyEn,
+  ko: siteConfig.routes.eyeconsPrivacyKo,
+  en: siteConfig.routes.eyeconsPrivacy,
   ja: siteConfig.routes.eyeconsPrivacyJa,
   "x-default": siteConfig.routes.eyeconsPrivacy,
 } as const;

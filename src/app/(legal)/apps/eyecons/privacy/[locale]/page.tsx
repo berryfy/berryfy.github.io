@@ -9,9 +9,7 @@ import {
   privacyLanguageAlternates,
   privacyLocaleDetails,
 } from "@/features/legal/constants/eyecons-privacy-copy";
-import type { PrivacyLocale } from "@/features/legal/types/privacy-policy";
-
-const translatedLocales = ["en", "ja"] as const;
+const translatedLocales = ["en", "ko", "ja"] as const;
 
 function isTranslatedLocale(
   locale: string,
@@ -40,6 +38,7 @@ export async function generateMetadata({
   const copy = eyeconsPrivacyCopy[locale];
   const descriptions: Record<(typeof translatedLocales)[number], string> = {
     en: `${policy.appName} explains the personal information processed by the app, external services, retention periods, and user rights.`,
+    ko: `${policy.appName} 앱에서 처리하는 개인정보, 외부 서비스, 보유기간과 이용자 권리를 안내합니다.`,
     ja: `${policy.appName}における個人情報の処理項目、外部サービス、保存期間、利用者の権利について説明します。`,
   };
 
@@ -48,7 +47,10 @@ export async function generateMetadata({
     title: `${policy.appName} ${copy.pageTitle} | ${siteConfig.name}`,
     description: descriptions[locale],
     alternates: {
-      canonical: privacyLocaleDetails[locale].path,
+      canonical:
+        locale === "en"
+          ? siteConfig.routes.eyeconsPrivacy
+          : privacyLocaleDetails[locale].path,
       languages: privacyLanguageAlternates,
     },
     robots: {
@@ -69,5 +71,5 @@ export default async function Page({
     notFound();
   }
 
-  return <EyeconsPrivacyPage locale={locale satisfies PrivacyLocale} />;
+  return <EyeconsPrivacyPage locale={locale} />;
 }
