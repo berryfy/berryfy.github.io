@@ -1,12 +1,12 @@
 import Link from "next/link";
 
 import { siteFontVariables } from "@/app/fonts";
+import LanguageSwitcher from "@/components/language-switcher";
 import { siteConfig } from "@/constants/site";
 import {
   eyeconsPrivacyCopy,
   eyeconsPrivacyPolicies,
-  privacyLocaleDetails,
-  privacyLocales,
+  privacyLocalePaths,
 } from "@/features/legal/constants/eyecons-privacy-copy";
 import { privacyLinks } from "@/features/legal/constants/privacy-links";
 import type {
@@ -228,31 +228,11 @@ export default function EyeconsPrivacyPage({
           >
             berryfy
           </Link>
-          <nav
-            aria-label={copy.languageNavigationLabel}
-            className="flex items-center gap-1 text-xs sm:gap-2 sm:text-sm"
-          >
-            {privacyLocales.map((item) => {
-              const detail = privacyLocaleDetails[item];
-              const isActive = item === locale;
-
-              return (
-                <Link
-                  key={item}
-                  href={detail.path}
-                  hrefLang={item}
-                  aria-current={isActive ? "page" : undefined}
-                  className={`px-2 py-2 underline-offset-4 sm:px-2.5 ${
-                    isActive
-                      ? "font-bold text-neutral-950 underline"
-                      : "text-neutral-600 hover:text-neutral-950"
-                  }`}
-                >
-                  {detail.label}
-                </Link>
-              );
-            })}
-          </nav>
+          <LanguageSwitcher
+            locale={locale}
+            label={copy.languageNavigationLabel}
+            paths={privacyLocalePaths}
+          />
         </div>
       </header>
 

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Menu } from "lucide-react";
 
 import BrandMark from "@/components/brand-mark";
+import LanguageSwitcher from "@/components/language-switcher";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -13,7 +14,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import LanguageSwitcher from "@/features/home/components/language-switcher";
+import { homeLocalePaths } from "@/constants/site";
 import { homeSections } from "@/features/home/constants/sections";
 import type { SiteCopy } from "@/features/home/types/home";
 import { homePath } from "@/features/home/utils/locale";
@@ -59,7 +60,11 @@ export default function SiteHeader({ locale, copy }: SiteHeaderProps) {
         </nav>
 
         <div className="flex items-center gap-1.5">
-          <LanguageSwitcher locale={locale} label={copy.languageMenuLabel} />
+          <LanguageSwitcher
+            locale={locale}
+            label={copy.languageMenuLabel}
+            paths={homeLocalePaths}
+          />
 
           <Sheet>
             <SheetTrigger asChild>

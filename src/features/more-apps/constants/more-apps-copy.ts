@@ -4,13 +4,19 @@ import type { SiteLocale } from "@/types/site";
 
 export const moreAppsLocales = ["en", "ko", "ja"] as const;
 
+export const moreAppsLocalePaths: Record<SiteLocale, string> = {
+  en: siteConfig.routes.moreApps,
+  ko: siteConfig.routes.moreAppsKo,
+  ja: siteConfig.routes.moreAppsJa,
+};
+
 export const moreAppsLocaleDetails: Record<
   SiteLocale,
   { label: string; path: string }
 > = {
-  en: { label: "EN", path: siteConfig.routes.moreApps },
-  ko: { label: "KO", path: siteConfig.routes.moreAppsKo },
-  ja: { label: "JA", path: siteConfig.routes.moreAppsJa },
+  en: { label: "EN", path: moreAppsLocalePaths.en },
+  ko: { label: "KO", path: moreAppsLocalePaths.ko },
+  ja: { label: "JA", path: moreAppsLocalePaths.ja },
 };
 
 export const moreAppsCopy: Record<SiteLocale, MoreAppsPageCopy> = {

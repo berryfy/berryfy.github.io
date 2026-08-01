@@ -12,13 +12,19 @@ import type {
 
 export const privacyLocales = ["ko", "en", "ja"] as const;
 
+export const privacyLocalePaths: Record<PrivacyLocale, string> = {
+  ko: siteConfig.routes.eyeconsPrivacyKo,
+  en: siteConfig.routes.eyeconsPrivacy,
+  ja: siteConfig.routes.eyeconsPrivacyJa,
+};
+
 export const privacyLocaleDetails: Record<
   PrivacyLocale,
   { label: string; path: string }
 > = {
-  ko: { label: "한국어", path: siteConfig.routes.eyeconsPrivacyKo },
-  en: { label: "English", path: siteConfig.routes.eyeconsPrivacy },
-  ja: { label: "日本語", path: siteConfig.routes.eyeconsPrivacyJa },
+  ko: { label: "한국어", path: privacyLocalePaths.ko },
+  en: { label: "English", path: privacyLocalePaths.en },
+  ja: { label: "日本語", path: privacyLocalePaths.ja },
 };
 
 export const eyeconsPrivacyPolicies: Record<

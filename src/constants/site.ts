@@ -60,3 +60,9 @@ export const languageAlternates = {
   ja: localeDetails.ja.path,
   "x-default": localeDetails[siteConfig.defaultLocale].path,
 } as const;
+
+export const homeLocalePaths: Record<SiteLocale, string> = {
+  en: localeDetails.en.path,
+  ko: localeDetails.ko.path,
+  ja: localeDetails.ja.path,
+};

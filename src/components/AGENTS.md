@@ -5,3 +5,4 @@
 - 1 파일 = 1 default export 컴포넌트를 유지한다.
 - 접근 가능한 이름, 키보드 focus, semantic HTML을 기본 제공한다.
 - 디자인 토큰과 Tailwind 유틸리티를 우선하며 임의 색상은 브랜드 표현에 필요한 경우만 사용한다.
+- 언어 선택 UI는 `language-switcher.tsx` 하나만 사용하고, 각 기능은 언어별 경로만 전달한다.
