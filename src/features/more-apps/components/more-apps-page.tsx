@@ -1,5 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 
+import { siteFontVariables } from "@/app/fonts";
 import SiteHeader from "@/components/site-header";
 import { siteConfig } from "@/constants/site";
 import MoreAppItem from "@/features/more-apps/components/more-app-item";
@@ -24,7 +25,7 @@ export default function MoreAppsPage({ locale }: { locale: SiteLocale }) {
   return (
     <div
       lang={locale}
-      className="min-h-svh bg-background pb-[env(safe-area-inset-bottom)] text-foreground"
+      className={`${siteFontVariables[locale]} min-h-svh bg-background pb-[env(safe-area-inset-bottom)] font-sans text-foreground`}
     >
       <SiteHeader
         homeHref={siteConfig.routes.home}
@@ -61,7 +62,7 @@ export default function MoreAppsPage({ locale }: { locale: SiteLocale }) {
           <a
             href={developerStoreUrl}
             rel="external"
-            className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-border bg-card px-5 text-sm font-semibold text-foreground shadow-sm transition-colors hover:border-primary/30 hover:text-primary"
+            className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-border bg-card px-5 text-sm font-semibold text-foreground shadow-sm transition-colors outline-none hover:border-primary/30 hover:text-primary focus-visible:ring-3 focus-visible:ring-primary/35"
           >
             {copy.storeActionLabel}
             <ArrowUpRight className="size-4" aria-hidden="true" />

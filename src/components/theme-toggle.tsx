@@ -69,7 +69,7 @@ export default function ThemeToggle({ locale }: ThemeToggleProps) {
       type="button"
       variant="ghost"
       size="icon-lg"
-      className="relative rounded-full text-muted-foreground hover:bg-secondary hover:text-foreground sm:size-10"
+      className="relative size-10 rounded-full text-muted-foreground hover:bg-secondary hover:text-foreground"
       aria-label={themeToggleLabels[locale]}
       title={themeToggleLabels[locale]}
       onClick={toggleTheme}

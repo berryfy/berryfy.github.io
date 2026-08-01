@@ -67,7 +67,7 @@ export default function HomeSiteHeader({ locale, copy }: HomeSiteHeaderProps) {
             <Button
               variant="outline"
               size="icon-lg"
-              className="rounded-full bg-card/80 md:hidden"
+              className="size-10 rounded-full bg-card/80 md:hidden"
               aria-label={copy.menuLabel}
             >
               <Menu aria-hidden="true" />
@@ -87,7 +87,7 @@ export default function HomeSiteHeader({ locale, copy }: HomeSiteHeaderProps) {
                 <SheetClose key={item.href} asChild>
                   <Link
                     href={item.href}
-                    className="rounded-2xl px-4 py-3 text-lg font-medium text-foreground transition-colors hover:bg-secondary"
+                    className="rounded-2xl px-4 py-3 text-lg font-medium text-foreground transition-colors hover:bg-secondary focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none"
                   >
                     {item.label}
                   </Link>

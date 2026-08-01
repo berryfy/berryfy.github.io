@@ -25,7 +25,7 @@ export default function MoreAppItem({
         href={storeUrl}
         rel="external"
         aria-label={`${copy.name} — ${actionLabel}`}
-        className="group flex min-h-[112px] items-center gap-3.5 rounded-[1.4rem] border border-border/80 bg-card p-3 shadow-[0_10px_36px_rgba(45,28,50,0.045)] transition duration-200 active:scale-[0.985] sm:min-h-[128px] sm:gap-5 sm:p-4"
+        className="group flex min-h-[112px] items-center gap-3.5 rounded-[1.4rem] border border-border/80 bg-card p-3 shadow-[0_10px_36px_rgba(45,28,50,0.045)] transition duration-200 outline-none hover:-translate-y-0.5 hover:border-primary/25 hover:shadow-[0_16px_44px_rgba(45,28,50,0.08)] focus-visible:ring-3 focus-visible:ring-primary/35 active:scale-[0.985] sm:min-h-[128px] sm:gap-5 sm:p-4"
       >
         <Image
           src={app.iconPath}
