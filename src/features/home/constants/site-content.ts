@@ -24,7 +24,7 @@ export const siteCopy: Record<SiteLocale, SiteCopy> = {
         "Easy to start, pleasant to use, and never more complicated than it needs to be.",
     },
     visual: {
-      caption: "Made for everyday moments",
+      caption: "Berryfy apps for play, focus, and creativity",
       ...sharedVisualCopy,
     },
     apps: {
@@ -33,7 +33,7 @@ export const siteCopy: Record<SiteLocale, SiteCopy> = {
       description:
         "Choose a quick puzzle, settle into a productive rhythm, or give your screen a new mood. Find an app that fits the moment.",
       featuredLabel: "Featured",
-      imageSlotLabel: "App artwork area",
+      imageSlotLabel: "App preview",
       items: [
         {
           name: "Potion Sort Quest",
@@ -110,7 +110,7 @@ export const siteCopy: Record<SiteLocale, SiteCopy> = {
       benefitValue: "처음부터 쉽고, 쓸수록 편안하며, 필요한 만큼만 담았습니다.",
     },
     visual: {
-      caption: "매일의 순간을 위해",
+      caption: "퍼즐, 집중 타이머, 배경화면 제작을 보여주는 Berryfy 앱",
       ...sharedVisualCopy,
     },
     apps: {
@@ -119,7 +119,7 @@ export const siteCopy: Record<SiteLocale, SiteCopy> = {
       description:
         "가볍게 즐길 퍼즐, 집중을 돕는 타이머, 화면 분위기를 바꾸는 창작 도구까지. 지금 필요한 앱을 찾아보세요.",
       featuredLabel: "주요 앱",
-      imageSlotLabel: "앱 이미지 영역",
+      imageSlotLabel: "앱 사용 화면",
       items: [
         {
           name: "Potion Sort Quest",
@@ -196,7 +196,7 @@ export const siteCopy: Record<SiteLocale, SiteCopy> = {
       benefitValue: "始めやすく、使うほど心地よく、必要以上に複雑にしません。",
     },
     visual: {
-      caption: "毎日の小さな瞬間へ",
+      caption: "パズル、集中タイマー、壁紙づくりのBerryfyアプリ",
       ...sharedVisualCopy,
     },
     apps: {
@@ -205,7 +205,7 @@ export const siteCopy: Record<SiteLocale, SiteCopy> = {
       description:
         "気軽に遊べるパズル、集中を支えるタイマー、画面の雰囲気を変える創作ツール。今の気分に合うアプリを見つけてください。",
       featuredLabel: "注目",
-      imageSlotLabel: "アプリ画像エリア",
+      imageSlotLabel: "アプリ画面",
       items: [
         {
           name: "Potion Sort Quest",
