@@ -18,7 +18,7 @@ export default function AppCard({
   index,
 }: AppCardProps) {
   return (
-    <article className="group overflow-hidden rounded-[2rem] border border-border/70 bg-white/72 p-3 shadow-[0_24px_70px_rgba(62,31,50,0.07)] backdrop-blur-sm transition duration-500 hover:-translate-y-1.5 hover:shadow-[0_34px_80px_rgba(62,31,50,0.12)]">
+    <article className="group overflow-hidden rounded-[2rem] border border-border/70 bg-card/72 p-3 shadow-[0_24px_70px_rgba(62,31,50,0.07)] backdrop-blur-sm transition duration-500 hover:-translate-y-1.5 hover:shadow-[0_34px_80px_rgba(62,31,50,0.12)]">
       <div
         className="relative aspect-[5/4] overflow-hidden rounded-[1.45rem] bg-muted"
         data-image-slot={`featured-app-${app.visual}`}
@@ -31,7 +31,7 @@ export default function AppCard({
           className="object-cover transition duration-700 ease-out group-hover:scale-[1.025]"
         />
         <div className="pointer-events-none absolute inset-0 rounded-[inherit] ring-1 ring-black/5 ring-inset" />
-        <Badge className="absolute top-4 left-4 h-7 border border-white/55 bg-white/82 px-3 text-foreground shadow-sm backdrop-blur-md">
+        <Badge className="absolute top-4 left-4 h-7 border border-white/55 bg-white/82 px-3 text-[#2d1c32] shadow-sm backdrop-blur-md">
           {featuredLabel}
         </Badge>
       </div>

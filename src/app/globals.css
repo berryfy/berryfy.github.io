@@ -157,6 +157,34 @@
   }
 }
 
+.dark body {
+  background-image:
+    radial-gradient(
+      circle at 80% 5%,
+      oklch(0.38 0.09 7 / 0.24),
+      transparent 32rem
+    ),
+    radial-gradient(
+      circle at 12% 54%,
+      oklch(0.35 0.07 157 / 0.18),
+      transparent 28rem
+    );
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(root) {
+  z-index: 1;
+}
+
+::view-transition-new(root) {
+  z-index: 2;
+}
+
 html:lang(ko) {
   word-break: keep-all;
 }

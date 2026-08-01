@@ -43,7 +43,7 @@ export default function NotFoundPage() {
             aria-hidden="true"
             className="relative hidden min-h-[360px] items-center justify-center lg:flex"
           >
-            <div className="absolute size-[22rem] rounded-full border border-primary/15 bg-white/45 shadow-[0_35px_100px_rgba(72,37,78,0.08)] backdrop-blur-sm xl:size-[27rem]" />
+            <div className="absolute size-[22rem] rounded-full border border-primary/15 bg-card/45 shadow-[0_35px_100px_rgba(72,37,78,0.08)] backdrop-blur-sm xl:size-[27rem]" />
             <div className="absolute size-[16rem] rotate-6 rounded-[4rem] bg-secondary/80 xl:size-[20rem]" />
             <p className="relative font-mono text-[8rem] leading-none font-semibold tracking-[-0.12em] text-primary xl:text-[10rem]">
               404

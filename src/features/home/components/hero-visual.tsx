@@ -23,7 +23,7 @@ export default function HeroVisual({ copy }: HeroVisualProps) {
         className="object-cover"
       />
       <div className="pointer-events-none absolute inset-0 rounded-[inherit] ring-1 ring-black/5 ring-inset" />
-      <div className="absolute top-4 right-4 flex items-center gap-2 rounded-full border border-white/75 bg-white/82 px-3 py-2 text-xs font-semibold tracking-wide text-foreground shadow-sm backdrop-blur-md sm:top-5 sm:right-5">
+      <div className="absolute top-4 right-4 flex items-center gap-2 rounded-full border border-white/75 bg-white/82 px-3 py-2 text-xs font-semibold tracking-wide text-[#2d1c32] shadow-sm backdrop-blur-md sm:top-5 sm:right-5">
         <Sparkles className="size-3.5 text-primary" aria-hidden="true" />
         {copy.caption}
       </div>

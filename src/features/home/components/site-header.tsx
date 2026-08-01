@@ -49,12 +49,12 @@ export default function HomeSiteHeader({ locale, copy }: HomeSiteHeaderProps) {
       languageLabel={copy.languageMenuLabel}
       languagePaths={homeLocalePaths}
       navigation={
-        <nav className="hidden items-center gap-1 rounded-full border border-border/70 bg-white/70 p-1 shadow-[0_10px_35px_rgba(36,21,41,0.05)] md:flex">
+        <nav className="hidden items-center gap-1 rounded-full border border-border/70 bg-card/70 p-1 shadow-[0_10px_35px_rgba(36,21,41,0.05)] md:flex">
           {navigation.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="rounded-full px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-white hover:text-foreground focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none"
+              className="rounded-full px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-card hover:text-foreground focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none"
             >
               {item.label}
             </Link>
@@ -67,7 +67,7 @@ export default function HomeSiteHeader({ locale, copy }: HomeSiteHeaderProps) {
             <Button
               variant="outline"
               size="icon-lg"
-              className="rounded-full bg-white/80 md:hidden"
+              className="rounded-full bg-card/80 md:hidden"
               aria-label={copy.menuLabel}
             >
               <Menu aria-hidden="true" />

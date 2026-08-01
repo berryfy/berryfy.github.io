@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import { monoFontVariable, siteFontVariables } from "@/app/fonts";
+import ThemeProvider from "@/components/theme-provider";
 import NotFoundPage from "@/features/not-found/components/not-found-page";
 import "./globals.css";
 
@@ -14,9 +15,12 @@ export default function GlobalNotFound() {
     <html
       lang="en"
       className={`${siteFontVariables.en} ${monoFontVariable} h-full antialiased`}
+      suppressHydrationWarning
     >
       <body className="min-h-full">
-        <NotFoundPage />
+        <ThemeProvider>
+          <NotFoundPage />
+        </ThemeProvider>
       </body>
     </html>
   );

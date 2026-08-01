@@ -31,7 +31,7 @@ export default function LanguageSwitcher({
       <DropdownMenuTrigger asChild>
         <Button
           variant="ghost"
-          className="h-9 gap-1.5 rounded-full px-2.5 text-xs text-muted-foreground hover:bg-white hover:text-foreground sm:h-10 sm:px-3 sm:text-sm"
+          className="h-9 gap-1.5 rounded-full px-2.5 text-xs text-muted-foreground hover:bg-secondary hover:text-foreground sm:h-10 sm:px-3 sm:text-sm"
           aria-label={label}
         >
           <Globe2 aria-hidden="true" />

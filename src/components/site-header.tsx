@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 
 import BrandMark from "@/components/brand-mark";
 import LanguageSwitcher from "@/components/language-switcher";
+import ThemeToggle from "@/components/theme-toggle";
 import type { SiteLocale } from "@/types/site";
 
 interface SiteHeaderProps {
@@ -32,6 +33,7 @@ export default function SiteHeader({
             label={languageLabel}
             paths={languagePaths}
           />
+          <ThemeToggle locale={locale} />
           {actions}
         </div>
       </div>

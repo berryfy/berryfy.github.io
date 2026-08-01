@@ -36,7 +36,7 @@ export default function HomePage({ locale, copy }: HomePageProps) {
             <div className="relative z-10 max-w-[720px]">
               <Badge
                 variant="outline"
-                className="h-8 border-primary/20 bg-white/65 px-3 text-primary backdrop-blur-sm"
+                className="h-8 border-primary/20 bg-card/65 px-3 text-primary backdrop-blur-sm"
               >
                 <span className="size-1.5 rounded-full bg-primary" />
                 {copy.hero.eyebrow}
@@ -62,7 +62,7 @@ export default function HomePage({ locale, copy }: HomePageProps) {
                   asChild
                   variant="outline"
                   size="lg"
-                  className="h-13 rounded-full border-border bg-white/65 px-6 text-base hover:bg-white"
+                  className="h-13 rounded-full border-border bg-card/65 px-6 text-base hover:bg-card"
                 >
                   <Link href={`${basePath}#${homeSections.studio}`}>
                     {copy.hero.secondaryAction}
@@ -181,7 +181,7 @@ export default function HomePage({ locale, copy }: HomePageProps) {
       </main>
 
       <footer className="px-5 pb-8 sm:px-8 lg:px-12">
-        <div className="mx-auto max-w-[1344px] rounded-[2rem] border border-border/70 bg-white/60 px-6 py-8 backdrop-blur-sm sm:px-8">
+        <div className="mx-auto max-w-[1344px] rounded-[2rem] border border-border/70 bg-card/60 px-6 py-8 backdrop-blur-sm sm:px-8">
           <div className="flex flex-col gap-7 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <BrandMark href={basePath} />
@@ -192,7 +192,7 @@ export default function HomePage({ locale, copy }: HomePageProps) {
             <Button
               asChild
               variant="outline"
-              className="h-11 self-start rounded-full bg-white px-5 sm:self-auto"
+              className="h-11 self-start rounded-full bg-card px-5 sm:self-auto"
             >
               <a href={`mailto:${businessInfo.contactEmail}`}>
                 <Mail aria-hidden="true" />

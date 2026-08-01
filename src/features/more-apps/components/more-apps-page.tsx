@@ -24,7 +24,7 @@ export default function MoreAppsPage({ locale }: { locale: SiteLocale }) {
   return (
     <div
       lang={locale}
-      className="min-h-svh bg-[#f8f5f7] pb-[env(safe-area-inset-bottom)] text-foreground"
+      className="min-h-svh bg-background pb-[env(safe-area-inset-bottom)] text-foreground"
     >
       <SiteHeader
         homeHref={siteConfig.routes.home}
@@ -61,7 +61,7 @@ export default function MoreAppsPage({ locale }: { locale: SiteLocale }) {
           <a
             href={developerStoreUrl}
             rel="external"
-            className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-border bg-white px-5 text-sm font-semibold text-foreground shadow-sm transition-colors hover:border-primary/30 hover:text-primary"
+            className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-border bg-card px-5 text-sm font-semibold text-foreground shadow-sm transition-colors hover:border-primary/30 hover:text-primary"
           >
             {copy.storeActionLabel}
             <ArrowUpRight className="size-4" aria-hidden="true" />
