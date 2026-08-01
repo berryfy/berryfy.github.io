@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 
 import { monoFontVariable, siteFontVariables } from "@/app/fonts";
-import ThemeProvider from "@/components/theme-provider";
+import SiteDocument from "@/components/site-document";
 import { siteConfig } from "@/constants/site";
 import { isSiteLocale } from "@/features/home/utils/locale";
 import "../../globals.css";
@@ -22,15 +22,12 @@ export default async function LocalizedRootLayout({
   }
 
   return (
-    <html
+    <SiteDocument
       lang={locale}
-      data-scroll-behavior="smooth"
-      className={`${siteFontVariables[locale]} ${monoFontVariable} h-full antialiased`}
-      suppressHydrationWarning
+      fontClassName={`${siteFontVariables[locale]} ${monoFontVariable}`}
+      bodyClassName="flex min-h-full flex-col"
     >
-      <body className="flex min-h-full flex-col">
-        <ThemeProvider>{children}</ThemeProvider>
-      </body>
-    </html>
+      {children}
+    </SiteDocument>
   );
 }

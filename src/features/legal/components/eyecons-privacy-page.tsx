@@ -1,205 +1,16 @@
 import { siteFontVariables } from "@/app/fonts";
 import SiteHeader from "@/components/site-header";
 import { siteConfig } from "@/constants/site";
+import PrivacyDataTable from "@/features/legal/components/privacy-data-table";
+import PrivacyExternalService from "@/features/legal/components/privacy-external-service";
+import PrivacySection from "@/features/legal/components/privacy-section";
 import {
   eyeconsPrivacyCopy,
   eyeconsPrivacyPolicies,
   privacyLocalePaths,
 } from "@/features/legal/constants/eyecons-privacy-copy";
 import { privacyLinks } from "@/features/legal/constants/privacy-links";
-import type {
-  ExternalPrivacyService,
-  PrivacyDataItem,
-  PrivacyLocale,
-  PrivacyPageCopy,
-} from "@/features/legal/types/privacy-policy";
-
-interface SectionHeadingProps {
-  number: string;
-  title: string;
-  id: string;
-  children: React.ReactNode;
-}
-
-function SectionHeading({ number, title, id, children }: SectionHeadingProps) {
-  return (
-    <section id={id} className="scroll-mt-24 border-t border-border pt-8">
-      <h2 className="text-xl font-bold text-foreground">
-        {number}. {title}
-      </h2>
-      <div className="legal-copy mt-4">{children}</div>
-    </section>
-  );
-}
-
-function DataTable({
-  items,
-  labels,
-}: {
-  items: readonly PrivacyDataItem[];
-  labels: PrivacyPageCopy["labels"];
-}) {
-  return (
-    <>
-      <div className="grid gap-3 sm:grid-cols-2 lg:hidden">
-        {items.map((item) => (
-          <section key={item.category} className="border border-border p-4">
-            <h4 className="font-bold text-foreground">{item.category}</h4>
-            <dl className="mt-3 space-y-3 text-sm">
-              <div>
-                <dt className="font-semibold text-foreground">
-                  {labels.dataItem}
-                </dt>
-                <dd className="mt-1 leading-6 break-words text-muted-foreground">
-                  {item.data}
-                </dd>
-              </div>
-              <div>
-                <dt className="font-semibold text-foreground">
-                  {labels.purpose}
-                </dt>
-                <dd className="mt-1 leading-6 break-words text-muted-foreground">
-                  {item.purpose}
-                </dd>
-              </div>
-              <div>
-                <dt className="font-semibold text-foreground">
-                  {labels.retention}
-                </dt>
-                <dd className="mt-1 leading-6 break-words text-muted-foreground">
-                  {item.retention}
-                </dd>
-              </div>
-            </dl>
-          </section>
-        ))}
-      </div>
-
-      <div className="hidden overflow-x-auto border border-border lg:block">
-        <table className="w-full border-collapse text-left text-sm">
-          <thead className="bg-muted/70 text-foreground">
-            <tr>
-              <th className="w-[17%] border-b border-border px-3 py-3 font-semibold">
-                {labels.category}
-              </th>
-              <th className="w-[28%] border-b border-border px-3 py-3 font-semibold">
-                {labels.dataItem}
-              </th>
-              <th className="w-[27%] border-b border-border px-3 py-3 font-semibold">
-                {labels.purpose}
-              </th>
-              <th className="w-[28%] border-b border-border px-3 py-3 font-semibold">
-                {labels.retention}
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {items.map((item) => (
-              <tr key={item.category} className="border-t border-border">
-                <th className="px-3 py-3 align-top font-semibold text-foreground">
-                  {item.category}
-                </th>
-                <td className="px-3 py-3 align-top leading-6 text-muted-foreground">
-                  {item.data}
-                </td>
-                <td className="px-3 py-3 align-top leading-6 text-muted-foreground">
-                  {item.purpose}
-                </td>
-                <td className="px-3 py-3 align-top leading-6 text-muted-foreground">
-                  {item.retention}
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    </>
-  );
-}
-
-function ExternalService({
-  service,
-  labels,
-}: {
-  service: ExternalPrivacyService;
-  labels: PrivacyPageCopy["labels"];
-}) {
-  return (
-    <section className="border border-border p-4">
-      <div className="flex flex-wrap items-baseline justify-between gap-2">
-        <h3 className="text-base font-bold text-foreground">
-          {service.provider} — {service.service}
-        </h3>
-        <a
-          href={service.policyUrl}
-          target="_blank"
-          rel="noreferrer"
-          className="text-sm text-muted-foreground underline underline-offset-2"
-        >
-          {labels.providerPolicy}
-        </a>
-      </div>
-      <dl className="mt-4 grid gap-x-6 gap-y-3 text-sm sm:grid-cols-2">
-        <div>
-          <dt className="font-semibold text-foreground">
-            {labels.relationship}
-          </dt>
-          <dd className="mt-1 leading-6 break-words text-muted-foreground">
-            {service.relationship}
-          </dd>
-        </div>
-        <div>
-          <dt className="font-semibold text-foreground">
-            {labels.transferBasis}
-          </dt>
-          <dd className="mt-1 leading-6 break-words text-muted-foreground">
-            {service.transferBasis}
-          </dd>
-        </div>
-        <div>
-          <dt className="font-semibold text-foreground">{labels.dataItem}</dt>
-          <dd className="mt-1 leading-6 break-words text-muted-foreground">
-            {service.data}
-          </dd>
-        </div>
-        <div>
-          <dt className="font-semibold text-foreground">{labels.purpose}</dt>
-          <dd className="mt-1 leading-6 break-words text-muted-foreground">
-            {service.purpose}
-          </dd>
-        </div>
-        <div>
-          <dt className="font-semibold text-foreground">{labels.location}</dt>
-          <dd className="mt-1 leading-6 break-words text-muted-foreground">
-            {service.location}
-          </dd>
-        </div>
-        <div>
-          <dt className="font-semibold text-foreground">
-            {labels.timingAndMethod}
-          </dt>
-          <dd className="mt-1 leading-6 break-words text-muted-foreground">
-            {service.timingAndMethod}
-          </dd>
-        </div>
-        <div>
-          <dt className="font-semibold text-foreground">{labels.retention}</dt>
-          <dd className="mt-1 leading-6 break-words text-muted-foreground">
-            {service.retention}
-          </dd>
-        </div>
-        <div>
-          <dt className="font-semibold text-foreground">
-            {labels.refusalAndEffect}
-          </dt>
-          <dd className="mt-1 leading-6 break-words text-muted-foreground">
-            {service.refusalAndEffect}
-          </dd>
-        </div>
-      </dl>
-    </section>
-  );
-}
+import type { PrivacyLocale } from "@/features/legal/types/privacy-policy";
 
 export default function EyeconsPrivacyPage({
   locale,
@@ -249,14 +60,19 @@ export default function EyeconsPrivacyPage({
           </dl>
         </header>
 
-        <nav className="mt-8" aria-label={copy.labels.contents}>
-          <h2 className="text-sm font-bold">{copy.labels.contents}</h2>
-          <ol className="mt-3 grid gap-x-6 gap-y-2 text-sm sm:grid-cols-2 lg:grid-cols-3">
+        <nav
+          className="mt-8 rounded-2xl border border-border/80 bg-card/45 p-4 sm:p-5"
+          aria-label={copy.labels.contents}
+        >
+          <h2 className="text-sm font-bold tracking-[-0.01em]">
+            {copy.labels.contents}
+          </h2>
+          <ol className="mt-3 grid gap-x-5 gap-y-1 text-sm sm:grid-cols-2 lg:grid-cols-3">
             {policy.navigation.map((item, index) => (
               <li key={item.id}>
                 <a
                   href={`#${item.id}`}
-                  className="text-muted-foreground underline underline-offset-2"
+                  className="block rounded-lg px-2 py-1.5 leading-5 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none"
                 >
                   {index + 1}. {item.label}
                 </a>
@@ -266,7 +82,10 @@ export default function EyeconsPrivacyPage({
         </nav>
 
         <article className="mt-10 space-y-10">
-          <section id="overview" className="scroll-mt-24 bg-muted/70 p-5">
+          <section
+            id="overview"
+            className="scroll-mt-24 rounded-2xl bg-muted/70 p-5"
+          >
             <h2 className="text-lg font-bold">1. {copy.overview.title}</h2>
             <ul className="mt-3 list-disc space-y-2 pl-5 leading-7 text-muted-foreground">
               {copy.overview.items.map((item) => (
@@ -275,25 +94,25 @@ export default function EyeconsPrivacyPage({
             </ul>
           </section>
 
-          <SectionHeading number="2" title={copy.purposes.title} id="purpose">
+          <PrivacySection number="2" title={copy.purposes.title} id="purpose">
             <p>{copy.purposes.intro}</p>
             <ul>
               {copy.purposes.items.map((item) => (
                 <li key={item}>{item}</li>
               ))}
             </ul>
-          </SectionHeading>
+          </PrivacySection>
 
-          <SectionHeading number="3" title={copy.data.title} id="data">
+          <PrivacySection number="3" title={copy.data.title} id="data">
             <p>{copy.data.intro}</p>
             <h3>{copy.data.serverTitle}</h3>
-            <DataTable items={policy.serverData} labels={copy.labels} />
+            <PrivacyDataTable items={policy.serverData} labels={copy.labels} />
             <p>{copy.data.localIntro}</p>
             <h3>{copy.data.localTitle}</h3>
-            <DataTable items={policy.localData} labels={copy.labels} />
-          </SectionHeading>
+            <PrivacyDataTable items={policy.localData} labels={copy.labels} />
+          </PrivacySection>
 
-          <SectionHeading
+          <PrivacySection
             number="4"
             title={copy.collection.title}
             id="collection"
@@ -305,9 +124,9 @@ export default function EyeconsPrivacyPage({
             </ul>
             <p>{copy.collection.permissions}</p>
             <p>{copy.collection.publicContent}</p>
-          </SectionHeading>
+          </PrivacySection>
 
-          <SectionHeading
+          <PrivacySection
             number="5"
             title={copy.thirdParties.title}
             id="third-parties"
@@ -315,9 +134,9 @@ export default function EyeconsPrivacyPage({
             {copy.thirdParties.paragraphs.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
-          </SectionHeading>
+          </PrivacySection>
 
-          <SectionHeading
+          <PrivacySection
             number="6"
             title={copy.external.title}
             id="external-services"
@@ -326,7 +145,7 @@ export default function EyeconsPrivacyPage({
             <p>{copy.external.providerControl}</p>
             <div className="space-y-3">
               {policy.externalServices.map((service) => (
-                <ExternalService
+                <PrivacyExternalService
                   key={`${service.provider}-${service.service}`}
                   service={service}
                   labels={copy.labels}
@@ -343,15 +162,15 @@ export default function EyeconsPrivacyPage({
                 {copy.external.googlePrivacy}
               </a>
             </p>
-          </SectionHeading>
+          </PrivacySection>
 
-          <SectionHeading number="7" title={copy.deletion.title} id="deletion">
+          <PrivacySection number="7" title={copy.deletion.title} id="deletion">
             {copy.deletion.paragraphs.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
-          </SectionHeading>
+          </PrivacySection>
 
-          <SectionHeading number="8" title={copy.rights.title} id="rights">
+          <PrivacySection number="8" title={copy.rights.title} id="rights">
             <p>{copy.rights.beforeEmail}</p>
             <p>
               <a href={privacyRequestMailto}>{policy.contactEmail}</a>
@@ -359,9 +178,9 @@ export default function EyeconsPrivacyPage({
             {copy.rights.paragraphs.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
-          </SectionHeading>
+          </PrivacySection>
 
-          <SectionHeading
+          <PrivacySection
             number="9"
             title={copy.automatic.title}
             id="automatic"
@@ -372,9 +191,9 @@ export default function EyeconsPrivacyPage({
                 <li key={item}>{item}</li>
               ))}
             </ul>
-          </SectionHeading>
+          </PrivacySection>
 
-          <SectionHeading number="10" title={copy.security.title} id="security">
+          <PrivacySection number="10" title={copy.security.title} id="security">
             <ul>
               {copy.security.items.map((item) => (
                 <li key={item}>{item}</li>
@@ -383,10 +202,10 @@ export default function EyeconsPrivacyPage({
             {copy.security.paragraphs.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
-          </SectionHeading>
+          </PrivacySection>
 
-          <SectionHeading number="11" title={copy.contact.title} id="contact">
-            <dl className="grid gap-2 border border-border p-4 text-sm sm:grid-cols-2">
+          <PrivacySection number="11" title={copy.contact.title} id="contact">
+            <dl className="grid gap-2 rounded-xl border border-border bg-card/40 p-4 text-sm sm:grid-cols-2">
               <div>
                 <dt className="inline font-semibold">
                   {copy.contact.department}:{" "}
@@ -415,11 +234,11 @@ export default function EyeconsPrivacyPage({
                 </li>
               ))}
             </ul>
-          </SectionHeading>
+          </PrivacySection>
 
-          <SectionHeading number="12" title={copy.changes.title} id="changes">
+          <PrivacySection number="12" title={copy.changes.title} id="changes">
             <p>{copy.changes.text.replace("{date}", policy.effectiveDate)}</p>
-          </SectionHeading>
+          </PrivacySection>
         </article>
       </main>
 
