@@ -123,7 +123,7 @@ export const eyeconsPrivacyCopy: Record<PrivacyLocale, PrivacyPageCopy> = {
     automatic: {
       title: "자동 수집 정보와 선택 거부 방법",
       intro:
-        "EYEKONS Stan 자체는 웹 쿠키를 설치하지 않습니다. 다만 내장 YouTube 플레이어, Firebase와 Google 광고 서비스는 쿠키 또는 유사 기술, 광고 ID, 앱 인스턴스·기기·이용 정보를 처리할 수 있습니다.",
+        "EYECONS Stan 자체는 웹 쿠키를 설치하지 않습니다. 다만 내장 YouTube 플레이어, Firebase와 Google 광고 서비스는 쿠키 또는 유사 기술, 광고 ID, 앱 인스턴스·기기·이용 정보를 처리할 수 있습니다.",
       items: [
         "Google UMP 화면과 Android 광고 개인정보 보호 설정에서 광고 선택을 변경할 수 있습니다.",
         "광고를 거부해도 기본 콘텐츠는 이용할 수 있으나 광고 보상 기능은 제한될 수 있습니다.",
@@ -260,7 +260,7 @@ export const eyeconsPrivacyCopy: Record<PrivacyLocale, PrivacyPageCopy> = {
     automatic: {
       title: "Automatic collection and available choices",
       intro:
-        "EYEKONS Stan does not itself install web cookies. The embedded YouTube player, Firebase, and Google advertising services may process cookies or similar technologies, advertising IDs, and app instance, device, and usage information.",
+        "EYECONS Stan does not itself install web cookies. The embedded YouTube player, Firebase, and Google advertising services may process cookies or similar technologies, advertising IDs, and app instance, device, and usage information.",
       items: [
         "Advertising choices can be changed through the Google UMP screen and Android advertising privacy settings.",
         "Core content remains available when advertising is refused, but ad reward features may be limited.",
@@ -397,7 +397,7 @@ export const eyeconsPrivacyCopy: Record<PrivacyLocale, PrivacyPageCopy> = {
     automatic: {
       title: "自動収集される情報と選択方法",
       intro:
-        "EYEKONS Stan自体はウェブCookieを設置しません。ただし、埋め込みYouTubeプレーヤー、Firebase、Google広告サービスは、Cookieまたは類似技術、広告ID、アプリインスタンス・端末・利用情報を処理する場合があります。",
+        "EYECONS Stan自体はウェブCookieを設置しません。ただし、埋め込みYouTubeプレーヤー、Firebase、Google広告サービスは、Cookieまたは類似技術、広告ID、アプリインスタンス・端末・利用情報を処理する場合があります。",
       items: [
         "Google UMP画面とAndroidの広告プライバシー設定から選択を変更できます。",
         "広告を拒否しても基本コンテンツは利用できますが、広告報酬機能が制限される場合があります。",

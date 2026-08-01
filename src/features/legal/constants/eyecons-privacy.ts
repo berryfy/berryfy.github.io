@@ -7,7 +7,7 @@ import type {
 } from "@/features/legal/types/privacy-policy";
 
 export const eyeconsPrivacy = {
-  appName: "EYEKONS Stan",
+  appName: "EYECONS Stan",
   businessName: businessInfo.name,
   contactEmail: businessInfo.contactEmail,
   effectiveDate: "2026년 8월 1일",

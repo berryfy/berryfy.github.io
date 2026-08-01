@@ -3,7 +3,7 @@ import { privacyLinks } from "@/features/legal/constants/privacy-links";
 import type { EyeconsPrivacyPolicy } from "@/features/legal/types/privacy-policy";
 
 export const eyeconsPrivacyJa = {
-  appName: "EYEKONS Stan",
+  appName: "EYECONS Stan",
   businessName: businessInfo.name,
   contactEmail: businessInfo.contactEmail,
   effectiveDate: "2026年8月1日",
