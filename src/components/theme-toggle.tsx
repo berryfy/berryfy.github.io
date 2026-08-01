@@ -1,6 +1,6 @@
 "use client";
 
-import type { MouseEvent } from "react";
+import { useRef, type MouseEvent } from "react";
 import { flushSync } from "react-dom";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
@@ -13,12 +13,17 @@ interface ThemeToggleProps {
   locale: SiteLocale;
 }
 
-const transitionDuration = 520;
+const transitionDuration = 460;
 
 export default function ThemeToggle({ locale }: ThemeToggleProps) {
   const { resolvedTheme, setTheme } = useTheme();
+  const isTransitioning = useRef(false);
 
   function toggleTheme(event: MouseEvent<HTMLButtonElement>) {
+    if (isTransitioning.current) {
+      return;
+    }
+
     const nextTheme = resolvedTheme === "dark" ? "light" : "dark";
     const prefersReducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
@@ -44,6 +49,7 @@ export default function ThemeToggle({ locale }: ThemeToggleProps) {
     const transition = document.startViewTransition(() => {
       flushSync(() => setTheme(nextTheme));
     });
+    isTransitioning.current = true;
 
     void transition.ready
       .then(() => {
@@ -56,12 +62,19 @@ export default function ThemeToggle({ locale }: ThemeToggleProps) {
           },
           {
             duration: transitionDuration,
-            easing: "cubic-bezier(0.22, 1, 0.36, 1)",
+            easing: "cubic-bezier(0.4, 0, 0.2, 1)",
+            fill: "both",
             pseudoElement: "::view-transition-new(root)",
           },
         );
       })
       .catch(() => undefined);
+
+    void transition.finished
+      .catch(() => undefined)
+      .finally(() => {
+        isTransitioning.current = false;
+      });
   }
 
   return (

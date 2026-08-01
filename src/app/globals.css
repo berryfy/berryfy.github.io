@@ -177,6 +177,10 @@
   mix-blend-mode: normal;
 }
 
+::view-transition-group(root) {
+  animation: none;
+}
+
 ::view-transition-old(root) {
   z-index: 1;
 }
