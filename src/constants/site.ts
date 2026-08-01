@@ -8,10 +8,10 @@ export const siteConfig = {
   defaultLocale: "en" satisfies SiteLocale,
   routes: {
     home: "/",
-    eyeconsPrivacy: "/apps/eyecons/privacy/",
-    eyeconsPrivacyKo: "/apps/eyecons/privacy/ko/",
-    eyeconsPrivacyEn: "/apps/eyecons/privacy/en/",
-    eyeconsPrivacyJa: "/apps/eyecons/privacy/ja/",
+    eyeconsPrivacy: "/apps/eyecons-stan/privacy/",
+    eyeconsPrivacyKo: "/apps/eyecons-stan/privacy/ko/",
+    eyeconsPrivacyEn: "/apps/eyecons-stan/privacy/en/",
+    eyeconsPrivacyJa: "/apps/eyecons-stan/privacy/ja/",
   },
 } as const;
 
