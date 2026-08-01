@@ -213,24 +213,6 @@ html:lang(ja) {
   color: var(--foreground);
 }
 
-@keyframes hero-float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-.hero-float {
-  animation: hero-float 7s ease-in-out infinite;
-}
-
-.hero-float-delayed {
-  animation: hero-float 8s ease-in-out -3s infinite;
-}
-
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
