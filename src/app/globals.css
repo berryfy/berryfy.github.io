@@ -189,6 +189,12 @@
   z-index: 2;
 }
 
+html[data-theme-transition="active"] *,
+html[data-theme-transition="active"] *::before,
+html[data-theme-transition="active"] *::after {
+  transition: none !important;
+}
+
 html:lang(ko) {
   word-break: keep-all;
 }

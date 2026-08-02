@@ -14,7 +14,7 @@ export default function ThemeProvider({
       storageKey={themeConfig.storageKey}
       enableSystem
       enableColorScheme
-      disableTransitionOnChange
+      disableTransitionOnChange={false}
     >
       {children}
     </NextThemesProvider>

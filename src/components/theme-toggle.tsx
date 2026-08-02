@@ -13,10 +13,10 @@ interface ThemeToggleProps {
   locale: SiteLocale;
 }
 
-const transitionDuration = 460;
+const transitionDuration = 440;
 
 export default function ThemeToggle({ locale }: ThemeToggleProps) {
-  const { resolvedTheme, setTheme } = useTheme();
+  const { setTheme } = useTheme();
   const isTransitioning = useRef(false);
 
   function toggleTheme(event: MouseEvent<HTMLButtonElement>) {
@@ -24,36 +24,53 @@ export default function ThemeToggle({ locale }: ThemeToggleProps) {
       return;
     }
 
-    const nextTheme = resolvedTheme === "dark" ? "light" : "dark";
+    const root = document.documentElement;
+    const nextTheme = root.classList.contains("dark") ? "light" : "dark";
     const prefersReducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
     ).matches;
+    const applyTheme = () => {
+      root.classList.toggle("dark", nextTheme === "dark");
+      root.style.colorScheme = nextTheme;
+      flushSync(() => setTheme(nextTheme));
+    };
 
     if (
       prefersReducedMotion ||
       typeof document.startViewTransition !== "function" ||
       typeof document.documentElement.animate !== "function"
     ) {
-      setTheme(nextTheme);
+      root.dataset.themeTransition = "active";
+      applyTheme();
+      window.requestAnimationFrame(() => {
+        delete root.dataset.themeTransition;
+      });
       return;
     }
 
     const bounds = event.currentTarget.getBoundingClientRect();
-    const originX = bounds.left + bounds.width / 2;
-    const originY = bounds.top + bounds.height / 2;
+    const hasPointerCoordinates = event.clientX !== 0 || event.clientY !== 0;
+    const originX = hasPointerCoordinates
+      ? event.clientX
+      : bounds.left + bounds.width / 2;
+    const originY = hasPointerCoordinates
+      ? event.clientY
+      : bounds.top + bounds.height / 2;
     const radius = Math.hypot(
       Math.max(originX, window.innerWidth - originX),
       Math.max(originY, window.innerHeight - originY),
     );
 
-    const transition = document.startViewTransition(() => {
-      flushSync(() => setTheme(nextTheme));
-    });
     isTransitioning.current = true;
+    root.dataset.themeTransition = "active";
 
-    void transition.ready
+    const transition = document.startViewTransition(() => {
+      applyTheme();
+    });
+
+    const revealFinished = transition.ready
       .then(() => {
-        document.documentElement.animate(
+        const reveal = root.animate(
           {
             clipPath: [
               `circle(0px at ${originX}px ${originY}px)`,
@@ -62,19 +79,22 @@ export default function ThemeToggle({ locale }: ThemeToggleProps) {
           },
           {
             duration: transitionDuration,
-            easing: "cubic-bezier(0.4, 0, 0.2, 1)",
+            easing: "cubic-bezier(0.22, 1, 0.36, 1)",
             fill: "both",
             pseudoElement: "::view-transition-new(root)",
           },
         );
+
+        return reveal.finished;
       })
       .catch(() => undefined);
 
-    void transition.finished
-      .catch(() => undefined)
-      .finally(() => {
+    void Promise.allSettled([transition.finished, revealFinished]).finally(
+      () => {
+        delete root.dataset.themeTransition;
         isTransitioning.current = false;
-      });
+      },
+    );
   }
 
   return (
