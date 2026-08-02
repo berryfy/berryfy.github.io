@@ -7,6 +7,81 @@ export const berryfyGooglePlayUrl =
 
 export const moreApps = [
   {
+    packageName: "me.bluemiv.blackpink_stan",
+    iconPath: "/images/apps/blink-stan.webp",
+    storeUrl: `${googlePlayBaseUrl}me.bluemiv.blackpink_stan`,
+    copy: {
+      en: {
+        name: "BLINK Stan",
+        category: "K-POP fandom",
+        description:
+          "Enjoy BLACKPINK videos and images, then keep your favorites close at hand.",
+      },
+      ko: {
+        name: "BLINK Stan",
+        category: "K-POP 팬덤",
+        description:
+          "BLACKPINK 영상과 이미지를 감상하고 좋아하는 콘텐츠를 모아보세요.",
+      },
+      ja: {
+        name: "BLINK Stan",
+        category: "K-POPファンダム",
+        description:
+          "BLACKPINKの動画や画像を楽しみ、お気に入りのコンテンツをまとめられます。",
+      },
+    },
+  },
+  {
+    packageName: "me.bluemiv.katseye_stan",
+    iconPath: "/images/apps/eyecons-stan.webp",
+    storeUrl: `${googlePlayBaseUrl}me.bluemiv.katseye_stan`,
+    copy: {
+      en: {
+        name: "EYECONS Stan",
+        category: "K-POP fandom",
+        description:
+          "Discover KATSEYE videos and images and revisit your favorite moments anytime.",
+      },
+      ko: {
+        name: "EYECONS Stan",
+        category: "K-POP 팬덤",
+        description:
+          "KATSEYE 영상과 이미지를 둘러보고 좋아하는 순간을 간편하게 모아보세요.",
+      },
+      ja: {
+        name: "EYECONS Stan",
+        category: "K-POPファンダム",
+        description:
+          "KATSEYEの動画や画像を見つけ、お気に入りの瞬間をいつでも楽しめます。",
+      },
+    },
+  },
+  {
+    packageName: "com.berryfy.stray_kids_stan",
+    iconPath: "/images/apps/stay-stan.webp",
+    storeUrl: `${googlePlayBaseUrl}com.berryfy.stray_kids_stan`,
+    copy: {
+      en: {
+        name: "STAY Stan",
+        category: "K-POP fandom",
+        description:
+          "Explore Stray Kids videos and images and save every favorite in one place.",
+      },
+      ko: {
+        name: "STAY Stan",
+        category: "K-POP 팬덤",
+        description:
+          "Stray Kids 영상과 이미지를 둘러보고 좋아하는 콘텐츠를 한곳에 모아보세요.",
+      },
+      ja: {
+        name: "STAY Stan",
+        category: "K-POPファンダム",
+        description:
+          "Stray Kidsの動画や画像を楽しみ、お気に入りをひとつにまとめられます。",
+      },
+    },
+  },
+  {
     packageName: "com.berryfy.pomodoro_flow",
     iconPath: "/images/apps/pomodoro-flow.webp",
     storeUrl: `${googlePlayBaseUrl}com.berryfy.pomodoro_flow`,
