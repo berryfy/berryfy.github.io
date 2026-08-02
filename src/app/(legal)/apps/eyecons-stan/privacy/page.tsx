@@ -1,31 +1,26 @@
-import type { Metadata } from "next";
-
 import { siteFontVariables } from "@/app/fonts";
-import { siteConfig } from "@/constants/site";
-import EyeconsPrivacyPage from "@/features/legal/components/eyecons-privacy-page";
+import PrivacyPolicyPage from "@/features/legal/components/privacy-policy-page";
 import {
+  eyeconsPrivacyLanguageAlternates,
+  eyeconsPrivacyLocalePaths,
   eyeconsPrivacyPolicies,
-  privacyLanguageAlternates,
 } from "@/features/legal/constants/eyecons-privacy-copy";
+import { createPrivacyMetadata } from "@/features/legal/utils/metadata";
 
-const policy = eyeconsPrivacyPolicies.en;
-
-export const metadata: Metadata = {
-  metadataBase: new URL(siteConfig.url),
-  title: `${policy.appName} Privacy Policy | ${siteConfig.name}`,
-  description: `${policy.appName} explains the personal information processed by the app, external services, retention periods, and user rights.`,
-  alternates: {
-    canonical: siteConfig.routes.eyeconsPrivacy,
-    languages: privacyLanguageAlternates,
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-};
+export const metadata = createPrivacyMetadata({
+  locale: "en",
+  policies: eyeconsPrivacyPolicies,
+  localePaths: eyeconsPrivacyLocalePaths,
+  languageAlternates: eyeconsPrivacyLanguageAlternates,
+});
 
 export default function Page() {
   return (
-    <EyeconsPrivacyPage locale="en" fontClassName={siteFontVariables.en} />
+    <PrivacyPolicyPage
+      locale="en"
+      fontClassName={siteFontVariables.en}
+      policies={eyeconsPrivacyPolicies}
+      localePaths={eyeconsPrivacyLocalePaths}
+    />
   );
 }

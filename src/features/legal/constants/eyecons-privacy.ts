@@ -1,6 +1,7 @@
 import { businessInfo } from "@/constants/business";
 import { privacyLinks } from "@/features/legal/constants/privacy-links";
 import type {
+  AppPrivacyPolicy,
   ExternalPrivacyService,
   PrivacyDataItem,
   PrivacyNavigationItem,
@@ -131,4 +132,4 @@ export const eyeconsPrivacy = {
       policyUrl: privacyLinks.googlePrivacy,
     },
   ] satisfies ExternalPrivacyService[],
-} as const;
+} as const satisfies AppPrivacyPolicy;

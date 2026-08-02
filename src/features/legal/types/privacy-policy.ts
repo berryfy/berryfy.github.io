@@ -1,3 +1,5 @@
+import type { SiteLocale } from "@/types/site";
+
 export interface PrivacyNavigationItem {
   id: string;
   label: string;
@@ -24,11 +26,9 @@ export interface ExternalPrivacyService {
   policyUrl: string;
 }
 
-import type { SiteLocale } from "@/types/site";
-
 export type PrivacyLocale = SiteLocale;
 
-export interface EyeconsPrivacyPolicy {
+export interface AppPrivacyPolicy {
   appName: string;
   businessName: string;
   contactEmail: string;

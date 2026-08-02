@@ -1,15 +1,13 @@
 import { notFound, redirect } from "next/navigation";
 
-import {
-  privacyLocalePaths,
-  privacyLocales,
-} from "@/features/legal/constants/eyecons-privacy-copy";
+import { siteLocales } from "@/constants/site";
+import { eyeconsPrivacyLocalePaths } from "@/features/legal/constants/eyecons-privacy-copy";
 import { isSiteLocale } from "@/lib/locale";
 
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return privacyLocales.map((locale) => ({ locale }));
+  return siteLocales.map((locale) => ({ locale }));
 }
 
 export default async function Page({
@@ -23,5 +21,5 @@ export default async function Page({
     notFound();
   }
 
-  redirect(privacyLocalePaths[locale]);
+  redirect(eyeconsPrivacyLocalePaths[locale]);
 }

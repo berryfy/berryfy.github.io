@@ -1,6 +1,6 @@
 import { businessInfo } from "@/constants/business";
 import { privacyLinks } from "@/features/legal/constants/privacy-links";
-import type { EyeconsPrivacyPolicy } from "@/features/legal/types/privacy-policy";
+import type { AppPrivacyPolicy } from "@/features/legal/types/privacy-policy";
 
 export const eyeconsPrivacyJa = {
   appName: "EYECONS Stan",
@@ -130,4 +130,4 @@ export const eyeconsPrivacyJa = {
       policyUrl: privacyLinks.googlePrivacy,
     },
   ],
-} satisfies EyeconsPrivacyPolicy;
+} satisfies AppPrivacyPolicy;

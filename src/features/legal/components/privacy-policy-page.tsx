@@ -3,23 +3,28 @@ import { siteConfig } from "@/constants/site";
 import PrivacyDataTable from "@/features/legal/components/privacy-data-table";
 import PrivacyExternalService from "@/features/legal/components/privacy-external-service";
 import PrivacySection from "@/features/legal/components/privacy-section";
-import {
-  eyeconsPrivacyCopy,
-  eyeconsPrivacyPolicies,
-  privacyLocalePaths,
-} from "@/features/legal/constants/eyecons-privacy-copy";
+import { privacyPolicyCopy } from "@/features/legal/constants/privacy-policy-copy";
 import { privacyLinks } from "@/features/legal/constants/privacy-links";
-import type { PrivacyLocale } from "@/features/legal/types/privacy-policy";
+import type {
+  AppPrivacyPolicy,
+  PrivacyLocale,
+} from "@/features/legal/types/privacy-policy";
 
-export default function EyeconsPrivacyPage({
-  locale,
-  fontClassName,
-}: {
+interface PrivacyPolicyPageProps {
   locale: PrivacyLocale;
   fontClassName: string;
-}) {
-  const policy = eyeconsPrivacyPolicies[locale];
-  const copy = eyeconsPrivacyCopy[locale];
+  policies: Record<PrivacyLocale, AppPrivacyPolicy>;
+  localePaths: Record<PrivacyLocale, string>;
+}
+
+export default function PrivacyPolicyPage({
+  locale,
+  fontClassName,
+  policies,
+  localePaths,
+}: PrivacyPolicyPageProps) {
+  const policy = policies[locale];
+  const copy = privacyPolicyCopy[locale];
   const privacyRequestMailto = `mailto:${policy.contactEmail}?subject=${encodeURIComponent(`${policy.appName} privacy request`)}`;
 
   return (
@@ -30,7 +35,7 @@ export default function EyeconsPrivacyPage({
       <SiteHeader
         homeHref={siteConfig.routes.home}
         locale={locale}
-        languagePaths={privacyLocalePaths}
+        languagePaths={localePaths}
       />
 
       <main className="mx-auto max-w-[900px] px-4 py-8 sm:px-8 sm:py-12 lg:py-14">
@@ -185,7 +190,7 @@ export default function EyeconsPrivacyPage({
             title={copy.automatic.title}
             id="automatic"
           >
-            <p>{copy.automatic.intro}</p>
+            <p>{copy.automatic.intro.replace("{appName}", policy.appName)}</p>
             <ul>
               {copy.automatic.items.map((item) => (
                 <li key={item}>{item}</li>
