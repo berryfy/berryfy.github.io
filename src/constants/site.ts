@@ -16,6 +16,10 @@ export const siteConfig = {
     eyeconsPrivacyKo: "/apps/eyecons-stan/privacy/ko/",
     eyeconsPrivacyEn: "/apps/eyecons-stan/privacy/en/",
     eyeconsPrivacyJa: "/apps/eyecons-stan/privacy/ja/",
+    blinkPrivacy: "/apps/blink-stan/privacy/",
+    blinkPrivacyKo: "/apps/blink-stan/privacy/ko/",
+    blinkPrivacyEn: "/apps/blink-stan/privacy/en/",
+    blinkPrivacyJa: "/apps/blink-stan/privacy/ja/",
   },
 } as const;
 
