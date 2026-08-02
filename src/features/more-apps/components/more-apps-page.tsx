@@ -1,6 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
 
-import { siteFontVariables } from "@/app/fonts";
 import SiteHeader from "@/components/site-header";
 import { siteConfig } from "@/constants/site";
 import MoreAppItem from "@/features/more-apps/components/more-app-item";
@@ -15,7 +14,15 @@ import {
 import { googlePlayUrlForLocale } from "@/features/more-apps/utils/google-play-url";
 import type { SiteLocale } from "@/types/site";
 
-export default function MoreAppsPage({ locale }: { locale: SiteLocale }) {
+interface MoreAppsPageProps {
+  locale: SiteLocale;
+  fontClassName: string;
+}
+
+export default function MoreAppsPage({
+  locale,
+  fontClassName,
+}: MoreAppsPageProps) {
   const copy = moreAppsCopy[locale];
   const developerStoreUrl = googlePlayUrlForLocale(
     berryfyGooglePlayUrl,
@@ -25,12 +32,11 @@ export default function MoreAppsPage({ locale }: { locale: SiteLocale }) {
   return (
     <div
       lang={locale}
-      className={`${siteFontVariables[locale]} min-h-svh bg-background pb-[env(safe-area-inset-bottom)] font-sans text-foreground`}
+      className={`${fontClassName} min-h-svh bg-background pb-[env(safe-area-inset-bottom)] font-sans text-foreground`}
     >
       <SiteHeader
         homeHref={siteConfig.routes.home}
         locale={locale}
-        languageLabel={copy.languageNavigationLabel}
         languagePaths={moreAppsLocalePaths}
       />
 

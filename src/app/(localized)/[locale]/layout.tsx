@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { monoFontVariable, siteFontVariables } from "@/app/fonts";
 import SiteDocument from "@/components/site-document";
 import { siteConfig } from "@/constants/site";
-import { isSiteLocale } from "@/features/home/utils/locale";
+import { isSiteLocale } from "@/lib/locale";
 import "../../globals.css";
 
 interface LocalizedRootLayoutProps {

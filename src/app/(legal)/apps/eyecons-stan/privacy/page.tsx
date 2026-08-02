@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import { siteFontVariables } from "@/app/fonts";
 import { siteConfig } from "@/constants/site";
 import EyeconsPrivacyPage from "@/features/legal/components/eyecons-privacy-page";
 import {
@@ -24,5 +25,7 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <EyeconsPrivacyPage locale="en" />;
+  return (
+    <EyeconsPrivacyPage locale="en" fontClassName={siteFontVariables.en} />
+  );
 }

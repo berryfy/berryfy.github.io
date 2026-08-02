@@ -66,3 +66,9 @@ export const homeLocalePaths: Record<SiteLocale, string> = {
   ko: localeDetails.ko.path,
   ja: localeDetails.ja.path,
 };
+
+export const languageSwitcherLabels: Record<SiteLocale, string> = {
+  en: "Choose language",
+  ko: "언어 선택",
+  ja: "言語を選択",
+};

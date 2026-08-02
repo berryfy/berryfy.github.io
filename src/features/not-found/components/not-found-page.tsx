@@ -12,7 +12,6 @@ export default function NotFoundPage() {
       <SiteHeader
         homeHref={notFoundCopy.homePath}
         locale={siteConfig.defaultLocale}
-        languageLabel={notFoundCopy.languageNavigationLabel}
         languagePaths={homeLocalePaths}
       />
 

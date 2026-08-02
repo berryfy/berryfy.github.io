@@ -14,7 +14,6 @@ export interface MoreApp {
 }
 
 export interface MoreAppsPageCopy {
-  languageNavigationLabel: string;
   eyebrow: string;
   title: string;
   description: string;

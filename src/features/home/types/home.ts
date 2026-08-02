@@ -8,7 +8,6 @@ export interface FeaturedApp {
 }
 
 export interface SiteCopy {
-  languageMenuLabel: string;
   menuLabel: string;
   closeMenuLabel: string;
   navigation: {

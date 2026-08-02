@@ -1,27 +1,23 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
+import { siteFontVariables } from "@/app/fonts";
 import { siteConfig } from "@/constants/site";
 import EyeconsPrivacyPage from "@/features/legal/components/eyecons-privacy-page";
 import {
   eyeconsPrivacyCopy,
   eyeconsPrivacyPolicies,
   privacyLanguageAlternates,
-  privacyLocaleDetails,
+  privacyLocalePaths,
+  privacyLocales,
 } from "@/features/legal/constants/eyecons-privacy-copy";
-
-const translatedLocales = ["en", "ko", "ja"] as const;
-
-function isTranslatedLocale(
-  locale: string,
-): locale is (typeof translatedLocales)[number] {
-  return translatedLocales.some((item) => item === locale);
-}
+import type { PrivacyLocale } from "@/features/legal/types/privacy-policy";
+import { isSiteLocale } from "@/lib/locale";
 
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return translatedLocales.map((locale) => ({ locale }));
+  return privacyLocales.map((locale) => ({ locale }));
 }
 
 export async function generateMetadata({
@@ -31,13 +27,13 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
 
-  if (!isTranslatedLocale(locale)) {
+  if (!isSiteLocale(locale)) {
     notFound();
   }
 
   const policy = eyeconsPrivacyPolicies[locale];
   const copy = eyeconsPrivacyCopy[locale];
-  const descriptions: Record<(typeof translatedLocales)[number], string> = {
+  const descriptions: Record<PrivacyLocale, string> = {
     en: `${policy.appName} explains the personal information processed by the app, external services, retention periods, and user rights.`,
     ko: `${policy.appName} 앱에서 처리하는 개인정보, 외부 서비스, 보유기간과 이용자 권리를 안내합니다.`,
     ja: `${policy.appName}における個人情報の処理項目、外部サービス、保存期間、利用者の権利について説明します。`,
@@ -51,7 +47,7 @@ export async function generateMetadata({
       canonical:
         locale === "en"
           ? siteConfig.routes.eyeconsPrivacy
-          : privacyLocaleDetails[locale].path,
+          : privacyLocalePaths[locale],
       languages: privacyLanguageAlternates,
     },
     robots: {
@@ -68,9 +64,14 @@ export default async function Page({
 }) {
   const { locale } = await params;
 
-  if (!isTranslatedLocale(locale)) {
+  if (!isSiteLocale(locale)) {
     notFound();
   }
 
-  return <EyeconsPrivacyPage locale={locale} />;
+  return (
+    <EyeconsPrivacyPage
+      locale={locale}
+      fontClassName={siteFontVariables[locale]}
+    />
+  );
 }

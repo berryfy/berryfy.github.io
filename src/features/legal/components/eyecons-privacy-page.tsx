@@ -1,4 +1,3 @@
-import { siteFontVariables } from "@/app/fonts";
 import SiteHeader from "@/components/site-header";
 import { siteConfig } from "@/constants/site";
 import PrivacyDataTable from "@/features/legal/components/privacy-data-table";
@@ -14,8 +13,10 @@ import type { PrivacyLocale } from "@/features/legal/types/privacy-policy";
 
 export default function EyeconsPrivacyPage({
   locale,
+  fontClassName,
 }: {
   locale: PrivacyLocale;
+  fontClassName: string;
 }) {
   const policy = eyeconsPrivacyPolicies[locale];
   const copy = eyeconsPrivacyCopy[locale];
@@ -24,12 +25,11 @@ export default function EyeconsPrivacyPage({
   return (
     <div
       lang={locale}
-      className={`${siteFontVariables[locale]} min-h-screen bg-background font-sans text-foreground`}
+      className={`${fontClassName} min-h-screen bg-background font-sans text-foreground`}
     >
       <SiteHeader
         homeHref={siteConfig.routes.home}
         locale={locale}
-        languageLabel={copy.languageNavigationLabel}
         languagePaths={privacyLocalePaths}
       />
 

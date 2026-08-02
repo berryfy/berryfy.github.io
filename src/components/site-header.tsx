@@ -3,12 +3,12 @@ import type { ReactNode } from "react";
 import BrandMark from "@/components/brand-mark";
 import LanguageSwitcher from "@/components/language-switcher";
 import ThemeToggle from "@/components/theme-toggle";
+import { languageSwitcherLabels } from "@/constants/site";
 import type { SiteLocale } from "@/types/site";
 
 interface SiteHeaderProps {
   homeHref: string;
   locale: SiteLocale;
-  languageLabel: string;
   languagePaths: Record<SiteLocale, string>;
   navigation?: ReactNode;
   actions?: ReactNode;
@@ -17,7 +17,6 @@ interface SiteHeaderProps {
 export default function SiteHeader({
   homeHref,
   locale,
-  languageLabel,
   languagePaths,
   navigation,
   actions,
@@ -30,7 +29,7 @@ export default function SiteHeader({
         <div className="flex shrink-0 items-center gap-1.5">
           <LanguageSwitcher
             locale={locale}
-            label={languageLabel}
+            label={languageSwitcherLabels[locale]}
             paths={languagePaths}
           />
           <ThemeToggle locale={locale} />

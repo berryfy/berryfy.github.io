@@ -1,5 +1,5 @@
 import { businessInfo } from "@/constants/business";
-import { siteConfig } from "@/constants/site";
+import { siteConfig, siteLocales } from "@/constants/site";
 import { eyeconsPrivacyEn } from "@/features/legal/constants/eyecons-privacy-en";
 import { eyeconsPrivacyJa } from "@/features/legal/constants/eyecons-privacy-ja";
 import { eyeconsPrivacy } from "@/features/legal/constants/eyecons-privacy";
@@ -10,21 +10,12 @@ import type {
   PrivacyPageCopy,
 } from "@/features/legal/types/privacy-policy";
 
-export const privacyLocales = ["ko", "en", "ja"] as const;
+export const privacyLocales = siteLocales;
 
 export const privacyLocalePaths: Record<PrivacyLocale, string> = {
   ko: siteConfig.routes.eyeconsPrivacyKo,
   en: siteConfig.routes.eyeconsPrivacy,
   ja: siteConfig.routes.eyeconsPrivacyJa,
-};
-
-export const privacyLocaleDetails: Record<
-  PrivacyLocale,
-  { label: string; path: string }
-> = {
-  ko: { label: "한국어", path: privacyLocalePaths.ko },
-  en: { label: "English", path: privacyLocalePaths.en },
-  ja: { label: "日本語", path: privacyLocalePaths.ja },
 };
 
 export const eyeconsPrivacyPolicies: Record<
@@ -38,7 +29,6 @@ export const eyeconsPrivacyPolicies: Record<
 
 export const eyeconsPrivacyCopy: Record<PrivacyLocale, PrivacyPageCopy> = {
   ko: {
-    languageNavigationLabel: "언어 선택",
     pageTitle: "개인정보 처리방침",
     intro: `${businessInfo.name}는 이용자의 개인정보를 필요한 범위에서만 처리하고, 처리 항목과 목적을 아래와 같이 안내합니다.`,
     labels: {
@@ -175,7 +165,6 @@ export const eyeconsPrivacyCopy: Record<PrivacyLocale, PrivacyPageCopy> = {
     },
   },
   en: {
-    languageNavigationLabel: "Select language",
     pageTitle: "Privacy Policy",
     intro: `${businessInfo.name} processes personal information only to the extent necessary and explains the categories and purposes below.`,
     labels: {
@@ -312,7 +301,6 @@ export const eyeconsPrivacyCopy: Record<PrivacyLocale, PrivacyPageCopy> = {
     },
   },
   ja: {
-    languageNavigationLabel: "言語を選択",
     pageTitle: "プライバシーポリシー",
     intro: `${businessInfo.name}は、必要な範囲でのみ個人情報を取り扱い、処理項目と目的を以下のとおりお知らせします。`,
     labels: {

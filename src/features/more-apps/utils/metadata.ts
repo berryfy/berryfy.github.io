@@ -4,7 +4,7 @@ import { siteConfig } from "@/constants/site";
 import {
   moreAppsCopy,
   moreAppsLanguageAlternates,
-  moreAppsLocaleDetails,
+  moreAppsLocalePaths,
 } from "@/features/more-apps/constants/more-apps-copy";
 import type { SiteLocale } from "@/types/site";
 
@@ -13,7 +13,7 @@ export function createMoreAppsMetadata(locale: SiteLocale): Metadata {
   const canonical =
     locale === siteConfig.defaultLocale
       ? siteConfig.routes.moreApps
-      : moreAppsLocaleDetails[locale].path;
+      : moreAppsLocalePaths[locale];
 
   return {
     metadataBase: new URL(siteConfig.url),

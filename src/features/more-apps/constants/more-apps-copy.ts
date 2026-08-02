@@ -2,26 +2,14 @@ import { siteConfig } from "@/constants/site";
 import type { MoreAppsPageCopy } from "@/features/more-apps/types/more-apps";
 import type { SiteLocale } from "@/types/site";
 
-export const moreAppsLocales = ["en", "ko", "ja"] as const;
-
 export const moreAppsLocalePaths: Record<SiteLocale, string> = {
   en: siteConfig.routes.moreApps,
   ko: siteConfig.routes.moreAppsKo,
   ja: siteConfig.routes.moreAppsJa,
 };
 
-export const moreAppsLocaleDetails: Record<
-  SiteLocale,
-  { label: string; path: string }
-> = {
-  en: { label: "EN", path: moreAppsLocalePaths.en },
-  ko: { label: "KO", path: moreAppsLocalePaths.ko },
-  ja: { label: "JA", path: moreAppsLocalePaths.ja },
-};
-
 export const moreAppsCopy: Record<SiteLocale, MoreAppsPageCopy> = {
   en: {
-    languageNavigationLabel: "Choose language",
     eyebrow: "Made by berryfy",
     title: "More apps to enjoy",
     description:
@@ -31,7 +19,6 @@ export const moreAppsCopy: Record<SiteLocale, MoreAppsPageCopy> = {
     availabilityNote: "Availability may vary by country or device.",
   },
   ko: {
-    languageNavigationLabel: "언어 선택",
     eyebrow: "berryfy가 만든 앱",
     title: "다른 앱도 만나보세요",
     description:
@@ -41,7 +28,6 @@ export const moreAppsCopy: Record<SiteLocale, MoreAppsPageCopy> = {
     availabilityNote: "국가나 기기에 따라 일부 앱이 표시되지 않을 수 있습니다.",
   },
   ja: {
-    languageNavigationLabel: "言語を選択",
     eyebrow: "berryfyのアプリ",
     title: "ほかのアプリもどうぞ",
     description:

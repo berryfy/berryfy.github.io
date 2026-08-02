@@ -5,7 +5,6 @@ import type { SiteLocale } from "@/types/site";
 
 export const siteCopy: Record<SiteLocale, SiteCopy> = {
   en: {
-    languageMenuLabel: "Choose language",
     menuLabel: "Open menu",
     closeMenuLabel: "Close menu",
     navigation: {
@@ -92,7 +91,6 @@ export const siteCopy: Record<SiteLocale, SiteCopy> = {
     },
   },
   ko: {
-    languageMenuLabel: "언어 선택",
     menuLabel: "메뉴 열기",
     closeMenuLabel: "메뉴 닫기",
     navigation: {
@@ -178,7 +176,6 @@ export const siteCopy: Record<SiteLocale, SiteCopy> = {
     },
   },
   ja: {
-    languageMenuLabel: "言語を選択",
     menuLabel: "メニューを開く",
     closeMenuLabel: "メニューを閉じる",
     navigation: {

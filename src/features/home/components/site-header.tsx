@@ -46,7 +46,6 @@ export default function HomeSiteHeader({ locale, copy }: HomeSiteHeaderProps) {
     <SharedSiteHeader
       homeHref={basePath}
       locale={locale}
-      languageLabel={copy.languageMenuLabel}
       languagePaths={homeLocalePaths}
       navigation={
         <nav className="hidden items-center gap-1 rounded-full border border-border/70 bg-card/70 p-1 shadow-[0_10px_35px_rgba(36,21,41,0.05)] md:flex">

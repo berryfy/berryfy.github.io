@@ -6,6 +6,5 @@ export const notFoundCopy = {
   description:
     "The link may be outdated, or the page may have moved. Let's get you back to somewhere familiar.",
   action: "Back to home",
-  languageNavigationLabel: "Choose language",
   homePath: siteConfig.routes.home,
 } as const;

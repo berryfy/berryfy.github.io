@@ -4,8 +4,8 @@ import { notFound } from "next/navigation";
 import { siteConfig, siteLocales } from "@/constants/site";
 import HomePage from "@/features/home/components/home-page";
 import { siteCopy } from "@/features/home/constants/site-content";
-import { isSiteLocale } from "@/features/home/utils/locale";
 import { createHomeMetadata } from "@/features/home/utils/metadata";
+import { isSiteLocale } from "@/lib/locale";
 
 interface LocalizedHomePageProps {
   params: Promise<{ locale: string }>;

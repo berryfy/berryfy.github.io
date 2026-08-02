@@ -24,7 +24,9 @@ export interface ExternalPrivacyService {
   policyUrl: string;
 }
 
-export type PrivacyLocale = "ko" | "en" | "ja";
+import type { SiteLocale } from "@/types/site";
+
+export type PrivacyLocale = SiteLocale;
 
 export interface EyeconsPrivacyPolicy {
   appName: string;
@@ -38,7 +40,6 @@ export interface EyeconsPrivacyPolicy {
 }
 
 export interface PrivacyPageCopy {
-  languageNavigationLabel: string;
   pageTitle: string;
   intro: string;
   labels: {

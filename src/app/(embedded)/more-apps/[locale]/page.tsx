@@ -1,14 +1,15 @@
 import { notFound } from "next/navigation";
 
+import { siteFontVariables } from "@/app/fonts";
+import { siteLocales } from "@/constants/site";
 import MoreAppsPage from "@/features/more-apps/components/more-apps-page";
-import { moreAppsLocales } from "@/features/more-apps/constants/more-apps-copy";
-import { isMoreAppsLocale } from "@/features/more-apps/utils/locale";
 import { createMoreAppsMetadata } from "@/features/more-apps/utils/metadata";
+import { isSiteLocale } from "@/lib/locale";
 
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return moreAppsLocales.map((locale) => ({ locale }));
+  return siteLocales.map((locale) => ({ locale }));
 }
 
 export async function generateMetadata({
@@ -18,7 +19,7 @@ export async function generateMetadata({
 }) {
   const { locale } = await params;
 
-  if (!isMoreAppsLocale(locale)) {
+  if (!isSiteLocale(locale)) {
     notFound();
   }
 
@@ -32,9 +33,11 @@ export default async function Page({
 }) {
   const { locale } = await params;
 
-  if (!isMoreAppsLocale(locale)) {
+  if (!isSiteLocale(locale)) {
     notFound();
   }
 
-  return <MoreAppsPage locale={locale} />;
+  return (
+    <MoreAppsPage locale={locale} fontClassName={siteFontVariables[locale]} />
+  );
 }
