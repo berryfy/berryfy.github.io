@@ -20,6 +20,10 @@ export const siteConfig = {
     blinkPrivacyKo: "/apps/blink-stan/privacy/ko/",
     blinkPrivacyEn: "/apps/blink-stan/privacy/en/",
     blinkPrivacyJa: "/apps/blink-stan/privacy/ja/",
+    stayPrivacy: "/apps/stay-stan/privacy/",
+    stayPrivacyKo: "/apps/stay-stan/privacy/ko/",
+    stayPrivacyEn: "/apps/stay-stan/privacy/en/",
+    stayPrivacyJa: "/apps/stay-stan/privacy/ja/",
   },
 } as const;
 
