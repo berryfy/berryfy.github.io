@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, type MouseEvent } from "react";
+import { useEffect, useRef, type MouseEvent } from "react";
 import { flushSync } from "react-dom";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
@@ -13,11 +13,31 @@ interface ThemeToggleProps {
   locale: SiteLocale;
 }
 
-const transitionDuration = 440;
+let viewTransitionPreparation: Promise<void> | undefined;
 
 export default function ThemeToggle({ locale }: ThemeToggleProps) {
   const { setTheme } = useTheme();
   const isTransitioning = useRef(false);
+
+  useEffect(() => {
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+
+    if (
+      prefersReducedMotion ||
+      typeof document.startViewTransition !== "function" ||
+      viewTransitionPreparation
+    ) {
+      return;
+    }
+
+    const preparation = document.startViewTransition(() => undefined);
+    viewTransitionPreparation = preparation.finished.then(
+      () => undefined,
+      () => undefined,
+    );
+  }, []);
 
   function toggleTheme(event: MouseEvent<HTMLButtonElement>) {
     if (isTransitioning.current) {
@@ -37,8 +57,7 @@ export default function ThemeToggle({ locale }: ThemeToggleProps) {
 
     if (
       prefersReducedMotion ||
-      typeof document.startViewTransition !== "function" ||
-      typeof document.documentElement.animate !== "function"
+      typeof document.startViewTransition !== "function"
     ) {
       root.dataset.themeTransition = "active";
       applyTheme();
@@ -60,41 +79,38 @@ export default function ThemeToggle({ locale }: ThemeToggleProps) {
       Math.max(originX, window.innerWidth - originX),
       Math.max(originY, window.innerHeight - originY),
     );
+    const cleanupTransition = () => {
+      delete root.dataset.themeTransition;
+      root.style.removeProperty("--theme-transition-x");
+      root.style.removeProperty("--theme-transition-y");
+      root.style.removeProperty("--theme-transition-radius");
+      isTransitioning.current = false;
+    };
+    const startTransition = () => {
+      root.dataset.themeTransition = "active";
+      root.style.setProperty("--theme-transition-x", `${originX}px`);
+      root.style.setProperty("--theme-transition-y", `${originY}px`);
+      root.style.setProperty("--theme-transition-radius", `${radius}px`);
+
+      try {
+        const transition = document.startViewTransition(() => {
+          applyTheme();
+        });
+
+        void transition.finished.then(cleanupTransition, cleanupTransition);
+      } catch {
+        applyTheme();
+        cleanupTransition();
+      }
+    };
 
     isTransitioning.current = true;
-    root.dataset.themeTransition = "active";
+    if (viewTransitionPreparation) {
+      void viewTransitionPreparation.then(startTransition);
+      return;
+    }
 
-    const transition = document.startViewTransition(() => {
-      applyTheme();
-    });
-
-    const revealFinished = transition.ready
-      .then(() => {
-        const reveal = root.animate(
-          {
-            clipPath: [
-              `circle(0px at ${originX}px ${originY}px)`,
-              `circle(${radius}px at ${originX}px ${originY}px)`,
-            ],
-          },
-          {
-            duration: transitionDuration,
-            easing: "cubic-bezier(0.22, 1, 0.36, 1)",
-            fill: "both",
-            pseudoElement: "::view-transition-new(root)",
-          },
-        );
-
-        return reveal.finished;
-      })
-      .catch(() => undefined);
-
-    void Promise.allSettled([transition.finished, revealFinished]).finally(
-      () => {
-        delete root.dataset.themeTransition;
-        isTransitioning.current = false;
-      },
-    );
+    startTransition();
   }
 
   return (
