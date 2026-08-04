@@ -28,6 +28,10 @@ export const siteConfig = {
     gllitPrivacyKo: "/apps/gllit-stan/privacy/ko/",
     gllitPrivacyEn: "/apps/gllit-stan/privacy/en/",
     gllitPrivacyJa: "/apps/gllit-stan/privacy/ja/",
+    monstiezPrivacy: "/apps/monstiez-stan/privacy/",
+    monstiezPrivacyKo: "/apps/monstiez-stan/privacy/ko/",
+    monstiezPrivacyEn: "/apps/monstiez-stan/privacy/en/",
+    monstiezPrivacyJa: "/apps/monstiez-stan/privacy/ja/",
   },
 } as const;
 
