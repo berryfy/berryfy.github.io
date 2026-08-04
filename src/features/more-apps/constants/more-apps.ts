@@ -57,6 +57,31 @@ export const moreApps = [
     },
   },
   {
+    packageName: "com.berryfy.illit_tube",
+    iconPath: "/images/apps/gllit-stan.webp",
+    storeUrl: `${googlePlayBaseUrl}com.berryfy.illit_tube`,
+    copy: {
+      en: {
+        name: "GLLIT Stan",
+        category: "K-POP fandom",
+        description:
+          "Explore ILLIT videos and images and keep your favorite moments together.",
+      },
+      ko: {
+        name: "GLLIT Stan",
+        category: "K-POP 팬덤",
+        description:
+          "ILLIT 영상과 이미지를 둘러보고 좋아하는 순간을 한곳에 모아보세요.",
+      },
+      ja: {
+        name: "GLLIT Stan",
+        category: "K-POPファンダム",
+        description:
+          "ILLITの動画や画像を楽しみ、お気に入りの瞬間をひとつにまとめられます。",
+      },
+    },
+  },
+  {
     packageName: "com.berryfy.stray_kids_stan",
     iconPath: "/images/apps/stay-stan.webp",
     storeUrl: `${googlePlayBaseUrl}com.berryfy.stray_kids_stan`,
