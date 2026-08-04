@@ -82,6 +82,31 @@ export const moreApps = [
     },
   },
   {
+    packageName: "me.bluemiv.babymonster_stan",
+    iconPath: "/images/apps/monstiez-stan.webp",
+    storeUrl: `${googlePlayBaseUrl}me.bluemiv.babymonster_stan`,
+    copy: {
+      en: {
+        name: "MONSTIEZ Stan",
+        category: "K-POP fandom",
+        description:
+          "Enjoy BABYMONSTER videos and images and keep your favorite moments in one place.",
+      },
+      ko: {
+        name: "MONSTIEZ Stan",
+        category: "K-POP 팬덤",
+        description:
+          "BABYMONSTER 영상과 이미지를 감상하고 좋아하는 순간을 한곳에 모아보세요.",
+      },
+      ja: {
+        name: "MONSTIEZ Stan",
+        category: "K-POPファンダム",
+        description:
+          "BABYMONSTERの動画や画像を楽しみ、お気に入りの瞬間をひとつにまとめられます。",
+      },
+    },
+  },
+  {
     packageName: "com.berryfy.stray_kids_stan",
     iconPath: "/images/apps/stay-stan.webp",
     storeUrl: `${googlePlayBaseUrl}com.berryfy.stray_kids_stan`,
