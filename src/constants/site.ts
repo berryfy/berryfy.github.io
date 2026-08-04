@@ -24,6 +24,10 @@ export const siteConfig = {
     stayPrivacyKo: "/apps/stay-stan/privacy/ko/",
     stayPrivacyEn: "/apps/stay-stan/privacy/en/",
     stayPrivacyJa: "/apps/stay-stan/privacy/ja/",
+    gllitPrivacy: "/apps/gllit-stan/privacy/",
+    gllitPrivacyKo: "/apps/gllit-stan/privacy/ko/",
+    gllitPrivacyEn: "/apps/gllit-stan/privacy/en/",
+    gllitPrivacyJa: "/apps/gllit-stan/privacy/ja/",
   },
 } as const;
 
