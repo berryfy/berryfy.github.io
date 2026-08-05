@@ -57,6 +57,31 @@ export const moreApps = [
     },
   },
   {
+    packageName: "com.bluemiv.le_sserafim_stan",
+    iconPath: "/images/apps/fearnot-stan.webp",
+    storeUrl: `${googlePlayBaseUrl}com.bluemiv.le_sserafim_stan`,
+    copy: {
+      en: {
+        name: "FEARNOT Stan",
+        category: "K-POP fandom",
+        description:
+          "Enjoy LE SSERAFIM videos and images and keep your favorite moments in one place.",
+      },
+      ko: {
+        name: "FEARNOT Stan",
+        category: "K-POP 팬덤",
+        description:
+          "LE SSERAFIM 영상과 이미지를 감상하고 좋아하는 순간을 한곳에 모아보세요.",
+      },
+      ja: {
+        name: "FEARNOT Stan",
+        category: "K-POPファンダム",
+        description:
+          "LE SSERAFIMの動画や画像を楽しみ、お気に入りの瞬間をひとつにまとめられます。",
+      },
+    },
+  },
+  {
     packageName: "com.berryfy.illit_tube",
     iconPath: "/images/apps/gllit-stan.webp",
     storeUrl: `${googlePlayBaseUrl}com.berryfy.illit_tube`,
