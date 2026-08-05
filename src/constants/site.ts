@@ -32,6 +32,10 @@ export const siteConfig = {
     monstiezPrivacyKo: "/apps/monstiez-stan/privacy/ko/",
     monstiezPrivacyEn: "/apps/monstiez-stan/privacy/en/",
     monstiezPrivacyJa: "/apps/monstiez-stan/privacy/ja/",
+    fearnotPrivacy: "/apps/fearnot-stan/privacy/",
+    fearnotPrivacyKo: "/apps/fearnot-stan/privacy/ko/",
+    fearnotPrivacyEn: "/apps/fearnot-stan/privacy/en/",
+    fearnotPrivacyJa: "/apps/fearnot-stan/privacy/ja/",
   },
 } as const;
 

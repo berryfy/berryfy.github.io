@@ -9,6 +9,7 @@
 - STAY Stan 개인정보 처리방침은 `/apps/stay-stan/privacy/` 영문 기본 경로와 `/en/`, `/ko/`, `/ja/` 경로를 유지하며, 다른 Stan 앱과 공유하는 앱 기능·외부 서비스의 사실관계를 동일하게 동기화한다.
 - GLLIT Stan 개인정보 처리방침은 `/apps/gllit-stan/privacy/` 영문 기본 경로와 `/en/`, `/ko/`, `/ja/` 경로를 유지하며, 다른 Stan 앱과 공유하는 앱 기능·외부 서비스의 사실관계를 동일하게 동기화한다.
 - MONSTIEZ Stan 개인정보 처리방침은 `/apps/monstiez-stan/privacy/` 영문 기본 경로와 `/en/`, `/ko/`, `/ja/` 경로를 유지하며, 다른 Stan 앱과 공유하는 앱 기능·외부 서비스의 사실관계를 동일하게 동기화한다.
+- FEARNOT Stan 개인정보 처리방침은 `/apps/fearnot-stan/privacy/` 영문 기본 경로와 `/en/`, `/ko/`, `/ja/` 경로를 유지하며, 다른 Stan 앱과 공유하는 앱 기능·외부 서비스의 사실관계를 동일하게 동기화한다.
 - 실제 앱 동작과 확인된 외부 서비스만 기재한다. 추정이나 과장된 법률 표현을 추가하지 않는다.
 - 처리 항목이나 외부 서비스가 바뀌면 데이터, 본문, 메타데이터, 시행일을 함께 검토한다.
 - 법적 효력을 단정하지 않으며 출시 전 운영자가 최종 검토한다.
@@ -17,3 +18,4 @@
 - STAY Stan의 출시본 package ID는 `com.berryfy.stray_kids_stan`이며, 사실 확인에는 같은 레거시 멀티 flavor 프로젝트와 현재 Google Play 등록 정보를 사용한다.
 - GLLIT Stan의 출시본 package ID는 `com.berryfy.illit_tube`이며, 사실 확인에는 같은 레거시 멀티 flavor 프로젝트와 현재 Google Play 등록 정보를 사용한다.
 - MONSTIEZ Stan의 출시본 package ID는 `me.bluemiv.babymonster_stan`이며, 사실 확인에는 같은 레거시 멀티 flavor 프로젝트와 현재 Google Play 등록 정보를 사용한다.
+- FEARNOT Stan의 출시본 package ID는 `com.bluemiv.le_sserafim_stan`이며, 사실 확인에는 같은 레거시 멀티 flavor 프로젝트와 현재 Google Play 등록 정보를 사용한다.
