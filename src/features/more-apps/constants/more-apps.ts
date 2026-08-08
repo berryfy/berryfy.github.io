@@ -157,6 +157,31 @@ export const moreApps = [
     },
   },
   {
+    packageName: "com.bluemiv.flutter_twice_stan",
+    iconPath: "/images/apps/once-stan.webp",
+    storeUrl: `${googlePlayBaseUrl}com.bluemiv.flutter_twice_stan`,
+    copy: {
+      en: {
+        name: "ONCE Stan",
+        category: "K-POP fandom",
+        description:
+          "Enjoy TWICE videos and images and keep your favorite moments in one place.",
+      },
+      ko: {
+        name: "ONCE Stan",
+        category: "K-POP 팬덤",
+        description:
+          "TWICE 영상과 이미지를 감상하고 좋아하는 순간을 한곳에 모아보세요.",
+      },
+      ja: {
+        name: "ONCE Stan",
+        category: "K-POPファンダム",
+        description:
+          "TWICEの動画や画像を楽しみ、お気に入りの瞬間をひとつにまとめられます。",
+      },
+    },
+  },
+  {
     packageName: "com.berryfy.artms_stan",
     iconPath: "/images/apps/ourii-stan.webp",
     storeUrl: `${googlePlayBaseUrl}com.berryfy.artms_stan`,
