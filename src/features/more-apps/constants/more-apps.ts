@@ -132,6 +132,31 @@ export const moreApps = [
     },
   },
   {
+    packageName: "com.berryfy.artms_stan",
+    iconPath: "/images/apps/ourii-stan.webp",
+    storeUrl: `${googlePlayBaseUrl}com.berryfy.artms_stan`,
+    copy: {
+      en: {
+        name: "OURII Stan",
+        category: "K-POP fandom",
+        description:
+          "Enjoy ARTMS videos and images and keep your favorite moments in one place.",
+      },
+      ko: {
+        name: "OURII Stan",
+        category: "K-POP 팬덤",
+        description:
+          "ARTMS 영상과 이미지를 감상하고 좋아하는 순간을 한곳에 모아보세요.",
+      },
+      ja: {
+        name: "OURII Stan",
+        category: "K-POPファンダム",
+        description:
+          "ARTMSの動画や画像を楽しみ、お気に入りの瞬間をひとつにまとめられます。",
+      },
+    },
+  },
+  {
     packageName: "com.berryfy.stray_kids_stan",
     iconPath: "/images/apps/stay-stan.webp",
     storeUrl: `${googlePlayBaseUrl}com.berryfy.stray_kids_stan`,
