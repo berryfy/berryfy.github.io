@@ -40,6 +40,10 @@ export const siteConfig = {
     ouriiPrivacyKo: "/apps/ourii-stan/privacy/ko/",
     ouriiPrivacyEn: "/apps/ourii-stan/privacy/en/",
     ouriiPrivacyJa: "/apps/ourii-stan/privacy/ja/",
+    engenePrivacy: "/apps/engene-stan/privacy/",
+    engenePrivacyKo: "/apps/engene-stan/privacy/ko/",
+    engenePrivacyEn: "/apps/engene-stan/privacy/en/",
+    engenePrivacyJa: "/apps/engene-stan/privacy/ja/",
   },
 } as const;
 
