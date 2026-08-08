@@ -7,6 +7,31 @@ export const berryfyGooglePlayUrl =
 
 export const moreApps = [
   {
+    packageName: "com.berryfy.ateez_stan",
+    iconPath: "/images/apps/atiny-stan.webp",
+    storeUrl: `${googlePlayBaseUrl}com.berryfy.ateez_stan`,
+    copy: {
+      en: {
+        name: "ATINY Stan",
+        category: "K-POP fandom",
+        description:
+          "Enjoy ATEEZ videos and images and keep your favorite moments in one place.",
+      },
+      ko: {
+        name: "ATINY Stan",
+        category: "K-POP 팬덤",
+        description:
+          "ATEEZ 영상과 이미지를 감상하고 좋아하는 순간을 한곳에 모아보세요.",
+      },
+      ja: {
+        name: "ATINY Stan",
+        category: "K-POPファンダム",
+        description:
+          "ATEEZの動画や画像を楽しみ、お気に入りの瞬間をひとつにまとめられます。",
+      },
+    },
+  },
+  {
     packageName: "me.bluemiv.blackpink_stan",
     iconPath: "/images/apps/blink-stan.webp",
     storeUrl: `${googlePlayBaseUrl}me.bluemiv.blackpink_stan`,
