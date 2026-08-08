@@ -32,6 +32,31 @@ export const moreApps = [
     },
   },
   {
+    packageName: "com.berryfy.enhypen_stan",
+    iconPath: "/images/apps/engene-stan.webp",
+    storeUrl: `${googlePlayBaseUrl}com.berryfy.enhypen_stan`,
+    copy: {
+      en: {
+        name: "ENGENE Stan",
+        category: "K-POP fandom",
+        description:
+          "Enjoy ENHYPEN videos and images and keep your favorite moments in one place.",
+      },
+      ko: {
+        name: "ENGENE Stan",
+        category: "K-POP 팬덤",
+        description:
+          "ENHYPEN 영상과 이미지를 감상하고 좋아하는 순간을 한곳에 모아보세요.",
+      },
+      ja: {
+        name: "ENGENE Stan",
+        category: "K-POPファンダム",
+        description:
+          "ENHYPENの動画や画像を楽しみ、お気に入りの瞬間をひとつにまとめられます。",
+      },
+    },
+  },
+  {
     packageName: "me.bluemiv.katseye_stan",
     iconPath: "/images/apps/eyecons-stan.webp",
     storeUrl: `${googlePlayBaseUrl}me.bluemiv.katseye_stan`,
