@@ -12,6 +12,7 @@
 - FEARNOT Stan 개인정보 처리방침은 `/apps/fearnot-stan/privacy/` 영문 기본 경로와 `/en/`, `/ko/`, `/ja/` 경로를 유지하며, 다른 Stan 앱과 공유하는 앱 기능·외부 서비스의 사실관계를 동일하게 동기화한다.
 - OURII Stan 개인정보 처리방침은 `/apps/ourii-stan/privacy/` 영문 기본 경로와 `/en/`, `/ko/`, `/ja/` 경로를 유지하며, 다른 Stan 앱과 공유하는 앱 기능·외부 서비스의 사실관계를 동일하게 동기화한다.
 - ENGENE Stan 개인정보 처리방침은 `/apps/engene-stan/privacy/` 영문 기본 경로와 `/en/`, `/ko/`, `/ja/` 경로를 유지하며, 다른 Stan 앱과 공유하는 앱 기능·외부 서비스의 사실관계를 동일하게 동기화한다.
+- ONCE Stan 개인정보 처리방침은 `/apps/once-stan/privacy/` 영문 기본 경로와 `/en/`, `/ko/`, `/ja/` 경로를 유지하며, 다른 Stan 앱과 공유하는 앱 기능·외부 서비스의 사실관계를 동일하게 동기화한다.
 - 실제 앱 동작과 확인된 외부 서비스만 기재한다. 추정이나 과장된 법률 표현을 추가하지 않는다.
 - 처리 항목이나 외부 서비스가 바뀌면 데이터, 본문, 메타데이터, 시행일을 함께 검토한다.
 - 법적 효력을 단정하지 않으며 출시 전 운영자가 최종 검토한다.
@@ -23,3 +24,4 @@
 - FEARNOT Stan의 출시본 package ID는 `com.bluemiv.le_sserafim_stan`이며, 사실 확인에는 같은 레거시 멀티 flavor 프로젝트와 현재 Google Play 등록 정보를 사용한다.
 - OURII Stan의 package ID는 `com.berryfy.artms_stan`이며, 사실 확인에는 같은 레거시 멀티 flavor 프로젝트를 사용한다. Google Play 공개 전에는 해당 스토어 URL이 404일 수 있다.
 - ENGENE Stan의 출시본 package ID는 `com.berryfy.enhypen_stan`이며, 사실 확인에는 같은 레거시 멀티 flavor 프로젝트와 현재 Google Play 등록 정보를 사용한다.
+- ONCE Stan의 출시본 package ID는 `com.bluemiv.flutter_twice_stan`이며, 사실 확인에는 같은 레거시 멀티 flavor 프로젝트와 현재 Google Play 등록 정보를 사용한다.

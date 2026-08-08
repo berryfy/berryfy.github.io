@@ -44,6 +44,10 @@ export const siteConfig = {
     engenePrivacyKo: "/apps/engene-stan/privacy/ko/",
     engenePrivacyEn: "/apps/engene-stan/privacy/en/",
     engenePrivacyJa: "/apps/engene-stan/privacy/ja/",
+    oncePrivacy: "/apps/once-stan/privacy/",
+    oncePrivacyKo: "/apps/once-stan/privacy/ko/",
+    oncePrivacyEn: "/apps/once-stan/privacy/en/",
+    oncePrivacyJa: "/apps/once-stan/privacy/ja/",
   },
 } as const;
 
