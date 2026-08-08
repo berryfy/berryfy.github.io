@@ -36,6 +36,10 @@ export const siteConfig = {
     fearnotPrivacyKo: "/apps/fearnot-stan/privacy/ko/",
     fearnotPrivacyEn: "/apps/fearnot-stan/privacy/en/",
     fearnotPrivacyJa: "/apps/fearnot-stan/privacy/ja/",
+    ouriiPrivacy: "/apps/ourii-stan/privacy/",
+    ouriiPrivacyKo: "/apps/ourii-stan/privacy/ko/",
+    ouriiPrivacyEn: "/apps/ourii-stan/privacy/en/",
+    ouriiPrivacyJa: "/apps/ourii-stan/privacy/ja/",
   },
 } as const;
 
