@@ -48,6 +48,10 @@ export const siteConfig = {
     oncePrivacyKo: "/apps/once-stan/privacy/ko/",
     oncePrivacyEn: "/apps/once-stan/privacy/en/",
     oncePrivacyJa: "/apps/once-stan/privacy/ja/",
+    atinyPrivacy: "/apps/atiny-stan/privacy/",
+    atinyPrivacyKo: "/apps/atiny-stan/privacy/ko/",
+    atinyPrivacyEn: "/apps/atiny-stan/privacy/en/",
+    atinyPrivacyJa: "/apps/atiny-stan/privacy/ja/",
   },
 } as const;
 
