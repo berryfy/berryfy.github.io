@@ -52,6 +52,10 @@ export const siteConfig = {
     atinyPrivacyKo: "/apps/atiny-stan/privacy/ko/",
     atinyPrivacyEn: "/apps/atiny-stan/privacy/en/",
     atinyPrivacyJa: "/apps/atiny-stan/privacy/ja/",
+    myPrivacy: "/apps/my-stan/privacy/",
+    myPrivacyKo: "/apps/my-stan/privacy/ko/",
+    myPrivacyEn: "/apps/my-stan/privacy/en/",
+    myPrivacyJa: "/apps/my-stan/privacy/ja/",
   },
 } as const;
 
