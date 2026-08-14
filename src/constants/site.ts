@@ -56,6 +56,10 @@ export const siteConfig = {
     myPrivacyKo: "/apps/my-stan/privacy/ko/",
     myPrivacyEn: "/apps/my-stan/privacy/en/",
     myPrivacyJa: "/apps/my-stan/privacy/ja/",
+    s2uPrivacy: "/apps/s2u-stan/privacy/",
+    s2uPrivacyKo: "/apps/s2u-stan/privacy/ko/",
+    s2uPrivacyEn: "/apps/s2u-stan/privacy/en/",
+    s2uPrivacyJa: "/apps/s2u-stan/privacy/ja/",
   },
 } as const;
 
