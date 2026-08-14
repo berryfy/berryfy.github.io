@@ -60,6 +60,10 @@ export const siteConfig = {
     s2uPrivacyKo: "/apps/s2u-stan/privacy/ko/",
     s2uPrivacyEn: "/apps/s2u-stan/privacy/en/",
     s2uPrivacyJa: "/apps/s2u-stan/privacy/ja/",
+    divePrivacy: "/apps/dive-stan/privacy/",
+    divePrivacyKo: "/apps/dive-stan/privacy/ko/",
+    divePrivacyEn: "/apps/dive-stan/privacy/en/",
+    divePrivacyJa: "/apps/dive-stan/privacy/ja/",
   },
 } as const;
 
