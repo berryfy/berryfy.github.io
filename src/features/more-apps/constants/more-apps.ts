@@ -182,6 +182,31 @@ export const moreApps = [
     },
   },
   {
+    packageName: "com.berryfy.aespa_stan",
+    iconPath: "/images/apps/my-stan.webp",
+    storeUrl: `${googlePlayBaseUrl}com.berryfy.aespa_stan`,
+    copy: {
+      en: {
+        name: "MY Stan",
+        category: "K-POP fandom",
+        description:
+          "Enjoy aespa videos and images and keep your favorite moments in one place.",
+      },
+      ko: {
+        name: "MY Stan",
+        category: "K-POP 팬덤",
+        description:
+          "aespa 영상과 이미지를 감상하고 좋아하는 순간을 한곳에 모아보세요.",
+      },
+      ja: {
+        name: "MY Stan",
+        category: "K-POPファンダム",
+        description:
+          "aespaの動画や画像を楽しみ、お気に入りの瞬間をひとつにまとめられます。",
+      },
+    },
+  },
+  {
     packageName: "com.bluemiv.flutter_twice_stan",
     iconPath: "/images/apps/once-stan.webp",
     storeUrl: `${googlePlayBaseUrl}com.bluemiv.flutter_twice_stan`,
@@ -228,6 +253,31 @@ export const moreApps = [
         category: "K-POPファンダム",
         description:
           "ARTMSの動画や画像を楽しみ、お気に入りの瞬間をひとつにまとめられます。",
+      },
+    },
+  },
+  {
+    packageName: "com.berryfy.hearts2hearts_stan",
+    iconPath: "/images/apps/s2u-stan.webp",
+    storeUrl: `${googlePlayBaseUrl}com.berryfy.hearts2hearts_stan`,
+    copy: {
+      en: {
+        name: "S2U Stan",
+        category: "K-POP fandom",
+        description:
+          "Enjoy Hearts2Hearts videos and images and keep your favorite moments in one place.",
+      },
+      ko: {
+        name: "S2U Stan",
+        category: "K-POP 팬덤",
+        description:
+          "Hearts2Hearts 영상과 이미지를 감상하고 좋아하는 순간을 한곳에 모아보세요.",
+      },
+      ja: {
+        name: "S2U Stan",
+        category: "K-POPファンダム",
+        description:
+          "Hearts2Heartsの動画や画像を楽しみ、お気に入りの瞬間をひとつにまとめられます。",
       },
     },
   },
