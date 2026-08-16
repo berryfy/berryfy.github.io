@@ -207,6 +207,31 @@ export const moreApps = [
     },
   },
   {
+    packageName: "me.bluemiv.txt_stan",
+    iconPath: "/images/apps/moa-stan.webp",
+    storeUrl: `${googlePlayBaseUrl}me.bluemiv.txt_stan`,
+    copy: {
+      en: {
+        name: "MOA Stan",
+        category: "K-POP fandom",
+        description:
+          "Enjoy TXT videos and images and keep your favorite moments in one place.",
+      },
+      ko: {
+        name: "MOA Stan",
+        category: "K-POP 팬덤",
+        description:
+          "TXT 영상과 이미지를 감상하고 좋아하는 순간을 한곳에 모아보세요.",
+      },
+      ja: {
+        name: "MOA Stan",
+        category: "K-POPファンダム",
+        description:
+          "TXTの動画や画像を楽しみ、お気に入りの瞬間をひとつにまとめられます。",
+      },
+    },
+  },
+  {
     packageName: "me.bluemiv.babymonster_stan",
     iconPath: "/images/apps/monstiez-stan.webp",
     storeUrl: `${googlePlayBaseUrl}me.bluemiv.babymonster_stan`,
@@ -253,6 +278,31 @@ export const moreApps = [
         category: "K-POPファンダム",
         description:
           "aespaの動画や画像を楽しみ、お気に入りの瞬間をひとつにまとめられます。",
+      },
+    },
+  },
+  {
+    packageName: "com.berryfy.gidle_stan",
+    iconPath: "/images/apps/neverland-stan.webp",
+    storeUrl: `${googlePlayBaseUrl}com.berryfy.gidle_stan`,
+    copy: {
+      en: {
+        name: "NEVERLAND Stan",
+        category: "K-POP fandom",
+        description:
+          "Enjoy i-dle videos and images and keep your favorite moments in one place.",
+      },
+      ko: {
+        name: "NEVERLAND Stan",
+        category: "K-POP 팬덤",
+        description:
+          "i-dle 영상과 이미지를 감상하고 좋아하는 순간을 한곳에 모아보세요.",
+      },
+      ja: {
+        name: "NEVERLAND Stan",
+        category: "K-POPファンダム",
+        description:
+          "i-dleの動画や画像を楽しみ、お気に入りの瞬間をひとつにまとめられます。",
       },
     },
   },
