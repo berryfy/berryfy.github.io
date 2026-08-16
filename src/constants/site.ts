@@ -76,6 +76,10 @@ export const siteConfig = {
     moaPrivacyKo: "/apps/moa-stan/privacy/ko/",
     moaPrivacyEn: "/apps/moa-stan/privacy/en/",
     moaPrivacyJa: "/apps/moa-stan/privacy/ja/",
+    neverlandPrivacy: "/apps/neverland-stan/privacy/",
+    neverlandPrivacyKo: "/apps/neverland-stan/privacy/ko/",
+    neverlandPrivacyEn: "/apps/neverland-stan/privacy/en/",
+    neverlandPrivacyJa: "/apps/neverland-stan/privacy/ja/",
   },
 } as const;
 
