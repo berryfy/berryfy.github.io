@@ -64,6 +64,10 @@ export const siteConfig = {
     divePrivacyKo: "/apps/dive-stan/privacy/ko/",
     divePrivacyEn: "/apps/dive-stan/privacy/en/",
     divePrivacyJa: "/apps/dive-stan/privacy/ja/",
+    caratPrivacy: "/apps/carat-stan/privacy/",
+    caratPrivacyKo: "/apps/carat-stan/privacy/ko/",
+    caratPrivacyEn: "/apps/carat-stan/privacy/en/",
+    caratPrivacyJa: "/apps/carat-stan/privacy/ja/",
   },
 } as const;
 
