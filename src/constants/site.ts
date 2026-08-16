@@ -68,6 +68,10 @@ export const siteConfig = {
     caratPrivacyKo: "/apps/carat-stan/privacy/ko/",
     caratPrivacyEn: "/apps/carat-stan/privacy/en/",
     caratPrivacyJa: "/apps/carat-stan/privacy/ja/",
+    midzyPrivacy: "/apps/midzy-stan/privacy/",
+    midzyPrivacyKo: "/apps/midzy-stan/privacy/ko/",
+    midzyPrivacyEn: "/apps/midzy-stan/privacy/en/",
+    midzyPrivacyJa: "/apps/midzy-stan/privacy/ja/",
   },
 } as const;
 
