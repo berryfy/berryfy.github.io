@@ -57,6 +57,31 @@ export const moreApps = [
     },
   },
   {
+    packageName: "com.berryfy.seventeen_stan",
+    iconPath: "/images/apps/carat-stan.webp",
+    storeUrl: `${googlePlayBaseUrl}com.berryfy.seventeen_stan`,
+    copy: {
+      en: {
+        name: "CARAT Stan",
+        category: "K-POP fandom",
+        description:
+          "Enjoy SEVENTEEN videos and images and keep your favorite moments in one place.",
+      },
+      ko: {
+        name: "CARAT Stan",
+        category: "K-POP 팬덤",
+        description:
+          "SEVENTEEN 영상과 이미지를 감상하고 좋아하는 순간을 한곳에 모아보세요.",
+      },
+      ja: {
+        name: "CARAT Stan",
+        category: "K-POPファンダム",
+        description:
+          "SEVENTEENの動画や画像を楽しみ、お気に入りの瞬間をひとつにまとめられます。",
+      },
+    },
+  },
+  {
     packageName: "com.berryfy.enhypen_stan",
     iconPath: "/images/apps/engene-stan.webp",
     storeUrl: `${googlePlayBaseUrl}com.berryfy.enhypen_stan`,
@@ -153,6 +178,31 @@ export const moreApps = [
         category: "K-POPファンダム",
         description:
           "ILLITの動画や画像を楽しみ、お気に入りの瞬間をひとつにまとめられます。",
+      },
+    },
+  },
+  {
+    packageName: "com.berryfy.itzy_tube",
+    iconPath: "/images/apps/midzy-stan.webp",
+    storeUrl: `${googlePlayBaseUrl}com.berryfy.itzy_tube`,
+    copy: {
+      en: {
+        name: "MIDZY Stan",
+        category: "K-POP fandom",
+        description:
+          "Enjoy ITZY videos and images and keep your favorite moments in one place.",
+      },
+      ko: {
+        name: "MIDZY Stan",
+        category: "K-POP 팬덤",
+        description:
+          "ITZY 영상과 이미지를 감상하고 좋아하는 순간을 한곳에 모아보세요.",
+      },
+      ja: {
+        name: "MIDZY Stan",
+        category: "K-POPファンダム",
+        description:
+          "ITZYの動画や画像を楽しみ、お気に入りの瞬間をひとつにまとめられます。",
       },
     },
   },
