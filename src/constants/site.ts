@@ -72,6 +72,10 @@ export const siteConfig = {
     midzyPrivacyKo: "/apps/midzy-stan/privacy/ko/",
     midzyPrivacyEn: "/apps/midzy-stan/privacy/en/",
     midzyPrivacyJa: "/apps/midzy-stan/privacy/ja/",
+    moaPrivacy: "/apps/moa-stan/privacy/",
+    moaPrivacyKo: "/apps/moa-stan/privacy/ko/",
+    moaPrivacyEn: "/apps/moa-stan/privacy/en/",
+    moaPrivacyJa: "/apps/moa-stan/privacy/ja/",
   },
 } as const;
 
