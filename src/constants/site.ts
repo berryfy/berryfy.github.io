@@ -80,6 +80,10 @@ export const siteConfig = {
     neverlandPrivacyKo: "/apps/neverland-stan/privacy/ko/",
     neverlandPrivacyEn: "/apps/neverland-stan/privacy/en/",
     neverlandPrivacyJa: "/apps/neverland-stan/privacy/ja/",
+    swithPrivacy: "/apps/swith-stan/privacy/",
+    swithPrivacyKo: "/apps/swith-stan/privacy/ko/",
+    swithPrivacyEn: "/apps/swith-stan/privacy/en/",
+    swithPrivacyJa: "/apps/swith-stan/privacy/ja/",
   },
 } as const;
 
