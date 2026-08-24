@@ -32,6 +32,31 @@ export const moreApps = [
     },
   },
   {
+    packageName: "me.bluemib.qwer_hub",
+    iconPath: "/images/apps/bawige-stan.webp",
+    storeUrl: `${googlePlayBaseUrl}me.bluemib.qwer_hub`,
+    copy: {
+      en: {
+        name: "BAWIGE Stan",
+        category: "K-POP fandom",
+        description:
+          "Enjoy QWER videos and images and keep your favorite moments in one place.",
+      },
+      ko: {
+        name: "BAWIGE Stan",
+        category: "K-POP 팬덤",
+        description:
+          "QWER 영상과 이미지를 감상하고 좋아하는 순간을 한곳에 모아보세요.",
+      },
+      ja: {
+        name: "BAWIGE Stan",
+        category: "K-POPファンダム",
+        description:
+          "QWERの動画や画像を楽しみ、お気に入りの瞬間をひとつにまとめられます。",
+      },
+    },
+  },
+  {
     packageName: "me.bluemiv.blackpink_stan",
     iconPath: "/images/apps/blink-stan.webp",
     storeUrl: `${googlePlayBaseUrl}me.bluemiv.blackpink_stan`,
