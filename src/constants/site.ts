@@ -84,6 +84,10 @@ export const siteConfig = {
     swithPrivacyKo: "/apps/swith-stan/privacy/ko/",
     swithPrivacyEn: "/apps/swith-stan/privacy/en/",
     swithPrivacyJa: "/apps/swith-stan/privacy/ja/",
+    pawmpawmPrivacy: "/apps/pawmpawm-stan/privacy/",
+    pawmpawmPrivacyKo: "/apps/pawmpawm-stan/privacy/ko/",
+    pawmpawmPrivacyEn: "/apps/pawmpawm-stan/privacy/en/",
+    pawmpawmPrivacyJa: "/apps/pawmpawm-stan/privacy/ja/",
   },
 } as const;
 
