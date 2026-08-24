@@ -407,6 +407,31 @@ export const moreApps = [
     },
   },
   {
+    packageName: "com.bluemiv.stayc_stan",
+    iconPath: "/images/apps/swith-stan.webp",
+    storeUrl: `${googlePlayBaseUrl}com.bluemiv.stayc_stan`,
+    copy: {
+      en: {
+        name: "SWITH Stan",
+        category: "K-POP fandom",
+        description:
+          "Enjoy STAYC videos and images and keep your favorite moments in one place.",
+      },
+      ko: {
+        name: "SWITH Stan",
+        category: "K-POP 팬덤",
+        description:
+          "STAYC 영상과 이미지를 감상하고 좋아하는 순간을 한곳에 모아보세요.",
+      },
+      ja: {
+        name: "SWITH Stan",
+        category: "K-POPファンダム",
+        description:
+          "STAYCの動画や画像を楽しみ、お気に入りの瞬間をひとつにまとめられます。",
+      },
+    },
+  },
+  {
     packageName: "com.berryfy.pomodoro_flow",
     iconPath: "/images/apps/pomodoro-flow.webp",
     storeUrl: `${googlePlayBaseUrl}com.berryfy.pomodoro_flow`,
