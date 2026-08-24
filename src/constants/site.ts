@@ -88,6 +88,10 @@ export const siteConfig = {
     pawmpawmPrivacyKo: "/apps/pawmpawm-stan/privacy/ko/",
     pawmpawmPrivacyEn: "/apps/pawmpawm-stan/privacy/en/",
     pawmpawmPrivacyJa: "/apps/pawmpawm-stan/privacy/ja/",
+    bawigePrivacy: "/apps/bawige-stan/privacy/",
+    bawigePrivacyKo: "/apps/bawige-stan/privacy/ko/",
+    bawigePrivacyEn: "/apps/bawige-stan/privacy/en/",
+    bawigePrivacyJa: "/apps/bawige-stan/privacy/ja/",
   },
 } as const;
 
