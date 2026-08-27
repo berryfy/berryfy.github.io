@@ -92,6 +92,10 @@ export const siteConfig = {
     bawigePrivacyKo: "/apps/bawige-stan/privacy/ko/",
     bawigePrivacyEn: "/apps/bawige-stan/privacy/en/",
     bawigePrivacyJa: "/apps/bawige-stan/privacy/ja/",
+    nswerPrivacy: "/apps/nswer-stan/privacy/",
+    nswerPrivacyKo: "/apps/nswer-stan/privacy/ko/",
+    nswerPrivacyEn: "/apps/nswer-stan/privacy/en/",
+    nswerPrivacyJa: "/apps/nswer-stan/privacy/ja/",
   },
 } as const;
 
