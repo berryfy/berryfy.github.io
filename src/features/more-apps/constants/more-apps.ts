@@ -332,6 +332,31 @@ export const moreApps = [
     },
   },
   {
+    packageName: "com.berryfy.nmixx_tube",
+    iconPath: "/images/apps/nswer-stan.webp",
+    storeUrl: `${googlePlayBaseUrl}com.berryfy.nmixx_tube`,
+    copy: {
+      en: {
+        name: "NSWER Stan",
+        category: "K-POP fandom",
+        description:
+          "Enjoy NMIXX videos and images and keep your favorite moments in one place.",
+      },
+      ko: {
+        name: "NSWER Stan",
+        category: "K-POP 팬덤",
+        description:
+          "NMIXX 영상과 이미지를 감상하고 좋아하는 순간을 한곳에 모아보세요.",
+      },
+      ja: {
+        name: "NSWER Stan",
+        category: "K-POPファンダム",
+        description:
+          "NMIXXの動画や画像を楽しみ、お気に入りの瞬間をひとつにまとめられます。",
+      },
+    },
+  },
+  {
     packageName: "com.bluemiv.flutter_twice_stan",
     iconPath: "/images/apps/once-stan.webp",
     storeUrl: `${googlePlayBaseUrl}com.bluemiv.flutter_twice_stan`,
