@@ -256,25 +256,6 @@ html:lang(ja) {
   text-underline-offset: 0.2em;
 }
 
-/*
- * 슬로건 타이포그래피: 페이지가 열리면 한 번, 슬로건 뒷줄이 얇은 굵기에서 가장 두꺼운 굵기로 바뀐다.
- * 동작 줄이기를 켜면 재생하지 않고 원래 굵기로 보인다.
- */
-@keyframes type-grow {
-  from {
-    font-weight: 400;
-  }
-  to {
-    font-weight: 900;
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .type-grow-on-load {
-    animation: type-grow 1.6s var(--ease-standard) 0.5s both;
-  }
-}
-
 ::selection {
   background: var(--color-cobalt-500);
   color: #ffffff;
