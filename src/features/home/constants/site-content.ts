@@ -7,7 +7,7 @@ export const siteCopy: Record<SiteLocale, SiteCopy> = {
   en: {
     about: {
       description:
-        "We keep bringing you new apps and games, and keep making the ones you use better.",
+        "Everything starts small, then keeps getting better, little by little.",
     },
     navigationLabel: "Main menu",
     navigation: {
@@ -19,8 +19,7 @@ export const siteCopy: Record<SiteLocale, SiteCopy> = {
   },
   ko: {
     about: {
-      description:
-        "새로운 앱과 게임을 꾸준히 선보이고, 지금 쓰는 앱도 계속 더 좋게 만들어요.",
+      description: "작게 시작해, 오래도록 조금씩 나아져요.",
     },
     navigationLabel: "주요 메뉴",
     navigation: {
@@ -32,8 +31,7 @@ export const siteCopy: Record<SiteLocale, SiteCopy> = {
   },
   ja: {
     about: {
-      description:
-        "新しいアプリやゲームをコツコツ届けながら、今お使いのものも少しずつ良くしていきます。",
+      description: "小さく始めて、長く、少しずつ良くしていく。",
     },
     navigationLabel: "メインメニュー",
     navigation: {
