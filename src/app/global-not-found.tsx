@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 
-import { monoFontVariable, siteFontVariables } from "@/app/fonts";
+import {
+  displayFontVariable,
+  monoFontVariable,
+  siteFontVariables,
+} from "@/app/fonts";
 import SiteDocument from "@/components/site-document";
 import NotFoundPage from "@/features/not-found/components/not-found-page";
 import "./globals.css";
@@ -14,7 +18,7 @@ export default function GlobalNotFound() {
   return (
     <SiteDocument
       lang="en"
-      fontClassName={`${siteFontVariables.en} ${monoFontVariable}`}
+      fontClassName={`${siteFontVariables.en} ${monoFontVariable} ${displayFontVariable}`}
     >
       <NotFoundPage />
     </SiteDocument>

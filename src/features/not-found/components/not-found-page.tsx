@@ -17,7 +17,7 @@ export default function NotFoundPage() {
 
       <main className="relative flex min-h-[calc(100svh-4rem)] overflow-hidden px-5 sm:min-h-[calc(100svh-4.75rem)] sm:px-8">
         <div className="pointer-events-none absolute top-[-11rem] right-[-10rem] size-[28rem] rounded-full border-[4.5rem] border-primary/[0.08] sm:size-[36rem]" />
-        <div className="pointer-events-none absolute bottom-[-12rem] left-[-9rem] size-[27rem] rounded-full bg-mint/20 blur-3xl sm:size-[34rem]" />
+        <div className="pointer-events-none absolute bottom-[-12rem] left-[-9rem] size-[27rem] rounded-full bg-success/20 blur-3xl sm:size-[34rem]" />
 
         <div className="relative mx-auto flex w-full max-w-[1440px] flex-col">
           <section className="grid flex-1 items-center gap-8 py-12 lg:grid-cols-[minmax(0,0.82fr)_minmax(380px,0.7fr)] lg:gap-20 lg:py-16">
@@ -52,7 +52,7 @@ export default function NotFoundPage() {
               <p className="relative font-mono text-[8rem] leading-none font-semibold tracking-[-0.12em] text-primary xl:text-[10rem]">
                 404
               </p>
-              <span className="absolute top-[12%] right-[12%] size-5 rounded-full bg-mint shadow-[0_8px_24px_rgba(70,190,140,0.3)] xl:size-6" />
+              <span className="absolute top-[12%] right-[12%] size-5 rounded-full bg-success shadow-[0_8px_24px_rgba(70,190,140,0.3)] xl:size-6" />
               <span className="absolute bottom-[13%] left-[10%] size-3 rounded-full bg-primary/70 xl:size-4" />
             </div>
           </section>

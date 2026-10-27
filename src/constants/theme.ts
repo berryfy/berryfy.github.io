@@ -1,7 +1,7 @@
 import type { SiteLocale } from "@/types/site";
 
 export const themeConfig = {
-  defaultTheme: "system",
+  defaultTheme: "dark",
   storageKey: "berryfy-theme",
 } as const;
 

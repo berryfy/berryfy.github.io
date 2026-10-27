@@ -39,6 +39,7 @@ This version has breaking changes — APIs, conventions, and file structure may 
 - 정적 내보내기에서 지원하지 않는 서버 기능, 동적 라우트, 기본 이미지 최적화를 도입하지 않는다.
 - 한국어·영어·일본어를 함께 유지한다. 브랜드명·앱명·자연스러운 영어 UI 라벨은 억지로 번역하지 않는다.
 - 사용자에게 내부 개발 목표나 구현 세부를 제품 문구로 노출하지 않는다.
+- 색·글꼴·글자 크기·모서리·그림자는 `docs/design-system.md`의 토큰만 쓴다. 임의 hex·`shadow-[...]`·`rounded-[...]`를 새로 만들지 않는다.
 
 ## 검증과 Git
 

@@ -1,6 +1,10 @@
 import { notFound } from "next/navigation";
 
-import { monoFontVariable, siteFontVariables } from "@/app/fonts";
+import {
+  displayFontVariable,
+  monoFontVariable,
+  siteFontVariables,
+} from "@/app/fonts";
 import SiteDocument from "@/components/site-document";
 import { siteConfig } from "@/constants/site";
 import { isSiteLocale } from "@/lib/locale";
@@ -24,7 +28,7 @@ export default async function LocalizedRootLayout({
   return (
     <SiteDocument
       lang={locale}
-      fontClassName={`${siteFontVariables[locale]} ${monoFontVariable}`}
+      fontClassName={`${siteFontVariables[locale]} ${monoFontVariable} ${displayFontVariable}`}
       bodyClassName="flex min-h-full flex-col"
     >
       {children}

@@ -1,4 +1,8 @@
-import { monoFontVariable, siteFontVariables } from "@/app/fonts";
+import {
+  displayFontVariable,
+  monoFontVariable,
+  siteFontVariables,
+} from "@/app/fonts";
 import SiteDocument from "@/components/site-document";
 import { siteConfig } from "@/constants/site";
 import "../globals.css";
@@ -11,7 +15,7 @@ export default function DefaultRootLayout({
   return (
     <SiteDocument
       lang={siteConfig.defaultLocale}
-      fontClassName={`${siteFontVariables.en} ${monoFontVariable}`}
+      fontClassName={`${siteFontVariables.en} ${monoFontVariable} ${displayFontVariable}`}
       bodyClassName="flex min-h-full flex-col"
     >
       {children}

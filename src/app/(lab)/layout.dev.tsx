@@ -1,4 +1,8 @@
-import { monoFontVariable, siteFontVariables } from "@/app/fonts";
+import {
+  displayFontVariable,
+  monoFontVariable,
+  siteFontVariables,
+} from "@/app/fonts";
 import SiteDocument from "@/components/site-document";
 import "../globals.css";
 
@@ -14,7 +18,7 @@ export default function LabRootLayout({
   return (
     <SiteDocument
       lang="ko"
-      fontClassName={`${siteFontVariables.ko} ${monoFontVariable}`}
+      fontClassName={`${siteFontVariables.ko} ${monoFontVariable} ${displayFontVariable}`}
     >
       {children}
     </SiteDocument>
