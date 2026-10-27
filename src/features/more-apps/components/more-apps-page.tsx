@@ -7,11 +7,8 @@ import {
   moreAppsCopy,
   moreAppsLocalePaths,
 } from "@/features/more-apps/constants/more-apps-copy";
-import {
-  berryfyGooglePlayUrl,
-  moreApps,
-} from "@/features/more-apps/constants/more-apps";
-import { googlePlayUrlForLocale } from "@/features/more-apps/utils/google-play-url";
+import { berryfyGooglePlayUrl, publishedApps } from "@/constants/apps";
+import { googlePlayUrlForLocale } from "@/lib/google-play-url";
 import type { SiteLocale } from "@/types/site";
 
 interface MoreAppsPageProps {
@@ -57,7 +54,7 @@ export default function MoreAppsPage({
         </section>
 
         <ul className="mt-9 space-y-3 sm:mt-11 sm:space-y-4">
-          {moreApps.map((app) => (
+          {publishedApps.map((app) => (
             <MoreAppItem
               key={app.packageName}
               app={app}

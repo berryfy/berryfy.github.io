@@ -4,7 +4,7 @@
 
 - Google Play에서 실제 공개된 berryfy 앱만 노출한다. 출시 전 앱이나 확인되지 않은 링크를 추가하지 않는다.
 - package ID는 출시 프로젝트의 Android `applicationId`와 Google Play 상세 페이지를 함께 확인하며 이름으로 추측하지 않는다.
-- 앱 목록·package ID·아이콘·스토어 URL·언어별 카드 문구는 `constants/more-apps.ts`, 페이지 공통 문구는 `constants/more-apps-copy.ts`에서 관리한다.
+- 앱 목록·package ID·분류(`group`)·아이콘·스토어 URL·언어별 카드 문구는 홈과 함께 쓰는 `src/constants/apps.ts`, 페이지 공통 문구는 `constants/more-apps-copy.ts`에서 관리한다.
 - 앱을 추가하거나 수정할 때 영어·한국어·일본어의 이름, 카테고리와 설명을 함께 갱신한다. 브랜드명·앱명은 억지로 번역하지 않는다.
 - K-POP 팬덤 앱은 표시 앱 이름의 알파벳순으로 묶고, 일반 앱의 기존 순서는 명시적인 제품 판단 없이 바꾸지 않는다.
 
@@ -13,7 +13,7 @@
 - 아이콘은 실제 출시 빌드의 최신 프로덕션 런처 아이콘을 재사용한다. 임의의 그룹 사진이나 오래된 임시 에셋으로 대체하지 않는다.
 - 웹용 아이콘은 256×256 WebP를 기본으로 하고 품질 90~95 범위에서 최적화한다. 최종 파일만 `public/images/apps/<app-name>.webp`에 둔다.
 - 새 자산의 출처가 공개 저장소에 커밋 가능한지 확인하고, 시크릿이나 Firebase 설정 같은 주변 파일을 함께 복사하지 않는다.
-- Google Play 링크는 package ID 기반의 일반 HTTPS 상세 링크로 제공하며 locale query는 공용 URL 유틸리티에서 처리한다.
+- Google Play 링크는 package ID 기반의 일반 HTTPS 상세 링크로 제공하며 locale query는 `src/lib/google-play-url.ts`에서 처리한다.
 
 ## WebView와 검증
 

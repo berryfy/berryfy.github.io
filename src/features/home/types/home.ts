@@ -1,4 +1,10 @@
 export interface SiteCopy {
+  products: {
+    title: string;
+    fandomTitle: string;
+    viewAll: string;
+    storeLabel: string;
+  };
   hero: {
     description: string;
   };

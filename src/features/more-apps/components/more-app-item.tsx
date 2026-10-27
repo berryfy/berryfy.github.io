@@ -1,12 +1,12 @@
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 
-import type { MoreApp } from "@/features/more-apps/types/more-apps";
-import { googlePlayUrlForLocale } from "@/features/more-apps/utils/google-play-url";
+import type { PublishedApp } from "@/types/app";
+import { googlePlayUrlForLocale } from "@/lib/google-play-url";
 import type { SiteLocale } from "@/types/site";
 
 interface MoreAppItemProps {
-  app: MoreApp;
+  app: PublishedApp;
   locale: SiteLocale;
   actionLabel: string;
 }

@@ -1,13 +1,15 @@
-import type { MoreApp } from "@/features/more-apps/types/more-apps";
+import type { PublishedApp } from "@/types/app";
 
 const googlePlayBaseUrl = "https://play.google.com/store/apps/details?id=";
 
 export const berryfyGooglePlayUrl =
   "https://play.google.com/store/apps/developer?id=berryfy";
 
-export const moreApps = [
+// Google Play에 공개된 berryfy 앱 목록. 홈·다른 앱 페이지가 함께 쓰는 단일 출처다.
+export const publishedApps = [
   {
     packageName: "com.berryfy.ateez_stan",
+    group: "fandom",
     iconPath: "/images/apps/atiny-stan.webp",
     storeUrl: `${googlePlayBaseUrl}com.berryfy.ateez_stan`,
     copy: {
@@ -33,6 +35,7 @@ export const moreApps = [
   },
   {
     packageName: "me.bluemib.qwer_hub",
+    group: "fandom",
     iconPath: "/images/apps/bawige-stan.webp",
     storeUrl: `${googlePlayBaseUrl}me.bluemib.qwer_hub`,
     copy: {
@@ -58,6 +61,7 @@ export const moreApps = [
   },
   {
     packageName: "me.bluemiv.blackpink_stan",
+    group: "fandom",
     iconPath: "/images/apps/blink-stan.webp",
     storeUrl: `${googlePlayBaseUrl}me.bluemiv.blackpink_stan`,
     copy: {
@@ -83,6 +87,7 @@ export const moreApps = [
   },
   {
     packageName: "com.berryfy.seventeen_stan",
+    group: "fandom",
     iconPath: "/images/apps/carat-stan.webp",
     storeUrl: `${googlePlayBaseUrl}com.berryfy.seventeen_stan`,
     copy: {
@@ -108,6 +113,7 @@ export const moreApps = [
   },
   {
     packageName: "com.berryfy.enhypen_stan",
+    group: "fandom",
     iconPath: "/images/apps/engene-stan.webp",
     storeUrl: `${googlePlayBaseUrl}com.berryfy.enhypen_stan`,
     copy: {
@@ -133,6 +139,7 @@ export const moreApps = [
   },
   {
     packageName: "me.bluemiv.katseye_stan",
+    group: "fandom",
     iconPath: "/images/apps/eyecons-stan.webp",
     storeUrl: `${googlePlayBaseUrl}me.bluemiv.katseye_stan`,
     copy: {
@@ -158,6 +165,7 @@ export const moreApps = [
   },
   {
     packageName: "com.bluemiv.le_sserafim_stan",
+    group: "fandom",
     iconPath: "/images/apps/fearnot-stan.webp",
     storeUrl: `${googlePlayBaseUrl}com.bluemiv.le_sserafim_stan`,
     copy: {
@@ -183,6 +191,7 @@ export const moreApps = [
   },
   {
     packageName: "com.berryfy.illit_tube",
+    group: "fandom",
     iconPath: "/images/apps/gllit-stan.webp",
     storeUrl: `${googlePlayBaseUrl}com.berryfy.illit_tube`,
     copy: {
@@ -208,6 +217,7 @@ export const moreApps = [
   },
   {
     packageName: "com.berryfy.itzy_tube",
+    group: "fandom",
     iconPath: "/images/apps/midzy-stan.webp",
     storeUrl: `${googlePlayBaseUrl}com.berryfy.itzy_tube`,
     copy: {
@@ -233,6 +243,7 @@ export const moreApps = [
   },
   {
     packageName: "me.bluemiv.txt_stan",
+    group: "fandom",
     iconPath: "/images/apps/moa-stan.webp",
     storeUrl: `${googlePlayBaseUrl}me.bluemiv.txt_stan`,
     copy: {
@@ -258,6 +269,7 @@ export const moreApps = [
   },
   {
     packageName: "me.bluemiv.babymonster_stan",
+    group: "fandom",
     iconPath: "/images/apps/monstiez-stan.webp",
     storeUrl: `${googlePlayBaseUrl}me.bluemiv.babymonster_stan`,
     copy: {
@@ -283,6 +295,7 @@ export const moreApps = [
   },
   {
     packageName: "com.berryfy.aespa_stan",
+    group: "fandom",
     iconPath: "/images/apps/my-stan.webp",
     storeUrl: `${googlePlayBaseUrl}com.berryfy.aespa_stan`,
     copy: {
@@ -308,6 +321,7 @@ export const moreApps = [
   },
   {
     packageName: "com.berryfy.gidle_stan",
+    group: "fandom",
     iconPath: "/images/apps/neverland-stan.webp",
     storeUrl: `${googlePlayBaseUrl}com.berryfy.gidle_stan`,
     copy: {
@@ -333,6 +347,7 @@ export const moreApps = [
   },
   {
     packageName: "com.berryfy.nmixx_tube",
+    group: "fandom",
     iconPath: "/images/apps/nswer-stan.webp",
     storeUrl: `${googlePlayBaseUrl}com.berryfy.nmixx_tube`,
     copy: {
@@ -358,6 +373,7 @@ export const moreApps = [
   },
   {
     packageName: "com.bluemiv.flutter_twice_stan",
+    group: "fandom",
     iconPath: "/images/apps/once-stan.webp",
     storeUrl: `${googlePlayBaseUrl}com.bluemiv.flutter_twice_stan`,
     copy: {
@@ -383,6 +399,7 @@ export const moreApps = [
   },
   {
     packageName: "com.berryfy.artms_stan",
+    group: "fandom",
     iconPath: "/images/apps/ourii-stan.webp",
     storeUrl: `${googlePlayBaseUrl}com.berryfy.artms_stan`,
     copy: {
@@ -408,6 +425,7 @@ export const moreApps = [
   },
   {
     packageName: "com.berryfy.hearts2hearts_stan",
+    group: "fandom",
     iconPath: "/images/apps/s2u-stan.webp",
     storeUrl: `${googlePlayBaseUrl}com.berryfy.hearts2hearts_stan`,
     copy: {
@@ -433,6 +451,7 @@ export const moreApps = [
   },
   {
     packageName: "com.berryfy.stray_kids_stan",
+    group: "fandom",
     iconPath: "/images/apps/stay-stan.webp",
     storeUrl: `${googlePlayBaseUrl}com.berryfy.stray_kids_stan`,
     copy: {
@@ -458,6 +477,7 @@ export const moreApps = [
   },
   {
     packageName: "com.bluemiv.stayc_stan",
+    group: "fandom",
     iconPath: "/images/apps/swith-stan.webp",
     storeUrl: `${googlePlayBaseUrl}com.bluemiv.stayc_stan`,
     copy: {
@@ -483,6 +503,7 @@ export const moreApps = [
   },
   {
     packageName: "com.berryfy.pomodoro_flow",
+    group: "general",
     iconPath: "/images/apps/pomodoro-flow.webp",
     storeUrl: `${googlePlayBaseUrl}com.berryfy.pomodoro_flow`,
     copy: {
@@ -508,6 +529,7 @@ export const moreApps = [
   },
   {
     packageName: "com.berryfy.lottocat645",
+    group: "general",
     iconPath: "/images/apps/lottocat645.webp",
     storeUrl: `${googlePlayBaseUrl}com.berryfy.lottocat645`,
     copy: {
@@ -533,6 +555,7 @@ export const moreApps = [
   },
   {
     packageName: "com.berryfy.potion_sort_quest",
+    group: "general",
     iconPath: "/images/apps/potion-sort-quest.webp",
     storeUrl: `${googlePlayBaseUrl}com.berryfy.potion_sort_quest`,
     copy: {
@@ -558,6 +581,7 @@ export const moreApps = [
   },
   {
     packageName: "com.berryfy.pixel_blur",
+    group: "general",
     iconPath: "/images/apps/pixel-blur.webp",
     storeUrl: `${googlePlayBaseUrl}com.berryfy.pixel_blur`,
     copy: {
@@ -583,6 +607,7 @@ export const moreApps = [
   },
   {
     packageName: "com.berryfy.musepiece",
+    group: "general",
     iconPath: "/images/apps/musepiece.webp",
     storeUrl: `${googlePlayBaseUrl}com.berryfy.musepiece`,
     copy: {
@@ -608,6 +633,7 @@ export const moreApps = [
   },
   {
     packageName: "com.berryfy.easy_dots",
+    group: "general",
     iconPath: "/images/apps/easy-dots.webp",
     storeUrl: `${googlePlayBaseUrl}com.berryfy.easy_dots`,
     copy: {
@@ -631,4 +657,4 @@ export const moreApps = [
       },
     },
   },
-] as const satisfies readonly MoreApp[];
+] as const satisfies readonly PublishedApp[];
