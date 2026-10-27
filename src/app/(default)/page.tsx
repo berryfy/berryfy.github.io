@@ -13,5 +13,5 @@ export const metadata: Metadata = createHomeMetadata(
 );
 
 export default function EnglishHomePage() {
-  return <HomePage locale={defaultLocale} copy={siteCopy[defaultLocale]} />;
+  return <HomePage />;
 }

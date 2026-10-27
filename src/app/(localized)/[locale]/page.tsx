@@ -40,5 +40,5 @@ export default async function LocalizedHomePage({
     notFound();
   }
 
-  return <HomePage locale={locale} copy={siteCopy[locale]} />;
+  return <HomePage />;
 }

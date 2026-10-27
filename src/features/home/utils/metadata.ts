@@ -16,9 +16,9 @@ export function createHomeMetadata(
   return {
     metadataBase: new URL(siteConfig.url),
     title: {
-      absolute: `${siteConfig.name} — ${copy.footer.tagline}`,
+      absolute: `${siteConfig.name} — ${copy.tagline}`,
     },
-    description: copy.hero.description,
+    description: copy.description,
     alternates: {
       canonical: localeDetails[locale].path,
       languages: languageAlternates,
@@ -28,21 +28,21 @@ export function createHomeMetadata(
       siteName: siteConfig.name,
       locale: localeDetails[locale].openGraphLocale,
       url: localeDetails[locale].path,
-      title: `${siteConfig.name} — ${copy.footer.tagline}`,
-      description: copy.hero.description,
+      title: `${siteConfig.name} — ${copy.tagline}`,
+      description: copy.description,
       images: [
         {
           url: siteAssets.socialPreview,
           width: 1200,
           height: 630,
-          alt: `${siteConfig.name} — Small apps. Bright moments.`,
+          alt: `${siteConfig.name} — ${copy.tagline}`,
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      title: `${siteConfig.name} — ${copy.footer.tagline}`,
-      description: copy.hero.description,
+      title: `${siteConfig.name} — ${copy.tagline}`,
+      description: copy.description,
       images: [siteAssets.socialPreview],
     },
   };
