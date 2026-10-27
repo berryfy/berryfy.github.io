@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useId, useRef, useState } from "react";
-import { Check, ChevronDown, Globe } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 
 import Button from "@/components/atoms/Button";
 import { localeDetails, siteLocales } from "@/constants/site";
@@ -15,7 +15,7 @@ interface LanguageMenuProps {
   paths: Record<SiteLocale, string>;
 }
 
-// 헤더용 언어 선택. 버튼 하나로 접어 두고, 펼치면 각 언어를 그 언어로 쓴 이름으로 보여 준다.
+// 헤더용 언어 선택. 메뉴와 같은 글자 스타일로 현재 언어 이름을 보여 주고, 펼친 목록의 현재 언어는 코발트 점으로 표시한다.
 const LanguageMenu = ({ locale, label, paths }: LanguageMenuProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const panelId = useId();
@@ -55,16 +55,13 @@ const LanguageMenu = ({ locale, label, paths }: LanguageMenuProps) => {
         ref={triggerRef}
         variant="ghost"
         size="sm"
-        className="h-11 gap-1.5 px-3 text-muted-foreground hover:text-foreground aria-expanded:bg-accent aria-expanded:text-foreground"
+        className="h-11 gap-1 px-3 font-medium text-muted-foreground hover:bg-transparent hover:text-foreground aria-expanded:text-foreground"
         aria-expanded={isOpen}
         aria-controls={panelId}
         aria-label={`${label}: ${localeDetails[locale].label}`}
         onClick={() => setIsOpen((open) => !open)}
       >
-        <Globe aria-hidden="true" />
-        <span className="font-semibold">
-          {localeDetails[locale].shortLabel}
-        </span>
+        <span lang={locale}>{localeDetails[locale].label}</span>
         <ChevronDown
           aria-hidden="true"
           className={cn(
@@ -79,9 +76,6 @@ const LanguageMenu = ({ locale, label, paths }: LanguageMenuProps) => {
         hidden={!isOpen}
         className="absolute top-full right-0 z-10 mt-2 w-44 rounded-lg border border-border bg-popover p-1.5 text-popover-foreground shadow-overlay"
       >
-        <p className="px-3 pt-1.5 pb-2 text-caption text-muted-foreground">
-          {label}
-        </p>
         <ul>
           {siteLocales.map((item) => {
             const isActive = item === locale;
@@ -95,14 +89,26 @@ const LanguageMenu = ({ locale, label, paths }: LanguageMenuProps) => {
                   aria-current={isActive ? "page" : undefined}
                   onClick={() => setIsOpen(false)}
                   className={cn(
-                    "flex min-h-11 items-center justify-between rounded-sm px-3 text-small transition-colors outline-none hover:bg-accent focus-visible:ring-3 focus-visible:ring-ring/60",
-                    isActive && "font-semibold",
+                    "flex min-h-11 items-center gap-2.5 rounded-sm px-3 text-small transition-colors outline-none hover:bg-accent focus-visible:ring-3 focus-visible:ring-ring/60",
+                    isActive
+                      ? "font-semibold text-foreground"
+                      : "text-muted-foreground hover:text-foreground",
                   )}
                 >
-                  {localeDetails[item].label}
-                  {isActive ? (
-                    <Check aria-hidden="true" className="size-4 text-link" />
-                  ) : null}
+                  <span
+                    aria-hidden="true"
+                    className={cn(
+                      "size-1.5 shrink-0 rounded-full",
+                      isActive && "bg-primary",
+                    )}
+                  />
+                  <span className="flex-1">{localeDetails[item].label}</span>
+                  <span
+                    aria-hidden="true"
+                    className="font-mono text-caption text-muted-foreground"
+                  >
+                    {localeDetails[item].shortLabel}
+                  </span>
                 </Link>
               </li>
             );

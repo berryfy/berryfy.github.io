@@ -97,7 +97,7 @@ const MobileMenu = ({
             ))}
           </ul>
         </nav>
-        <div className="mt-5">
+        <div className="-mx-3 mt-5">
           <LanguageSwitcher
             locale={locale}
             label={languageLabel}
