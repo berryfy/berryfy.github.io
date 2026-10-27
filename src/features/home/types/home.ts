@@ -1,4 +1,7 @@
 export interface SiteCopy {
+  about: {
+    description: string;
+  };
   description: string;
   navigationLabel: string;
   navigation: {

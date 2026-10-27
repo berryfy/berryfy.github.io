@@ -3,7 +3,7 @@ import Link from "next/link";
 import Wordmark from "@/components/atoms/Wordmark";
 import LanguageSwitcher from "@/components/widgets/LanguageSwitcher";
 import { businessInfo } from "@/constants/business";
-import { footerLabels, siteSlogans } from "@/constants/site";
+import { footerLabels, siteSlogan } from "@/constants/site";
 import type { SiteLocale } from "@/types/site";
 
 interface SiteFooterProps {
@@ -37,7 +37,7 @@ const SiteFooter = ({ locale, homeHref, languagePaths }: SiteFooterProps) => {
               <Wordmark className="text-title-md" />
             </Link>
             <p className="mt-3 text-small text-muted-foreground">
-              {siteSlogans[locale]}
+              {siteSlogan}
             </p>
           </div>
 
