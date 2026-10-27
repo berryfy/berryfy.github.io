@@ -167,6 +167,9 @@ export const menuLabels: Record<SiteLocale, { open: string; close: string }> = {
   ja: { open: "メニューを開く", close: "メニューを閉じる" },
 };
 
+// 푸터 문의 영역 id. 헤더의 "문의" 메뉴가 여기로 이동한다.
+export const footerContactId = "contact";
+
 // 모든 페이지의 본문 `<main>`에 붙이는 id. 건너뛰기 링크가 여기로 이동한다.
 export const mainContentId = "main";
 

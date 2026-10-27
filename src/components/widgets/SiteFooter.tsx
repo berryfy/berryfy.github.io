@@ -3,7 +3,7 @@ import Link from "next/link";
 import Wordmark from "@/components/atoms/Wordmark";
 import LanguageSwitcher from "@/components/widgets/LanguageSwitcher";
 import { businessInfo } from "@/constants/business";
-import { footerLabels, siteSlogan } from "@/constants/site";
+import { footerContactId, footerLabels, siteSlogan } from "@/constants/site";
 import type { SiteLocale } from "@/types/site";
 
 interface SiteFooterProps {
@@ -41,7 +41,7 @@ const SiteFooter = ({ locale, homeHref, languagePaths }: SiteFooterProps) => {
             </p>
           </div>
 
-          <div>
+          <div id={footerContactId} className="scroll-mt-24">
             <h2 className={columnTitleClassName}>{labels.contact}</h2>
             <a
               href={`mailto:${businessInfo.contactEmail}`}
