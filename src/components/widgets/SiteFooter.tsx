@@ -3,27 +3,21 @@ import Link from "next/link";
 import Wordmark from "@/components/atoms/Wordmark";
 import LanguageSwitcher from "@/components/widgets/LanguageSwitcher";
 import { businessInfo } from "@/constants/business";
-import { footerLabels } from "@/constants/site";
+import { footerLabels, siteSlogans } from "@/constants/site";
 import type { SiteLocale } from "@/types/site";
 
 interface SiteFooterProps {
   locale: SiteLocale;
   homeHref: string;
   languagePaths: Record<SiteLocale, string>;
-  tagline?: string;
 }
 
 const columnTitleClassName = "font-mono text-caption text-muted-foreground";
 const linkClassName =
   "inline-flex min-h-11 items-center text-small text-foreground transition-colors outline-none hover:text-link focus-visible:ring-3 focus-visible:ring-ring/60 rounded-xs";
 
-// 공용 푸터: 브랜드·문의 열 + 아래 줄에 언어 목록과 저작권. 구분선 없이 여백으로 나눈다. 빌드 연도를 표시한다.
-const SiteFooter = ({
-  locale,
-  homeHref,
-  languagePaths,
-  tagline,
-}: SiteFooterProps) => {
+// 공용 푸터: 브랜드(글자 로고·슬로건)·문의 열 + 아래 줄에 언어 목록과 저작권. 구분선 없이 여백으로 나눈다. 빌드 연도를 표시한다.
+const SiteFooter = ({ locale, homeHref, languagePaths }: SiteFooterProps) => {
   const labels = footerLabels[locale];
   const year = new Date().getFullYear();
 
@@ -39,9 +33,9 @@ const SiteFooter = ({
             >
               <Wordmark className="text-title-md" />
             </Link>
-            {tagline ? (
-              <p className="mt-3 text-small text-muted-foreground">{tagline}</p>
-            ) : null}
+            <p className="mt-3 text-small text-muted-foreground">
+              {siteSlogans[locale]}
+            </p>
           </div>
 
           <div>

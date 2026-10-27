@@ -152,6 +152,13 @@ export const languageSwitcherLabels: Record<SiteLocale, string> = {
   ja: "言語を選択",
 };
 
+// 브랜드 슬로건. 로고 옆·푸터·검색 제목에 쓰고 슬로건 안에는 브랜드 이름을 넣지 않는다.
+export const siteSlogans: Record<SiteLocale, string> = {
+  en: "Made small. Made well.",
+  ko: "작게, 그리고 제대로.",
+  ja: "小さく、ていねいに。",
+};
+
 export const skipLinkLabels: Record<SiteLocale, string> = {
   en: "Skip to content",
   ko: "본문으로 건너뛰기",

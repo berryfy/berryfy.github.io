@@ -36,7 +36,6 @@ const HomePage = ({ locale, copy }: HomePageProps) => {
         locale={locale}
         homeHref={localeDetails[locale].path}
         languagePaths={homeLocalePaths}
-        tagline={copy.tagline}
       />
     </>
   );

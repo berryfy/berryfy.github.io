@@ -79,7 +79,7 @@
 | HeaderNavigation | `components/widgets/HeaderNavigation.tsx` | `md` 이상 가로 메뉴. 44px 링크, 보조 글자색 → hover 시 본문색                                                                                                                                                                                                                            |
 | MobileMenu       | `components/widgets/MobileMenu.tsx`       | `md` 미만. 메뉴 버튼 → 헤더 아래 화면 전체를 덮는 패널(큰 글자 메뉴 + 언어, 구분선 없음). Esc·링크 선택·넓은 화면 전환 시 닫힘                                                                                                                                                           |
 | SkipLink         | `components/atoms/SkipLink.tsx`           | 키보드 포커스 때만 보이는 본문 건너뛰기. 대상은 `<main id={mainContentId}>`                                                                                                                                                                                                              |
-| SiteFooter       | `components/widgets/SiteFooter.tsx`       | 구분선 없이 위 여백(96/128px)으로 본문과 나눔. 브랜드(글자 로고·한 줄 소개)·문의(이메일) 두 열. 메뉴는 헤더에만 두고 푸터에 반복하지 않음. + 아래 줄 저작권·LanguageSwitcher. `md` 미만은 한 열                                                                                          |
+| SiteFooter       | `components/widgets/SiteFooter.tsx`       | 구분선 없이 위 여백(96/128px)으로 본문과 나눔. 브랜드(글자 로고·슬로건)·문의(이메일) 두 열. 메뉴는 헤더에만 두고 푸터에 반복하지 않음. + 아래 줄 저작권·LanguageSwitcher. `md` 미만은 한 열                                                                                              |
 
 - 현재 위치·선택 상태는 장식(점·체크·막대) 없이 글자 굵기(`font-semibold`)와 밝기(`foreground` ↔ `muted-foreground`)로만 구분한다. 코발트 점은 글자 로고에만 쓴다.
 - 정사각형 자리(파비콘·프로필)는 `b` + 코발트 점 모노그램을 쓴다.

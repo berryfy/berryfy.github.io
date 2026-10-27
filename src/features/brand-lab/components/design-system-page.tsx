@@ -135,7 +135,6 @@ export default function DesignSystemPage() {
               locale="ko"
               homeHref="/"
               languagePaths={homeLocalePaths}
-              tagline="작은 앱으로, 더 빛나는 순간."
             />
           </div>
         </Section>
