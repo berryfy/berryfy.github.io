@@ -262,10 +262,7 @@ export default function DesignSystemPage() {
         >
           <ThemePair>
             <div className="flex flex-wrap gap-2">
-              <Badge>
-                <span className="size-1.5 rounded-full bg-primary" />
-                개발 중
-              </Badge>
+              <Badge>개발 중</Badge>
               <Badge variant="success">출시</Badge>
               <Badge variant="primary">NEW</Badge>
               <Badge variant="outline">게임</Badge>
@@ -285,10 +282,7 @@ export default function DesignSystemPage() {
               <div className="aspect-[16/9] bg-secondary" />
               <div className="grid gap-3 p-5">
                 <div className="flex flex-wrap gap-2">
-                  <Badge>
-                    <span className="size-1.5 rounded-full bg-primary" />
-                    개발 중
-                  </Badge>
+                  <Badge>개발 중</Badge>
                   <Badge variant="outline">게임</Badge>
                 </div>
                 <h3 className="font-display text-title-lg font-extrabold tracking-[-0.03em]">

@@ -15,7 +15,7 @@ interface LanguageMenuProps {
   paths: Record<SiteLocale, string>;
 }
 
-// 헤더용 언어 선택. 메뉴와 같은 글자 스타일로 현재 언어 이름을 보여 주고, 펼친 목록의 현재 언어는 코발트 점으로 표시한다.
+// 헤더용 언어 선택. 메뉴와 같은 글자 스타일로 현재 언어 이름을 보여 주고, 펼친 목록의 현재 언어는 굵고 밝은 글자로 표시한다.
 const LanguageMenu = ({ locale, label, paths }: LanguageMenuProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const panelId = useId();
@@ -89,19 +89,12 @@ const LanguageMenu = ({ locale, label, paths }: LanguageMenuProps) => {
                   aria-current={isActive ? "page" : undefined}
                   onClick={() => setIsOpen(false)}
                   className={cn(
-                    "flex min-h-11 items-center gap-2.5 rounded-sm px-3 text-small transition-colors outline-none hover:bg-accent focus-visible:ring-3 focus-visible:ring-ring/60",
+                    "flex min-h-11 items-center gap-3 rounded-sm px-3 text-small transition-colors outline-none hover:bg-accent focus-visible:ring-3 focus-visible:ring-ring/60",
                     isActive
                       ? "font-semibold text-foreground"
                       : "text-muted-foreground hover:text-foreground",
                   )}
                 >
-                  <span
-                    aria-hidden="true"
-                    className={cn(
-                      "size-1.5 shrink-0 rounded-full",
-                      isActive && "bg-primary",
-                    )}
-                  />
                   <span className="flex-1">{localeDetails[item].label}</span>
                   <span
                     aria-hidden="true"

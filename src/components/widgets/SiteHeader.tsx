@@ -3,6 +3,7 @@ import BrandMark from "@/components/widgets/BrandMark";
 import HeaderNavigation from "@/components/widgets/HeaderNavigation";
 import LanguageMenu from "@/components/widgets/LanguageMenu";
 import MobileMenu from "@/components/widgets/MobileMenu";
+import StickyHeader from "@/components/widgets/StickyHeader";
 import ThemeToggle from "@/components/widgets/ThemeToggle";
 import {
   languageSwitcherLabels,
@@ -33,7 +34,7 @@ const SiteHeader = ({
   const hasNavigation = navigation.length > 0;
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-background/90 pt-[env(safe-area-inset-top)] backdrop-blur-md">
+    <StickyHeader>
       <SkipLink href={`#${mainContentId}`} label={skipLinkLabels[locale]} />
       <div className="relative mx-auto flex h-16 max-w-page items-center justify-between gap-3 px-4 sm:h-18 sm:px-8">
         <BrandMark href={homeHref} />
@@ -62,7 +63,7 @@ const SiteHeader = ({
           ) : null}
         </div>
       </div>
-    </header>
+    </StickyHeader>
   );
 };
 

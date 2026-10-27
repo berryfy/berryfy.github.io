@@ -65,19 +65,19 @@
 
 ## 컴포넌트
 
-| 컴포넌트         | 파일                                      | 규칙                                                                                                                                                                                  |
-| ---------------- | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Button           | `components/atoms/Button.tsx`             | pill. size `sm 36` · `md 44` · `lg 52`px · `icon-sm`/`icon`/`icon-lg`. variant `primary` · `secondary` · `outline` · `ghost` · `danger` · `link`. `href`면 링크, `external`이면 새 탭 |
-| Badge            | `components/atoms/Badge.tsx`              | pill 28px. variant `neutral` · `primary` · `outline` · `success` · `warning` · `danger`. 개발 중은 `neutral` + 코발트 점                                                              |
-| Wordmark         | `components/atoms/Wordmark.tsx`           | 소문자 `berryfy` + 코발트 점. 크기는 font-size로만 조절                                                                                                                               |
-| BrandMark        | `components/widgets/BrandMark.tsx`        | 홈 링크가 달린 Wordmark                                                                                                                                                               |
-| LanguageMenu     | `components/widgets/LanguageMenu.tsx`     | 헤더용. 메뉴와 같은 글자로 현재 언어 이름 + 꺾쇠 → 언어 이름·코드 목록. 현재 언어는 코발트 점. Esc·바깥 누름·선택 시 닫힘                                                             |
-| LanguageSwitcher | `components/widgets/LanguageSwitcher.tsx` | 펼침 없는 언어 이름 목록. 모바일 메뉴·푸터용. 현재 언어는 코발트 점                                                                                                                   |
-| ThemeToggle      | `components/widgets/ThemeToggle.tsx`      | ghost 아이콘 버튼. 해·달 아이콘 전환                                                                                                                                                  |
-| SiteHeader       | `components/widgets/SiteHeader.tsx`       | 고정 헤더 64/72px. BrandMark + 메뉴(선택) + LanguageMenu + ThemeToggle. 메뉴가 있으면 `md` 미만에서 MobileMenu로 전환                                                                 |
-| HeaderNavigation | `components/widgets/HeaderNavigation.tsx` | `md` 이상 가로 메뉴. 44px 링크, 보조 글자색 → hover 시 본문색                                                                                                                         |
-| MobileMenu       | `components/widgets/MobileMenu.tsx`       | `md` 미만. 메뉴 버튼 → 헤더 아래 패널(메뉴 + 언어). Esc·링크 선택·넓은 화면 전환 시 닫힘                                                                                              |
-| SkipLink         | `components/atoms/SkipLink.tsx`           | 키보드 포커스 때만 보이는 본문 건너뛰기. 대상은 `<main id={mainContentId}>`                                                                                                           |
+| 컴포넌트         | 파일                                      | 규칙                                                                                                                                                                                                       |
+| ---------------- | ----------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Button           | `components/atoms/Button.tsx`             | pill. size `sm 36` · `md 44` · `lg 52`px · `icon-sm`/`icon`/`icon-lg`. variant `primary` · `secondary` · `outline` · `ghost` · `danger` · `link`. `href`면 링크, `external`이면 새 탭                      |
+| Badge            | `components/atoms/Badge.tsx`              | pill 28px. variant `neutral` · `primary` · `outline` · `success` · `warning` · `danger`. 개발 중은 `neutral`                                                                                               |
+| Wordmark         | `components/atoms/Wordmark.tsx`           | 소문자 `berryfy` + 코발트 점. 크기는 font-size로만 조절                                                                                                                                                    |
+| BrandMark        | `components/widgets/BrandMark.tsx`        | 홈 링크가 달린 Wordmark                                                                                                                                                                                    |
+| LanguageMenu     | `components/widgets/LanguageMenu.tsx`     | 헤더용. 메뉴와 같은 글자로 현재 언어 이름 + 꺾쇠 → 언어 이름·코드 목록. 현재 언어는 굵고 밝은 글자. Esc·바깥 누름·선택 시 닫힘                                                                             |
+| LanguageSwitcher | `components/widgets/LanguageSwitcher.tsx` | 펼침 없는 언어 이름 목록. 모바일 메뉴·푸터용. 현재 언어는 굵고 밝은 글자                                                                                                                                   |
+| ThemeToggle      | `components/widgets/ThemeToggle.tsx`      | ghost 아이콘 버튼. 해·달 아이콘 전환                                                                                                                                                                       |
+| SiteHeader       | `components/widgets/SiteHeader.tsx`       | 고정 헤더 64/72px. 맨 위에서는 구분선 없이 바탕과 이어지고 스크롤하면 구분선·반투명 바탕(StickyHeader). BrandMark + 메뉴(선택) + LanguageMenu + ThemeToggle. 메뉴가 있으면 `md` 미만에서 MobileMenu로 전환 |
+| HeaderNavigation | `components/widgets/HeaderNavigation.tsx` | `md` 이상 가로 메뉴. 44px 링크, 보조 글자색 → hover 시 본문색                                                                                                                                              |
+| MobileMenu       | `components/widgets/MobileMenu.tsx`       | `md` 미만. 메뉴 버튼 → 헤더 아래 패널(메뉴 + 언어). Esc·링크 선택·넓은 화면 전환 시 닫힘                                                                                                                   |
+| SkipLink         | `components/atoms/SkipLink.tsx`           | 키보드 포커스 때만 보이는 본문 건너뛰기. 대상은 `<main id={mainContentId}>`                                                                                                                                |
 
-- 현재 위치·선택 상태는 체크 표시 대신 코발트 점(6px)으로 표시한다. 글자 로고의 점과 같은 표현이다.
+- 현재 위치·선택 상태는 장식(점·체크·막대) 없이 글자 굵기(`font-semibold`)와 밝기(`foreground` ↔ `muted-foreground`)로만 구분한다. 코발트 점은 글자 로고에만 쓴다.
 - 정사각형 자리(파비콘·프로필)는 `b` + 코발트 점 모노그램을 쓴다.
