@@ -209,6 +209,8 @@ html:lang(ko) {
 
 html:lang(ja) {
   font-feature-settings: "palt" 1;
+  /* 단어 중간이 아니라 구 단위로 줄을 바꾼다. 지원하지 않는 브라우저는 기본 줄바꿈을 쓴다. */
+  word-break: auto-phrase;
 }
 
 .legal-copy {

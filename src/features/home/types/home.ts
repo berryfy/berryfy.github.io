@@ -1,4 +1,7 @@
 export interface SiteCopy {
+  hero: {
+    description: string;
+  };
   about: {
     description: string;
   };

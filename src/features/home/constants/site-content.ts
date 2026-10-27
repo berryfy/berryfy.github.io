@@ -5,6 +5,9 @@ import type { SiteLocale } from "@/types/site";
 // 홈 화면 문구. 영어 제목·슬로건은 번역하지 않고 설명만 각 언어로 쓴다.
 export const siteCopy: Record<SiteLocale, SiteCopy> = {
   en: {
+    hero: {
+      description: "Something new today. Something better tomorrow.",
+    },
     about: {
       description:
         "Everything starts small, then keeps getting better, little by little.",
@@ -18,6 +21,9 @@ export const siteCopy: Record<SiteLocale, SiteCopy> = {
     description: `Play for a moment, find your focus, or make something your own. ${siteConfig.name} creates ${siteConfig.platform} apps that are easy to enjoy and easy to keep.`,
   },
   ko: {
+    hero: {
+      description: "오늘도 새로운 걸 만들고, 어제 만든 건 조금 더 좋게.",
+    },
     about: {
       description: "작게 시작해, 오래도록 조금씩 나아져요.",
     },
@@ -30,6 +36,9 @@ export const siteCopy: Record<SiteLocale, SiteCopy> = {
     description: `잠깐 즐기고 싶을 때, 집중하고 싶을 때, 나만의 무언가를 만들고 싶을 때. ${siteConfig.name}는 쉽고 기분 좋은 ${siteConfig.platform} 앱을 만듭니다.`,
   },
   ja: {
+    hero: {
+      description: "今日も新しいものを。昨日のものは、少しだけ良く。",
+    },
     about: {
       description: "小さく始めて、長く、少しずつ良くしていく。",
     },
