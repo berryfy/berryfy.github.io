@@ -12,6 +12,9 @@ interface SiteFooterProps {
   languagePaths: Record<SiteLocale, string>;
 }
 
+// 저작권 문구는 언어와 관계없이 영어로 둔다.
+const copyrightNotice = "All rights reserved.";
+
 const columnTitleClassName = "font-mono text-caption text-muted-foreground";
 const linkClassName =
   "inline-flex min-h-11 items-center text-small text-foreground transition-colors outline-none hover:text-link focus-visible:ring-3 focus-visible:ring-ring/60 rounded-xs";
@@ -51,7 +54,7 @@ const SiteFooter = ({ locale, homeHref, languagePaths }: SiteFooterProps) => {
 
         <div className="mt-20 flex flex-col-reverse gap-4 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-caption text-muted-foreground">
-            © {year} {businessInfo.name}. {labels.rights}
+            © {year} {businessInfo.name}. {copyrightNotice}
           </p>
           <div className="-mx-3">
             <LanguageSwitcher
