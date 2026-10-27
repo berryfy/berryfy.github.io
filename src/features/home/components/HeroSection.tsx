@@ -4,7 +4,7 @@ interface HeroSectionProps {
   description: string;
 }
 
-// "New often." · "Better always." 두 줄로 나눈다. 뒷줄만 스크롤에 따라 굵어진다.
+// "New often." · "Better always." 두 줄로 나눈다. 뒷줄만 페이지가 열릴 때 굵어진다.
 const [sloganLead, sloganTail] = siteSlogan.split(/(?<=\.)\s+/);
 
 // 홈 첫 화면. 영어 슬로건을 페이지 제목으로 크게 두고 그 뜻을 페이지 언어로 작게 덧붙인다.
@@ -20,7 +20,7 @@ const HeroSection = ({ description }: HeroSectionProps) => (
         className="font-display text-display-xl font-extrabold tracking-[-0.05em]"
       >
         <span className="block whitespace-nowrap">{sloganLead}</span>
-        <span className="type-grow-on-scroll block whitespace-nowrap">
+        <span className="type-grow-on-load block whitespace-nowrap">
           {sloganTail}
         </span>
       </h1>
