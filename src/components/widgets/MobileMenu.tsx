@@ -19,7 +19,7 @@ interface MobileMenuProps {
   languagePaths: Record<SiteLocale, string>;
 }
 
-// 좁은 화면용 메뉴. 헤더 바로 아래로 펼쳐지고 언어 전환도 이 안에 둔다.
+// 좁은 화면용 메뉴. 헤더 아래 화면 전체를 덮고, 구분선 없이 큰 글자와 여백으로 메뉴와 언어 목록을 나눈다.
 const MobileMenu = ({
   items,
   navigationLabel,
@@ -52,10 +52,16 @@ const MobileMenu = ({
       }
     };
 
+    // 패널이 화면 전체를 덮는 동안 뒤 페이지가 스크롤되지 않게 한다.
+    const root = document.documentElement;
+    const previousOverflow = root.style.overflow;
+    root.style.overflow = "hidden";
+
     document.addEventListener("keydown", handleKeyDown);
     desktopQuery.addEventListener("change", handleViewportChange);
 
     return () => {
+      root.style.overflow = previousOverflow;
       document.removeEventListener("keydown", handleKeyDown);
       desktopQuery.removeEventListener("change", handleViewportChange);
     };
@@ -80,7 +86,7 @@ const MobileMenu = ({
       <div
         id={panelId}
         hidden={!isOpen}
-        className="absolute inset-x-0 top-full border-b border-border bg-background px-4 pt-2 pb-6"
+        className="absolute inset-x-0 top-full h-svh overflow-y-auto bg-background px-4 pt-4 pb-10"
       >
         <nav aria-label={navigationLabel}>
           <ul className="grid">
@@ -89,7 +95,7 @@ const MobileMenu = ({
                 <Link
                   href={item.href}
                   onClick={close}
-                  className="flex min-h-13 items-center border-b border-border font-display text-title-sm font-bold outline-none focus-visible:ring-3 focus-visible:ring-ring/60"
+                  className="flex min-h-14 items-center rounded-xs font-display text-title-md font-bold outline-none focus-visible:ring-3 focus-visible:ring-ring/60"
                 >
                   {item.label}
                 </Link>
@@ -97,7 +103,7 @@ const MobileMenu = ({
             ))}
           </ul>
         </nav>
-        <div className="-mx-3 mt-5">
+        <div className="-mx-3 mt-10">
           <LanguageSwitcher
             locale={locale}
             label={languageLabel}

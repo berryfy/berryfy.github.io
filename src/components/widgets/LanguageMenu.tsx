@@ -74,7 +74,7 @@ const LanguageMenu = ({ locale, label, paths }: LanguageMenuProps) => {
       <div
         id={panelId}
         hidden={!isOpen}
-        className="absolute top-full right-0 z-10 mt-2 w-44 rounded-lg border border-border bg-popover p-1.5 text-popover-foreground shadow-overlay"
+        className="absolute top-full right-0 z-10 mt-2 w-44 rounded-lg bg-popover p-1.5 text-popover-foreground shadow-overlay"
       >
         <ul>
           {siteLocales.map((item) => {

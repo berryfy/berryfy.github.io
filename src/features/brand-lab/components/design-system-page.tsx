@@ -16,7 +16,7 @@ import {
 
 const principles = [
   "바탕은 어둡게, 강조색은 코발트 하나. 한 화면에서 코발트로 칠한 큰 면은 주요 행동 하나뿐입니다.",
-  "깊이는 그림자가 아니라 표면 단계(background → card → popover)와 테두리로 표현합니다.",
+  "구분은 선이 아니라 여백·글자 위계·표면 단계(background → card → popover)로 합니다.",
   "제목은 Gabarito, 본문은 언어별 글꼴. 글자 크기는 타입 스케일 토큰만 씁니다.",
   "버튼·칩은 pill, 카드는 lg 모서리. 누를 수 있는 요소는 높이 44px 이상입니다.",
   "제품 그림이 주인공입니다. 브랜드 색은 그림을 담는 틀로만 씁니다.",
@@ -32,7 +32,7 @@ function Section({
   children: ReactNode;
 }) {
   return (
-    <section className="grid gap-6 border-t border-border py-12 lg:grid-cols-[minmax(0,15rem)_minmax(0,1fr)] lg:gap-12">
+    <section className="grid gap-6 py-14 lg:grid-cols-[minmax(0,15rem)_minmax(0,1fr)] lg:gap-12">
       <div>
         <h2 className="font-display text-title-md font-extrabold tracking-[-0.03em]">
           {title}
@@ -111,7 +111,7 @@ export default function DesignSystemPage() {
           title="Header"
           description="고정 헤더. 넓은 화면은 가로 메뉴, 좁은 화면은 메뉴 버튼 안에 메뉴와 언어 전환을 둡니다. Tab을 누르면 본문 건너뛰기 링크가 나타납니다."
         >
-          <div className="overflow-hidden rounded-xl border border-border">
+          <div className="overflow-hidden rounded-xl bg-card">
             <SiteHeader
               homeHref="/"
               locale="ko"
@@ -130,7 +130,7 @@ export default function DesignSystemPage() {
           title="Footer"
           description="브랜드·메뉴·문의 세 열과 아래 줄의 저작권·언어 목록. 좁은 화면에서는 한 열로 쌓입니다."
         >
-          <div className="overflow-hidden rounded-xl border border-border">
+          <div className="overflow-hidden rounded-xl bg-card">
             <SiteFooter
               locale="ko"
               homeHref="/"
@@ -227,9 +227,7 @@ export default function DesignSystemPage() {
           <ul className="grid grid-cols-[repeat(auto-fill,minmax(7rem,1fr))] gap-4">
             {radii.map((radius) => (
               <li key={radius.token}>
-                <span
-                  className={`block h-16 border border-border bg-card ${radius.className}`}
-                />
+                <span className={`block h-16 bg-card ${radius.className}`} />
                 <span className="mt-2 block font-mono text-caption">
                   {radius.token}
                 </span>
@@ -298,7 +296,7 @@ export default function DesignSystemPage() {
           description="앱과 게임을 같은 형식으로 보여주는 카드. 그림 자리는 제품 원화가 채웁니다."
         >
           <ThemePair>
-            <article className="overflow-hidden rounded-lg border border-border bg-card text-card-foreground shadow-raised">
+            <article className="overflow-hidden rounded-lg bg-card text-card-foreground shadow-raised">
               <div className="aspect-[16/9] bg-secondary" />
               <div className="grid gap-3 p-5">
                 <div className="flex flex-wrap gap-2">
@@ -311,7 +309,7 @@ export default function DesignSystemPage() {
                 <p className="text-small text-muted-foreground">
                   손님들이 쉬어 가는 작은 섬 리조트를 꾸리는 경영 게임.
                 </p>
-                <div className="flex flex-wrap items-center justify-between gap-3 border-t border-border pt-4">
+                <div className="mt-2 flex flex-wrap items-center justify-between gap-3">
                   <span className="font-mono text-caption text-muted-foreground">
                     Steam · Android
                   </span>

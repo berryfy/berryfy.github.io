@@ -19,7 +19,7 @@ const columnTitleClassName = "font-mono text-caption text-muted-foreground";
 const linkClassName =
   "inline-flex min-h-11 items-center text-small text-foreground transition-colors outline-none hover:text-link focus-visible:ring-3 focus-visible:ring-ring/60 rounded-xs";
 
-// 공용 푸터: 브랜드·메뉴·문의 열 + 아래 줄에 언어 목록과 저작권. 빌드 연도를 표시한다.
+// 공용 푸터: 브랜드·메뉴·문의 열 + 아래 줄에 언어 목록과 저작권. 구분선 없이 여백으로 나눈다. 빌드 연도를 표시한다.
 const SiteFooter = ({
   locale,
   homeHref,
@@ -31,8 +31,8 @@ const SiteFooter = ({
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-border pb-[env(safe-area-inset-bottom)]">
-      <div className="mx-auto max-w-page px-4 pt-14 pb-8 sm:px-8 sm:pt-20">
+    <footer className="pb-[env(safe-area-inset-bottom)]">
+      <div className="mx-auto max-w-page px-4 pt-24 pb-10 sm:px-8 sm:pt-32">
         <div className="grid gap-10 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)_minmax(0,1fr)] md:gap-8">
           <div className="max-w-xs">
             <Link
@@ -73,7 +73,7 @@ const SiteFooter = ({
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col-reverse gap-4 border-t border-border pt-6 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-20 flex flex-col-reverse gap-4 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-caption text-muted-foreground">
             © {year} {businessInfo.name}. {labels.rights}
           </p>

@@ -11,7 +11,7 @@ interface StickyHeaderProps {
 const hideAfterOffset = 96;
 const directionThreshold = 8;
 
-// 맨 위에서는 바탕과 이어지고, 스크롤하면 구분선을 보인다.
+// 맨 위에서는 바탕과 이어지고, 스크롤하면 구분선 없이 반투명 흐림 바탕으로 본문과 구분한다.
 // 아래로 내리면 숨기고 위로 올리면 다시 보인다. 메뉴가 열려 있거나 헤더 안에 포커스가 있으면 숨기지 않는다.
 const StickyHeader = ({ children }: StickyHeaderProps) => {
   const headerRef = useRef<HTMLElement>(null);
@@ -59,7 +59,7 @@ const StickyHeader = ({ children }: StickyHeaderProps) => {
       data-scrolled={isScrolled}
       data-hidden={isHidden}
       onFocus={() => setIsHidden(false)}
-      className="sticky top-0 z-50 border-b border-transparent bg-background pt-[env(safe-area-inset-top)] transition-[translate,background-color,border-color] duration-300 ease-standard data-[hidden=true]:-translate-y-full data-[scrolled=true]:border-border data-[scrolled=true]:bg-background/85 data-[scrolled=true]:backdrop-blur-md"
+      className="sticky top-0 z-50 bg-background pt-[env(safe-area-inset-top)] transition-[translate,background-color] duration-300 ease-standard data-[hidden=true]:-translate-y-full data-[scrolled=true]:bg-background/80 data-[scrolled=true]:backdrop-blur-md"
     >
       {children}
     </header>
