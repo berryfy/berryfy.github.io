@@ -65,11 +65,14 @@
 
 ## 컴포넌트
 
-| 컴포넌트  | 파일                        | 규칙                                                                                                                               |
-| --------- | --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| Button    | `components/ui/button.tsx`  | pill. `sm 36` · `default 44` · `lg 52`px. variant `default`(=primary) · `secondary` · `outline` · `ghost` · `destructive` · `link` |
-| Badge     | `components/ui/badge.tsx`   | pill 28px. `default` · `primary` · `outline` · `success` · `warning` · `destructive`. 개발 중은 `default` + 코발트 점              |
-| Wordmark  | `components/wordmark.tsx`   | 소문자 `berryfy` + 코발트 점. 크기는 font-size로만 조절                                                                            |
-| BrandMark | `components/brand-mark.tsx` | 홈 링크가 달린 Wordmark                                                                                                            |
+| 컴포넌트         | 파일                                      | 규칙                                                                                                                                                                                  |
+| ---------------- | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Button           | `components/atoms/Button.tsx`             | pill. size `sm 36` · `md 44` · `lg 52`px · `icon-sm`/`icon`/`icon-lg`. variant `primary` · `secondary` · `outline` · `ghost` · `danger` · `link`. `href`면 링크, `external`이면 새 탭 |
+| Badge            | `components/atoms/Badge.tsx`              | pill 28px. variant `neutral` · `primary` · `outline` · `success` · `warning` · `danger`. 개발 중은 `neutral` + 코발트 점                                                              |
+| Wordmark         | `components/atoms/Wordmark.tsx`           | 소문자 `berryfy` + 코발트 점. 크기는 font-size로만 조절                                                                                                                               |
+| BrandMark        | `components/widgets/BrandMark.tsx`        | 홈 링크가 달린 Wordmark                                                                                                                                                               |
+| LanguageSwitcher | `components/widgets/LanguageSwitcher.tsx` | EN·KO·JA 링크 3개. 현재 언어는 `secondary` 바탕                                                                                                                                       |
+| ThemeToggle      | `components/widgets/ThemeToggle.tsx`      | ghost 아이콘 버튼. 해·달 아이콘 전환                                                                                                                                                  |
+| SiteHeader       | `components/widgets/SiteHeader.tsx`       | 고정 헤더. BrandMark + LanguageSwitcher + ThemeToggle                                                                                                                                 |
 
 - 정사각형 자리(파비콘·프로필)는 `b` + 코발트 점 모노그램을 쓴다.

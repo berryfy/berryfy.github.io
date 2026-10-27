@@ -1,10 +1,13 @@
 # 공용 컴포넌트 규칙
 
-- 둘 이상의 기능에서 재사용하는 컴포넌트만 둔다.
-- 기능 문구·비즈니스 로직·기능 전용 데이터에 의존하지 않는다.
-- 1 파일 = 1 default export 컴포넌트를 유지한다.
-- 접근 가능한 이름, 키보드 focus, semantic HTML을 기본 제공한다.
-- 디자인 토큰과 Tailwind 유틸리티를 우선하며 임의 색상은 브랜드 표현에 필요한 경우만 사용한다.
-- 언어 선택 UI는 `language-switcher.tsx` 하나만 사용하고, 각 기능은 언어별 경로만 전달한다.
-- 공통 페이지 헤더는 `site-header.tsx`를 사용한다. 기능별 내비게이션이나 메뉴는 `navigation`·`actions` 슬롯으로만 주입한다.
-- 전역 테마는 `theme-provider.tsx`, 테마 전환 UI는 `theme-toggle.tsx`만 사용한다. 페이지별 테마 상태를 만들지 않는다.
+| 폴더 | 두는 것 | 예 |
+|---|---|---|
+| `atoms/` | 다른 컴포넌트를 import하지 않는 단일 요소 | `Button` · `Badge` · `Wordmark` |
+| `widgets/` | atoms를 조합하거나 상태·브라우저 API·라우팅을 쓰는 부품 | `SiteHeader` · `LanguageSwitcher` · `ThemeToggle` · `SiteDocument` |
+
+- 파일명 = 컴포넌트명(PascalCase), 1파일 1컴포넌트 default export, 화살표 함수.
+- 기능 문구·비즈니스 데이터에 의존하지 않는다. 문구는 props로 받는다.
+- variant·size는 문자열 union 타입과 클래스 맵으로 정의하고 토큰 클래스만 쓴다.
+- 링크 모양 버튼은 `Button`의 `href`(내부 경로) · `external`(새 탭)로 만든다.
+- 페이지 헤더는 `widgets/SiteHeader`, 언어 전환은 `widgets/LanguageSwitcher`, 테마는 `widgets/ThemeProvider`·`widgets/ThemeToggle` 하나씩만 쓴다.
+- 새 컴포넌트는 `/lab/design-system/`에 예시를 추가하고 `docs/design-system.md` 표를 갱신한다.
