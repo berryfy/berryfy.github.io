@@ -256,6 +256,29 @@ html:lang(ja) {
   text-underline-offset: 0.2em;
 }
 
+/*
+ * 스크롤 타이포그래피: 슬로건 뒷줄이 첫 화면을 지나는 동안 얇은 굵기에서 가장 두꺼운 굵기로 바뀐다.
+ * 스크롤 연동 애니메이션을 지원하고 동작 줄이기를 끄지 않은 경우에만 적용하고, 나머지는 원래 굵기로 보인다.
+ */
+@keyframes type-grow {
+  from {
+    font-weight: 400;
+  }
+  to {
+    font-weight: 900;
+  }
+}
+
+@supports (animation-timeline: scroll()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .type-grow-on-scroll {
+      animation: type-grow linear both;
+      animation-timeline: scroll(root);
+      animation-range: 0 15vh;
+    }
+  }
+}
+
 ::selection {
   background: var(--color-cobalt-500);
   color: #ffffff;
