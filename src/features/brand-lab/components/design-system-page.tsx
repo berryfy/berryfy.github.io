@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import { ArrowRight, Heart, Play } from "lucide-react";
 
 import Wordmark from "@/components/atoms/Wordmark";
+import SiteFooter from "@/components/widgets/SiteFooter";
 import SiteHeader from "@/components/widgets/SiteHeader";
 import { homeLocalePaths } from "@/constants/site";
 import Badge from "@/components/atoms/Badge";
@@ -121,6 +122,25 @@ export default function DesignSystemPage() {
                 { label: "문의", href: "#contact" },
               ]}
               navigationLabel="주요 메뉴"
+            />
+          </div>
+        </Section>
+
+        <Section
+          title="Footer"
+          description="브랜드·메뉴·문의 세 열과 아래 줄의 저작권·언어 목록. 좁은 화면에서는 한 열로 쌓입니다."
+        >
+          <div className="overflow-hidden rounded-xl border border-border">
+            <SiteFooter
+              locale="ko"
+              homeHref="/"
+              languagePaths={homeLocalePaths}
+              tagline="작은 앱으로, 더 빛나는 순간."
+              navigation={[
+                { label: "제품", href: "#products" },
+                { label: "소개", href: "#about" },
+                { label: "문의", href: "#contact" },
+              ]}
             />
           </div>
         </Section>

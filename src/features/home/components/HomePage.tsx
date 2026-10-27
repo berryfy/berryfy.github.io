@@ -1,3 +1,4 @@
+import SiteFooter from "@/components/widgets/SiteFooter";
 import SiteHeader from "@/components/widgets/SiteHeader";
 import {
   homeLocalePaths,
@@ -13,7 +14,7 @@ interface HomePageProps {
   copy: SiteCopy;
 }
 
-// 섹션은 디자인 시스템 기준으로 하나씩 새로 만든다. 지금은 헤더만 있다.
+// 섹션은 디자인 시스템 기준으로 하나씩 새로 만든다. 지금은 헤더와 푸터만 있다.
 const HomePage = ({ locale, copy }: HomePageProps) => {
   const navigation = [
     { label: copy.navigation.products, href: `#${homeSections.products}` },
@@ -31,6 +32,13 @@ const HomePage = ({ locale, copy }: HomePageProps) => {
         navigationLabel={copy.navigationLabel}
       />
       <main id={mainContentId} className="min-h-screen" />
+      <SiteFooter
+        locale={locale}
+        homeHref={localeDetails[locale].path}
+        languagePaths={homeLocalePaths}
+        tagline={copy.tagline}
+        navigation={navigation}
+      />
     </>
   );
 };

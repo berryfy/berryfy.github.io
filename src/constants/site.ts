@@ -4,7 +4,6 @@ export const siteConfig = {
   name: "Berryfy",
   url: "https://berryfy.github.io",
   platform: "Android",
-  copyrightNotice: "All rights reserved.",
   defaultLocale: "en" satisfies SiteLocale,
   routes: {
     home: "/",
@@ -167,3 +166,27 @@ export const menuLabels: Record<SiteLocale, { open: string; close: string }> = {
 
 // 모든 페이지의 본문 `<main>`에 붙이는 id. 건너뛰기 링크가 여기로 이동한다.
 export const mainContentId = "main";
+
+export const footerLabels: Record<
+  SiteLocale,
+  { navigation: string; contact: string; language: string; rights: string }
+> = {
+  en: {
+    navigation: "Menu",
+    contact: "Contact",
+    language: "Language",
+    rights: "All rights reserved.",
+  },
+  ko: {
+    navigation: "메뉴",
+    contact: "문의",
+    language: "언어",
+    rights: "모든 권리 보유.",
+  },
+  ja: {
+    navigation: "メニュー",
+    contact: "お問い合わせ",
+    language: "言語",
+    rights: "All rights reserved.",
+  },
+};
