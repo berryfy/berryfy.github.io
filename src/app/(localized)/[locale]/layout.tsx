@@ -5,7 +5,7 @@ import {
   monoFontVariable,
   siteFontVariables,
 } from "@/app/fonts";
-import SiteDocument from "@/components/site-document";
+import SiteDocument from "@/components/widgets/SiteDocument";
 import { siteConfig } from "@/constants/site";
 import { isSiteLocale } from "@/lib/locale";
 import "../../globals.css";

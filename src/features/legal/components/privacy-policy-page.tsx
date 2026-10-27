@@ -1,4 +1,4 @@
-import SiteHeader from "@/components/site-header";
+import SiteHeader from "@/components/widgets/SiteHeader";
 import { siteConfig } from "@/constants/site";
 import PrivacyDataTable from "@/features/legal/components/privacy-data-table";
 import PrivacyExternalService from "@/features/legal/components/privacy-external-service";

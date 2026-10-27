@@ -1,6 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 
-import SiteHeader from "@/components/site-header";
+import SiteHeader from "@/components/widgets/SiteHeader";
 import { siteConfig } from "@/constants/site";
 import MoreAppItem from "@/features/more-apps/components/more-app-item";
 import {

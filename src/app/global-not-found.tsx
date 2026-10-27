@@ -5,7 +5,7 @@ import {
   monoFontVariable,
   siteFontVariables,
 } from "@/app/fonts";
-import SiteDocument from "@/components/site-document";
+import SiteDocument from "@/components/widgets/SiteDocument";
 import NotFoundPage from "@/features/not-found/components/not-found-page";
 import "./globals.css";
 

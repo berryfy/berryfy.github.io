@@ -1,9 +1,9 @@
 import type { ReactNode } from "react";
 import { ArrowRight, Heart, Play } from "lucide-react";
 
-import Wordmark from "@/components/wordmark";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import Wordmark from "@/components/atoms/Wordmark";
+import Badge from "@/components/atoms/Badge";
+import Button from "@/components/atoms/Button";
 import {
   colorScales,
   radii,
@@ -228,7 +228,7 @@ export default function DesignSystemPage() {
               </div>
               <div className="flex flex-wrap items-center gap-4">
                 <Button variant="link">개인정보처리방침</Button>
-                <Button variant="destructive">삭제</Button>
+                <Button variant="danger">삭제</Button>
                 <Button disabled>준비 중</Button>
               </div>
             </div>
@@ -250,7 +250,7 @@ export default function DesignSystemPage() {
               <Badge variant="outline">게임</Badge>
               <Badge variant="outline">앱 · 생산성</Badge>
               <Badge variant="warning">점검 예정</Badge>
-              <Badge variant="destructive">지원 종료</Badge>
+              <Badge variant="danger">지원 종료</Badge>
             </div>
           </ThemePair>
         </Section>
