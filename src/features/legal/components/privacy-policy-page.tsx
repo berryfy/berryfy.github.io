@@ -1,5 +1,6 @@
+import SiteFooter from "@/components/widgets/SiteFooter";
 import SiteHeader from "@/components/widgets/SiteHeader";
-import { mainContentId, siteConfig } from "@/constants/site";
+import { localeDetails, mainContentId } from "@/constants/site";
 import PrivacyDataTable from "@/features/legal/components/privacy-data-table";
 import PrivacyExternalService from "@/features/legal/components/privacy-external-service";
 import PrivacySection from "@/features/legal/components/privacy-section";
@@ -33,54 +34,60 @@ export default function PrivacyPolicyPage({
       className={`${fontClassName} min-h-screen bg-background font-sans text-foreground`}
     >
       <SiteHeader
-        homeHref={siteConfig.routes.home}
+        homeHref={localeDetails[locale].path}
         locale={locale}
         languagePaths={localePaths}
       />
 
       <main
         id={mainContentId}
-        className="mx-auto max-w-[900px] px-4 py-8 sm:px-8 sm:py-12 lg:py-14"
+        className="mx-auto max-w-4xl px-4 pt-16 pb-8 sm:px-8 sm:pt-24"
       >
         <header>
-          <p className="text-sm text-muted-foreground">{policy.appName}</p>
-          <h1 className="mt-2 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+          <p className="font-mono text-caption text-muted-foreground">
+            {policy.appName}
+          </p>
+          <h1 className="mt-3 font-display text-display-md font-extrabold tracking-[-0.04em]">
             {copy.pageTitle}
           </h1>
-          <p className="mt-4 max-w-[720px] leading-7 text-muted-foreground">
+          <p className="mt-5 max-w-prose text-body-lg text-pretty text-muted-foreground">
             {copy.intro}
           </p>
-          <dl className="mt-6 grid gap-2 border-y border-border py-4 text-sm sm:grid-cols-2 lg:grid-cols-3">
+          <dl className="mt-8 flex flex-wrap gap-x-8 gap-y-2 text-small text-muted-foreground">
             <div>
-              <dt className="inline font-semibold">{copy.labels.app}: </dt>
-              <dd className="inline">{policy.appName}</dd>
+              <dt className="inline">{copy.labels.app} </dt>
+              <dd className="inline font-semibold text-foreground">
+                {policy.appName}
+              </dd>
             </div>
             <div>
-              <dt className="inline font-semibold">{copy.labels.business}: </dt>
-              <dd className="inline">{policy.businessName}</dd>
+              <dt className="inline">{copy.labels.business} </dt>
+              <dd className="inline font-semibold text-foreground">
+                {policy.businessName}
+              </dd>
             </div>
             <div>
-              <dt className="inline font-semibold">
-                {copy.labels.effectiveDate}:{" "}
-              </dt>
-              <dd className="inline">{policy.effectiveDate}</dd>
+              <dt className="inline">{copy.labels.effectiveDate} </dt>
+              <dd className="inline font-semibold text-foreground">
+                {policy.effectiveDate}
+              </dd>
             </div>
           </dl>
         </header>
 
         <nav
-          className="mt-8 rounded-2xl border border-border/80 bg-card/45 p-4 sm:p-5"
+          className="mt-12 rounded-lg bg-card p-5 sm:p-6"
           aria-label={copy.labels.contents}
         >
-          <h2 className="text-sm font-bold tracking-[-0.01em]">
+          <h2 className="font-mono text-caption text-muted-foreground">
             {copy.labels.contents}
           </h2>
-          <ol className="mt-3 grid gap-x-5 gap-y-1 text-sm sm:grid-cols-2 lg:grid-cols-3">
+          <ol className="mt-3 grid gap-x-6 text-small sm:grid-cols-2 lg:grid-cols-3">
             {policy.navigation.map((item, index) => (
               <li key={item.id}>
                 <a
                   href={`#${item.id}`}
-                  className="block rounded-lg px-2 py-1.5 leading-5 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none"
+                  className="-mx-2 flex min-h-11 items-center rounded-sm px-2 text-muted-foreground transition-colors outline-none hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring/60"
                 >
                   {index + 1}. {item.label}
                 </a>
@@ -89,13 +96,15 @@ export default function PrivacyPolicyPage({
           </ol>
         </nav>
 
-        <article className="mt-10 space-y-10">
+        <article className="mt-16 space-y-16">
           <section
             id="overview"
-            className="scroll-mt-24 rounded-2xl bg-muted/70 p-5"
+            className="scroll-mt-24 rounded-lg bg-card p-6 sm:p-8"
           >
-            <h2 className="text-lg font-bold">1. {copy.overview.title}</h2>
-            <ul className="mt-3 list-disc space-y-2 pl-5 leading-7 text-muted-foreground">
+            <h2 className="font-display text-title-md font-extrabold tracking-[-0.02em]">
+              1. {copy.overview.title}
+            </h2>
+            <ul className="mt-4 list-disc space-y-2 pl-5 text-muted-foreground">
               {copy.overview.items.map((item) => (
                 <li key={item}>{item}</li>
               ))}
@@ -213,7 +222,7 @@ export default function PrivacyPolicyPage({
           </PrivacySection>
 
           <PrivacySection number="11" title={copy.contact.title} id="contact">
-            <dl className="grid gap-2 rounded-xl border border-border bg-card/40 p-4 text-sm sm:grid-cols-2">
+            <dl className="grid gap-2 rounded-lg bg-card p-5 text-small sm:grid-cols-2">
               <div>
                 <dt className="inline font-semibold">
                   {copy.contact.department}:{" "}
@@ -250,13 +259,11 @@ export default function PrivacyPolicyPage({
         </article>
       </main>
 
-      <footer className="border-t border-border bg-background">
-        <div className="mx-auto max-w-[900px] px-4 py-6 text-sm text-muted-foreground sm:px-8">
-          <p>
-            {policy.businessName} · {policy.contactEmail}
-          </p>
-        </div>
-      </footer>
+      <SiteFooter
+        locale={locale}
+        homeHref={localeDetails[locale].path}
+        languagePaths={localePaths}
+      />
     </div>
   );
 }

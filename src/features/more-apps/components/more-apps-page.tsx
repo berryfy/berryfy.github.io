@@ -1,5 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 
+import Button from "@/components/atoms/Button";
 import SiteHeader from "@/components/widgets/SiteHeader";
 import { mainContentId, siteConfig } from "@/constants/site";
 import MoreAppItem from "@/features/more-apps/components/more-app-item";
@@ -39,21 +40,21 @@ export default function MoreAppsPage({
 
       <main
         id={mainContentId}
-        className="mx-auto max-w-[760px] px-4 pt-10 pb-8 sm:px-6 sm:pt-14"
+        className="mx-auto max-w-3xl px-4 pt-12 pb-16 sm:px-6 sm:pt-16"
       >
         <section>
-          <p className="text-xs font-semibold tracking-[0.18em] text-primary uppercase sm:text-sm">
+          <p className="font-mono text-caption text-muted-foreground">
             {copy.eyebrow}
           </p>
-          <h1 className="mt-3 text-[clamp(2.25rem,9vw,4rem)] leading-[0.98] font-semibold tracking-[-0.06em] text-foreground">
+          <h1 className="mt-3 font-display text-display-md font-extrabold tracking-[-0.04em]">
             {copy.title}
           </h1>
-          <p className="mt-5 max-w-[620px] text-sm leading-7 text-muted-foreground sm:text-base sm:leading-8">
+          <p className="mt-5 max-w-prose text-body text-pretty text-muted-foreground">
             {copy.description}
           </p>
         </section>
 
-        <ul className="mt-9 space-y-3 sm:mt-11 sm:space-y-4">
+        <ul className="mt-10 space-y-3">
           {publishedApps.map((app) => (
             <MoreAppItem
               key={app.packageName}
@@ -64,16 +65,12 @@ export default function MoreAppsPage({
           ))}
         </ul>
 
-        <footer className="mt-9 border-t border-border/80 pt-6 text-center sm:mt-12">
-          <a
-            href={developerStoreUrl}
-            rel="external"
-            className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-border bg-card px-5 text-sm font-semibold text-foreground shadow-sm transition-colors outline-none hover:border-primary/30 hover:text-primary focus-visible:ring-3 focus-visible:ring-primary/35"
-          >
+        <footer className="mt-14 text-center">
+          <Button href={developerStoreUrl} external variant="secondary">
             {copy.storeActionLabel}
-            <ArrowUpRight className="size-4" aria-hidden="true" />
-          </a>
-          <p className="mt-4 text-xs leading-5 text-muted-foreground">
+            <ArrowUpRight aria-hidden="true" />
+          </Button>
+          <p className="mt-4 text-caption text-muted-foreground">
             {copy.availabilityNote}
           </p>
         </footer>

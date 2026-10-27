@@ -14,8 +14,8 @@ export default function PrivacySection({
   children,
 }: PrivacySectionProps) {
   return (
-    <section id={id} className="scroll-mt-24 border-t border-border pt-8">
-      <h2 className="text-xl font-bold tracking-[-0.02em] text-foreground">
+    <section id={id} className="scroll-mt-24">
+      <h2 className="font-display text-title-md font-extrabold tracking-[-0.02em]">
         {number}. {title}
       </h2>
       <div className="legal-copy mt-4">{children}</div>
