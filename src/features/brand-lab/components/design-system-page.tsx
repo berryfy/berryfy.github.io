@@ -128,7 +128,7 @@ export default function DesignSystemPage() {
 
         <Section
           title="Footer"
-          description="브랜드·메뉴·문의 세 열과 아래 줄의 저작권·언어 목록. 좁은 화면에서는 한 열로 쌓입니다."
+          description="브랜드·문의 두 열과 아래 줄의 저작권·언어 목록. 메뉴는 헤더에만 둡니다. 좁은 화면에서는 한 열로 쌓입니다."
         >
           <div className="overflow-hidden rounded-xl bg-card">
             <SiteFooter
@@ -136,11 +136,6 @@ export default function DesignSystemPage() {
               homeHref="/"
               languagePaths={homeLocalePaths}
               tagline="작은 앱으로, 더 빛나는 순간."
-              navigation={[
-                { label: "제품", href: "#products" },
-                { label: "소개", href: "#about" },
-                { label: "문의", href: "#contact" },
-              ]}
             />
           </div>
         </Section>
