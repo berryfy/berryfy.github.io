@@ -1,5 +1,5 @@
 import SiteHeader from "@/components/widgets/SiteHeader";
-import { siteConfig } from "@/constants/site";
+import { mainContentId, siteConfig } from "@/constants/site";
 import PrivacyDataTable from "@/features/legal/components/privacy-data-table";
 import PrivacyExternalService from "@/features/legal/components/privacy-external-service";
 import PrivacySection from "@/features/legal/components/privacy-section";
@@ -38,7 +38,10 @@ export default function PrivacyPolicyPage({
         languagePaths={localePaths}
       />
 
-      <main className="mx-auto max-w-[900px] px-4 py-8 sm:px-8 sm:py-12 lg:py-14">
+      <main
+        id={mainContentId}
+        className="mx-auto max-w-[900px] px-4 py-8 sm:px-8 sm:py-12 lg:py-14"
+      >
         <header>
           <p className="text-sm text-muted-foreground">{policy.appName}</p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">

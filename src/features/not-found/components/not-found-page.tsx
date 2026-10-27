@@ -2,7 +2,7 @@ import { ArrowLeft } from "lucide-react";
 
 import Button from "@/components/atoms/Button";
 import SiteHeader from "@/components/widgets/SiteHeader";
-import { homeLocalePaths, siteConfig } from "@/constants/site";
+import { homeLocalePaths, mainContentId, siteConfig } from "@/constants/site";
 import { notFoundCopy } from "@/features/not-found/constants/not-found-copy";
 
 export default function NotFoundPage() {
@@ -14,7 +14,10 @@ export default function NotFoundPage() {
         languagePaths={homeLocalePaths}
       />
 
-      <main className="mx-auto flex max-w-page flex-col px-4 py-20 sm:px-8 sm:py-28">
+      <main
+        id={mainContentId}
+        className="mx-auto flex max-w-page flex-col px-4 py-20 sm:px-8 sm:py-28"
+      >
         <p className="font-mono text-caption text-link">
           Error 404 · {notFoundCopy.eyebrow}
         </p>

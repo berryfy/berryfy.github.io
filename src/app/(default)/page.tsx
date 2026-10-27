@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 import { siteConfig } from "@/constants/site";
-import HomePage from "@/features/home/components/home-page";
+import HomePage from "@/features/home/components/HomePage";
 import { siteCopy } from "@/features/home/constants/site-content";
 import { createHomeMetadata } from "@/features/home/utils/metadata";
 
@@ -13,5 +13,5 @@ export const metadata: Metadata = createHomeMetadata(
 );
 
 export default function EnglishHomePage() {
-  return <HomePage />;
+  return <HomePage locale={defaultLocale} copy={siteCopy[defaultLocale]} />;
 }

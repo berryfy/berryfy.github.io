@@ -1,7 +1,7 @@
 import { ArrowUpRight } from "lucide-react";
 
 import SiteHeader from "@/components/widgets/SiteHeader";
-import { siteConfig } from "@/constants/site";
+import { mainContentId, siteConfig } from "@/constants/site";
 import MoreAppItem from "@/features/more-apps/components/more-app-item";
 import {
   moreAppsCopy,
@@ -40,7 +40,10 @@ export default function MoreAppsPage({
         languagePaths={moreAppsLocalePaths}
       />
 
-      <main className="mx-auto max-w-[760px] px-4 pt-10 pb-8 sm:px-6 sm:pt-14">
+      <main
+        id={mainContentId}
+        className="mx-auto max-w-[760px] px-4 pt-10 pb-8 sm:px-6 sm:pt-14"
+      >
         <section>
           <p className="text-xs font-semibold tracking-[0.18em] text-primary uppercase sm:text-sm">
             {copy.eyebrow}

@@ -152,3 +152,18 @@ export const languageSwitcherLabels: Record<SiteLocale, string> = {
   ko: "언어 선택",
   ja: "言語を選択",
 };
+
+export const skipLinkLabels: Record<SiteLocale, string> = {
+  en: "Skip to content",
+  ko: "본문으로 건너뛰기",
+  ja: "本文へスキップ",
+};
+
+export const menuLabels: Record<SiteLocale, { open: string; close: string }> = {
+  en: { open: "Open menu", close: "Close menu" },
+  ko: { open: "메뉴 열기", close: "메뉴 닫기" },
+  ja: { open: "メニューを開く", close: "メニューを閉じる" },
+};
+
+// 모든 페이지의 본문 `<main>`에 붙이는 id. 건너뛰기 링크가 여기로 이동한다.
+export const mainContentId = "main";

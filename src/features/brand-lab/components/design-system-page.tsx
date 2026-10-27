@@ -2,6 +2,8 @@ import type { ReactNode } from "react";
 import { ArrowRight, Heart, Play } from "lucide-react";
 
 import Wordmark from "@/components/atoms/Wordmark";
+import SiteHeader from "@/components/widgets/SiteHeader";
+import { homeLocalePaths } from "@/constants/site";
 import Badge from "@/components/atoms/Badge";
 import Button from "@/components/atoms/Button";
 import {
@@ -102,6 +104,25 @@ export default function DesignSystemPage() {
               </span>
             </div>
           </ThemePair>
+        </Section>
+
+        <Section
+          title="Header"
+          description="고정 헤더. 넓은 화면은 가로 메뉴, 좁은 화면은 메뉴 버튼 안에 메뉴와 언어 전환을 둡니다. Tab을 누르면 본문 건너뛰기 링크가 나타납니다."
+        >
+          <div className="overflow-hidden rounded-xl border border-border">
+            <SiteHeader
+              homeHref="/"
+              locale="ko"
+              languagePaths={homeLocalePaths}
+              navigation={[
+                { label: "제품", href: "#products" },
+                { label: "소개", href: "#about" },
+                { label: "문의", href: "#contact" },
+              ]}
+              navigationLabel="주요 메뉴"
+            />
+          </div>
         </Section>
 
         <Section

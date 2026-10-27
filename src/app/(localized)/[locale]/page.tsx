@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { siteConfig, siteLocales } from "@/constants/site";
-import HomePage from "@/features/home/components/home-page";
+import HomePage from "@/features/home/components/HomePage";
 import { siteCopy } from "@/features/home/constants/site-content";
 import { createHomeMetadata } from "@/features/home/utils/metadata";
 import { isSiteLocale } from "@/lib/locale";
@@ -40,5 +40,5 @@ export default async function LocalizedHomePage({
     notFound();
   }
 
-  return <HomePage />;
+  return <HomePage locale={locale} copy={siteCopy[locale]} />;
 }

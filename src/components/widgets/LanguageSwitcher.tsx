@@ -10,10 +10,10 @@ interface LanguageSwitcherProps {
   paths: Record<SiteLocale, string>;
 }
 
-// 언어가 3개뿐이라 펼침 메뉴 없이 바로 누를 수 있는 링크로 보여 준다.
+// 펼침 없이 보이는 언어 목록. 모바일 메뉴·푸터에서 쓴다. 헤더는 LanguageMenu를 쓴다.
 const LanguageSwitcher = ({ locale, label, paths }: LanguageSwitcherProps) => (
   <nav aria-label={label}>
-    <ul className="flex items-center rounded-full border border-border p-0.5">
+    <ul className="flex flex-wrap items-center gap-1">
       {siteLocales.map((item) => {
         const isActive = item === locale;
 
@@ -24,15 +24,14 @@ const LanguageSwitcher = ({ locale, label, paths }: LanguageSwitcherProps) => (
               hrefLang={item}
               lang={item}
               aria-current={isActive ? "page" : undefined}
-              aria-label={localeDetails[item].label}
               className={cn(
-                "inline-flex h-10 min-w-11 items-center justify-center rounded-full px-2.5 font-mono text-caption font-medium transition-colors outline-none focus-visible:ring-3 focus-visible:ring-ring/60",
+                "inline-flex h-11 items-center rounded-full px-4 text-small transition-colors outline-none focus-visible:ring-3 focus-visible:ring-ring/60",
                 isActive
-                  ? "bg-secondary text-foreground"
+                  ? "bg-secondary font-semibold text-foreground"
                   : "text-muted-foreground hover:text-foreground",
               )}
             >
-              {localeDetails[item].shortLabel}
+              {localeDetails[item].label}
             </Link>
           </li>
         );
