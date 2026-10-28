@@ -1,7 +1,13 @@
+import { ArrowRight } from "lucide-react";
+
+import Button from "@/components/atoms/Button";
 import { publishedApps } from "@/constants/apps";
 import ProductGroup from "@/features/home/components/ProductGroup";
 import { productGroups } from "@/features/home/constants/products";
-import { homeSections } from "@/features/home/constants/sections";
+import {
+  homeSections,
+  moreAppsPaths,
+} from "@/features/home/constants/sections";
 import type { SiteCopy } from "@/features/home/types/home";
 import type { SiteLocale } from "@/types/site";
 
@@ -20,13 +26,27 @@ const ProductsSection = ({ locale, label, copy }: ProductsSectionProps) => (
     className="scroll-mt-24 py-24 sm:py-32"
   >
     <div className="mx-auto max-w-page px-4 sm:px-8">
-      <p className="font-mono text-caption text-muted-foreground">{label}</p>
-      <h2
-        id={`${homeSections.products}-title`}
-        className="mt-3 font-display text-display-md font-extrabold tracking-[-0.04em]"
-      >
-        {copy.title}
-      </h2>
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <p className="font-mono text-caption text-muted-foreground">
+            {label}
+          </p>
+          <h2
+            id={`${homeSections.products}-title`}
+            className="mt-3 font-display text-display-md font-extrabold tracking-[-0.04em]"
+          >
+            {copy.title}
+          </h2>
+        </div>
+        <Button
+          href={moreAppsPaths[locale]}
+          variant="ghost"
+          className="-ml-5 self-start sm:-mr-5 sm:ml-0 sm:self-auto"
+        >
+          {copy.viewAll}
+          <ArrowRight aria-hidden="true" />
+        </Button>
+      </div>
       <div className="mt-16 grid gap-16 md:grid-cols-3 md:gap-10 lg:gap-16">
         {productGroups.map(({ group, title }) => (
           <ProductGroup
@@ -34,7 +54,6 @@ const ProductsSection = ({ locale, label, copy }: ProductsSectionProps) => (
             id={`${homeSections.products}-${group}`}
             title={title}
             description={copy[group]}
-            countLabel={copy.countLabel}
             apps={publishedApps.filter((app) => app.group === group)}
             locale={locale}
             compact={group === "fandom"}

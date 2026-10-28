@@ -10,7 +10,7 @@ export const siteCopy: Record<SiteLocale, SiteCopy> = {
       game: "Small games for a short break.",
       tool: "Simple tools for the little moments in your day.",
       fandom: "A place for the artists you love, one app for each fandom.",
-      countLabel: "{count} apps",
+      viewAll: "See all apps",
     },
     hero: {
       description: "Something new today. Something better tomorrow.",
@@ -33,7 +33,7 @@ export const siteCopy: Record<SiteLocale, SiteCopy> = {
       game: "잠깐 쉬어 갈 때 꺼내는 작은 게임.",
       tool: "하루 곳곳에서 손이 가는 간단한 도구.",
       fandom: "좋아하는 아티스트를 위한 공간, 팬덤마다 하나씩.",
-      countLabel: "앱 {count}개",
+      viewAll: "모든 앱 보기",
     },
     hero: {
       description: "오늘도 새로운 걸 만들고, 어제 만든 건 조금 더 좋게.",
@@ -55,7 +55,7 @@ export const siteCopy: Record<SiteLocale, SiteCopy> = {
       game: "ひと息つきたいときの、小さなゲーム。",
       tool: "毎日のちょっとした場面で使える、シンプルな道具。",
       fandom: "推しのための場所を、ファンダムごとにひとつずつ。",
-      countLabel: "{count}本のアプリ",
+      viewAll: "すべてのアプリを見る",
     },
     hero: {
       description: "今日も新しいものを。昨日のものは、少しだけ良く。",

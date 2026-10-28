@@ -5,7 +5,6 @@ interface ProductGroupProps {
   id: string;
   title: string;
   description: string;
-  countLabel: string;
   apps: readonly PublishedApp[];
   locale: SiteLocale;
   compact?: boolean;
@@ -17,24 +16,18 @@ const ProductGroup = ({
   id,
   title,
   description,
-  countLabel,
   apps,
   locale,
   compact = false,
 }: ProductGroupProps) => (
   <section aria-labelledby={`${id}-title`} className="flex flex-col">
-    <div className="flex items-baseline justify-between gap-4">
-      <h3
-        id={`${id}-title`}
-        lang="en"
-        className="font-display text-title-lg font-extrabold tracking-[-0.03em]"
-      >
-        {title}
-      </h3>
-      <p className="font-mono text-caption text-muted-foreground">
-        {countLabel.replace("{count}", String(apps.length))}
-      </p>
-    </div>
+    <h3
+      id={`${id}-title`}
+      lang="en"
+      className="font-display text-title-lg font-extrabold tracking-[-0.03em]"
+    >
+      {title}
+    </h3>
     <p className="mt-3 text-small text-pretty text-muted-foreground">
       {description}
     </p>
