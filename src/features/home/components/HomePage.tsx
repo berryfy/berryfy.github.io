@@ -8,6 +8,7 @@ import {
 import AboutSection from "@/features/home/components/AboutSection";
 import HeroSection from "@/features/home/components/HeroSection";
 import ProductsSection from "@/features/home/components/ProductsSection";
+import StructuredData from "@/features/home/components/StructuredData";
 import { homeSections } from "@/features/home/constants/sections";
 import type { SiteCopy } from "@/features/home/types/home";
 import type { SiteLocale } from "@/types/site";
@@ -27,6 +28,7 @@ const HomePage = ({ locale, copy }: HomePageProps) => {
 
   return (
     <>
+      <StructuredData locale={locale} description={copy.description} />
       <SiteHeader
         homeHref={localeDetails[locale].path}
         locale={locale}

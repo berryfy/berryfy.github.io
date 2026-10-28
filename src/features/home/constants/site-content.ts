@@ -1,4 +1,3 @@
-import { siteConfig } from "@/constants/site";
 import type { SiteCopy } from "@/features/home/types/home";
 import type { SiteLocale } from "@/types/site";
 
@@ -25,7 +24,8 @@ export const siteCopy: Record<SiteLocale, SiteCopy> = {
       about: "About",
       contact: "Contact",
     },
-    description: `Play for a moment, find your focus, or make something your own. ${siteConfig.name} creates ${siteConfig.platform} apps that are easy to enjoy and easy to keep.`,
+    description:
+      "berryfy is a studio making games, everyday tools and fan apps. We release new apps often and keep improving the ones we've made.",
   },
   ko: {
     products: {
@@ -47,7 +47,8 @@ export const siteCopy: Record<SiteLocale, SiteCopy> = {
       about: "소개",
       contact: "문의",
     },
-    description: `잠깐 즐기고 싶을 때, 집중하고 싶을 때, 나만의 무언가를 만들고 싶을 때. ${siteConfig.name}는 쉽고 기분 좋은 ${siteConfig.platform} 앱을 만듭니다.`,
+    description:
+      "berryfy는 게임과 일상 도구, 팬 앱을 만드는 스튜디오예요. 새 앱을 자주 내고, 만든 앱은 계속 다듬어요.",
   },
   ja: {
     products: {
@@ -69,6 +70,7 @@ export const siteCopy: Record<SiteLocale, SiteCopy> = {
       about: "私たちについて",
       contact: "お問い合わせ",
     },
-    description: `少し遊びたいとき、集中したいとき、自分らしく何かをつくりたいとき。${siteConfig.name}は、すぐに楽しめて長く使いたくなる${siteConfig.platform}アプリをつくります。`,
+    description:
+      "berryfyは、ゲームや毎日の道具、ファンアプリをつくるスタジオです。新しいアプリをこまめに届け、つくったアプリは少しずつ良くしていきます。",
   },
 };

@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 
-import { siteAssets } from "@/constants/assets";
 import {
   languageAlternates,
   localeDetails,
@@ -8,43 +7,28 @@ import {
   siteSlogan,
 } from "@/constants/site";
 import type { SiteCopy } from "@/features/home/types/home";
+import { createSocialMetadata } from "@/lib/social-metadata";
 import type { SiteLocale } from "@/types/site";
 
 export function createHomeMetadata(
   locale: SiteLocale,
   copy: SiteCopy,
 ): Metadata {
+  const title = `${siteConfig.name} — ${siteSlogan}`;
+
   return {
     metadataBase: new URL(siteConfig.url),
-    title: {
-      absolute: `${siteConfig.name} — ${siteSlogan}`,
-    },
+    title: { absolute: title },
     description: copy.description,
     alternates: {
       canonical: localeDetails[locale].path,
       languages: languageAlternates,
     },
-    openGraph: {
-      type: "website",
-      siteName: siteConfig.name,
-      locale: localeDetails[locale].openGraphLocale,
-      url: localeDetails[locale].path,
-      title: `${siteConfig.name} — ${siteSlogan}`,
+    ...createSocialMetadata({
+      locale,
+      path: localeDetails[locale].path,
+      title,
       description: copy.description,
-      images: [
-        {
-          url: siteAssets.socialPreview,
-          width: 1200,
-          height: 630,
-          alt: `${siteConfig.name} — ${siteSlogan}`,
-        },
-      ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: `${siteConfig.name} — ${siteSlogan}`,
-      description: copy.description,
-      images: [siteAssets.socialPreview],
-    },
+    }),
   };
 }

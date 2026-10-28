@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import { siteConfig } from "@/constants/site";
 import { privacyPolicyCopy } from "@/features/legal/constants/privacy-policy-copy";
+import { createSocialMetadata } from "@/lib/social-metadata";
 import type {
   AppPrivacyPolicy,
   PrivacyLocale,
@@ -28,9 +29,11 @@ export function createPrivacyMetadata({
     ja: `${policy.appName}における個人情報の処理項目、外部サービス、保存期間、利用者の権利について説明します。`,
   };
 
+  const title = `${policy.appName} ${copy.pageTitle} | ${siteConfig.name}`;
+
   return {
     metadataBase: new URL(siteConfig.url),
-    title: `${policy.appName} ${copy.pageTitle} | ${siteConfig.name}`,
+    title,
     description: descriptions[locale],
     alternates: {
       canonical: localePaths[locale],
@@ -40,5 +43,11 @@ export function createPrivacyMetadata({
       index: true,
       follow: true,
     },
+    ...createSocialMetadata({
+      locale,
+      path: localePaths[locale],
+      title,
+      description: descriptions[locale],
+    }),
   };
 }

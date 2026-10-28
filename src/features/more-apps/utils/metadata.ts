@@ -6,6 +6,7 @@ import {
   moreAppsLanguageAlternates,
   moreAppsLocalePaths,
 } from "@/features/more-apps/constants/more-apps-copy";
+import { createSocialMetadata } from "@/lib/social-metadata";
 import type { SiteLocale } from "@/types/site";
 
 export function createMoreAppsMetadata(locale: SiteLocale): Metadata {
@@ -15,9 +16,11 @@ export function createMoreAppsMetadata(locale: SiteLocale): Metadata {
       ? siteConfig.routes.moreApps
       : moreAppsLocalePaths[locale];
 
+  const title = `${copy.title} | ${siteConfig.name}`;
+
   return {
     metadataBase: new URL(siteConfig.url),
-    title: `${copy.title} | ${siteConfig.name}`,
+    title,
     description: copy.metaDescription,
     alternates: {
       canonical,
@@ -27,5 +30,11 @@ export function createMoreAppsMetadata(locale: SiteLocale): Metadata {
       index: true,
       follow: true,
     },
+    ...createSocialMetadata({
+      locale,
+      path: canonical,
+      title,
+      description: copy.metaDescription,
+    }),
   };
 }
