@@ -11,8 +11,8 @@ interface ProductGroupProps {
   compact?: boolean;
 }
 
-// 쓰임새 하나를 큰 섹션으로 소개한다. 영어 제목 + 언어별 설명 + 앱 이름 목록. 스토어 링크는 아직 달지 않는다.
-// compact: 팬 앱처럼 수가 많을 때 이름을 한 줄로 흘려 쓴다.
+// 제품 섹션의 한 열. 영어 제목 + 언어별 설명 + 앱 이름 목록. 스토어 링크는 아직 달지 않는다.
+// compact: 팬 앱처럼 수가 많을 때 이름을 이어서 흘려 쓴다.
 const ProductGroup = ({
   id,
   title,
@@ -22,28 +22,25 @@ const ProductGroup = ({
   locale,
   compact = false,
 }: ProductGroupProps) => (
-  <section
-    aria-labelledby={`${id}-title`}
-    className="grid gap-10 py-20 sm:py-28 md:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] md:gap-16"
-  >
-    <div>
+  <section aria-labelledby={`${id}-title`} className="flex flex-col">
+    <div className="flex items-baseline justify-between gap-4">
       <h3
         id={`${id}-title`}
         lang="en"
-        className="font-display text-display-lg font-extrabold tracking-[-0.045em]"
+        className="font-display text-title-lg font-extrabold tracking-[-0.03em]"
       >
         {title}
       </h3>
-      <p className="mt-5 max-w-sm text-body-lg text-pretty text-muted-foreground">
-        {description}
-      </p>
-      <p className="mt-6 font-mono text-caption text-muted-foreground">
+      <p className="font-mono text-caption text-muted-foreground">
         {countLabel.replace("{count}", String(apps.length))}
       </p>
     </div>
+    <p className="mt-3 text-small text-pretty text-muted-foreground">
+      {description}
+    </p>
 
     {compact ? (
-      <p className="self-end text-title-md leading-relaxed font-semibold text-pretty">
+      <p className="mt-8 text-body leading-loose font-semibold">
         {apps.map((app, index) => (
           // 구분점이 줄 맨 앞에 오지 않도록 이름과 뒤 구분점을 한 덩어리로 묶는다.
           <span key={app.packageName}>
@@ -59,13 +56,13 @@ const ProductGroup = ({
         ))}
       </p>
     ) : (
-      <ul className="grid gap-8 self-end">
+      <ul className="mt-8 grid gap-5">
         {apps.map((app) => (
           <li key={app.packageName}>
-            <p className="font-display text-title-lg font-extrabold tracking-[-0.03em]">
+            <p className="text-title-sm font-semibold">
               {app.copy[locale].name}
             </p>
-            <p className="mt-1 text-small text-muted-foreground">
+            <p className="mt-0.5 text-small text-muted-foreground">
               {app.copy[locale].category}
             </p>
           </li>

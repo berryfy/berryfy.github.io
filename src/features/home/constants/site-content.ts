@@ -6,6 +6,7 @@ import type { SiteLocale } from "@/types/site";
 export const siteCopy: Record<SiteLocale, SiteCopy> = {
   en: {
     products: {
+      title: "Apps and games",
       game: "Small games for a short break.",
       tool: "Simple tools for the little moments in your day.",
       fandom: "A place for the artists you love, one app for each fandom.",
@@ -28,6 +29,7 @@ export const siteCopy: Record<SiteLocale, SiteCopy> = {
   },
   ko: {
     products: {
+      title: "앱과 게임",
       game: "잠깐 쉬어 갈 때 꺼내는 작은 게임.",
       tool: "하루 곳곳에서 손이 가는 간단한 도구.",
       fandom: "좋아하는 아티스트를 위한 공간, 팬덤마다 하나씩.",
@@ -49,6 +51,7 @@ export const siteCopy: Record<SiteLocale, SiteCopy> = {
   },
   ja: {
     products: {
+      title: "アプリとゲーム",
       game: "ひと息つきたいときの、小さなゲーム。",
       tool: "毎日のちょっとした場面で使える、シンプルな道具。",
       fandom: "推しのための場所を、ファンダムごとにひとつずつ。",
