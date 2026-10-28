@@ -70,6 +70,15 @@
   --container-prose: 720px;
 
   --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+
+  /* 앱 아이콘 띠: 같은 목록을 두 번 이어 붙이고 절반만큼 왼쪽으로 흘려 끊김 없이 반복한다 */
+  --animate-marquee: marquee 80s linear infinite;
+
+  @keyframes marquee {
+    to {
+      transform: translateX(-50%);
+    }
+  }
 }
 
 @theme inline {

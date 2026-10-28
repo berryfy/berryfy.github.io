@@ -17,7 +17,7 @@ const copyrightNotice = "All rights reserved.";
 
 const columnTitleClassName = "font-mono text-caption text-muted-foreground";
 const linkClassName =
-  "inline-flex min-h-11 items-center rounded-xs text-small text-link underline-offset-4 outline-none hover:underline focus-visible:ring-3 focus-visible:ring-ring/60";
+  "inline-flex min-h-11 items-center text-small text-foreground transition-colors outline-none hover:text-link focus-visible:ring-3 focus-visible:ring-ring/60 rounded-xs";
 
 // 공용 푸터: 브랜드(글자 로고·슬로건)·문의 열 + 아래 줄에 언어 목록과 저작권. 구분선 없이 여백으로 나눈다. 빌드 연도를 표시한다.
 const SiteFooter = ({ locale, homeHref, languagePaths }: SiteFooterProps) => {

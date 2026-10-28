@@ -2,6 +2,7 @@ import { ArrowRight } from "lucide-react";
 
 import Button from "@/components/atoms/Button";
 import { publishedApps } from "@/constants/apps";
+import AppIconMarquee from "@/features/home/components/AppIconMarquee";
 import ProductGroup from "@/features/home/components/ProductGroup";
 import { productGroups } from "@/features/home/constants/products";
 import {
@@ -41,7 +42,7 @@ const ProductsSection = ({ locale, label, copy }: ProductsSectionProps) => (
         <Button
           href={moreAppsPaths[locale]}
           variant="ghost"
-          className="-ml-5 self-start text-link sm:-mr-5 sm:ml-0 sm:self-auto"
+          className="-ml-5 self-start sm:-mr-5 sm:ml-0 sm:self-auto"
         >
           {copy.viewAll}
           <ArrowRight aria-hidden="true" />
@@ -60,6 +61,9 @@ const ProductsSection = ({ locale, label, copy }: ProductsSectionProps) => (
           />
         ))}
       </div>
+    </div>
+    <div className="mt-20 sm:mt-24">
+      <AppIconMarquee />
     </div>
   </section>
 );
