@@ -39,9 +39,10 @@ export function createPrivacyMetadata({
       canonical: localePaths[locale],
       languages: languageAlternates,
     },
+    // 앱에서 링크로 여는 문서라 검색 결과에 노출하지 않는다. 주소로 직접 열람은 그대로 가능하다.
     robots: {
-      index: true,
-      follow: true,
+      index: false,
+      follow: false,
     },
     ...createSocialMetadata({
       locale,

@@ -13,7 +13,7 @@ This version has breaking changes — APIs, conventions, and file structure may 
 - 패키지 매니저는 pnpm만 쓴다.
 - 공개 저장소다. API 키·토큰·실제 `.env`·내부 URL을 커밋하지 않는다. `public/`의 모든 파일은 그대로 공개된다.
 - 영어(기본)·한국어·일본어를 함께 유지하고 브랜드명·앱명은 번역하지 않는다.
-- 모든 공개 페이지 metadata는 canonical·언어 대체 경로와 `createSocialMetadata`(OG·X 카드)를 넣는다. `sitemap.xml`은 `site.ts` 라우트에서 만들므로 새 페이지 경로는 `…Ko`·`…Ja` 짝과 함께 `site.ts`에 추가한다.
+- 모든 공개 페이지 metadata는 canonical·언어 대체 경로와 `createSocialMetadata`(OG·X 카드)를 넣는다. `sitemap.xml`은 `site.ts` 라우트에서 만들므로 새 페이지 경로는 `…Ko`·`…Ja` 짝과 함께 `site.ts`에 추가한다. 개인정보처리방침처럼 검색에 노출하지 않을 문서는 noindex로 두고 사이트맵에서 뺀다.
 
 ## 구조
 
