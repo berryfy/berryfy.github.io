@@ -503,7 +503,7 @@ export const publishedApps = [
   },
   {
     packageName: "com.berryfy.pomodoro_flow",
-    group: "general",
+    group: "tool",
     iconPath: "/images/apps/pomodoro-flow.webp",
     storeUrl: `${googlePlayBaseUrl}com.berryfy.pomodoro_flow`,
     copy: {
@@ -529,7 +529,7 @@ export const publishedApps = [
   },
   {
     packageName: "com.berryfy.lottocat645",
-    group: "general",
+    group: "tool",
     iconPath: "/images/apps/lottocat645.webp",
     storeUrl: `${googlePlayBaseUrl}com.berryfy.lottocat645`,
     copy: {
@@ -555,7 +555,7 @@ export const publishedApps = [
   },
   {
     packageName: "com.berryfy.potion_sort_quest",
-    group: "general",
+    group: "game",
     iconPath: "/images/apps/potion-sort-quest.webp",
     storeUrl: `${googlePlayBaseUrl}com.berryfy.potion_sort_quest`,
     copy: {
@@ -581,7 +581,7 @@ export const publishedApps = [
   },
   {
     packageName: "com.berryfy.pixel_blur",
-    group: "general",
+    group: "tool",
     iconPath: "/images/apps/pixel-blur.webp",
     storeUrl: `${googlePlayBaseUrl}com.berryfy.pixel_blur`,
     copy: {
@@ -607,7 +607,7 @@ export const publishedApps = [
   },
   {
     packageName: "com.berryfy.musepiece",
-    group: "general",
+    group: "game",
     iconPath: "/images/apps/musepiece.webp",
     storeUrl: `${googlePlayBaseUrl}com.berryfy.musepiece`,
     copy: {
@@ -633,7 +633,7 @@ export const publishedApps = [
   },
   {
     packageName: "com.berryfy.easy_dots",
-    group: "general",
+    group: "tool",
     iconPath: "/images/apps/easy-dots.webp",
     storeUrl: `${googlePlayBaseUrl}com.berryfy.easy_dots`,
     copy: {
