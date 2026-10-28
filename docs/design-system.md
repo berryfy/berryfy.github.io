@@ -7,7 +7,7 @@
 
 - 어두운 테마가 기본(`themeConfig.defaultTheme = "dark"`), 밝은 테마는 같은 토큰 이름으로 값만 바꾼다.
 - 강조색은 코발트 하나. 코발트로 칠한 큰 면은 한 화면에 주요 행동 하나만 둔다.
-- 코발트가 나오는 곳은 글자 로고의 점과 영어 제목의 마침표(`AccentPeriods`)뿐이다. 글자 링크·메뉴는 본문 글자색으로 두고(링크는 hover 때만 `link`), 단어 전체나 넓은 배경을 코발트로 칠하지 않는다.
+- 코발트가 나오는 곳은 글자 로고의 점과 제품 분류 제목(Play·Tools·Fandom)의 마침표(`AccentPeriods`)뿐이다. 슬로건·소개처럼 가장 큰 제목에는 넣지 않는다. 글자 링크·메뉴는 본문 글자색으로 두고(링크는 hover 때만 `link`), 단어 전체나 넓은 배경을 코발트로 칠하지 않는다.
 - 다른 강조색·그라데이션·임의 hex·임의 그림자를 쓰지 않는다. 제품 고유 색은 제품 원화 안에서만 쓴다.
 - 구분은 선이 아니라 여백·글자 위계(크기·굵기·밝기)·표면 단계(`background` → `card` → `popover`)로 한다. 구분선(`border`)은 표·입력칸·outline 버튼처럼 구조상 필요한 곳에만 쓴다.
 - 선 대신 여백으로 나누므로 섹션 사이 여백을 아끼지 않는다. 어두운 테마에서 그림자로 띄우지 않는다.
@@ -72,7 +72,7 @@
 | Button           | `components/atoms/Button.tsx`             | pill. size `sm 36` · `md 44` · `lg 52`px · `icon-sm`/`icon`/`icon-lg`. variant `primary` · `secondary` · `outline` · `ghost` · `danger` · `link`. `href`면 링크, `external`이면 새 탭                                                                                                    |
 | Badge            | `components/atoms/Badge.tsx`              | pill 28px. variant `neutral` · `primary` · `outline` · `success` · `warning` · `danger`. 개발 중은 `neutral`                                                                                                                                                                             |
 | Wordmark         | `components/atoms/Wordmark.tsx`           | 소문자 `berryfy` + 코발트 점. 크기는 font-size로만 조절                                                                                                                                                                                                                                  |
-| AccentPeriods    | `components/atoms/AccentPeriods.tsx`      | 영어 제목 문자열의 마침표만 `text-primary`로 칠함. 슬로건·철학·제품 분류 제목에 사용                                                                                                                                                                                                     |
+| AccentPeriods    | `components/atoms/AccentPeriods.tsx`      | 영어 제목 문자열의 마침표만 `text-primary`로 칠함. 제품 분류 제목에만 사용(슬로건·소개 제외)                                                                                                                                                                                             |
 | BrandMark        | `components/widgets/BrandMark.tsx`        | 홈 링크가 달린 Wordmark                                                                                                                                                                                                                                                                  |
 | LanguageMenu     | `components/widgets/LanguageMenu.tsx`     | 헤더용. 메뉴와 같은 글자로 현재 언어 이름 + 꺾쇠 → 언어 이름·코드 목록. 현재 언어는 굵고 밝은 글자. Esc·바깥 누름·선택 시 닫힘                                                                                                                                                           |
 | LanguageSwitcher | `components/widgets/LanguageSwitcher.tsx` | 펼침 없는 언어 이름 목록. 모바일 메뉴·푸터용. 현재 언어는 굵고 밝은 글자                                                                                                                                                                                                                 |
@@ -88,7 +88,7 @@
 
 ## 움직임
 
-- 홈 제품 섹션 아래 앱 아이콘 띠(`AppIconMarquee`)만 움직인다: 오른쪽 → 왼쪽 80초 한 바퀴, 아이콘 96/128px·불투명도 35%, 양 끝 12%는 마스크로 서서히 사라짐, 마우스를 올리면 멈춤, 동작 줄이기면 정지. 장식이므로 `aria-hidden`.
+- 홈 제품 섹션 아래 앱 아이콘 띠(`AppIconMarquee`)만 움직인다: 오른쪽 → 왼쪽 80초 한 바퀴, 아이콘 96/128px·불투명도 35%, 양 끝 22%는 `.fade-x-edges` 마스크로 서서히 사라짐(-webkit- 포함), 항목 간격은 오른쪽 여백(이음새 일치), 이미지는 미리 불러옴, 마우스를 올리면 멈춤, 동작 줄이기면 정지. 장식이므로 `aria-hidden`.
 - 의미가 있는 움직임 하나만 둔다. 글자가 한 단어씩 떠오르거나 화면을 고정하는 스크롤 연출은 쓰지 않는다.
 - 홈 슬로건은 움직임 없이 정적인 타이포그래피로 둔다. 굵기만 바꾸는 연출은 글꼴 로딩 오류처럼 보여 쓰지 않는다.
 - 움직임이 없어도 모든 글자는 처음부터 보이고 완성된 상태여야 한다.

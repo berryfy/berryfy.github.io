@@ -266,6 +266,24 @@
   text-underline-offset: 0.2em;
 }
 
+/* 가로로 흐르는 띠의 양 끝을 바탕으로 서서히 지운다. Safari를 위해 -webkit- 접두사도 함께 쓴다. */
+.fade-x-edges {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 22%,
+    black 78%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 22%,
+    black 78%,
+    transparent
+  );
+}
+
 ::selection {
   background: var(--color-cobalt-500);
   color: #ffffff;

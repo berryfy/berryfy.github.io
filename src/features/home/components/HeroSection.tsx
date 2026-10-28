@@ -1,4 +1,3 @@
-import AccentPeriods from "@/components/atoms/AccentPeriods";
 import { siteSlogan } from "@/constants/site";
 
 interface HeroSectionProps {
@@ -20,12 +19,8 @@ const HeroSection = ({ description }: HeroSectionProps) => (
         lang="en"
         className="font-display text-display-xl font-extrabold tracking-[-0.05em]"
       >
-        <span className="block whitespace-nowrap">
-          <AccentPeriods text={sloganLead} />
-        </span>
-        <span className="block whitespace-nowrap">
-          <AccentPeriods text={sloganTail} />
-        </span>
+        <span className="block whitespace-nowrap">{sloganLead}</span>
+        <span className="block whitespace-nowrap">{sloganTail}</span>
       </h1>
       <p className="mt-8 max-w-prose text-body-lg text-pretty text-muted-foreground">
         {description}
