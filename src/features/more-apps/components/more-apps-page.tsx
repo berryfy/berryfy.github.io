@@ -43,15 +43,9 @@ export default function MoreAppsPage({
         className="mx-auto max-w-3xl px-4 pt-12 pb-16 sm:px-6 sm:pt-16"
       >
         <section>
-          <p className="font-mono text-caption text-muted-foreground">
-            {copy.eyebrow}
-          </p>
-          <h1 className="mt-3 font-display text-display-md font-extrabold tracking-[-0.04em]">
+          <h1 className="font-display text-display-md font-extrabold tracking-[-0.04em]">
             {copy.title}
           </h1>
-          <p className="mt-5 max-w-prose text-body text-pretty text-muted-foreground">
-            {copy.description}
-          </p>
         </section>
 
         <ul className="mt-10 space-y-3">

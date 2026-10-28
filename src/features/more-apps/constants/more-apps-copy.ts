@@ -10,27 +10,24 @@ export const moreAppsLocalePaths: Record<SiteLocale, string> = {
 
 export const moreAppsCopy: Record<SiteLocale, MoreAppsPageCopy> = {
   en: {
-    eyebrow: "Made by berryfy",
     title: "More apps to enjoy",
-    description:
+    metaDescription:
       "Simple tools and games made for everyday moments. Find something new for your Android device.",
     appActionLabel: "View on Google Play",
     storeActionLabel: "See every app on Google Play",
     availabilityNote: "Availability may vary by country or device.",
   },
   ko: {
-    eyebrow: "berryfy가 만든 앱",
     title: "다른 앱도 만나보세요",
-    description:
+    metaDescription:
       "일상의 작은 순간을 위한 도구와 게임을 만듭니다. Android에서 새로운 앱을 찾아보세요.",
     appActionLabel: "Google Play에서 보기",
     storeActionLabel: "Google Play에서 모든 앱 보기",
     availabilityNote: "국가나 기기에 따라 일부 앱이 표시되지 않을 수 있습니다.",
   },
   ja: {
-    eyebrow: "berryfyのアプリ",
     title: "ほかのアプリもどうぞ",
-    description:
+    metaDescription:
       "毎日の小さな時間に寄り添うツールとゲーム。Androidで新しいアプリを見つけてください。",
     appActionLabel: "Google Playで見る",
     storeActionLabel: "Google Playですべてのアプリを見る",

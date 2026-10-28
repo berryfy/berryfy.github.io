@@ -18,7 +18,7 @@ export function createMoreAppsMetadata(locale: SiteLocale): Metadata {
   return {
     metadataBase: new URL(siteConfig.url),
     title: `${copy.title} | ${siteConfig.name}`,
-    description: copy.description,
+    description: copy.metaDescription,
     alternates: {
       canonical,
       languages: moreAppsLanguageAlternates,
