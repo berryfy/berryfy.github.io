@@ -1,3 +1,4 @@
+import AccentPeriods from "@/components/atoms/AccentPeriods";
 import { homeSections } from "@/features/home/constants/sections";
 import { studioPhilosophy } from "@/features/home/constants/studio";
 
@@ -20,7 +21,7 @@ const AboutSection = ({ label, description }: AboutSectionProps) => (
         lang="en"
         className="mt-4 font-display text-display-lg font-extrabold tracking-[-0.045em]"
       >
-        {studioPhilosophy}
+        <AccentPeriods text={studioPhilosophy} />
       </h2>
       <p className="mt-6 max-w-prose text-body-lg text-pretty text-muted-foreground">
         {description}

@@ -41,7 +41,7 @@ const ProductsSection = ({ locale, label, copy }: ProductsSectionProps) => (
         <Button
           href={moreAppsPaths[locale]}
           variant="ghost"
-          className="-ml-5 self-start sm:-mr-5 sm:ml-0 sm:self-auto"
+          className="-ml-5 self-start text-link sm:-mr-5 sm:ml-0 sm:self-auto"
         >
           {copy.viewAll}
           <ArrowRight aria-hidden="true" />

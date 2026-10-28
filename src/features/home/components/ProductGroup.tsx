@@ -1,3 +1,4 @@
+import AccentPeriods from "@/components/atoms/AccentPeriods";
 import type { PublishedApp } from "@/types/app";
 import type { SiteLocale } from "@/types/site";
 
@@ -26,7 +27,7 @@ const ProductGroup = ({
       lang="en"
       className="font-display text-title-lg font-extrabold tracking-[-0.03em]"
     >
-      {title}
+      <AccentPeriods text={title} />
     </h3>
     <p className="mt-3 text-small text-pretty text-muted-foreground">
       {description}

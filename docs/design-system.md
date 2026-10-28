@@ -7,6 +7,7 @@
 
 - 어두운 테마가 기본(`themeConfig.defaultTheme = "dark"`), 밝은 테마는 같은 토큰 이름으로 값만 바꾼다.
 - 강조색은 코발트 하나. 코발트로 칠한 큰 면은 한 화면에 주요 행동 하나만 둔다.
+- 코발트가 나오는 곳은 세 가지뿐이다: 글자 로고의 점, 영어 제목의 마침표(`AccentPeriods`), 누를 수 있는 글자 링크(`text-link`). 헤더 메뉴·언어 목록처럼 길을 찾는 메뉴는 코발트로 칠하지 않는다. 단어 전체나 넓은 배경을 코발트로 칠하지 않는다.
 - 다른 강조색·그라데이션·임의 hex·임의 그림자를 쓰지 않는다. 제품 고유 색은 제품 원화 안에서만 쓴다.
 - 구분은 선이 아니라 여백·글자 위계(크기·굵기·밝기)·표면 단계(`background` → `card` → `popover`)로 한다. 구분선(`border`)은 표·입력칸·outline 버튼처럼 구조상 필요한 곳에만 쓴다.
 - 선 대신 여백으로 나누므로 섹션 사이 여백을 아끼지 않는다. 어두운 테마에서 그림자로 띄우지 않는다.
@@ -71,6 +72,7 @@
 | Button           | `components/atoms/Button.tsx`             | pill. size `sm 36` · `md 44` · `lg 52`px · `icon-sm`/`icon`/`icon-lg`. variant `primary` · `secondary` · `outline` · `ghost` · `danger` · `link`. `href`면 링크, `external`이면 새 탭                                                                                                    |
 | Badge            | `components/atoms/Badge.tsx`              | pill 28px. variant `neutral` · `primary` · `outline` · `success` · `warning` · `danger`. 개발 중은 `neutral`                                                                                                                                                                             |
 | Wordmark         | `components/atoms/Wordmark.tsx`           | 소문자 `berryfy` + 코발트 점. 크기는 font-size로만 조절                                                                                                                                                                                                                                  |
+| AccentPeriods    | `components/atoms/AccentPeriods.tsx`      | 영어 제목 문자열의 마침표만 `text-primary`로 칠함. 슬로건·철학·제품 분류 제목에 사용                                                                                                                                                                                                     |
 | BrandMark        | `components/widgets/BrandMark.tsx`        | 홈 링크가 달린 Wordmark                                                                                                                                                                                                                                                                  |
 | LanguageMenu     | `components/widgets/LanguageMenu.tsx`     | 헤더용. 메뉴와 같은 글자로 현재 언어 이름 + 꺾쇠 → 언어 이름·코드 목록. 현재 언어는 굵고 밝은 글자. Esc·바깥 누름·선택 시 닫힘                                                                                                                                                           |
 | LanguageSwitcher | `components/widgets/LanguageSwitcher.tsx` | 펼침 없는 언어 이름 목록. 모바일 메뉴·푸터용. 현재 언어는 굵고 밝은 글자                                                                                                                                                                                                                 |
