@@ -6,7 +6,7 @@ import {
   siteFontVariables,
 } from "@/app/fonts";
 import SiteDocument from "@/components/widgets/SiteDocument";
-import NotFoundPage from "@/features/not-found/components/not-found-page";
+import NotFoundPage from "@/features/not-found/components/NotFoundPage";
 import "./globals.css";
 
 export const metadata: Metadata = {

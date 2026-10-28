@@ -1,10 +1,11 @@
 import { siteConfig } from "@/constants/site";
 
+// 전역 404는 기본 언어인 영어만 쓴다.
 export const notFoundCopy = {
-  eyebrow: "Lost in a small corner",
-  title: "This page wandered off.",
+  code: "404",
+  title: "Page not found.",
   description:
-    "The link may be outdated, or the page may have moved. Let's get you back to somewhere familiar.",
+    "The link may be out of date, or the page may have moved. Let's head back home.",
   action: "Back to home",
   homePath: siteConfig.routes.home,
 } as const;
