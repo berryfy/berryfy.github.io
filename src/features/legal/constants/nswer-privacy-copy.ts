@@ -22,8 +22,6 @@ export const nswerPrivacyPolicies: Record<PrivacyLocale, AppPrivacyPolicy> = {
 };
 
 export const nswerPrivacyLanguageAlternates = {
-  en: siteConfig.routes.nswerPrivacy,
-  ko: siteConfig.routes.nswerPrivacyKo,
-  ja: siteConfig.routes.nswerPrivacyJa,
-  "x-default": siteConfig.routes.nswerPrivacy,
+  ...nswerPrivacyLocalePaths,
+  "x-default": nswerPrivacyLocalePaths.en,
 } as const;

@@ -22,8 +22,6 @@ export const divePrivacyPolicies: Record<PrivacyLocale, AppPrivacyPolicy> = {
 };
 
 export const divePrivacyLanguageAlternates = {
-  en: siteConfig.routes.divePrivacy,
-  ko: siteConfig.routes.divePrivacyKo,
-  ja: siteConfig.routes.divePrivacyJa,
-  "x-default": siteConfig.routes.divePrivacy,
+  ...divePrivacyLocalePaths,
+  "x-default": divePrivacyLocalePaths.en,
 } as const;

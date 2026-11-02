@@ -1,22 +1,22 @@
-import { eyeconsPrivacyEn } from "@/features/legal/constants/eyecons-privacy-en";
-import { eyeconsPrivacyJa } from "@/features/legal/constants/eyecons-privacy-ja";
-import { eyeconsPrivacy } from "@/features/legal/constants/eyecons-privacy";
+import { legacyStanPrivacyEn } from "@/features/legal/constants/legacy-stan-privacy-en";
+import { legacyStanPrivacyJa } from "@/features/legal/constants/legacy-stan-privacy-ja";
+import { legacyStanPrivacyKo } from "@/features/legal/constants/legacy-stan-privacy-ko";
 import type { AppPrivacyPolicy } from "@/features/legal/types/privacy-policy";
 
 export const monstiezPrivacy = {
-  ...eyeconsPrivacy,
+  ...legacyStanPrivacyKo,
   appName: "MONSTIEZ Stan",
   effectiveDate: "2026년 8월 4일",
 } satisfies AppPrivacyPolicy;
 
 export const monstiezPrivacyEn = {
-  ...eyeconsPrivacyEn,
+  ...legacyStanPrivacyEn,
   appName: "MONSTIEZ Stan",
   effectiveDate: "August 4, 2026",
 } satisfies AppPrivacyPolicy;
 
 export const monstiezPrivacyJa = {
-  ...eyeconsPrivacyJa,
+  ...legacyStanPrivacyJa,
   appName: "MONSTIEZ Stan",
   effectiveDate: "2026年8月4日",
 } satisfies AppPrivacyPolicy;

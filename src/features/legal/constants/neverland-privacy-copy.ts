@@ -23,8 +23,6 @@ export const neverlandPrivacyPolicies: Record<PrivacyLocale, AppPrivacyPolicy> =
   };
 
 export const neverlandPrivacyLanguageAlternates = {
-  en: siteConfig.routes.neverlandPrivacy,
-  ko: siteConfig.routes.neverlandPrivacyKo,
-  ja: siteConfig.routes.neverlandPrivacyJa,
-  "x-default": siteConfig.routes.neverlandPrivacy,
+  ...neverlandPrivacyLocalePaths,
+  "x-default": neverlandPrivacyLocalePaths.en,
 } as const;

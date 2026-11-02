@@ -22,8 +22,6 @@ export const fearnotPrivacyPolicies: Record<PrivacyLocale, AppPrivacyPolicy> = {
 };
 
 export const fearnotPrivacyLanguageAlternates = {
-  en: siteConfig.routes.fearnotPrivacy,
-  ko: siteConfig.routes.fearnotPrivacyKo,
-  ja: siteConfig.routes.fearnotPrivacyJa,
-  "x-default": siteConfig.routes.fearnotPrivacy,
+  ...fearnotPrivacyLocalePaths,
+  "x-default": fearnotPrivacyLocalePaths.en,
 } as const;

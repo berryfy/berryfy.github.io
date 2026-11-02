@@ -23,8 +23,6 @@ export const pawmpawmPrivacyPolicies: Record<PrivacyLocale, AppPrivacyPolicy> =
   };
 
 export const pawmpawmPrivacyLanguageAlternates = {
-  en: siteConfig.routes.pawmpawmPrivacy,
-  ko: siteConfig.routes.pawmpawmPrivacyKo,
-  ja: siteConfig.routes.pawmpawmPrivacyJa,
-  "x-default": siteConfig.routes.pawmpawmPrivacy,
+  ...pawmpawmPrivacyLocalePaths,
+  "x-default": pawmpawmPrivacyLocalePaths.en,
 } as const;

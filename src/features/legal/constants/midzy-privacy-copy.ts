@@ -22,8 +22,6 @@ export const midzyPrivacyPolicies: Record<PrivacyLocale, AppPrivacyPolicy> = {
 };
 
 export const midzyPrivacyLanguageAlternates = {
-  en: siteConfig.routes.midzyPrivacy,
-  ko: siteConfig.routes.midzyPrivacyKo,
-  ja: siteConfig.routes.midzyPrivacyJa,
-  "x-default": siteConfig.routes.midzyPrivacy,
+  ...midzyPrivacyLocalePaths,
+  "x-default": midzyPrivacyLocalePaths.en,
 } as const;

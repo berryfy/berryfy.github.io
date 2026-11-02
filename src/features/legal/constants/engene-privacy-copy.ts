@@ -22,8 +22,6 @@ export const engenePrivacyPolicies: Record<PrivacyLocale, AppPrivacyPolicy> = {
 };
 
 export const engenePrivacyLanguageAlternates = {
-  en: siteConfig.routes.engenePrivacy,
-  ko: siteConfig.routes.engenePrivacyKo,
-  ja: siteConfig.routes.engenePrivacyJa,
-  "x-default": siteConfig.routes.engenePrivacy,
+  ...engenePrivacyLocalePaths,
+  "x-default": engenePrivacyLocalePaths.en,
 } as const;

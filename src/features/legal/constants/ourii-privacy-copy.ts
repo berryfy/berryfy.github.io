@@ -22,8 +22,6 @@ export const ouriiPrivacyPolicies: Record<PrivacyLocale, AppPrivacyPolicy> = {
 };
 
 export const ouriiPrivacyLanguageAlternates = {
-  en: siteConfig.routes.ouriiPrivacy,
-  ko: siteConfig.routes.ouriiPrivacyKo,
-  ja: siteConfig.routes.ouriiPrivacyJa,
-  "x-default": siteConfig.routes.ouriiPrivacy,
+  ...ouriiPrivacyLocalePaths,
+  "x-default": ouriiPrivacyLocalePaths.en,
 } as const;

@@ -22,8 +22,6 @@ export const blinkPrivacyPolicies: Record<PrivacyLocale, AppPrivacyPolicy> = {
 };
 
 export const blinkPrivacyLanguageAlternates = {
-  en: siteConfig.routes.blinkPrivacy,
-  ko: siteConfig.routes.blinkPrivacyKo,
-  ja: siteConfig.routes.blinkPrivacyJa,
-  "x-default": siteConfig.routes.blinkPrivacy,
+  ...blinkPrivacyLocalePaths,
+  "x-default": blinkPrivacyLocalePaths.en,
 } as const;

@@ -22,8 +22,6 @@ export const atinyPrivacyPolicies: Record<PrivacyLocale, AppPrivacyPolicy> = {
 };
 
 export const atinyPrivacyLanguageAlternates = {
-  en: siteConfig.routes.atinyPrivacy,
-  ko: siteConfig.routes.atinyPrivacyKo,
-  ja: siteConfig.routes.atinyPrivacyJa,
-  "x-default": siteConfig.routes.atinyPrivacy,
+  ...atinyPrivacyLocalePaths,
+  "x-default": atinyPrivacyLocalePaths.en,
 } as const;

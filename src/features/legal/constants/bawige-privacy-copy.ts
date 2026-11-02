@@ -22,8 +22,6 @@ export const bawigePrivacyPolicies: Record<PrivacyLocale, AppPrivacyPolicy> = {
 };
 
 export const bawigePrivacyLanguageAlternates = {
-  en: siteConfig.routes.bawigePrivacy,
-  ko: siteConfig.routes.bawigePrivacyKo,
-  ja: siteConfig.routes.bawigePrivacyJa,
-  "x-default": siteConfig.routes.bawigePrivacy,
+  ...bawigePrivacyLocalePaths,
+  "x-default": bawigePrivacyLocalePaths.en,
 } as const;

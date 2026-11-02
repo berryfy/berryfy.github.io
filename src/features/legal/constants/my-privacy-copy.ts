@@ -22,8 +22,6 @@ export const myPrivacyPolicies: Record<PrivacyLocale, AppPrivacyPolicy> = {
 };
 
 export const myPrivacyLanguageAlternates = {
-  en: siteConfig.routes.myPrivacy,
-  ko: siteConfig.routes.myPrivacyKo,
-  ja: siteConfig.routes.myPrivacyJa,
-  "x-default": siteConfig.routes.myPrivacy,
+  ...myPrivacyLocalePaths,
+  "x-default": myPrivacyLocalePaths.en,
 } as const;

@@ -23,8 +23,6 @@ export const monstiezPrivacyPolicies: Record<PrivacyLocale, AppPrivacyPolicy> =
   };
 
 export const monstiezPrivacyLanguageAlternates = {
-  en: siteConfig.routes.monstiezPrivacy,
-  ko: siteConfig.routes.monstiezPrivacyKo,
-  ja: siteConfig.routes.monstiezPrivacyJa,
-  "x-default": siteConfig.routes.monstiezPrivacy,
+  ...monstiezPrivacyLocalePaths,
+  "x-default": monstiezPrivacyLocalePaths.en,
 } as const;

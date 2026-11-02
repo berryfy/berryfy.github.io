@@ -22,8 +22,6 @@ export const gllitPrivacyPolicies: Record<PrivacyLocale, AppPrivacyPolicy> = {
 };
 
 export const gllitPrivacyLanguageAlternates = {
-  en: siteConfig.routes.gllitPrivacy,
-  ko: siteConfig.routes.gllitPrivacyKo,
-  ja: siteConfig.routes.gllitPrivacyJa,
-  "x-default": siteConfig.routes.gllitPrivacy,
+  ...gllitPrivacyLocalePaths,
+  "x-default": gllitPrivacyLocalePaths.en,
 } as const;

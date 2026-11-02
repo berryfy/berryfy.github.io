@@ -22,8 +22,6 @@ export const oncePrivacyPolicies: Record<PrivacyLocale, AppPrivacyPolicy> = {
 };
 
 export const oncePrivacyLanguageAlternates = {
-  en: siteConfig.routes.oncePrivacy,
-  ko: siteConfig.routes.oncePrivacyKo,
-  ja: siteConfig.routes.oncePrivacyJa,
-  "x-default": siteConfig.routes.oncePrivacy,
+  ...oncePrivacyLocalePaths,
+  "x-default": oncePrivacyLocalePaths.en,
 } as const;

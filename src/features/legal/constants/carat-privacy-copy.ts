@@ -22,8 +22,6 @@ export const caratPrivacyPolicies: Record<PrivacyLocale, AppPrivacyPolicy> = {
 };
 
 export const caratPrivacyLanguageAlternates = {
-  en: siteConfig.routes.caratPrivacy,
-  ko: siteConfig.routes.caratPrivacyKo,
-  ja: siteConfig.routes.caratPrivacyJa,
-  "x-default": siteConfig.routes.caratPrivacy,
+  ...caratPrivacyLocalePaths,
+  "x-default": caratPrivacyLocalePaths.en,
 } as const;

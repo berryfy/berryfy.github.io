@@ -22,8 +22,6 @@ export const moaPrivacyPolicies: Record<PrivacyLocale, AppPrivacyPolicy> = {
 };
 
 export const moaPrivacyLanguageAlternates = {
-  en: siteConfig.routes.moaPrivacy,
-  ko: siteConfig.routes.moaPrivacyKo,
-  ja: siteConfig.routes.moaPrivacyJa,
-  "x-default": siteConfig.routes.moaPrivacy,
+  ...moaPrivacyLocalePaths,
+  "x-default": moaPrivacyLocalePaths.en,
 } as const;

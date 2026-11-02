@@ -22,8 +22,6 @@ export const s2uPrivacyPolicies: Record<PrivacyLocale, AppPrivacyPolicy> = {
 };
 
 export const s2uPrivacyLanguageAlternates = {
-  en: siteConfig.routes.s2uPrivacy,
-  ko: siteConfig.routes.s2uPrivacyKo,
-  ja: siteConfig.routes.s2uPrivacyJa,
-  "x-default": siteConfig.routes.s2uPrivacy,
+  ...s2uPrivacyLocalePaths,
+  "x-default": s2uPrivacyLocalePaths.en,
 } as const;
