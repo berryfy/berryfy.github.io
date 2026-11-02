@@ -44,8 +44,19 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Check formatting and lint
+        run: |
+          pnpm format:check
+          pnpm lint
+
       - name: Build
         run: pnpm build
+
+      - name: Check types and exported routes
+        run: |
+          pnpm typecheck
+          pnpm verify:legacy-routes
+          pnpm verify:potion-privacy
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5

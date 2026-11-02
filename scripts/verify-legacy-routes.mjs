@@ -49,10 +49,47 @@ for (const [oldPath, newPath] of pairs) {
   if (oldPath.includes("/privacy/"))
     assert(html(newPath).includes('name="robots" content="noindex, nofollow"'));
 }
+// 기본 정책과 언어 접두어 정책도 실제 산출물에서 검증한다.
+let policyPages = 0;
+for (const slug of slugs.filter((slug) => slug !== "eyecons")) {
+  const base = `/apps/${slug}/privacy/`;
+  for (const locale of ["default", "en", "ko", "ja"]) {
+    const path = locale === "default" ? base : `/${locale}${base}`;
+    const content = html(path);
+    const language = locale === "default" ? "en" : locale;
+    const canonical = ["default", "en"].includes(locale) ? base : path;
+    assert(
+      content.includes(`<html lang="${language}"`),
+      `${path}: document language`,
+    );
+    assert(
+      content.includes('name="robots" content="noindex, nofollow"'),
+      `${path}: noindex`,
+    );
+    assert(
+      content.includes(
+        `rel="canonical" href="https://berryfy.github.io${canonical}"`,
+      ),
+      `${path}: canonical destination`,
+    );
+    for (const alternate of ["en", "ko", "ja", "x-default"]) {
+      const alternatePath = ["en", "x-default"].includes(alternate)
+        ? base
+        : `/${alternate}${base}`;
+      assert(
+        content.includes(
+          `hrefLang="${alternate}" href="https://berryfy.github.io${alternatePath}"`,
+        ),
+        `${path}: ${alternate} alternate`,
+      );
+    }
+    policyPages++;
+  }
+}
 assert(
   !sitemap.includes("/privacy/"),
   "Privacy policies must never appear in sitemap",
 );
 console.log(
-  `PASS: ${pairs.length} legacy URLs, destinations, noindex, canonical, JavaScript-disabled fallback, and sitemap exclusions`,
+  `PASS: ${pairs.length} legacy URLs and ${policyPages} policy pages, destinations, noindex, canonical, JavaScript-disabled fallback, and sitemap exclusions`,
 );

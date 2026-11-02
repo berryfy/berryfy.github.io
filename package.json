@@ -11,6 +11,7 @@
     "typecheck": "tsc --noEmit",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
+    "verify:potion-privacy": "node scripts/verify-potion-privacy.mjs",
     "verify:legacy-routes": "node scripts/verify-legacy-routes.mjs"
   },
   "dependencies": {
