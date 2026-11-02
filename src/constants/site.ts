@@ -10,6 +10,10 @@ export const siteConfig = {
     lulusPotionShop: "/games/lulus-potion-shop/",
     lulusPotionShopKo: "/ko/games/lulus-potion-shop/",
     lulusPotionShopJa: "/ja/games/lulus-potion-shop/",
+    potionPrivacy: "/apps/potion-sort-quest/privacy/",
+    potionPrivacyKo: "/ko/apps/potion-sort-quest/privacy/",
+    potionPrivacyEn: "/en/apps/potion-sort-quest/privacy/",
+    potionPrivacyJa: "/ja/apps/potion-sort-quest/privacy/",
     moreApps: "/more-apps/",
     moreAppsKo: "/ko/more-apps/",
     moreAppsEn: "/en/more-apps/",
@@ -198,4 +202,10 @@ export const gameLocalePaths: Record<SiteLocale, string> = {
   en: siteConfig.routes.lulusPotionShop,
   ko: siteConfig.routes.lulusPotionShopKo,
   ja: siteConfig.routes.lulusPotionShopJa,
+};
+
+export const potionPrivacyPaths: Record<SiteLocale, string> = {
+  en: siteConfig.routes.potionPrivacy,
+  ko: siteConfig.routes.potionPrivacyKo,
+  ja: siteConfig.routes.potionPrivacyJa,
 };

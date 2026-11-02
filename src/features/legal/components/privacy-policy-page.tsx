@@ -9,6 +9,7 @@ import { privacyLinks } from "@/features/legal/constants/privacy-links";
 import type {
   AppPrivacyPolicy,
   PrivacyLocale,
+  PrivacyPageCopy,
 } from "@/features/legal/types/privacy-policy";
 
 interface PrivacyPolicyPageProps {
@@ -16,6 +17,7 @@ interface PrivacyPolicyPageProps {
   fontClassName: string;
   policies: Record<PrivacyLocale, AppPrivacyPolicy>;
   localePaths: Record<PrivacyLocale, string>;
+  pageCopy?: PrivacyPageCopy;
 }
 
 export default function PrivacyPolicyPage({
@@ -23,9 +25,10 @@ export default function PrivacyPolicyPage({
   fontClassName,
   policies,
   localePaths,
+  pageCopy,
 }: PrivacyPolicyPageProps) {
   const policy = policies[locale];
-  const copy = privacyPolicyCopy[locale];
+  const copy = pageCopy ?? privacyPolicyCopy[locale];
   const privacyRequestMailto = `mailto:${policy.contactEmail}?subject=${encodeURIComponent(`${policy.appName} privacy request`)}`;
 
   return (
@@ -169,12 +172,16 @@ export default function PrivacyPolicyPage({
                 />
               ))}
             </div>
-            <p>{copy.external.youtube}</p>
+            {copy.external.youtube ? <p>{copy.external.youtube}</p> : null}
             <p>
-              <a href={privacyLinks.youtubeTerms}>
-                {copy.external.youtubeTerms}
-              </a>
-              {" · "}
+              {copy.external.youtubeTerms ? (
+                <>
+                  <a href={privacyLinks.youtubeTerms}>
+                    {copy.external.youtubeTerms}
+                  </a>
+                  {" · "}
+                </>
+              ) : null}
               <a href={privacyLinks.googlePrivacy}>
                 {copy.external.googlePrivacy}
               </a>

@@ -12,6 +12,12 @@ const pairs = [];
 for (const locale of ["en", "ko", "ja"]) {
   pairs.push([`/more-apps/${locale}/`, `/${locale}/more-apps/`]);
   for (const slug of slugs) {
+    if (
+      !existsSync(
+        resolve(root, `src/app/(legal)/apps/${slug}/privacy/[locale]/page.tsx`),
+      )
+    )
+      continue;
     pairs.push([
       `/apps/${slug}/privacy/${locale}/`,
       `/${locale}/apps/${slug === "eyecons" ? "eyecons-stan" : slug}/privacy/`,
