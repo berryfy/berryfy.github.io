@@ -1,6 +1,11 @@
 export const gameDetailCopy = {
   en: {
     back: "All apps and games",
+    trailer: {
+      title: "Take a look inside the shop.",
+      playerTitle: "Lulu’s Potion Shop trailer",
+      watch: "Watch on YouTube",
+    },
     download: "Get Lulu’s Potion Shop on Google Play",
     eyebrow: "A cozy potion-sorting puzzle",
     title: "Welcome to Lulu’s potion shop.",
@@ -35,6 +40,11 @@ export const gameDetailCopy = {
   },
   ko: {
     back: "앱과 게임 둘러보기",
+    trailer: {
+      title: "영상으로 먼저 만나보세요.",
+      playerTitle: "루루의 포션 가게 소개 영상",
+      watch: "YouTube에서 보기",
+    },
     download: "Google Play에서 Lulu’s Potion Shop 받기",
     eyebrow: "작은 마녀의 포션 정렬 퍼즐",
     title: "루루의 포션 가게에 어서 오세요.",
@@ -69,6 +79,11 @@ export const gameDetailCopy = {
   },
   ja: {
     back: "アプリとゲームを見る",
+    trailer: {
+      title: "まずは動画で、お店の様子を。",
+      playerTitle: "Lulu’s Potion Shop 紹介動画",
+      watch: "YouTubeで見る",
+    },
     download: "Google PlayでLulu’s Potion Shopを入手",
     eyebrow: "小さな魔女の色分けパズル",
     title: "ルルのポーション屋さんへようこそ。",

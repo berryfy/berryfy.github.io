@@ -10,6 +10,7 @@ import {
   homeLocalePaths,
   mainContentId,
 } from "@/constants/site";
+import GameTrailer from "@/features/game-detail/components/GameTrailer";
 import GameImageMotion from "@/features/game-detail/components/GameImageMotion";
 import { gameDetailCopy } from "@/features/game-detail/constants/content";
 import type { SiteLocale } from "@/types/site";
@@ -68,6 +69,11 @@ const GameDetailPage = ({ locale }: { locale: SiteLocale }) => {
             />
           </GameImageMotion>
         </section>
+        <GameTrailer
+          videoId={game.trailerId}
+          locale={locale}
+          copy={copy.trailer}
+        />
         <section
           className="mx-auto max-w-page px-4 py-12 sm:px-8 sm:py-20"
           aria-labelledby="game-features-title"
@@ -82,16 +88,14 @@ const GameDetailPage = ({ locale }: { locale: SiteLocale }) => {
             {copy.features.map((feature, index) => (
               <article key={feature.image}>
                 <GameImageMotion variant="screenshot" delay={index * 100}>
-                  <div className="rounded-xl bg-card p-5 sm:p-6">
-                    <Image
-                      src={`/images/games/lulu-${feature.image}-${locale}.webp`}
-                      width={640}
-                      height={1138}
-                      alt={feature.alt}
-                      sizes="(min-width: 768px) 320px, 90vw"
-                      className="mx-auto h-auto w-full max-w-xs rounded-md"
-                    />
-                  </div>
+                  <Image
+                    src={`/images/games/lulu-${feature.image}-${locale}.webp`}
+                    width={640}
+                    height={1138}
+                    alt={feature.alt}
+                    sizes="(min-width: 768px) 320px, 90vw"
+                    className="h-auto w-full rounded-md"
+                  />
                 </GameImageMotion>
                 <h3 className="mt-6 font-display text-title-md font-extrabold tracking-[-0.03em]">
                   {feature.title}

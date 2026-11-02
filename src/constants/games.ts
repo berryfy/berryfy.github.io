@@ -3,6 +3,7 @@ import { gameLocalePaths } from "@/constants/site";
 export const featuredGames = [
   {
     id: "lulus-potion-shop",
+    trailerId: "GxLWM68EXWQ",
     paths: gameLocalePaths,
     name: "Lulu’s Potion Shop",
     image: "/images/games/lulus_potion_shop.webp",
