@@ -2,7 +2,7 @@ import { ArrowUpRight } from "lucide-react";
 
 import Button from "@/components/atoms/Button";
 import SiteHeader from "@/components/widgets/SiteHeader";
-import { mainContentId, siteConfig } from "@/constants/site";
+import { homeLocalePaths, mainContentId } from "@/constants/site";
 import MoreAppItem from "@/features/more-apps/components/more-app-item";
 import {
   moreAppsCopy,
@@ -33,7 +33,7 @@ export default function MoreAppsPage({
       className={`${fontClassName} min-h-svh bg-background pb-[env(safe-area-inset-bottom)] font-sans text-foreground`}
     >
       <SiteHeader
-        homeHref={siteConfig.routes.home}
+        homeHref={homeLocalePaths[locale]}
         locale={locale}
         languagePaths={moreAppsLocalePaths}
       />
