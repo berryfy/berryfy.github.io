@@ -7,6 +7,9 @@ export const siteConfig = {
   defaultLocale: "en" satisfies SiteLocale,
   routes: {
     home: "/",
+    lulusPotionShop: "/games/lulus-potion-shop/",
+    lulusPotionShopKo: "/ko/games/lulus-potion-shop/",
+    lulusPotionShopJa: "/ja/games/lulus-potion-shop/",
     moreApps: "/more-apps/",
     moreAppsKo: "/more-apps/ko/",
     moreAppsEn: "/more-apps/en/",
@@ -189,4 +192,10 @@ export const footerLabels: Record<
     contact: "お問い合わせ",
     language: "言語",
   },
+};
+
+export const gameLocalePaths: Record<SiteLocale, string> = {
+  en: siteConfig.routes.lulusPotionShop,
+  ko: siteConfig.routes.lulusPotionShopKo,
+  ja: siteConfig.routes.lulusPotionShopJa,
 };

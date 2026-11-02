@@ -6,6 +6,7 @@ import {
   mainContentId,
 } from "@/constants/site";
 import AboutSection from "@/features/home/components/AboutSection";
+import FeaturedGamesSection from "@/features/home/components/FeaturedGamesSection";
 import HeroSection from "@/features/home/components/HeroSection";
 import ProductsSection from "@/features/home/components/ProductsSection";
 import StructuredData from "@/features/home/components/StructuredData";
@@ -38,6 +39,7 @@ const HomePage = ({ locale, copy }: HomePageProps) => {
       />
       <main id={mainContentId} className="min-h-screen">
         <HeroSection description={copy.hero.description} />
+        <FeaturedGamesSection locale={locale} />
         <ProductsSection
           locale={locale}
           label={copy.navigation.products}

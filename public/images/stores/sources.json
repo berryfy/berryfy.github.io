@@ -1,0 +1,20 @@
+[
+  {
+    "file": "google-play-ko.webp",
+    "source": "https://play.google.com/intl/en_us/badges/static/images/badges/ko_badge_web_generic.png",
+    "source_sha256": "40b67d92fb4162ae7470efe7849481c1f3f978472ada95f306878cd1a8b6707d",
+    "webp_sha256": "5503f48624d63175e2838b6c86db03ac9ac9b1b3fef9f337b7d5a80fe6f349e2"
+  },
+  {
+    "file": "google-play-ja.webp",
+    "source": "https://play.google.com/intl/en_us/badges/static/images/badges/ja_badge_web_generic.png",
+    "source_sha256": "2b1b4ff5b79346bcfc5a78e760e781a5161202adb9884c58f142b457b4bc0a9c",
+    "webp_sha256": "9a91af1d902fef011fbd631dbd25412eb095756bf9541619c7b2274e5eb944c5"
+  },
+  {
+    "file": "google-play-en.webp",
+    "source": "https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png",
+    "source_sha256": "f72611e2df8e88204009fd896d05d5e8e83c77009c63943bbffa169559934849",
+    "webp_sha256": "1fbbb0788e690a46ee0aab7f322645bc1119206c94421b2ca32296c7d7235405"
+  }
+]

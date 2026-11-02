@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import { ArrowRight, Heart, Play } from "lucide-react";
 
 import Wordmark from "@/components/atoms/Wordmark";
+import GooglePlayBadge from "@/components/widgets/GooglePlayBadge";
 import SiteFooter from "@/components/widgets/SiteFooter";
 import SiteHeader from "@/components/widgets/SiteHeader";
 import { homeLocalePaths } from "@/constants/site";
@@ -283,6 +284,17 @@ export default function DesignSystemPage() {
               <Badge variant="danger">지원 종료</Badge>
             </div>
           </ThemePair>
+        </Section>
+
+        <Section
+          title="Google Play badge"
+          description="공식 언어별 다운로드 배지. 비율과 자체 여백을 유지합니다."
+        >
+          <GooglePlayBadge
+            href="https://play.google.com/store/apps/details?id=com.berryfy.potion_sort_quest"
+            locale="ko"
+            label="Google Play에서 받기"
+          />
         </Section>
 
         <Section

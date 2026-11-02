@@ -560,22 +560,22 @@ export const publishedApps = [
     storeUrl: `${googlePlayBaseUrl}com.berryfy.potion_sort_quest`,
     copy: {
       en: {
-        name: "Potion Sort Quest",
+        name: "Lulu’s Potion Shop",
         category: "Puzzle",
         description:
-          "A relaxing offline color-sorting puzzle filled with bright potion bottles.",
+          "Sort colorful potions and get to know the regulars at Lulu’s little shop.",
       },
       ko: {
-        name: "Potion Sort Quest",
+        name: "Lulu’s Potion Shop",
         category: "퍼즐",
         description:
-          "알록달록한 포션을 같은 색끼리 정리하는 편안한 오프라인 퍼즐입니다.",
+          "포션의 색을 맞춰 주문을 완성하고, 루루의 가게를 찾는 단골들과 이야기를 나눠요.",
       },
       ja: {
-        name: "Potion Sort Quest",
+        name: "Lulu’s Potion Shop",
         category: "パズル",
         description:
-          "カラフルなポーションを色ごとにそろえる、穏やかなオフラインパズルです。",
+          "ポーションの色をそろえて注文を完成。ルルのお店で常連さんとのおしゃべりも楽しめます。",
       },
     },
   },
