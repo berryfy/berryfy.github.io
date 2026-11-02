@@ -5,7 +5,7 @@
 - 앱별 개인정보 처리방침의 사실 데이터는 `constants/<app>-privacy.ts`, 언어별 정책·경로 매핑은 `constants/<app>-privacy-copy.ts`에서 관리한다.
 - 사업자 정보는 `src/constants/business.ts`, 공용 라우트는 `src/constants/site.ts`, 외부 정책 URL은 `constants/privacy-links.ts`를 참조한다.
 - 앱명·시행일·처리 항목을 컴포넌트나 route metadata에 중복 하드코딩하지 않는다.
-- 모든 앱은 `/apps/<app-name>/privacy/`를 영문 기본 경로로 사용하고 `/en/`, `/ko/`, `/ja/`를 함께 정적 생성한다.
+- 모든 앱은 `/apps/<app-name>/privacy/`를 영문 기본 경로로 사용하고, 언어는 앞에 붙여 `/en/apps/<app-name>/privacy/`, `/ko/apps/<app-name>/privacy/`, `/ja/apps/<app-name>/privacy/`를 함께 정적 생성한다.
 - EYECONS Stan의 기존 `/apps/eyecons/privacy/` 경로는 호환용으로 보존한다. 새 앱에 별도 레거시 경로를 만들지 않는다.
 - route 파일은 공용 `PrivacyPolicyPage`와 metadata 유틸리티를 연결하는 thin wrapper로 유지한다.
 
@@ -32,6 +32,6 @@
 
 ## 검증
 
-- 기본·`/en/`·`/ko/`·`/ja/` 네 경로의 정적 HTML 생성, 앱명, 언어별 제목·시행일, canonical과 language alternate를 확인한다.
+- 영문 기본 경로와 언어 접두어(`/en/`·`/ko/`·`/ja/`)를 붙인 네 경로의 정적 HTML 생성, 앱명, 언어별 제목·시행일, canonical과 language alternate를 확인한다.
 - 모바일과 태블릿에서 sticky header, 언어 전환, 긴 표·링크의 반응형 표시를 확인한다.
 - 배포 후 네 공개 URL이 HTTP 200이고 올바른 앱 정책을 표시하는지 확인한다.

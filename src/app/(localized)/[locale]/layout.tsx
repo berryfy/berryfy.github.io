@@ -6,7 +6,6 @@ import {
   siteFontVariables,
 } from "@/app/fonts";
 import SiteDocument from "@/components/widgets/SiteDocument";
-import { siteConfig } from "@/constants/site";
 import { isSiteLocale } from "@/lib/locale";
 import "../../globals.css";
 
@@ -21,7 +20,7 @@ export default async function LocalizedRootLayout({
 }: LocalizedRootLayoutProps) {
   const { locale } = await params;
 
-  if (!isSiteLocale(locale) || locale === siteConfig.defaultLocale) {
+  if (!isSiteLocale(locale)) {
     notFound();
   }
 
