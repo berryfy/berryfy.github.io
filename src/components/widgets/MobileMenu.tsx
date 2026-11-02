@@ -31,6 +31,7 @@ const MobileMenu = ({
 }: MobileMenuProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const panelId = useId();
+  const rootRef = useRef<HTMLDivElement>(null);
   const triggerRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
@@ -38,10 +39,47 @@ const MobileMenu = ({
       return;
     }
 
+    const trigger = triggerRef.current;
+    const menu = rootRef.current;
+    if (!menu) return;
+
+    // 메뉴를 포함하는 가지를 제외한 형제들을 비활성화하고 기존 값을 복원한다.
+    const background: { element: HTMLElement; inert: boolean }[] = [];
+    let branch: HTMLElement = menu;
+    while (branch.parentElement) {
+      for (const sibling of branch.parentElement.children) {
+        if (sibling !== branch && sibling instanceof HTMLElement) {
+          background.push({ element: sibling, inert: sibling.inert });
+          sibling.inert = true;
+        }
+      }
+      if (branch.parentElement === document.body) break;
+      branch = branch.parentElement;
+    }
+
+    const focusable = () =>
+      Array.from(
+        menu.querySelectorAll<HTMLElement>("button:not(:disabled), a[href]"),
+      ).filter((element) => element.getClientRects().length > 0);
+
+    menu.querySelector<HTMLAnchorElement>("a[href]")?.focus();
+
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
+        event.preventDefault();
         setIsOpen(false);
-        triggerRef.current?.focus();
+      }
+      if (event.key === "Tab") {
+        const elements = focusable();
+        const first = elements[0];
+        const last = elements[elements.length - 1];
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last?.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          first?.focus();
+        }
       }
     };
 
@@ -62,6 +100,8 @@ const MobileMenu = ({
 
     return () => {
       root.style.overflow = previousOverflow;
+      for (const { element, inert } of background) element.inert = inert;
+      trigger?.focus({ preventScroll: true });
       document.removeEventListener("keydown", handleKeyDown);
       desktopQuery.removeEventListener("change", handleViewportChange);
     };
@@ -70,7 +110,13 @@ const MobileMenu = ({
   const close = () => setIsOpen(false);
 
   return (
-    <div className="md:hidden">
+    <div
+      ref={rootRef}
+      className="md:hidden"
+      role={isOpen ? "dialog" : undefined}
+      aria-modal={isOpen ? true : undefined}
+      aria-label={isOpen ? navigationLabel : undefined}
+    >
       <Button
         ref={triggerRef}
         variant="ghost"
@@ -86,6 +132,13 @@ const MobileMenu = ({
       <div
         id={panelId}
         hidden={!isOpen}
+        onClick={(event) => {
+          if (
+            event.target instanceof Element &&
+            event.target.closest("a[href]")
+          )
+            close();
+        }}
         className="absolute inset-x-0 top-full h-svh overflow-y-auto bg-background px-4 pt-4 pb-10"
       >
         <nav aria-label={navigationLabel}>
