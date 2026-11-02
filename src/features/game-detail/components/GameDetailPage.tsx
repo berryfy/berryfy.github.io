@@ -10,6 +10,7 @@ import {
   homeLocalePaths,
   mainContentId,
 } from "@/constants/site";
+import GameImageMotion from "@/features/game-detail/components/GameImageMotion";
 import { gameDetailCopy } from "@/features/game-detail/constants/content";
 import type { SiteLocale } from "@/types/site";
 
@@ -55,15 +56,17 @@ const GameDetailPage = ({ locale }: { locale: SiteLocale }) => {
               label={copy.download}
             />
           </div>
-          <Image
-            src={game.image}
-            alt={game.copy[locale].imageAlt}
-            width={game.width}
-            height={game.height}
-            sizes="(min-width: 1200px) 1136px, 100vw"
-            preload
-            className="mt-12 h-auto w-full rounded-xl"
-          />
+          <GameImageMotion variant="hero">
+            <Image
+              src={game.image}
+              alt={game.copy[locale].imageAlt}
+              width={game.width}
+              height={game.height}
+              sizes="(min-width: 1200px) 1136px, 100vw"
+              preload
+              className="h-auto w-full rounded-xl"
+            />
+          </GameImageMotion>
         </section>
         <section
           className="mx-auto max-w-page px-4 py-12 sm:px-8 sm:py-20"
@@ -76,18 +79,20 @@ const GameDetailPage = ({ locale }: { locale: SiteLocale }) => {
             {copy.galleryTitle}
           </h2>
           <div className="mt-12 grid gap-12 md:grid-cols-3 md:gap-8">
-            {copy.features.map((feature) => (
+            {copy.features.map((feature, index) => (
               <article key={feature.image}>
-                <div className="rounded-xl bg-card p-5 sm:p-6">
-                  <Image
-                    src={`/images/games/lulu-${feature.image}-${locale}.webp`}
-                    width={640}
-                    height={1138}
-                    alt={feature.alt}
-                    sizes="(min-width: 768px) 320px, 90vw"
-                    className="mx-auto h-auto w-full max-w-xs rounded-md"
-                  />
-                </div>
+                <GameImageMotion variant="screenshot" delay={index * 100}>
+                  <div className="rounded-xl bg-card p-5 sm:p-6">
+                    <Image
+                      src={`/images/games/lulu-${feature.image}-${locale}.webp`}
+                      width={640}
+                      height={1138}
+                      alt={feature.alt}
+                      sizes="(min-width: 768px) 320px, 90vw"
+                      className="mx-auto h-auto w-full max-w-xs rounded-md"
+                    />
+                  </div>
+                </GameImageMotion>
                 <h3 className="mt-6 font-display text-title-md font-extrabold tracking-[-0.03em]">
                   {feature.title}
                 </h3>
