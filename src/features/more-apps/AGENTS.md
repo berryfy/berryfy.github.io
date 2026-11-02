@@ -18,6 +18,7 @@
 ## WebView와 검증
 
 - 기본 URL은 `/more-apps/`(영어)이며 언어 접두어를 사용한다: `/ko/more-apps/`, `/ja/more-apps/`, `/en/more-apps/`(영문 호환).
+- 기존 `/more-apps/en/`·`/more-apps/ko/`·`/more-apps/ja/`는 정적 호환 페이지로 유지하고 새 주소로 자동 이동한다. JavaScript 이동은 query·hash를 보존하고 `location.replace`를 사용한다.
 - 앱 내 WebView 사용을 우선하며 모바일 한 열 리스트, 충분한 터치 영역, 가벼운 에셋을 유지한다.
 - 카드 전체를 단일 Google Play 링크로 제공하고 접근 가능한 앱명·동작 라벨을 유지한다.
 - 정적 빌드에서 영문 기본 경로와 언어 접두어를 붙인 세 경로 모두 새 앱명, package ID, 아이콘 경로와 언어별 문구를 포함하는지 확인한다.

@@ -6,6 +6,7 @@
 - 사업자 정보는 `src/constants/business.ts`, 공용 라우트는 `src/constants/site.ts`, 외부 정책 URL은 `constants/privacy-links.ts`를 참조한다.
 - 앱명·시행일·처리 항목을 컴포넌트나 route metadata에 중복 하드코딩하지 않는다.
 - 모든 앱은 `/apps/<app-name>/privacy/`를 영문 기본 경로로 사용하고, 언어는 앞에 붙여 `/en/apps/<app-name>/privacy/`, `/ko/apps/<app-name>/privacy/`, `/ja/apps/<app-name>/privacy/`를 함께 정적 생성한다.
+- 기존 `/apps/<app-name>/privacy/<locale>/` 주소는 정적 호환 페이지로 유지해 언어 접두어 주소로 자동 이동한다. 호환 페이지도 noindex이며 사이트맵에 넣지 않는다.
 - EYECONS Stan의 기존 `/apps/eyecons/privacy/` 경로는 호환용으로 보존한다. 새 앱에 별도 레거시 경로를 만들지 않는다.
 - route 파일은 공용 `PrivacyPolicyPage`와 metadata 유틸리티를 연결하는 thin wrapper로 유지한다.
 

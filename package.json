@@ -10,7 +10,8 @@
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "verify:legacy-routes": "node scripts/verify-legacy-routes.mjs"
   },
   "dependencies": {
     "clsx": "^2.1.1",
