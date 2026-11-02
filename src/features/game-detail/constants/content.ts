@@ -1,7 +1,6 @@
 export const gameDetailCopy = {
   en: {
     back: "All apps and games",
-    privacy: "Privacy Policy",
     download: "Get Lulu’s Potion Shop on Google Play",
     eyebrow: "A cozy potion-sorting puzzle",
     title: "Welcome to Lulu’s potion shop.",
@@ -36,7 +35,6 @@ export const gameDetailCopy = {
   },
   ko: {
     back: "앱과 게임 둘러보기",
-    privacy: "개인정보 처리방침",
     download: "Google Play에서 Lulu’s Potion Shop 받기",
     eyebrow: "작은 마녀의 포션 정렬 퍼즐",
     title: "루루의 포션 가게에 어서 오세요.",
@@ -71,7 +69,6 @@ export const gameDetailCopy = {
   },
   ja: {
     back: "アプリとゲームを見る",
-    privacy: "プライバシーポリシー",
     download: "Google PlayでLulu’s Potion Shopを入手",
     eyebrow: "小さな魔女の色分けパズル",
     title: "ルルのポーション屋さんへようこそ。",

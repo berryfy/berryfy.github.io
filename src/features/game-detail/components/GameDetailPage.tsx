@@ -9,7 +9,6 @@ import {
   gameLocalePaths,
   homeLocalePaths,
   mainContentId,
-  potionPrivacyPaths,
 } from "@/constants/site";
 import GameImageMotion from "@/features/game-detail/components/GameImageMotion";
 import { gameDetailCopy } from "@/features/game-detail/constants/content";
@@ -119,13 +118,6 @@ const GameDetailPage = ({ locale }: { locale: SiteLocale }) => {
                 label={copy.download}
               />
             </div>
-            <Button
-              href={potionPrivacyPaths[locale]}
-              variant="link"
-              className="mt-4 min-h-11"
-            >
-              {copy.privacy}
-            </Button>
           </div>
         </section>
       </main>
