@@ -6,7 +6,9 @@ const base = "/apps/potion-sort-quest/privacy/";
 for (const locale of ["default", "en", "ko", "ja"]) {
   const path = locale === "default" ? base : `/${locale}${base}`;
   const content = readFileSync(resolve(root, `out${path}index.html`), "utf8");
-  const text = content
+  const main = content.match(/<main\b[^>]*>([\s\S]*?)<\/main>/)?.[1];
+  assert(main, `${path}: policy main content missing`);
+  const text = main
     .replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, "")
     .replace(/<[^>]*>/g, " ");
   assert(

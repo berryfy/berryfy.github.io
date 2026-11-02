@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 
 import Wordmark from "@/components/atoms/Wordmark";
 import LanguageSwitcher from "@/components/widgets/LanguageSwitcher";
@@ -39,6 +40,15 @@ const SiteFooter = ({ locale, homeHref, languagePaths }: SiteFooterProps) => {
             <p className="mt-3 text-small text-muted-foreground">
               {siteSlogan}
             </p>
+            <a
+              href={businessInfo.youtubeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${linkClassName} mt-4 gap-2`}
+            >
+              YouTube
+              <ArrowUpRight aria-hidden="true" className="size-4" />
+            </a>
           </div>
 
           <div id={footerContactId} className="scroll-mt-24">
