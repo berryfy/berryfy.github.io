@@ -54,8 +54,8 @@ const ZombieCarePrivacyPage = ({
       id: "external-services",
       label: policy.transfer,
       content: (
-        <div className="space-y-3 rounded-lg bg-card p-5">
-          <h3>Google AdMob · UMP</h3>
+        <div className="flex flex-col gap-3 rounded-lg bg-card p-5">
+          <h3 className="m-0!">Google AdMob · UMP</h3>
           <p>{copy.transfer}</p>
           <p>
             <a href={privacyLinks.googlePrivacy}>{copy.googlePrivacy}</a>
