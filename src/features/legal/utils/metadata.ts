@@ -10,7 +10,7 @@ import type {
 
 interface CreatePrivacyMetadataOptions {
   locale: PrivacyLocale;
-  policies: Record<PrivacyLocale, AppPrivacyPolicy>;
+  policies: Record<PrivacyLocale, Pick<AppPrivacyPolicy, "appName">>;
   localePaths: Record<PrivacyLocale, string>;
   languageAlternates: Record<string, string>;
 }

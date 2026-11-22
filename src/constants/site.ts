@@ -142,6 +142,15 @@ export const localizedRoutes = {
     englishAlias: "/en/apps/s2u-stan/privacy/",
     indexable: false,
   },
+  zombieCarePrivacy: {
+    paths: {
+      en: "/apps/zombie-care/privacy/",
+      ko: "/ko/apps/zombie-care/privacy/",
+      ja: "/ja/apps/zombie-care/privacy/",
+    },
+    englishAlias: "/en/apps/zombie-care/privacy/",
+    indexable: false,
+  },
   divePrivacy: {
     paths: {
       en: "/apps/dive-stan/privacy/",
