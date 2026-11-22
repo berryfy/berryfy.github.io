@@ -1,6 +1,8 @@
 export const privacyLinks = {
   youtubeTerms: "https://www.youtube.com/t/terms",
   googlePrivacy: "https://policies.google.com/privacy",
+  googleMobileAdsData:
+    "https://developers.google.com/admob/android/next-gen/privacy/play-data-disclosure",
   googleAdsPrivacy: "https://policies.google.com/technologies/ads",
   firebasePrivacy: "https://firebase.google.com/support/privacy",
   supabasePrivacy: "https://supabase.com/privacy",

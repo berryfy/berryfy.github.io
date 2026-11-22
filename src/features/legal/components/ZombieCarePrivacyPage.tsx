@@ -3,6 +3,7 @@ import SiteHeader from "@/components/widgets/SiteHeader";
 import { businessInfo } from "@/constants/business";
 import { localeDetails, mainContentId } from "@/constants/site";
 import PrivacySection from "@/features/legal/components/privacy-section";
+import { privacyLinks } from "@/features/legal/constants/privacy-links";
 import { privacyPolicyCopy } from "@/features/legal/constants/privacy-policy-copy";
 import { zombieCarePrivacy } from "@/features/legal/constants/zombie-care-privacy";
 import {
@@ -68,10 +69,33 @@ const ZombieCarePrivacyPage = ({
           <PrivacySection number="1" title={copy.localTitle} id="game-data">
             <p>{copy.local}</p>
           </PrivacySection>
-          <PrivacySection number="2" title={copy.supportTitle} id="support">
+          <PrivacySection number="2" title={copy.adsTitle} id="rewarded-ads">
+            <p>{copy.ads}</p>
+            <p>{copy.transfer}</p>
+            <p>{copy.choices}</p>
+            <ul>
+              <li>
+                <a
+                  className="inline-flex min-h-11 items-center"
+                  href={privacyLinks.googlePrivacy}
+                >
+                  {copy.googlePrivacy}
+                </a>
+              </li>
+              <li>
+                <a
+                  className="inline-flex min-h-11 items-center"
+                  href={privacyLinks.googleMobileAdsData}
+                >
+                  {copy.googleAdsData}
+                </a>
+              </li>
+            </ul>
+          </PrivacySection>
+          <PrivacySection number="3" title={copy.supportTitle} id="support">
             <p>{copy.support}</p>
           </PrivacySection>
-          <PrivacySection number="3" title={copy.rightsTitle} id="rights">
+          <PrivacySection number="4" title={copy.rightsTitle} id="rights">
             <p>{copy.rights}</p>
             <p>
               <a
@@ -82,7 +106,7 @@ const ZombieCarePrivacyPage = ({
               </a>
             </p>
           </PrivacySection>
-          <PrivacySection number="4" title={copy.changesTitle} id="changes">
+          <PrivacySection number="5" title={copy.changesTitle} id="changes">
             <p>{copy.changes}</p>
           </PrivacySection>
         </article>
